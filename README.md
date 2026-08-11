@@ -16,7 +16,7 @@ Speed is only allowed to rise when comprehension holds. Get most of the question
 
 ## The rule about article text
 
-**No article is written by a language model.** Every article is real text lifted from a source we are allowed to reuse, listed in [docs/content-sources.md](docs/content-sources.md).
+No article is written by a language model. Every one is real text lifted from a source we are allowed to reuse, and those sources are listed in [docs/content-sources.md](docs/content-sources.md).
 
 A model may shorten a source by deleting sentences, and may write the quiz questions, the word definitions and the code. It may not write, reword or simplify a sentence that ends up in an article.
 

@@ -83,13 +83,13 @@ When testing locally, run `npx serve site` and open the address it prints. Openi
 
 Do not add tracking, user accounts, or a server unless a work package specifically asks for one.
 
-## Two bugs that will happen again if you do not know about them
+## Two bugs worth knowing about
 
-Both of these produced the same symptom: a blank panel where the article should be. Both took a long time to find, because nothing in the code looked wrong.
+Both of them looked identical from the outside. You opened the page and the article area was empty. Nothing in the code looked wrong either time, and both took hours to find.
 
-**The reader grew taller than the screen.** In CSS, an element inside a flexible layout will not shrink smaller than the text inside it unless you explicitly say `min-height: 0`. Without that, a long article stretched the reading panel past the bottom of the screen. Because the panel was then exactly as tall as its text, there was nothing left to scroll through, so the article "finished" on the very first frame. Every element in the chain from `body` down to `.reader` now sets `min-height: 0`. If you add another scrolling area, it needs the same.
+The first was the reading panel growing taller than the window. Inside a flexible layout, an element will not shrink below the height of the text it contains unless you tell it `min-height: 0`. A long article pushed the panel past the bottom of the screen, and once the panel was exactly as tall as its own text, there was nothing left to scroll through, so the article reached its end on the first frame. Everything from `body` down to `.reader` now sets `min-height: 0`, and a new scrolling area will need it too.
 
-**The countdown never went away.** HTML has a `hidden` attribute that should hide an element. But if a stylesheet tells that same element to be visible, the stylesheet wins. Our "3, 2, 1" countdown had a style making it visible, so it stayed on screen forever, covering the entire article in the same colour as the panel behind it. The fix is one line near the top of the stylesheet, `[hidden] { display: none !important; }`, which makes the attribute win again. Hide things with the attribute and let that rule do the work.
+The second was a countdown that would not leave. HTML's `hidden` attribute is supposed to hide an element, but a stylesheet saying that element is visible beats it. Our three-two-one overlay had such a style, so it sat on top of the article permanently, painted in the same colour as the panel behind it. That is why nothing looked broken. One line near the top of the stylesheet, `[hidden] { display: none !important; }`, gives the attribute its authority back. Hide things with the attribute and let that line do the work.
 
 ## Writing for people
 

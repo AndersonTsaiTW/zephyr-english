@@ -96,7 +96,6 @@ function liveStreak() {
 /* ---------- theme ---------- */
 
 const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 function activeTheme() {
   return document.documentElement.dataset.theme || (darkQuery.matches ? 'dark' : 'light');
@@ -128,6 +127,7 @@ const state = {
   words: 0,
   wpm: profile()?.currentWpm ?? START_WPM,
   calibrating: profile() === null,
+  stepMode: localStorage.getItem('zephyr.stepMode') === '1',
   y: 0,
   playing: false,
   rafId: null,
@@ -165,6 +165,7 @@ function hasSource(article) {
 
 async function init() {
   paintThemeButton();
+  paintStepButton();
   setupShareControls();
   $('dayLabel').textContent = dayKey();
 
@@ -294,30 +295,30 @@ function frame(t) {
 
 /* ---------- paragraph steps, for reduced motion ---------- */
 
-// Continuous movement is the whole product, so it cannot simply be switched
-// off. Instead the text advances a paragraph at a time, holding each one for
-// the time it would have taken to scroll past, which keeps the pacing without
-// anything sliding. The block sits near the top of the panel rather than at
-// the focus band so that a long paragraph fits on screen whole.
-function stepBlocks() {
-  const offset = Math.round(reader.clientHeight * 0.12);
-  return [...track.children].map((el) => ({
-    top: el.offsetTop - offset,
-    words: Math.max(1, countWords(el.textContent)),
-  }));
+// An alternative for anyone who cannot read text that slides. Rather than
+// jumping a whole paragraph and then sitting still, which looks like the app
+// has frozen, it moves one line at a time on the same overall schedule. The
+// screen changes every few seconds, so progress stays visible.
+function lineHeightPx() {
+  const size = parseFloat(getComputedStyle(track).fontSize) || 19;
+  const lh = parseFloat(getComputedStyle(track).lineHeight);
+  return Number.isFinite(lh) ? lh : size * 1.8;
 }
 
-function runSteps(blocks, index) {
-  if (index >= blocks.length) {
-    state.y = maxY();
+function runSteps() {
+  const line = lineHeightPx();
+  const limit = maxY();
+  if (state.y >= limit) {
+    state.y = limit;
     renderScroll();
     finish();
     return;
   }
-  state.y = Math.max(0, Math.min(maxY(), blocks[index].top));
+  state.y = Math.min(limit, state.y + line);
   renderScroll();
-  const hold = (blocks[index].words / state.wpm) * 60000;
-  state.stepTimer = setTimeout(() => runSteps(blocks, index + 1), hold);
+  // One line holds for as long as that line would have taken to scroll past.
+  const hold = (line / pxPerSec()) * 1000;
+  state.stepTimer = setTimeout(runSteps, hold);
 }
 
 // Time is measured off the clock in both modes, so the speed reported at the
@@ -328,13 +329,30 @@ function play() {
   state.last = null;
   state.runStart = performance.now();
   $('playBtn').textContent = '⏸';
-  if (reduceMotion.matches) {
-    const blocks = stepBlocks();
-    const next = blocks.findIndex((b) => b.top > state.y);
-    runSteps(blocks, next === -1 ? blocks.length : next);
-  } else {
-    state.rafId = requestAnimationFrame(frame);
+  if (state.stepMode) runSteps();
+  else state.rafId = requestAnimationFrame(frame);
+}
+
+// Smooth scrolling is the default for everyone. The operating system's
+// reduced-motion setting is not used to decide this: on Windows it is often
+// switched on to make the interface feel faster, and those readers still want
+// the scroll, which is the entire product. Anyone who needs the stepped
+// version can turn it on here, and the choice is remembered.
+function toggleStepMode() {
+  state.stepMode = !state.stepMode;
+  localStorage.setItem('zephyr.stepMode', state.stepMode ? '1' : '0');
+  paintStepButton();
+  if (state.playing) {
+    pause();
+    play();
   }
+}
+
+function paintStepButton() {
+  const btn = $('stepBtn');
+  btn.classList.toggle('on', state.stepMode);
+  btn.setAttribute('aria-pressed', String(state.stepMode));
+  btn.title = state.stepMode ? 'Switch to smooth scrolling' : 'Switch to line by line';
 }
 
 function bankElapsed() {
@@ -570,6 +588,7 @@ function setupShareControls() {
 /* ---------- events ---------- */
 
 $('themeBtn').addEventListener('click', toggleTheme);
+$('stepBtn').addEventListener('click', toggleStepMode);
 $('shareBtn').addEventListener('click', shareResult);
 $('waBtn').addEventListener('click', openWhatsApp);
 $('copyBtn').addEventListener('click', copyResult);

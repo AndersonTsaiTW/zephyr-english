@@ -174,6 +174,38 @@ check('manifest is valid and standalone', manifest?.display === 'standalone' && 
 const swOk = await page.evaluate(async () => (await fetch('sw.js')).ok);
 check('service worker is served', swOk);
 
+// The reader must scroll at its real default speed for someone whose system
+// asks for reduced motion. A previous version silently switched those readers
+// to a paragraph-at-a-time mode that sat still for ten seconds at a stretch,
+// which is indistinguishable from the app being broken.
+const reduced = await browser.newPage({ viewport: { width: 390, height: 780 }, reducedMotion: 'reduce' });
+await reduced.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle' });
+await reduced.evaluate("localStorage.clear()");
+await reduced.reload({ waitUntil: 'networkidle' });
+await reduced.locator('#startBtn').click();
+await reduced.waitForTimeout(3400);
+const rStart = await reduced.evaluate('state.y');
+await reduced.waitForTimeout(4000);
+const rEnd = await reduced.evaluate('state.y');
+check(
+  'reduced motion still scrolls at the default speed',
+  rEnd - rStart > 30,
+  `moved ${Math.round(rEnd - rStart)}px in 4s`
+);
+
+// The stepped alternative exists, but only when the reader asks for it.
+check('stepped mode is off unless chosen', (await reduced.evaluate('state.stepMode')) === false);
+await reduced.locator('#stepBtn').click();
+check('stepped mode can be turned on', await reduced.evaluate('state.stepMode'));
+const sStart = await reduced.evaluate('state.y');
+await reduced.waitForTimeout(5000);
+check(
+  'stepped mode advances rather than freezing',
+  (await reduced.evaluate('state.y')) > sStart,
+  `moved ${Math.round((await reduced.evaluate('state.y')) - sStart)}px in 5s`
+);
+await reduced.close();
+
 check('no unexpected page errors', errors.length === 0, errors.join(' | '));
 
 await browser.close();

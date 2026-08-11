@@ -55,13 +55,13 @@ Numbers a reader compares between days, meaning speed, score and streak, use `fo
 
 A few sizes in the stylesheet are slightly off this scale. Pull them onto it when convenient rather than adding more steps.
 
-## Two layout rules learned the hard way
+## Two layout rules
 
-Both of these caused the same bug: a blank panel where the article should be.
+Both of these were learned by shipping the bug. Each time, the article area came up empty and the code looked fine.
 
-Every element in the chain from `body` down to `.reader` sets `min-height: 0`. In a flexible layout, an element normally refuses to shrink below the size of the text inside it. Without this, a long article stretched the reading panel taller than the screen, which left nothing to scroll through, so the article finished instantly. Any new scrolling area needs the same line.
+Every element from `body` down to `.reader` sets `min-height: 0`. In a flexible layout an element will not shrink below the height of its own text, so a long article pushed the reading panel past the bottom of the screen. With the panel exactly as tall as its text there was nothing to scroll through, and the article ended on its first frame. Any new scrolling area needs the same line.
 
-Near the top of the stylesheet sits `[hidden] { display: none !important; }`. HTML's `hidden` attribute is supposed to hide an element, but if a stylesheet says that element is visible, the stylesheet wins. Our countdown overlay had exactly that problem and stayed on screen forever, covering the article in the same colour as the panel behind it. With that rule in place, hiding something with the attribute works. Use the attribute and let the rule do the work.
+Near the top of the stylesheet sits `[hidden] { display: none !important; }`. The `hidden` attribute should hide an element, but a stylesheet declaring that element visible beats it. The countdown overlay had exactly that, so it stayed on top of the article in the same colour as the panel behind it. With the rule in place the attribute works again. Hide with the attribute and let the rule do it.
 
 ## Spacing and shape
 
@@ -75,13 +75,21 @@ Borders are always one pixel in `--line`. There are no drop shadows in this prod
 
 ## The pieces
 
-**Main button.** Fully rounded, accent background, `--on-accent` text, 0.8rem by 2rem of padding. At most one per screen.
+### Main button
 
-**Icon button.** Fully rounded, 2.5rem square, surface background with a one pixel border that turns accent on hover. The play button in the reader is the same thing at 3.2rem, filled with the accent.
+Fully rounded, accent background, `--on-accent` text, 0.8rem by 2rem of padding. At most one per screen.
 
-**Card row.** Surface background, one pixel border, 12 pixel corners. The preview words use this, and the quiz options are the same thing made taller.
+### Icon button
 
-**Focus.** Every control shows a two pixel accent outline when reached by keyboard. Never remove it. Someone navigating without a mouse has no other way to tell where they are.
+Fully rounded, 2.5rem square, surface background with a one pixel border that turns accent on hover. The play button in the reader is the same thing at 3.2rem, filled with the accent.
+
+### Card row
+
+Surface background, one pixel border, 12 pixel corners. The preview words use this, and the quiz options are the same thing made taller.
+
+### Focus
+
+Every control shows a two pixel accent outline when reached by keyboard. Never remove it. Someone navigating without a mouse has no other way to tell where they are.
 
 Anything you tap must be at least 44 pixels on its shorter side.
 

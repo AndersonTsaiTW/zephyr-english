@@ -4,9 +4,9 @@
 // on a train with no signal. So the shell is cached on install, and today's
 // and tomorrow's articles are cached whenever the app is online.
 //
-// Bump CACHE when the shell changes. The old cache is deleted on activate.
+// The old cache is deleted on activate.
 
-const CACHE = 'zephyr-v1';
+const CACHE = 'zephyr-v2';
 
 const SHELL = [
   './',
@@ -95,8 +95,26 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // The shell only changes when we deploy, and the cache name changes with it.
+  // The shell is served network first too, and this is deliberate.
+  //
+  // Cache first is the usual advice, but it assumes filenames change when
+  // their contents do. Ours do not: app.js is always app.js. With cache
+  // first, the first visit pins a copy of the code and no later deploy ever
+  // reaches that reader again, unless someone remembers to bump CACHE by
+  // hand. Forgetting once leaves people stuck on a broken version with no
+  // way to recover, and no way for us to tell.
+  //
+  // Going to the network first costs one conditional request per file on a
+  // working connection, and the cache still answers when there is none.
   event.respondWith(
-    caches.match(request).then((hit) => hit ?? fetch(request))
+    fetch(request)
+      .then((res) => {
+        if (res.ok) {
+          const copy = res.clone();
+          caches.open(CACHE).then((cache) => cache.put(request, copy));
+        }
+        return res;
+      })
+      .catch(() => caches.match(request).then((hit) => hit ?? caches.match('./index.html')))
   );
 });
