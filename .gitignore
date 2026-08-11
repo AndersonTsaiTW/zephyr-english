@@ -8,3 +8,6 @@ notes-zh/
 
 # wrangler local cache
 .wrangler/
+
+# agent worktrees
+.claude/worktrees/
