@@ -33,4 +33,6 @@ Do one package from `PLAN.md` per session unless told otherwise. Read its accept
 
 Test by serving `site/` over HTTP with `npx serve site`, because `fetch()` will not read `file://` URLs.
 
+Run `node scripts/smoke.mjs` before calling a package done. It drives the real site in a real browser and reads an article end to end. Syntax checks, grep and HTTP status codes all pass happily on a page that renders blank, which is exactly how the two worst bugs so far reached production. Extend it when you add a screen.
+
 Do not add analytics, accounts or backend services unless the package explicitly calls for them.

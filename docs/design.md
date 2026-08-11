@@ -53,6 +53,12 @@ Numbers that a reader compares across days, meaning speed, score and streak, get
 
 The current CSS has a few sizes off this scale, specifically 0.92rem and 0.78rem. Reconcile them to Caption and Label in WP9 rather than adding more steps now.
 
+## Two layout rules that have already bitten
+
+Every flex item on the path from `body` down to `.reader` sets `min-height: 0`. Flex items default to `min-height: auto`, which refuses to shrink below the content, so a long article pushes the reader taller than the viewport. When that happens `scrollHeight` and `clientHeight` come out equal, there is nothing to scroll through, and the read ends on its first frame. Any new scroll container needs the same treatment.
+
+`[hidden] { display: none !important; }` sits near the top of the stylesheet. A `display` value in a stylesheet outranks the browser's own rule for the `hidden` attribute, so an element given `display: flex` by its class stays on screen no matter what the attribute says. The countdown overlay hid the entire article this way. Toggle visibility through the attribute and let that rule do the work rather than writing per-element `display` toggles.
+
 ## Spacing and shape
 
 Space runs on a 4px base: 0.25, 0.5, 0.75, 1, 1.5, 2 and 3rem. Lay groups out with flex or grid and `gap`, not per-element margins.
