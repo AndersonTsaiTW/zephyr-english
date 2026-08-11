@@ -149,13 +149,12 @@ Live at <https://zephyr-8w8.pages.dev>, hosted on Cloudflare Pages under the pro
 
 Cloudflare rather than GitHub Pages for two reasons that show up later. WP7's Web Push option needs a Worker with KV, and on Cloudflare that can sit behind the same domain as a route rather than a second origin with CORS between them. And `site/_headers` is honored here, which is what keeps a service worker and a day-old article from being served stale; GitHub Pages has no equivalent.
 
-To redeploy by hand:
+The project is connected to the GitHub repository, so **pushing to `main` deploys**. Build command is empty, build output is `site`, and root directory is the repo root. Nothing runs at build time; Cloudflare copies `site/` and applies `site/_headers`.
 
-```text
-npx wrangler pages deploy site --project-name zephyr --branch main
-```
+Do not also run `wrangler pages deploy` by hand now that Git is connected. Mixing the two makes the deployment list ambiguous about which commit is live.
 
-- [ ] Turn on deploy-on-push. In the Cloudflare dashboard, open Workers and Pages, then the `zephyr` project, then Settings and Builds, and connect the GitHub repository with an empty build command and `site` as the output directory. The alternative is a GitHub Actions workflow calling `wrangler pages deploy`, which needs a Cloudflare API token stored as a repository secret.
+Still to do:
+
 - [ ] An accessibility pass covering visible focus states, the reduced-motion paragraph-step mode, and contrast in both themes.
 - [ ] Lighthouse PWA and accessibility scores of 90 or better.
 - [ ] Optionally, Cloudflare Web Analytics, which is cookieless, for page views and nothing personal.
