@@ -57,6 +57,7 @@ const state = {
   rafId: null,
   last: null,
   elapsed: 0,
+  lastResult: null,
 };
 
 /* ---------- loading ---------- */
@@ -72,6 +73,7 @@ async function tryFetch(path) {
 
 async function init() {
   paintThemeButton();
+  setupShareControls();
   $('dayLabel').textContent = todayKey();
   let article = await tryFetch(`content/articles/${todayKey()}.json`);
   let isSample = false;
@@ -219,15 +221,88 @@ function finish() {
   pause();
   const mins = state.elapsed / 60;
   const actualWpm = mins > 0 ? Math.round(state.words / mins) : state.wpm;
+
+  // WP3 adds score and total here, WP4 adds day and streak.
+  state.lastResult = { date: todayKey(), wpm: actualWpm, words: state.words };
+
   $('doneStats').textContent = `${state.words} words · ${Math.round(state.elapsed)}s · ${actualWpm} wpm`;
   const src = state.article.source;
   $('attribution').textContent = src ? `${src.origin}, ${src.author} (${src.license})` : '';
   show('done');
 }
 
+/* ---------- sharing ---------- */
+
+// The deployed address, whatever it turns out to be.
+function siteUrl() {
+  return location.origin + location.pathname.replace(/index\.html$/, '');
+}
+
+// Fields appear as later packages produce them: WP3 adds the score, WP4 the
+// day number and the streak. Missing ones are left out rather than shown empty.
+function buildShareText() {
+  const r = state.lastResult;
+  if (!r) return '';
+  const stats = [`${r.wpm} wpm`];
+  if (r.score != null && r.total != null) stats.push(`${r.score}/${r.total} correct`);
+  if (r.streak) stats.push(`streak ${r.streak}`);
+  return [`ZEPHYR · ${r.day ? `Day ${r.day}` : r.date}`, stats.join(' · '), siteUrl()].join('\n');
+}
+
+function openWhatsApp() {
+  window.open(`https://wa.me/?text=${encodeURIComponent(buildShareText())}`, '_blank', 'noopener');
+}
+
+async function shareResult() {
+  const text = buildShareText();
+  try {
+    await navigator.share({ text });
+  } catch (err) {
+    // Dismissing the sheet is not a failure worth reacting to.
+    if (err.name !== 'AbortError') openWhatsApp();
+  }
+}
+
+async function copyResult() {
+  const text = buildShareText();
+  let copied = false;
+  try {
+    await navigator.clipboard.writeText(text);
+    copied = true;
+  } catch {
+    // clipboard needs a secure context; fall back to a selection copy.
+    const scratch = document.createElement('textarea');
+    scratch.value = text;
+    scratch.setAttribute('readonly', '');
+    scratch.style.cssText = 'position:fixed;top:-9999px;opacity:0';
+    document.body.append(scratch);
+    scratch.select();
+    try {
+      copied = document.execCommand('copy');
+    } catch {
+      copied = false;
+    }
+    scratch.remove();
+  }
+  const btn = $('copyBtn');
+  btn.textContent = copied ? 'Copied' : 'Press Ctrl+C';
+  setTimeout(() => { btn.textContent = 'Copy'; }, 1600);
+}
+
+// One native share button where the browser supports it, two explicit ones
+// where it does not.
+function setupShareControls() {
+  const native = typeof navigator.share === 'function';
+  $('shareBtn').hidden = !native;
+  $('shareFallback').hidden = native;
+}
+
 /* ---------- events ---------- */
 
 $('themeBtn').addEventListener('click', toggleTheme);
+$('shareBtn').addEventListener('click', shareResult);
+$('waBtn').addEventListener('click', openWhatsApp);
+$('copyBtn').addEventListener('click', copyResult);
 $('startBtn').addEventListener('click', startReading);
 $('againBtn').addEventListener('click', startReading);
 $('playBtn').addEventListener('click', toggle);

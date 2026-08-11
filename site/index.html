@@ -62,8 +62,14 @@
     <h1>Done</h1>
     <p class="meta big" id="doneStats"></p>
     <p class="attribution" id="attribution"></p>
-    <p class="hint">The quiz and the streak arrive with WP3 and WP4. See PLAN.md.</p>
-    <button class="primary" id="againBtn">Read again</button>
+    <div class="actions">
+      <button class="primary" id="shareBtn" hidden>Share</button>
+      <div class="share-row" id="shareFallback" hidden>
+        <button class="primary" id="waBtn">WhatsApp</button>
+        <button class="wide" id="copyBtn">Copy</button>
+      </div>
+      <button class="text-btn" id="againBtn">Read again</button>
+    </div>
   </section>
 
   <!-- Empty state -->

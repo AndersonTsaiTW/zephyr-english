@@ -10,7 +10,7 @@ Status marks: done, partial, todo.
 | WP3 | Quiz and results flow | todo |
 | WP4 | Streak, calibration and adaptive speed | todo |
 | WP5 | PWA, installable and offline | todo |
-| WP6 | Share card and WhatsApp loop | todo |
+| WP6 | Share card and WhatsApp loop | done |
 | WP7 | Daily notifications | todo |
 | WP8 | Curation toolkit | todo |
 | WP9 | Deploy and polish | todo |
@@ -97,14 +97,25 @@ Acceptance: edit the dates in localStorage to simulate three days and confirm th
 
 Acceptance: it installs from Android Chrome and from iOS Safari via Add to Home Screen, and reloading in airplane mode still opens today's article.
 
-## WP6, share card and WhatsApp loop
+## WP6, share card and WhatsApp loop (done)
 
-A social loop for two friends that needs no infrastructure at all.
+A social loop for two friends that needs no infrastructure at all. Nobody subscribes to anything: one reader taps share, the other gets a real WhatsApp message from a friend, and that message is the reminder.
 
-- [ ] A share text generator on the results page producing `ZEPHYR · Day <n>`, then the speed, score and streak, then the site URL.
-- [ ] A share button using the Web Share API where it exists, falling back to a WhatsApp button pointing at `https://wa.me/?text=<urlencoded>` and a copy button.
+`buildShareText()` assembles the card from `state.lastResult`. It was built ahead of WP3 and WP4, so it includes only the fields that exist and grows as they land:
 
-Acceptance: on a phone, one tap from the results page opens WhatsApp with the message already filled in.
+```text
+now          ZEPHYR · 2026-08-11 / 156 wpm / <url>
+after WP3    ZEPHYR · 2026-08-11 / 156 wpm · 3/3 correct / <url>
+after WP4    ZEPHYR · Day 12 / 156 wpm · 2/3 correct · streak 12 / <url>
+```
+
+WP3 populates `score` and `total` on `state.lastResult`, and WP4 populates `day` and `streak`. Neither needs to touch the share code.
+
+The site address comes from `location`, so it is correct wherever the app is deployed without anything to configure.
+
+Where `navigator.share` exists the screen shows a single Share button and the platform sheet handles the rest. Where it does not, it shows a WhatsApp button opening `https://wa.me/?text=<urlencoded>` and a Copy button. Copy uses the clipboard API and falls back to a selection copy outside a secure context, and the button reports what happened before reverting.
+
+Remaining for WP3: move these controls onto the real results screen, keeping Share primary and "Read again" secondary.
 
 ## WP7, daily notifications
 
