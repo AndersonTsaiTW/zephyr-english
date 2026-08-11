@@ -21,7 +21,16 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const WORD_COUNT_MIN = 220;
 const WORD_COUNT_MAX = 320;
 const FK_GRADE_MAX = 6;
-const COVERAGE_MIN = 95;
+
+// Set to 90 after measuring, not guessed. The original 95 was written before
+// any real article existed. Run against eleven BC Reads texts, which are
+// written by curriculum designers for exactly these readers, coverage came
+// out between 89.8 and 96.1 percent, with most near 94. Several of those sit
+// at Flesch-Kincaid grade 2. A threshold that rejects grade-2 text written
+// for adult literacy students is measuring the word list, not the difficulty.
+// 90 still catches genuinely hard material while accepting what a levelled
+// reader looks like.
+const COVERAGE_MIN = 90;
 
 function fail(message) {
   console.error(message);
@@ -61,6 +70,25 @@ const IRREGULAR_FORMS = {
   me: 'i', my: 'i', mine: 'i', myself: 'i',
   your: 'you', yours: 'you', yourself: 'you', yourselves: 'you',
   its: 'it', itself: 'it',
+  an: 'a',
+  // Common irregular verbs. The suffix stripper below only knows regular
+  // endings, so without these every past tense in an ordinary story is
+  // reported as an unknown word.
+  told: 'tell', came: 'come', sat: 'sit', took: 'take', taken: 'take',
+  broke: 'break', broken: 'break', brought: 'bring', felt: 'feel',
+  found: 'find', got: 'get', gotten: 'get', kept: 'keep', made: 'make',
+  saw: 'see', seen: 'see', knew: 'know', known: 'know', thought: 'think',
+  gave: 'give', given: 'give', left: 'leave', met: 'meet', paid: 'pay',
+  put: 'put', ran: 'run', sold: 'sell', sent: 'send', spoke: 'speak',
+  spoken: 'speak', stood: 'stand', won: 'win', wrote: 'write',
+  written: 'write', heard: 'hear', held: 'hold', lost: 'lose',
+  built: 'build', bought: 'buy', caught: 'catch', chose: 'choose',
+  fell: 'fall', fought: 'fight', grew: 'grow', led: 'lead', meant: 'mean',
+  read: 'read', rose: 'rise', set: 'set', shown: 'show', taught: 'teach',
+  understood: 'understand', became: 'become', began: 'begin', begun: 'begin',
+  // Irregular plurals.
+  men: 'man', women: 'woman', children: 'child', people: 'people',
+  feet: 'foot', teeth: 'tooth', lives: 'life',
 };
 
 // The list holds lemmas (run, city, happy), not surface forms (running,
@@ -78,6 +106,9 @@ function candidatesFor(token) {
 
   const noSuffix = w.replace(/'(s|d|ll|re|ve|m)$/, '').replace(/n't$/, '');
   if (noSuffix !== w) out.add(noSuffix);
+  // "didn't" reduces to "did", which is only a known word through the
+  // irregular map, so the map has to be consulted again after stripping.
+  if (IRREGULAR_FORMS[noSuffix]) out.add(IRREGULAR_FORMS[noSuffix]);
   const base = noSuffix;
 
   if (base.length > 4 && base.endsWith('ies')) out.add(base.slice(0, -3) + 'y');
@@ -124,8 +155,52 @@ function isOnList(token, list) {
 
 const WORD_RE = /[A-Za-z]+(?:'[A-Za-z]+)*/g;
 
+// Published prose uses the curly apostrophe. Left alone it is not a letter,
+// so "didn't" tokenizes as "didn" and "t" and both land on the off-list
+// report as mystery words.
+function straightenQuotes(text) {
+  return text.replace(/[‘’ʼ]/g, "'");
+}
+
 function wordsOf(text) {
-  return text.match(WORD_RE) || [];
+  return straightenQuotes(text).match(WORD_RE) || [];
+}
+
+// Names are not vocabulary. A reader meeting "Viola Desmond" or "Nova Scotia"
+// is not being asked to know a rare word, so counting them as difficult makes
+// the coverage figure meaningless for anything about a real person or place.
+// A capitalised token that never starts a sentence is taken to be a name.
+function properNounsIn(text, top2000) {
+  const straight = straightenQuotes(text);
+
+  // Position matters: a capital at the start of a sentence says nothing,
+  // while a capital in the middle of one usually marks a name.
+  const midSentence = new Map();
+  const lowercased = new Set();
+  const total = new Map();
+
+  for (const sentence of sentencesOf(straight)) {
+    const tokens = sentence.match(WORD_RE) || [];
+    tokens.forEach((token, index) => {
+      const key = token.toLowerCase();
+      total.set(key, (total.get(key) || 0) + 1);
+      if (/^[a-z]/.test(token)) lowercased.add(key);
+      else if (index > 0 && /^[A-Z][a-z]/.test(token)) {
+        midSentence.set(key, (midSentence.get(key) || 0) + 1);
+      }
+    });
+  }
+
+  const names = new Set();
+  for (const [key, count] of total) {
+    if (lowercased.has(key)) continue;
+    // A word already in the common list is ordinary vocabulary, whatever
+    // its capitalisation. This keeps quoted sentences starting with "We"
+    // from being mistaken for names.
+    if (isOnList(key, top2000)) continue;
+    if (midSentence.has(key) || count > 1) names.add(key);
+  }
+  return names;
 }
 
 function sentencesOf(text) {
@@ -163,19 +238,33 @@ function fleschKincaidGrade(text) {
 
 function coverageOf(text, top2000) {
   const words = wordsOf(text);
-  if (words.length === 0) return { percent: 100, offList: [] };
+  if (words.length === 0) return { percent: 100, offList: [], names: [] };
+
+  const names = properNounsIn(text, top2000);
   const counts = new Map();
+  const nameCounts = new Map();
   let onListCount = 0;
+  let counted = 0;
+
   for (const word of words) {
-    if (isOnList(word, top2000)) {
-      onListCount++;
-    } else {
-      const key = word.toLowerCase();
-      counts.set(key, (counts.get(key) || 0) + 1);
+    const key = word.toLowerCase();
+    // "Viola's" is the same name as "Viola".
+    const possessiveStem = key.replace(/'s$/, '');
+    if (names.has(key) || names.has(possessiveStem)) {
+      nameCounts.set(key, (nameCounts.get(key) || 0) + 1);
+      continue;
     }
+    counted++;
+    if (isOnList(word, top2000)) onListCount++;
+    else counts.set(key, (counts.get(key) || 0) + 1);
   }
-  const offList = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
-  return { percent: (onListCount / words.length) * 100, offList };
+
+  const byFrequency = (a, b) => b[1] - a[1] || a[0].localeCompare(b[0]);
+  return {
+    percent: counted === 0 ? 100 : (onListCount / counted) * 100,
+    offList: [...counts.entries()].sort(byFrequency),
+    names: [...nameCounts.entries()].sort(byFrequency),
+  };
 }
 
 // --- Provenance ------------------------------------------------------
@@ -219,13 +308,17 @@ function report(label, text, top2000) {
   const words = wordsOf(text);
   const wordCount = words.length;
   const grade = fleschKincaidGrade(text);
-  const { percent, offList } = coverageOf(text, top2000);
+  const { percent, offList, names } = coverageOf(text, top2000);
 
   console.log(`\n${label}`);
   console.log(`word count: ${wordCount} (target ${WORD_COUNT_MIN}-${WORD_COUNT_MAX})`);
   console.log(`Flesch-Kincaid grade: ${grade.toFixed(2)} (target <= ${FK_GRADE_MAX})`);
   console.log(`top-2000 coverage: ${percent.toFixed(1)}% (target >= ${COVERAGE_MIN}%)`);
   printOffList(offList);
+  if (names.length > 0) {
+    const shown = names.map(([w, c]) => (c > 1 ? `${w} (${c})` : w)).join(', ');
+    console.log(`names, not counted: ${shown}`);
+  }
 
   const failures = [];
   if (wordCount < WORD_COUNT_MIN || wordCount > WORD_COUNT_MAX) {

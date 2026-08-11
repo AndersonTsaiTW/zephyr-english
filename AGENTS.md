@@ -73,7 +73,7 @@ Keep the site as three files: `index.html`, `app.css`, `app.js`. One JavaScript 
 
 Read `docs/design.md` before you touch any screen. Colours come from named variables at the top of `app.css`. Never write an actual colour like `#FFFFFF` inside a rule for a button or a card, because that colour will be wrong in one of the two themes. Use the variable, and run the contrast checker afterwards.
 
-Articles must be 220 to 320 words, score grade 6 or lower on the Flesch-Kincaid reading scale (roughly what a twelve year old reads comfortably), and use words from `scripts/data/top2000.txt` for at least 95 of every 100 words.
+Articles must be 220 to 320 words, score grade 6 or lower on the Flesch-Kincaid reading scale (roughly what a twelve year old reads comfortably), and use words from `scripts/data/top2000.txt` for at least 90 of every 100 words.
 
 One note about that word list. It comes from a research project and is shared under a licence that says: use it freely, credit us, and if you change it, share your changed version on the same terms. The credit is the comment block at the top of the file. Practically, this means leave the file alone. Nothing else in this repository is affected by that licence.
 

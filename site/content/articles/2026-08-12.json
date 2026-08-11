@@ -1,0 +1,59 @@
+{
+  "id": "2026-08-12",
+  "title": "The Story of Tommy Douglas",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 4, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader4/chapter/the-story-of-tommy-douglas/"
+  },
+  "body": [
+    "In 1919, Tommy Douglas was a teenager standing on a rooftop in downtown Winnipeg. He was looking down on a huge crowd of workers protesting low wages. They could not give their families a good quality of life, even though they worked very hard. Suddenly, the police pulled out their guns and shot over 20 of the protesting workers. Two people died. Tommy was deeply affected by what he saw that day. He believed everyone should have a good quality of life, whether they were rich or poor.",
+    "When he was 26, he became a minister so he could help people. When the miners in his town went on strike, he brought them food and blankets. Once more, the police came in. They shot and killed three people. Tommy had seen enough. He decided to go into politics to make life better for poor people.",
+    "During that time, Tommy kept his promises to make life better for everyone in Saskatchewan. Tommy brought in power across the province. He made a law that bosses had to give workers at least two weeks of paid vacation. He made a bill of rights saying people of all races and genders are equal. The biggest change of all was that he brought in free health care for everyone in the province.",
+    "Health care was personal for Tommy. When he was a young boy, he got an infection in his leg. His family was poor and could not afford health care. He was going to lose his leg. Thankfully, a doctor agreed to operate on his leg for free. In 1959, Tommy brought in free health care for everyone in Saskatchewan, rich and poor."
+  ],
+  "previewWords": [
+    {
+      "word": "strike",
+      "gloss": "when workers stop working to demand better pay or conditions"
+    },
+    {
+      "word": "infection",
+      "gloss": "an illness caused by germs entering the body"
+    },
+    {
+      "word": "afford",
+      "gloss": "to have enough money to pay for something"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did Tommy see in Winnipeg in 1919?",
+      "options": [
+        "A crowd celebrating the end of a war",
+        "Police shooting at workers who were protesting",
+        "His first day of school"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Why was health care personal to him?",
+      "options": [
+        "He nearly lost his leg because his family could not pay a doctor",
+        "He trained as a doctor himself",
+        "His father worked in a hospital"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What did he bring to Saskatchewan in 1959?",
+      "options": [
+        "Paid vacation for all workers",
+        "Free health care for everyone",
+        "Electric power to the cities"
+      ],
+      "answer": 1
+    }
+  ]
+}

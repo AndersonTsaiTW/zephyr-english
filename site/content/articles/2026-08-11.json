@@ -1,0 +1,63 @@
+{
+  "id": "2026-08-11",
+  "title": "The Story of Viola Desmond",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 4, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader4/chapter/the-story-of-viola-desmond/"
+  },
+  "body": [
+    "Viola Desmond was an African Canadian woman from Nova Scotia. She lived in a time when black women were expected to be servants in houses, and black men were expected to be servants on trains. Viola was only 32, yet she had her own beauty salon.",
+    "One day, she was driving across Nova Scotia to make a delivery. But then her car broke down in New Glasgow. She went to the Roseland Theatre. Viola sat on the main floor because her eyesight was poor and she needed to be close to the screen.",
+    "Just as the movie started to play, she felt a tap on her shoulder. A staff person told her she could not sit there. The ticket seller said, “We don’t sell tickets on the main floor to you people.” That’s when she realized that the balcony was for black people. The main floor was for white people.",
+    "That’s when the manager came. He told her to move to the balcony, or he would call the police. Viola told him to go ahead. She wasn’t moving. Sure enough, the police came. They asked her one more time to move. Viola said no. So the police grabbed her by the arms and took her from the theatre.",
+    "The police took Viola to prison. She sat up awake the whole night.",
+    "The next day, she was taken to court. She didn’t know how courtrooms worked, and she was found guilty.",
+    "But Viola’s case brought people together to fight for equal rights in Nova Scotia. They kept up the battle, and, in 1954, the province finally got rid of the laws that made it legal to treat black people differently from white people.",
+    "Viola’s story invites us to ask: What can we do to make sure that history does not repeat itself?"
+  ],
+  "previewWords": [
+    {
+      "word": "balcony",
+      "gloss": "the upper floor of seats in a theatre"
+    },
+    {
+      "word": "guilty",
+      "gloss": "judged by a court to have broken the law"
+    },
+    {
+      "word": "servant",
+      "gloss": "someone paid to work in another person's home"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did Viola sit on the main floor?",
+      "options": [
+        "She could not see well from far away",
+        "The balcony was full",
+        "Her ticket cost more"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What happened when she refused to move?",
+      "options": [
+        "She was given her money back",
+        "The police took her out of the theatre",
+        "The manager let her stay"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What did her case lead to?",
+      "options": [
+        "She won in court the second time",
+        "Nova Scotia ended its laws that treated black people differently",
+        "The theatre was closed down"
+      ],
+      "answer": 1
+    }
+  ]
+}

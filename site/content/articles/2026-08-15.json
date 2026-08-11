@@ -1,0 +1,63 @@
+{
+  "id": "2026-08-15",
+  "title": "The Story of Elijah Harper",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 4, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader4/chapter/the-story-of-elijah-harper/"
+  },
+  "body": [
+    "An eight-year-old boy named Elijah sat in the forest with his grandfather. He lived on a reserve in Manitoba called Red Sucker Lake. Elijah loved spending time on the land. He had learned all about hunting and fishing from his grandfather.",
+    "One day, a small plane landed on the lake. A white man stepped out. He was sent by the government. His job was to take Elijah from his grandparents and bring him to residential school, or boarding school. Elijah didn’t want to get on the plane, but he had no choice. At that time, First Nations people didn’t have any rights.",
+    "Elijah spent the next 10 years in residential school. The teachers cut his hair. He was punished if he tried to speak his own language. During that time, many of his classmates tried to run away.",
+    "Elijah had an idea. If he was in government, he could help First Nations people stand up for their rights. So, in 1981, he ran to be an MLA, or member of the government. He won! He was the first Aboriginal MLA in the history of Manitoba.",
+    "In Ottawa, the prime minister of Canada wanted to pass a bill, or a suggested law. It said that Canada was created by the English and the French. But it didn’t say anything about the role of First Nations people in building Canada.",
+    "The prime minister needed all of the MLAs in Manitoba to agree to the bill to make it a law. But when it was Elijah’s turn to vote, he held up an eagle feather and spoke the word, “No.”",
+    "It was a moment that put First Nations issues front and centre in Canadian politics.",
+    "Elijah Harper inspired a new wave of First Nations people to take part in politics."
+  ],
+  "previewWords": [
+    {
+      "word": "reserve",
+      "gloss": "land the government set aside for First Nations people to live on"
+    },
+    {
+      "word": "bill",
+      "gloss": "a suggested law, before it has been passed"
+    },
+    {
+      "word": "feather",
+      "gloss": "one of the light parts that cover a bird"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why was Elijah taken away on the plane?",
+      "options": [
+        "To visit family in another town",
+        "Because the law forced him to attend residential school",
+        "To get medical treatment"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What was missing from the prime minister's bill?",
+      "options": [
+        "Any mention of First Nations people",
+        "Protection for the French language",
+        "A plan to keep the country united"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What did Elijah do when it was his turn to vote?",
+      "options": [
+        "He left the room",
+        "He held up an eagle feather and said no",
+        "He voted yes but spoke against it"
+      ],
+      "answer": 1
+    }
+  ]
+}

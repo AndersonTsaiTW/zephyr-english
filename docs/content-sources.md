@@ -62,7 +62,11 @@ Between 220 and 320 words. Below that there is not enough to build a rhythm; abo
 
 Flesch-Kincaid grade 6 or lower. That is a standard readability score based on sentence length and how many syllables the words have. Grade 6 is roughly what a twelve year old reads without effort. It sounds low, but you are reading it at speed in a second language, and the difficulty has to come from the pace rather than the vocabulary.
 
-At least 95 of every 100 words come from `scripts/data/top2000.txt`, the two thousand most common English words. So no more than five unfamiliar words per hundred, which is about the point where you can still follow a text without stopping.
+At least 90 of every 100 words come from `scripts/data/top2000.txt`, the two thousand most common English words.
+
+That number started at 95 and was lowered after measuring, which is worth explaining so nobody quietly raises it again. Eleven BC Reads texts, written by curriculum designers for exactly these readers, were run through the checker untouched. They scored between 89.8 and 96.1 percent, clustering near 94, and several of them are written at Flesch-Kincaid grade 2. A threshold that fails grade-2 text written for adult literacy students is measuring the size of the word list, not the difficulty of the writing. Ninety still rejects genuinely hard material.
+
+Names do not count towards this figure. A reader meeting "Viola Desmond" is not being asked to know a rare word, and counting names as difficult vocabulary made the number useless for any article about a real person or place. The checker lists them separately so you can still see them.
 
 ## Preparing a batch
 
