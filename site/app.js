@@ -192,7 +192,7 @@ function finish() {
   const actualWpm = mins > 0 ? Math.round(state.words / mins) : state.wpm;
   $('doneStats').textContent = `${state.words} words · ${Math.round(state.elapsed)}s · ${actualWpm} wpm`;
   const src = state.article.source;
-  $('attribution').textContent = src ? `${src.origin} — ${src.author} (${src.license})` : '';
+  $('attribution').textContent = src ? `${src.origin}, ${src.author} (${src.license})` : '';
   show('done');
 }
 

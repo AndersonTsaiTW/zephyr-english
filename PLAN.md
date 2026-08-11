@@ -1,116 +1,119 @@
-# Zephyr — Implementation Plan
+# Zephyr implementation plan
 
-Status: ✅ done · 🔶 partial · ⬜ todo
+Status marks: done, partial, todo.
 
 | WP | Title | Status |
-|-----|--------------------------------------|----|
-| WP0 | Repo scaffold | ✅ |
-| WP1 | Auto-scroll reader engine | ✅ |
-| WP2 | Content schema & daily loader | 🔶 |
-| WP3 | Quiz & results flow | ⬜ |
-| WP4 | Streak, calibration & adaptive speed | ⬜ |
-| WP5 | PWA: installable & offline | ⬜ |
-| WP6 | Share card & WhatsApp loop | ⬜ |
-| WP7 | Daily notifications | ⬜ |
-| WP8 | Curation toolkit | ⬜ |
-| WP9 | Deploy & polish | ⬜ |
+| --- | --- | --- |
+| WP0 | Repo scaffold | done |
+| WP1 | Auto-scroll reader engine | done |
+| WP2 | Content schema and daily loader | partial |
+| WP3 | Quiz and results flow | todo |
+| WP4 | Streak, calibration and adaptive speed | todo |
+| WP5 | PWA, installable and offline | todo |
+| WP6 | Share card and WhatsApp loop | todo |
+| WP7 | Daily notifications | todo |
+| WP8 | Curation toolkit | todo |
+| WP9 | Deploy and polish | todo |
 
-**To delegate a package:** "Read CLAUDE.md and PLAN.md, then implement WP\<n\> only. Update the PLAN.md status table when done." Packages are ordered by dependency; do them roughly in order (WP6/WP7/WP8 are independent of each other).
+To hand a package to a session:
 
----
+> Read CLAUDE.md and PLAN.md, then implement WP\<n\> only. Update the PLAN.md status table when done.
 
-## WP0 — Repo scaffold ✅
+The packages are ordered by dependency, so work through them roughly in order. WP6, WP7 and WP8 do not depend on each other and can be taken out of turn.
 
-Done in the initial commit: repo layout, README, CLAUDE.md, this plan, content-sources doc, working reader skeleton with a public-domain sample article.
+## WP0, repo scaffold (done)
 
-## WP1 — Auto-scroll reader engine ✅
+The initial commit set up the repo layout, the README, CLAUDE.md, this plan, the content sources document, and a working reader with one public domain sample article.
 
-Done in `site/app.js`:
-- `requestAnimationFrame` + `translateY` scrolling (constant speed; native scroll is not used because it can't hold a steady rate).
-- Speed model: `px/s = wpm / 60 × trackHeight / wordCount`.
-- Play/pause (tap the text or the button), ±10 wpm controls (persisted to localStorage), progress bar, focus band with fade masks, 3-2-1 countdown, auto-pause when the tab is hidden, done screen with measured actual WPM.
+## WP1, auto-scroll reader engine (done)
 
-Known gaps (fold into WP9 polish): keyboard shortcuts exist (space, arrows) but need visible affordance; `prefers-reduced-motion` should offer a paragraph-step mode instead of smooth scroll.
+`site/app.js` drives the scroll with `requestAnimationFrame` and `translateY`. Native scrolling is not used because it cannot hold a steady rate. The speed model is `px/s = wpm / 60 × trackHeight / wordCount`.
 
-## WP2 — Content schema & daily loader 🔶
+Working already: play and pause by tapping the text or the button, speed controls in steps of 10 wpm persisted to localStorage, a progress bar, the focus band with fade masks, a 3-2-1 countdown, automatic pause when the tab is hidden, and a done screen showing the measured speed.
 
-Schema (see `site/content/articles/sample.json`): `id`, `title`, `source{author,origin,license,url}`, `body[]` (paragraph strings), `previewWords[{word,gloss}]`, `quiz[{q,options[],answer}]`.
+Two gaps roll into WP9. Keyboard shortcuts work (space and the arrow keys) but nothing on screen says so. And `prefers-reduced-motion` should offer a paragraph-step mode rather than just disabling the animation.
 
-Done: loader fetches `content/articles/<local-date>.json`, falls back to `sample.json` with a visible "sample" notice; today card shows title, word count, estimated seconds, preview words.
+## WP2, content schema and daily loader (partial)
 
-Remaining:
-- [ ] `site/content/index.json` — array of available article dates. Needed by WP5's service worker for precaching. Keep it a plain sorted array of `"YYYY-MM-DD"` strings.
-- [ ] "No article today" empty state (calm, one sentence, no error styling) when neither today's file nor sample exists.
-- [ ] Guard: if the article JSON has no `source` block, refuse to render and show a dev warning (enforces CLAUDE.md rule 4).
+The schema lives in `site/content/articles/sample.json`: `id`, `title`, `source` with author, origin, license and url, `body` as an array of paragraph strings, `previewWords` as word and gloss pairs, and `quiz` as question, options and answer index.
 
-Acceptance: with a dated file for today present, it loads; without it, sample loads with notice; with neither, the empty state shows; an article missing `source` never renders.
+Working already: the loader fetches `content/articles/<local-date>.json` and falls back to `sample.json` with a visible notice, and the today card shows the title, word count, estimated seconds and preview words.
 
-## WP3 — Quiz & results flow ⬜
+Three things remain.
 
-After the scroll finishes, quiz the reader, then show results.
+- [ ] `site/content/index.json`, a sorted array of the dates that have articles. The service worker in WP5 needs it to decide what to precache.
+- [ ] A "no article today" screen for when neither today's file nor the sample exists. Keep it calm and short, and do not style it as an error.
+- [ ] A guard that refuses to render an article whose JSON has no `source` block, with a warning in the console. This turns rule 4 in CLAUDE.md into something the code enforces.
 
-- [ ] Quiz screen: 2–3 single-choice questions from `article.quiz`, one at a time, large tap targets. Instant feedback on tap (correct = accent highlight, wrong = show the right one), auto-advance after ~600 ms.
-- [ ] Results screen replaces the current bare done screen: actual WPM (words ÷ active reading time), comprehension `n/N`, source attribution line, "See you tomorrow" close state.
-- [ ] Wire the flow: today card → countdown → reader → quiz → results. "Read again" moves to results-page secondary action (re-read does not re-quiz).
+Acceptance: a dated file for today loads; without it the sample loads and says so; without either the empty screen appears; an article missing `source` never renders.
 
-Acceptance: full flow works on a 390 px-wide viewport; refreshing mid-quiz restarts the day cleanly; quiz answers are never revealed in the DOM before the user taps.
+## WP3, quiz and results flow
 
-## WP4 — Streak, calibration & adaptive speed ⬜
+Once the scroll finishes, quiz the reader and then show results.
 
-localStorage only (no accounts). Keys, all namespaced `zephyr.`:
-- `zephyr.profile` → `{ currentWpm }`
-- `zephyr.history` → array of `{ date, wpm, score, total, words }`
-- `zephyr.streak` → `{ count, lastDate }`
+- [ ] Quiz screen, showing two or three single-choice questions from `article.quiz` one at a time, with tap targets big enough for a phone. Feedback lands on tap, with the accent color for a correct answer and the right option revealed for a wrong one, then it advances after about 600 ms.
+- [ ] Results screen replacing the current bare done screen. It shows the measured speed as words divided by active reading time, the comprehension score as `n/N`, the source attribution, and a closing line.
+- [ ] Wire the flow together: today card, countdown, reader, quiz, results. "Read again" moves to the results page as a secondary action, and re-reading does not re-quiz.
 
-- [ ] First run: article plays at 110 wpm with free speed adjustment; the wpm the user ends at becomes `currentWpm`.
-- [ ] Adaptive rule, applied when the quiz is submitted: score ≥ 80% → tomorrow +5%; < 60% → −5%; otherwise hold. Clamp to 80–300. Round to nearest 5. Show "Tomorrow: NNN wpm" on results.
-- [ ] Streak: consecutive local dates with a completed quiz; a missed day resets to 0 on next completion. Show on today card and results.
-- [ ] Same-day reopen after completion → show that day's results, not the article (protect the one-a-day scarcity).
+Acceptance: the whole flow works on a 390 px wide viewport; refreshing during the quiz restarts the day cleanly; the answers are absent from the DOM until the user taps.
 
-Acceptance: simulate three days by editing localStorage dates; streak and wpm progression behave per the rules above.
+## WP4, streak, calibration and adaptive speed
 
-## WP5 — PWA: installable & offline ⬜
+Everything sits in localStorage and there are no accounts. Three keys, all prefixed `zephyr.`: `profile` holding the current wpm, `history` as an array of date, wpm, score, total and words, and `streak` holding a count and the last completed date.
 
-- [ ] `manifest.webmanifest`: name "Zephyr", short_name "Zephyr", standalone, theme/background colors from `app.css` tokens, 192/512 icons (simple wind-mark SVG rendered to PNG; place in `site/icons/`).
-- [ ] `sw.js`: precache app shell; on activation fetch `content/index.json` and cache today's + tomorrow's articles. Cache-first for shell, network-first for `index.json`.
-- [ ] iOS meta tags (`apple-mobile-web-app-*`), installability passes Lighthouse.
+- [ ] First run plays at 110 wpm with free speed adjustment, and whatever speed the reader settles on becomes their baseline.
+- [ ] Adaptive rule applied when the quiz is submitted. A score of 80 percent or better adds 5 percent to tomorrow, below 60 percent takes off 5 percent, and anything between holds steady. Clamp to the range 80 to 300 and round to the nearest 5. The results page announces tomorrow's speed.
+- [ ] Streak counts consecutive local dates with a completed quiz. A missed day resets it to zero on the next completion. It appears on the today card and the results page.
+- [ ] Reopening after finishing on the same day shows that day's results rather than the article, which protects the one-a-day scarcity.
 
-Acceptance: install on Android Chrome and iOS Safari (Add to Home Screen); airplane-mode reload still opens today's article.
+Acceptance: edit the dates in localStorage to simulate three days and confirm the streak and the speed progression follow the rules above.
 
-## WP6 — Share card & WhatsApp loop ⬜
+## WP5, PWA, installable and offline
 
-Zero-infrastructure social loop for two friends.
+- [ ] `manifest.webmanifest` with the name Zephyr, `standalone` display, theme and background colors taken from the tokens in `app.css`, and 192 and 512 pixel icons. Draw a simple wind mark as SVG, render it to PNG, and put both in `site/icons/`.
+- [ ] `sw.js` precaches the app shell, then on activation reads `content/index.json` and caches today's and tomorrow's articles. Cache-first for the shell and network-first for `index.json`.
+- [ ] The `apple-mobile-web-app-*` meta tags, and installability passing Lighthouse.
 
-- [ ] Share text generator on results: `ZEPHYR · Day <n>` / `🌬️ <wpm> wpm · <score>/<total> · streak <k>` / site URL.
-- [ ] Share button: Web Share API when available; fallback buttons "WhatsApp" (`https://wa.me/?text=<urlencoded>`) and "Copy".
+Acceptance: it installs from Android Chrome and from iOS Safari via Add to Home Screen, and reloading in airplane mode still opens today's article.
 
-Acceptance: on a phone, one tap from results opens WhatsApp with the prefilled card.
+## WP6, share card and WhatsApp loop
 
-## WP7 — Daily notifications ⬜
+A social loop for two friends that needs no infrastructure at all.
 
-Three options, in recommended order. Ship A only when WP5 exists.
+- [ ] A share text generator on the results page producing `ZEPHYR · Day <n>`, then the speed, score and streak, then the site URL.
+- [ ] A share button using the Web Share API where it exists, falling back to a WhatsApp button pointing at `https://wa.me/?text=<urlencoded>` and a copy button.
 
-- **B. CallMeBot (do first — 5-minute personal hack).** Each friend sends the one-time activation message to CallMeBot's WhatsApp number to get a personal API key. A scheduled job (GitHub Actions cron on this repo, or a Cloudflare Worker cron) sends a GET to `https://api.callmebot.com/whatsapp.php?phone=<E164>&apikey=<key>&text=<msg>` at the chosen local hour. Phone numbers and keys live in repo/worker secrets, never in code. Unofficial service: fine for two friends, not a foundation for a public product.
-- **A. Web Push (the real product feature).** Requires WP5. Tiny Cloudflare Worker + KV: stores push subscriptions (with each subscriber's UTC offset captured at subscribe time), cron trigger fires hourly and pushes to subscribers whose local time matches their chosen hour. VAPID keys in Worker secrets. Note: iOS delivers web push only to installed PWAs (16.4+).
-- **C. Meta WhatsApp Business Cloud API (only if this becomes a public product).** Official: Meta developer app + WhatsApp Business Account + a registered number + an approved utility template for business-initiated daily messages. Per-message cost is trivial at small scale; setup is the real cost.
+Acceptance: on a phone, one tap from the results page opens WhatsApp with the message already filled in.
 
-Acceptance (B): both phones get the daily message at the configured hour for 3 consecutive days.
+## WP7, daily notifications
 
-## WP8 — Curation toolkit ⬜
+Three options, listed in the order worth considering them. Option A needs WP5 first.
 
-Node scripts that make the human curation workflow fast and enforce the content rules mechanically.
+Option B, CallMeBot, is the one to do first because it takes five minutes. Each friend sends the activation message from their own WhatsApp to CallMeBot's number and receives a personal API key in reply. A scheduled job, either a GitHub Actions cron in this repo or a Cloudflare Worker cron, then sends a GET to `https://api.callmebot.com/whatsapp.php?phone=<E164>&apikey=<key>&text=<msg>` at the chosen hour. Phone numbers and keys belong in repo or Worker secrets and never in code. The service is unofficial and run by one person, which is fine for two friends and unsuitable as the foundation of a public product.
 
-- [ ] `scripts/check-article.mjs <file.json|file.txt>`: prints word count, Flesch-Kincaid grade, top-2000 coverage %, and the list of off-list words. Fails (exit 1) if word count outside 220–320, FK > 6, or coverage < 95%.
-- [ ] Word list: source an openly licensed top-2000 English frequency list (NGSL or equivalent — **verify its licence before vendoring**) into `scripts/data/top2000.txt`, one lemma per line, with a source note at the top.
-- [ ] `scripts/new-article.mjs <source.txt> --date YYYY-MM-DD --title ... --author ... --license ... --url ...`: scaffolds a dated article JSON with the body split into paragraphs and empty `previewWords`/`quiz` slots, and appends the date to `content/index.json`.
-- [ ] Provenance check inside `check-article.mjs`: keep the untrimmed source text in `content-raw/<id>.txt` (repo root, not deployed). Verify every sentence of `body` appears verbatim in the raw source — deletions-only editing, enforced by machine. This is the technical enforcement of the "no LLM prose" rule.
-- [ ] Document the weekly batch routine at the top of `docs/content-sources.md`: collect → trim (LLM may assist, deletions only) → run checker → write quiz/glosses (LLM may draft, human approves) → schedule.
+Option A, Web Push, is the real product feature and requires WP5. A small Cloudflare Worker with KV stores the push subscriptions along with each subscriber's UTC offset captured at subscribe time. An hourly cron fires and pushes to whoever's local time matches their chosen hour. VAPID keys go in Worker secrets. On iOS, web push reaches installed PWAs only, from version 16.4.
 
-Acceptance: running the checker on `sample.json` produces a report (the sample is allowed to fail thresholds — it's a schema demo); `new-article.mjs` output passes JSON schema and loads in the app.
+Option C, the Meta WhatsApp Business Cloud API, is worth setting up only if this becomes a public product. It needs a Meta developer app, a WhatsApp Business Account, a registered number, and an approved utility template before it can send business-initiated messages. The per-message cost is negligible at this scale and the setup is the real expense.
 
-## WP9 — Deploy & polish ⬜
+Acceptance for option B: both phones receive the daily message at the configured hour for three consecutive days.
 
-- [ ] Deploy `site/` to Cloudflare Pages (no build command, output dir = `site/`) or GitHub Pages via Actions. Custom domain later.
-- [ ] Accessibility pass: visible focus states, reduced-motion paragraph-step mode, contrast check in both themes.
-- [ ] Lighthouse: PWA and accessibility ≥ 90.
-- [ ] Optional: Cloudflare Web Analytics (cookieless) — page views only, no personal data.
+## WP8, curation toolkit
+
+Node scripts that speed up human curation and turn the content rules into something a machine checks.
+
+- [ ] `scripts/check-article.mjs <file.json|file.txt>` prints the word count, the Flesch-Kincaid grade, the top-2000 coverage percentage, and the list of off-list words. It exits 1 when the word count falls outside 220 to 320, the grade exceeds 6, or coverage drops below 95 percent.
+- [ ] An openly licensed top-2000 English frequency list, NGSL or equivalent, vendored into `scripts/data/top2000.txt` as one lemma per line with a source note at the top. Verify the licence before committing it.
+- [ ] `scripts/new-article.mjs <source.txt> --date --title --author --license --url` scaffolds a dated article JSON with the body split into paragraphs and empty slots for preview words and quiz, then appends the date to `content/index.json`.
+- [ ] A provenance check inside `check-article.mjs`. The untrimmed source text lives in `content-raw/<id>.txt`, which stays in the repo but outside `site/` so it never ships. The check verifies that every sentence of `body` appears verbatim in the raw source, which makes deletion-only editing something the machine enforces rather than something a person has to trust.
+- [ ] The weekly batch routine documented at the top of `docs/content-sources.md`.
+
+The provenance check matters more than its position in this list suggests. While a person is watching, deletion-only editing holds up on good faith. Once a scheduled job does the trimming unattended, that script is the only thing standing between a trimmed excerpt and a quietly paraphrased one. Any move toward automation should pull this package forward.
+
+Acceptance: the checker produces a report for `sample.json`, which is allowed to fail the thresholds since it exists to demonstrate the schema; and the output of `new-article.mjs` validates and loads in the app.
+
+## WP9, deploy and polish
+
+- [ ] Deploy `site/` to Cloudflare Pages with no build command and `site` as the output directory, or to GitHub Pages through Actions. A custom domain can wait.
+- [ ] An accessibility pass covering visible focus states, the reduced-motion paragraph-step mode, and contrast in both themes.
+- [ ] Lighthouse PWA and accessibility scores of 90 or better.
+- [ ] Optionally, Cloudflare Web Analytics, which is cookieless, for page views and nothing personal.

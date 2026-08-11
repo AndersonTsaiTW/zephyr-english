@@ -2,3 +2,6 @@ node_modules/
 *.log
 .DS_Store
 Thumbs.db
+
+# 中文筆記，本機自用，不上 GitHub
+notes-zh/
