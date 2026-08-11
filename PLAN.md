@@ -13,7 +13,7 @@ Status marks: done, partial, todo.
 | WP6 | Share card and WhatsApp loop | done |
 | WP7 | Daily notifications | todo |
 | WP8 | Curation toolkit | todo |
-| WP9 | Deploy and polish | todo |
+| WP9 | Deploy and polish | partial |
 
 To hand a package to a session:
 
@@ -143,9 +143,19 @@ The provenance check matters more than its position in this list suggests. While
 
 Acceptance: the checker produces a report for `sample.json`, which is allowed to fail the thresholds since it exists to demonstrate the schema; and the output of `new-article.mjs` validates and loads in the app.
 
-## WP9, deploy and polish
+## WP9, deploy and polish (partial)
 
-- [ ] Deploy `site/` to Cloudflare Pages with no build command and `site` as the output directory, or to GitHub Pages through Actions. A custom domain can wait.
+Live at <https://zephyr-8w8.pages.dev>, hosted on Cloudflare Pages under the project `zephyr`, with the code on GitHub at `AndersonTsaiTW/zephyr-english`.
+
+Cloudflare rather than GitHub Pages for two reasons that show up later. WP7's Web Push option needs a Worker with KV, and on Cloudflare that can sit behind the same domain as a route rather than a second origin with CORS between them. And `site/_headers` is honored here, which is what keeps a service worker and a day-old article from being served stale; GitHub Pages has no equivalent.
+
+To redeploy by hand:
+
+```text
+npx wrangler pages deploy site --project-name zephyr --branch main
+```
+
+- [ ] Turn on deploy-on-push. In the Cloudflare dashboard, open Workers and Pages, then the `zephyr` project, then Settings and Builds, and connect the GitHub repository with an empty build command and `site` as the output directory. The alternative is a GitHub Actions workflow calling `wrangler pages deploy`, which needs a Cloudflare API token stored as a repository secret.
 - [ ] An accessibility pass covering visible focus states, the reduced-motion paragraph-step mode, and contrast in both themes.
 - [ ] Lighthouse PWA and accessibility scores of 90 or better.
 - [ ] Optionally, Cloudflare Web Analytics, which is cookieless, for page views and nothing personal.

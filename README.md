@@ -1,5 +1,7 @@
 # Zephyr
 
+Live at **<https://zephyr-8w8.pages.dev>**
+
 One short English article a day, scrolling by itself at a set speed. You cannot scroll back, so you keep up. At the end you answer two or three questions, see your reading speed and your streak, and the day is done. It takes two or three minutes.
 
 It is built for adult learners preparing for CELPIP. The texts are written by people, drawn mostly from Canadian sources, on everyday topics.
@@ -12,7 +14,7 @@ Article bodies are never written by an LLM. Every body text is an excerpt from a
 
 The site is plain HTML, CSS and JavaScript. There is nothing to install and nothing to build.
 
-```
+```text
 npx serve site
 ```
 
