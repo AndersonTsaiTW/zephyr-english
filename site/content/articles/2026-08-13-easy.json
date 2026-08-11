@@ -1,0 +1,61 @@
+{
+  "id": "2026-08-13-easy",
+  "title": "Spy Hopping with Killer Whales",
+  "level": "easy",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 3, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader3/chapter/spy-hopping-with-killer-whales/"
+  },
+  "body": [
+    "Did you know that there are about 300 orca whales living off the coast of British Columbia year-round? Orca whales show up in many First Nations stories. In some tales, orca whales take people from canoes and turn them into whales, too. An orca whale near the shore is sometimes seen as one of these people trying to talk to their family.",
+    "Whales live in family groups called pods. A pod has between 5 and 30 whales. Pods always stay together. A female orca whale is called a cow . She is the head of the family. A male orca whale is called a bull . Cows and bulls mate for life. Cows will have about five babies in their lifetime. When a baby is born, it comes out tail first. The mother brings it to the surface of the water. The baby takes its first breath of air. After a half an hour, the baby can swim on its own. By age two, it can hunt. A bull will live up to 50 years. A cow will live up to 90 years.",
+    "The orca whales in the pod talk to each other. They talk using fast, high clicks. The sounds can be as loud as a jet. Each pod has its own sounds.",
+    "Did you know that orca whales cannot breathe underwater? They must breathe air through a blowhole on top of their head. They can hold their breath for up to 15 minutes as they dive deep into the ocean.",
+    "In British Columbia, orca whales do something no one understands. They come onto some beaches and rub their bodies on the smooth, round pebbles . Sometimes they do this for hours. They do not do this in other parts of the world."
+  ],
+  "previewWords": [
+    {
+      "word": "pod",
+      "gloss": "a family group of whales"
+    },
+    {
+      "word": "blowhole",
+      "gloss": "the hole on a whale's head that it breathes through"
+    },
+    {
+      "word": "shore",
+      "gloss": "the land at the edge of the sea"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How do orca whales talk to each other?",
+      "options": [
+        "With fast, high clicks",
+        "By slapping their tails",
+        "They do not make sounds"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "How do orca whales breathe?",
+      "options": [
+        "Through gills, like fish",
+        "Through a blowhole on their head",
+        "They do not need to breathe"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What do orca whales in British Columbia do that nobody understands?",
+      "options": [
+        "They rub on smooth beach pebbles",
+        "They swim backwards",
+        "They hunt only at night"
+      ],
+      "answer": 0
+    }
+  ]
+}

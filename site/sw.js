@@ -40,13 +40,14 @@ async function cacheUpcomingArticles() {
   } catch {
     // Offline during activation is fine; the next online visit will fill in.
   }
-  await Promise.all(
-    dates.map((date) =>
-      cache.add(`./content/articles/${date}.json`).catch(() => {
-        // A date with no article yet is expected, not an error.
-      })
-    )
-  );
+  // Three reading levels, and a day rarely has all of them, so a miss here is
+  // ordinary rather than a failure.
+  const paths = dates.flatMap((date) => [
+    `./content/articles/${date}.json`,
+    `./content/articles/${date}-easy.json`,
+    `./content/articles/${date}-hard.json`,
+  ]);
+  await Promise.all(paths.map((path) => cache.add(path).catch(() => {})));
 }
 
 self.addEventListener('install', (event) => {

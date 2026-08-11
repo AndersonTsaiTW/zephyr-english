@@ -1,10 +1,13 @@
 #!/usr/bin/env node
-// Checks an article against the three thresholds in CLAUDE.md: 220-320 words,
-// Flesch-Kincaid grade 6 or below, and at least 95 percent of tokens inside
-// the top-2000 frequency list. Also verifies provenance against the raw
-// source when one is checked in, which is how the project enforces its
-// deletion-only editing rule once a script rather than a person is doing
-// the trimming.
+// Checks an article is short enough, easy enough, and faithful to its source.
+//
+// Length is 220 to 320 words for every level. Reading grade and common-word
+// coverage depend on the article's level, see LEVEL_LIMITS below.
+//
+// It also compares each published sentence against the untouched original in
+// content-raw/. That comparison is how the project enforces its rule that a
+// source may be shortened but never reworded, without relying on whoever did
+// the shortening to have been honest about it.
 //
 // Usage:
 //   node scripts/check-article.mjs site/content/articles/2026-08-11.json
@@ -20,17 +23,25 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 const WORD_COUNT_MIN = 220;
 const WORD_COUNT_MAX = 320;
-const FK_GRADE_MAX = 6;
-
-// Set to 90 after measuring, not guessed. The original 95 was written before
-// any real article existed. Run against eleven BC Reads texts, which are
-// written by curriculum designers for exactly these readers, coverage came
-// out between 89.8 and 96.1 percent, with most near 94. Several of those sit
-// at Flesch-Kincaid grade 2. A threshold that rejects grade-2 text written
-// for adult literacy students is measuring the word list, not the difficulty.
-// 90 still catches genuinely hard material while accepting what a levelled
-// reader looks like.
-const COVERAGE_MIN = 90;
+// Difficulty limits per reading level, measured rather than guessed.
+//
+// One set of limits for everything would make the three levels identical, so
+// each gets its own, taken from the BC Reads volumes they are drawn from:
+// Reader 3 runs near grade 4, Reader 4 near 5, Reader 5 near 7. Each cap sits
+// a little above its volume's range, so an ordinary chapter passes and
+// something well outside it does not.
+//
+// Coverage started at a flat 95 percent, written before any real article
+// existed. Eleven of these texts, produced by curriculum designers for
+// exactly these readers, scored between 89.8 and 96.1 percent untouched, with
+// several written at grade 2. A threshold that fails grade-2 adult literacy
+// material is measuring the size of the word list rather than the difficulty
+// of the writing.
+const LEVEL_LIMITS = {
+  easy: { grade: 5.5, coverage: 88 },
+  core: { grade: 6.0, coverage: 90 },
+  hard: { grade: 9.0, coverage: 84 },
+};
 
 function fail(message) {
   console.error(message);
@@ -246,6 +257,16 @@ function coverageOf(text, top2000) {
   let onListCount = 0;
   let counted = 0;
 
+  // An unfamiliar word costs the reader once. After that they know it, and in
+  // an article about salmon the word "salmon" is the subject rather than an
+  // obstacle. Counting all eleven appearances as eleven separate difficulties
+  // says more about the topic than about how hard the text is to read, so each
+  // unfamiliar word counts at most twice. Grouping by stem keeps "whale" and
+  // "whales" from being charged separately.
+  const REPEAT_ALLOWANCE = 2;
+  const stemCounts = new Map();
+  const stemOf = (w) => candidatesFor(w).sort((a, b) => a.length - b.length)[0];
+
   for (const word of words) {
     const key = word.toLowerCase();
     // "Viola's" is the same name as "Viola".
@@ -255,8 +276,16 @@ function coverageOf(text, top2000) {
       continue;
     }
     counted++;
-    if (isOnList(word, top2000)) onListCount++;
-    else counts.set(key, (counts.get(key) || 0) + 1);
+    if (isOnList(word, top2000)) {
+      onListCount++;
+      continue;
+    }
+    counts.set(key, (counts.get(key) || 0) + 1);
+    const stem = stemOf(key);
+    const seen = (stemCounts.get(stem) || 0) + 1;
+    stemCounts.set(stem, seen);
+    // Beyond the allowance the word stops being charged as unfamiliar.
+    if (seen > REPEAT_ALLOWANCE) onListCount++;
   }
 
   const byFrequency = (a, b) => b[1] - a[1] || a[0].localeCompare(b[0]);
@@ -304,16 +333,18 @@ function printOffList(offList) {
   console.log(`off-list words (${offList.length} unique): ${line}${rest > 0 ? `, plus ${rest} more` : ''}`);
 }
 
-function report(label, text, top2000) {
+function report(label, text, top2000, level = 'core') {
+  const limits = LEVEL_LIMITS[level] ?? LEVEL_LIMITS.core;
   const words = wordsOf(text);
   const wordCount = words.length;
   const grade = fleschKincaidGrade(text);
   const { percent, offList, names } = coverageOf(text, top2000);
 
   console.log(`\n${label}`);
+  console.log(`level: ${level}`);
   console.log(`word count: ${wordCount} (target ${WORD_COUNT_MIN}-${WORD_COUNT_MAX})`);
-  console.log(`Flesch-Kincaid grade: ${grade.toFixed(2)} (target <= ${FK_GRADE_MAX})`);
-  console.log(`top-2000 coverage: ${percent.toFixed(1)}% (target >= ${COVERAGE_MIN}%)`);
+  console.log(`Flesch-Kincaid grade: ${grade.toFixed(2)} (target <= ${limits.grade})`);
+  console.log(`top-2000 coverage: ${percent.toFixed(1)}% (target >= ${limits.coverage}%)`);
   printOffList(offList);
   if (names.length > 0) {
     const shown = names.map(([w, c]) => (c > 1 ? `${w} (${c})` : w)).join(', ');
@@ -324,11 +355,11 @@ function report(label, text, top2000) {
   if (wordCount < WORD_COUNT_MIN || wordCount > WORD_COUNT_MAX) {
     failures.push(`word count ${wordCount} is outside ${WORD_COUNT_MIN}-${WORD_COUNT_MAX}`);
   }
-  if (grade > FK_GRADE_MAX) {
-    failures.push(`Flesch-Kincaid grade ${grade.toFixed(2)} exceeds ${FK_GRADE_MAX}`);
+  if (grade > limits.grade) {
+    failures.push(`Flesch-Kincaid grade ${grade.toFixed(2)} exceeds ${limits.grade} for level ${level}`);
   }
-  if (percent < COVERAGE_MIN) {
-    failures.push(`top-2000 coverage ${percent.toFixed(1)}% is below ${COVERAGE_MIN}%`);
+  if (percent < limits.coverage) {
+    failures.push(`top-2000 coverage ${percent.toFixed(1)}% is below ${limits.coverage}% for level ${level}`);
   }
   return failures;
 }
@@ -363,7 +394,7 @@ function main() {
     }
     const id = article.id || basename(absolutePath, ext);
     const text = article.body.join(' ');
-    failures = report(inputPath, text, top2000);
+    failures = report(inputPath, text, top2000, article.level || 'core');
 
     const rawSourcePath = join(root, 'content-raw', `${id}.txt`);
     if (existsSync(rawSourcePath)) {

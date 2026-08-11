@@ -50,7 +50,21 @@ const check = (name, pass, detail = '') => {
 };
 
 const browser = await chromium.launch({ channel: 'chrome' });
-const page = await browser.newPage({ viewport: { width: 390, height: 780 } });
+
+// Service workers are blocked throughout. With one running it answers from
+// its own cache, which bypasses the request mocking these checks rely on and
+// silently tests yesterday's files instead of today's. The worker is checked
+// separately, by confirming it is served and parses.
+const newPage = async (options = {}) => {
+  const context = await browser.newContext({
+    viewport: { width: 390, height: 780 },
+    serviceWorkers: 'block',
+    ...options,
+  });
+  return context.newPage();
+};
+
+const page = await newPage();
 
 // A missing article for today is the designed fallback, and there is no
 // favicon yet. Neither counts as a defect.
@@ -153,7 +167,7 @@ await page.reload({ waitUntil: 'networkidle' });
 check('pinned theme survives reload', (await page.evaluate('document.documentElement.dataset.theme')) === pinned);
 
 // An article with no source block must not render, whatever else is right.
-const guarded = await browser.newPage();
+const guarded = await newPage();
 await guarded.route('**/content/articles/*.json', (route) =>
   route.fulfill({
     status: 200,
@@ -178,7 +192,7 @@ check('service worker is served', swOk);
 // asks for reduced motion. A previous version silently switched those readers
 // to a paragraph-at-a-time mode that sat still for ten seconds at a stretch,
 // which is indistinguishable from the app being broken.
-const reduced = await browser.newPage({ viewport: { width: 390, height: 780 }, reducedMotion: 'reduce' });
+const reduced = await newPage({ reducedMotion: 'reduce' });
 await reduced.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle' });
 await reduced.evaluate("localStorage.clear()");
 await reduced.reload({ waitUntil: 'networkidle' });
@@ -205,6 +219,35 @@ check(
   `moved ${Math.round((await reduced.evaluate('state.y')) - sStart)}px in 5s`
 );
 await reduced.close();
+
+// Reading levels: the choice sticks, and a level with nothing scheduled falls
+// back to its nearest neighbour rather than showing an empty day.
+const lvl = await newPage();
+await lvl.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle' });
+check('three levels are offered', (await lvl.locator('#levelPicker .level').count()) === 3);
+check('standard is the default', (await lvl.evaluate('state.level')) === 'core');
+
+const coreTitle = await lvl.locator('#cardTitle').textContent();
+await lvl.locator('#levelPicker .level', { hasText: 'Easier' }).click();
+await lvl.waitForTimeout(500);
+const easyTitle = await lvl.locator('#cardTitle').textContent();
+check('choosing a level loads a different article', easyTitle !== coreTitle, `${coreTitle.trim()} -> ${easyTitle.trim()}`);
+check('the choice is stored', (await lvl.evaluate("localStorage.getItem('zephyr.level')")) === 'easy');
+
+await lvl.reload({ waitUntil: 'networkidle' });
+check('the choice survives reload', (await lvl.locator('#cardTitle').textContent()) === easyTitle);
+
+// With only the standard level present for a date, an easy reader still reads.
+const soloLevel = await newPage();
+await soloLevel.route('**/content/articles/*-easy.json', (route) => route.fulfill({ status: 404, body: '' }));
+await soloLevel.route('**/content/articles/*-hard.json', (route) => route.fulfill({ status: 404, body: '' }));
+await soloLevel.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle' });
+await soloLevel.evaluate("localStorage.setItem('zephyr.level','easy')");
+await soloLevel.reload({ waitUntil: 'networkidle' });
+check('a missing level falls back rather than showing nothing', (await soloLevel.locator('.screen.active').getAttribute('id')) === 'screen-today');
+check('the substitution is explained', await soloLevel.locator('#levelNote').isVisible());
+await soloLevel.close();
+await lvl.close();
 
 check('no unexpected page errors', errors.length === 0, errors.join(' | '));
 

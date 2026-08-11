@@ -1,0 +1,60 @@
+{
+  "id": "2026-08-15-easy",
+  "title": "Spread the Word: First Nations Languages in BC",
+  "level": "easy",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 3, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader3/chapter/spread-the-word-first-nations-languages-in-bc/"
+  },
+  "body": [
+    "The land we now call British Columbia is home to more First Nations languages than any other part of Canada. About 32 First Nations languages are spoken here. But many of these languages are at risk.",
+    "For example, there are now fewer than 10 people who can speak the language of the Skwomesh Nation. Most of the speakers are over the age of 65. Then there is a young man named Khelsilem Rivers. Khelsilem is 24 years old. He has learned the Skwomesh language and spends much of his time working to keep it alive . He lives in a house with other young people who want to speak their traditional language every day.",
+    "Why is language so important? Language is how we practice our culture. It is how we share our stories, our songs, our history, and our teachings. It is part of our identity. It connects us to our family who came before us. Knowing our language helps us be healthy in mind, body, and spirit.",
+    "Why are First Nations languages at risk? When white people came to Canada, they thought they were better than First Nations people. They thought First Nations people should be just like white people. So they made it against the law to practice First Nations culture. From the 1880s until the 1990s, First Nations children were taken from their families and sent to boarding schools. At these schools, they were told never to speak their language. If they did, they would be punished. Now as adults, many have forgotten their language or do not feel safe speaking it. Some languages are said to be sleeping, because there is no one left who can speak them. Today, most people in British Columbia see that what happened was racist and wrong."
+  ],
+  "previewWords": [
+    {
+      "word": "identity",
+      "gloss": "who you are and where you belong"
+    },
+    {
+      "word": "punish",
+      "gloss": "to make someone suffer for breaking a rule"
+    },
+    {
+      "word": "sleeping",
+      "gloss": "here: a language nobody speaks any more"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How many First Nations languages are spoken in British Columbia?",
+      "options": [
+        "About 32",
+        "About 10",
+        "About 65"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What happened to children sent to boarding schools?",
+      "options": [
+        "They were taught their own language",
+        "They were punished for speaking their language",
+        "They were sent home each summer"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does it mean when a language is called sleeping?",
+      "options": [
+        "It is only used at night",
+        "Nobody is left who can speak it",
+        "It is taught only to children"
+      ],
+      "answer": 1
+    }
+  ]
+}

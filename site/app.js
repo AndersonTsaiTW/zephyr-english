@@ -40,6 +40,32 @@ const START_WPM = 110;
 const MIN_WPM = 80;
 const MAX_WPM = 300;
 
+// Three reading levels, easiest first. A day does not need all three. If the
+// chosen level has nothing scheduled, the reader gets the nearest one that
+// does, with a note saying so, which is what lets the levels be filled in as
+// there is time rather than all at once.
+const LEVELS = ['easy', 'core', 'hard'];
+const LEVEL_LABELS = { easy: 'Easier', core: 'Standard', hard: 'Harder' };
+
+function articlePath(date, level) {
+  return level === 'core'
+    ? `content/articles/${date}.json`
+    : `content/articles/${date}-${level}.json`;
+}
+
+// Preferred level first, then outwards to the nearest alternatives.
+function levelsByCloseness(preferred) {
+  const home = LEVELS.indexOf(preferred);
+  return [...LEVELS].sort(
+    (a, b) => Math.abs(LEVELS.indexOf(a) - home) - Math.abs(LEVELS.indexOf(b) - home)
+  );
+}
+
+function chosenLevel() {
+  const stored = localStorage.getItem('zephyr.level');
+  return LEVELS.includes(stored) ? stored : 'core';
+}
+
 function profile() {
   return store.read('profile', null);
 }
@@ -128,6 +154,8 @@ const state = {
   wpm: profile()?.currentWpm ?? START_WPM,
   calibrating: profile() === null,
   stepMode: localStorage.getItem('zephyr.stepMode') === '1',
+  level: chosenLevel(),
+  servedLevel: null,
   y: 0,
   playing: false,
   rafId: null,
@@ -170,12 +198,25 @@ async function init() {
   $('dayLabel').textContent = dayKey();
 
   const today = dayKey();
-  let article = await tryFetch(`content/articles/${today}.json`);
+  const wanted = chosenLevel();
+
+  let article = null;
+  let servedLevel = null;
+  for (const level of levelsByCloseness(wanted)) {
+    article = await tryFetch(articlePath(today, level));
+    if (article) {
+      servedLevel = level;
+      break;
+    }
+  }
+
   let isSample = false;
   if (!article) {
     article = await tryFetch('content/articles/sample.json');
     isSample = Boolean(article);
   }
+  state.level = wanted;
+  state.servedLevel = servedLevel;
 
   if (!article) {
     show('empty');
@@ -207,8 +248,35 @@ async function init() {
   show('today');
 }
 
+function renderLevelPicker() {
+  const group = $('levelPicker');
+  group.innerHTML = '';
+  for (const level of LEVELS) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'level';
+    btn.textContent = LEVEL_LABELS[level];
+    btn.setAttribute('aria-pressed', String(level === state.level));
+    btn.classList.toggle('on', level === state.level);
+    btn.addEventListener('click', () => {
+      if (level === state.level) return;
+      localStorage.setItem('zephyr.level', level);
+      init();
+    });
+    group.append(btn);
+  }
+
+  const note = $('levelNote');
+  const substituted = state.servedLevel && state.servedLevel !== state.level;
+  note.hidden = !substituted;
+  if (substituted) {
+    note.textContent = `No ${LEVEL_LABELS[state.level].toLowerCase()} article today, so here is the ${LEVEL_LABELS[state.servedLevel].toLowerCase()} one.`;
+  }
+}
+
 function renderTodayCard(article, isSample) {
   $('sampleNote').hidden = !isSample;
+  renderLevelPicker();
 
   const streak = liveStreak();
   const line = $('todayStreak');
@@ -613,10 +681,23 @@ window.addEventListener('resize', () => {
 // Registration needs a secure context, so it is skipped over plain http
 // during local development and simply does nothing there.
 if ('serviceWorker' in navigator && window.isSecureContext) {
+  // A replacement worker taking over means the page is still showing code
+  // from the previous one. Reload once so a fix reaches the reader on this
+  // visit instead of the next. The flag stops the reload repeating.
+  let reloading = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (reloading) return;
+    reloading = true;
+    location.reload();
+  });
+
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').catch((err) => {
-      console.warn('Zephyr: service worker registration failed.', err);
-    });
+    navigator.serviceWorker
+      .register('sw.js')
+      .then((reg) => reg.update())
+      .catch((err) => {
+        console.warn('Zephyr: service worker registration failed.', err);
+      });
   });
 }
 

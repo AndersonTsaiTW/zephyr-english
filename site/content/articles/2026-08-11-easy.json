@@ -1,0 +1,61 @@
+{
+  "id": "2026-08-11-easy",
+  "title": "The Rare Spirit Bear",
+  "level": "easy",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 3, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader3/chapter/the-rare-spirit-bear/"
+  },
+  "body": [
+    "There are lots of wonders in the Great Bear Rainforest. There are trees that are more than a thousand years old. There are waterfalls rushing off mossy mountains. There are wolves that fish — and there are black bears that are white. These bears are known as “spirit bears.”",
+    "Spirit bears are rare. They are only found in British Columbia. In all of British Columbia, only about 1 in 100 black bears has white fur. Most spirit bears live in the Great Bear Rainforest. This rainforest is on the coast of British Columbia. On some of the islands in the Great Bear Rainforest as many as 1 in 3 black bears has white fur.",
+    "Spirit bears, like other black bears, eat plants such as berries, nuts, and fruits. They also eat small animals such as baby deer and baby moose. Most of all, they love salmon. Spirit bears have an easier time than black bears at catching salmon. Their white fur makes them harder for the salmon to see. After getting nice and fat over the spring, summer, and fall, the bears sleep in their dens all winter. During the winter, spirit bears can go without food for up to seven months.",
+    "Spirit bears mostly live alone. They mate in the summer but do not stay with their partner. The mother gives birth in January or February . By the time the cubs are a year and a half old, they are ready to go out on their own.",
+    "The Great Bear Rainforest is the traditional land of 12 different First Nations. These First Nations groups have never hunted the spirit bear. It is now against the law for anyone in British Columbia to hunt a spirit bear. Without the threat of people or any other animals, spirit bears can live to over 25 years old."
+  ],
+  "previewWords": [
+    {
+      "word": "rare",
+      "gloss": "not often seen or found"
+    },
+    {
+      "word": "fur",
+      "gloss": "the thick hair that covers an animal"
+    },
+    {
+      "word": "den",
+      "gloss": "the hidden place where a wild animal sleeps"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is a spirit bear?",
+      "options": [
+        "A black bear with white fur",
+        "A kind of polar bear",
+        "A bear found all over Canada"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Why is white fur useful when catching salmon?",
+      "options": [
+        "It keeps the bear warm in the river",
+        "The salmon find it harder to see",
+        "It helps other bears find them"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What protects spirit bears today?",
+      "options": [
+        "They live where no people go",
+        "Hunting them is against the law",
+        "Other animals hunt them instead"
+      ],
+      "answer": 1
+    }
+  ]
+}

@@ -35,7 +35,7 @@ function fail(message) {
 function parseArgs(argv) {
   if (argv.length === 0) {
     fail(
-      'usage: node scripts/new-article.mjs <source.txt> --date YYYY-MM-DD --title T --author A --license L --url U [--origin O]'
+      'usage: node scripts/new-article.mjs <source.txt> --date YYYY-MM-DD --title T --author A --license L --url U [--origin O] [--level easy|core|hard]'
     );
   }
   const sourcePath = argv[0];
@@ -98,12 +98,19 @@ function main() {
   const url = requireFlag(flags, 'url');
   const origin = flags.origin || '';
 
+  // Reading level. "core" keeps the plain <date>.json name so the earlier
+  // articles need no renaming; the other two take a suffix.
+  const level = flags.level || 'core';
+  if (!['easy', 'core', 'hard'].includes(level)) {
+    fail(`--level must be easy, core or hard, got "${level}"`);
+  }
+
   const absoluteSourcePath = resolve(process.cwd(), sourcePath);
   if (!existsSync(absoluteSourcePath)) {
     fail(`source file not found: ${sourcePath}`);
   }
 
-  const id = date;
+  const id = level === 'core' ? date : `${date}-${level}`;
   const articlePath = join(root, 'site/content/articles', `${id}.json`);
   if (existsSync(articlePath)) {
     fail(`refusing to overwrite existing article: ${articlePath}`);
@@ -124,6 +131,7 @@ function main() {
   const article = {
     id,
     title,
+    level,
     source: { author, origin, license, url },
     body: paragraphs,
     previewWords: [],

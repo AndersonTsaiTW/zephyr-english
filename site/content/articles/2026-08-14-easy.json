@@ -1,0 +1,60 @@
+{
+  "id": "2026-08-14-easy",
+  "title": "The Gentleman Bandit",
+  "level": "easy",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 3, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader3/chapter/the-gentleman-bandit/"
+  },
+  "body": [
+    "In the days before cars, people and goods travelled a long way on horses and trains. Horses and trains were easy targets for bandits looking to make easy money. Bill Miner was one of the most feared train bandits . He spent four years of his life here in British Columbia . This is the story of those four years.",
+    "Wanted posters with Bill Miner’s face were put up all over the west coast of the United States . Bill needed to escape. He slipped across the border into Canada. George Edwards was the name he gave anyone who asked who he was. He went from town to town in British Columbia . He had no trouble making friends. He was a charming man. He played the fiddle. He showed people how to dance. He was known as a real gentleman . Nobody thought he could be a bandit.",
+    "During this time, he got to know the area around Mission, British Columbia. Many trains of the Canadian Pacific Railway, or the CPR, passed through the area. He knew where the trains were coming from and where they were going. He knew how often they passed. By talking to the railroad workers, he found out what the trains carried.",
+    "This was the first time the CPR was ever robbed. It was in all of the newspapers across British Columbia. More wanted posters went up. But the posters did not describe Bill’s face because it had been covered up. Bill went to Chilliwack. He played pool and poker. He even played poker with police officers . He didn’t get caught. He spent his money freely and told people he made it from mining."
+  ],
+  "previewWords": [
+    {
+      "word": "bandit",
+      "gloss": "someone who robs people, often on the road"
+    },
+    {
+      "word": "gentleman",
+      "gloss": "a polite, well behaved man"
+    },
+    {
+      "word": "poster",
+      "gloss": "a large printed sheet put up in a public place"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did people in the area see Bill Miner?",
+      "options": [
+        "As a dangerous stranger",
+        "As a charming gentleman",
+        "As a railway worker"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "How did he learn what the trains carried?",
+      "options": [
+        "He read the newspapers",
+        "He talked to railroad workers",
+        "He worked for the CPR"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Why did the wanted posters not help catch him?",
+      "options": [
+        "They did not show his face",
+        "Nobody could read them",
+        "They were taken down"
+      ],
+      "answer": 0
+    }
+  ]
+}

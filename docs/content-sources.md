@@ -54,17 +54,35 @@ News sites such as CBC, CTV and Global, along with publisher graded readers and 
 
 Anything whose licence cannot be named.
 
+## Three reading levels
+
+Each day can carry up to three versions of that day, at different difficulties. You pick your level once and the app remembers it. You still read one article a day.
+
+The levels map onto the BC Reads volumes, which are already graded by their publisher:
+
+```text
+Easier    Reader 3    BC nature and history, short sentences
+Standard  Reader 4    Canadian civil rights, adult topics
+Harder    Reader 5    how learning, memory and personality work
+```
+
+A day does not need all three. If the chosen level has nothing scheduled, the reader gets the nearest level that does, and the card says so.
+
+Files are named `2026-08-12.json` for standard, `2026-08-12-easy.json` and `2026-08-12-hard.json` for the others. Pass `--level easy` or `--level hard` to `new-article.mjs`.
+
 ## How hard an article is allowed to be
 
-Three limits, all checked by `scripts/check-article.mjs`.
+Three limits, all checked by `scripts/check-article.mjs`. Length is the same for every level; the other two depend on the level.
 
-Between 220 and 320 words. Below that there is not enough to build a rhythm; above it the session stops being two minutes.
+Between 220 and 320 words, whatever the level. Below that there is not enough to build a rhythm; above it the session stops being two minutes.
 
-Flesch-Kincaid grade 6 or lower. That is a standard readability score based on sentence length and how many syllables the words have. Grade 6 is roughly what a twelve year old reads without effort. It sounds low, but you are reading it at speed in a second language, and the difficulty has to come from the pace rather than the vocabulary.
+Flesch-Kincaid grade at or below 5.5 for easier, 6 for standard, 9 for harder. Flesch-Kincaid is a readability score based on sentence length and syllable count, so grade 6 is roughly what a twelve year old reads without effort. The caps come from measuring the BC Reads volumes each level draws on, and sit slightly above each volume's range.
 
-At least 90 of every 100 words come from `scripts/data/top2000.txt`, the two thousand most common English words.
+At least 88 of every 100 words for easier, 90 for standard, 84 for harder, taken from `scripts/data/top2000.txt`, the two thousand most common English words.
 
-That number started at 95 and was lowered after measuring, which is worth explaining so nobody quietly raises it again. Eleven BC Reads texts, written by curriculum designers for exactly these readers, were run through the checker untouched. They scored between 89.8 and 96.1 percent, clustering near 94, and several of them are written at Flesch-Kincaid grade 2. A threshold that fails grade-2 text written for adult literacy students is measuring the size of the word list, not the difficulty of the writing. Ninety still rejects genuinely hard material.
+These numbers started at a flat 95 and came down after measuring, which is recorded here so nobody quietly raises them again. Eleven BC Reads texts, written by curriculum designers for exactly these readers, were run through the checker untouched. They scored between 89.8 and 96.1 percent, clustering near 94, and several are written at Flesch-Kincaid grade 2. A threshold that fails grade-2 text written for adult literacy students is measuring the size of the word list, not the difficulty of the writing.
+
+A word you have already met is not charged again. Beyond two appearances an unfamiliar word stops counting against the total, because in an article about salmon the word "salmon" appears eleven times and is the subject rather than an obstacle. You learn it once. Counting all eleven says more about the topic than about how hard the text is.
 
 Names do not count towards this figure. A reader meeting "Viola Desmond" is not being asked to know a rare word, and counting names as difficult vocabulary made the number useless for any article about a real person or place. The checker lists them separately so you can still see them.
 

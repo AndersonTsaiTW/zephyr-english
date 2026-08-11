@@ -1,0 +1,61 @@
+{
+  "id": "2026-08-12-hard",
+  "title": "Boost Your Brainpower",
+  "level": "hard",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 5, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader5/chapter/boost-your-brainpower/"
+  },
+  "body": [
+    "Many different factors affect how well we learn. While we can’t control all of these factors, there are many that we can. Below are 10 things we can do to help our brains work better.",
+    "The fuel for the brain comes from the calories in the food we eat. In fact, 20% of the calories we eat are used by our brain. Not all calories are equally good for your brain. Canada’s Food Guide explains how to make healthy choices. Research suggests that some foods might be especially good for memory and concentration, such as egg yolk, whole grains, nuts, fish, dark green leafy vegetables, beans, strawberries, and blueberries.",
+    "The brain is more than 70% water. If we don’t drink enough water, it affects our concentration . We need around six to eight glasses of non-sugary, non-alcoholic fluid each day. Research suggests that the brain does not do well with sudden rushes of sugar, so sweet fizzy drinks do not really help your brain.",
+    "Oxygen is carried to your brain by your blood. When you move your body, your blood flow increases and your brain gets more oxygen. Going for a walk, a run, or a bike ride really helps get oxygen to your brain. Taking deep breaths and stretching also helps.",
+    "Getting enough rest boosts our mood and helps us concentrate. What’s more, when we are asleep, the brain practices what we were doing during the day. We actually learn in our sleep. If you have a hard time falling asleep at night, try listening to gentle music, thinking positive thoughts, or reading something funny to relax you. Avoid video games and exciting TV shows in the hour before bedtime."
+  ],
+  "previewWords": [
+    {
+      "word": "concentration",
+      "gloss": "the ability to keep your attention on one thing"
+    },
+    {
+      "word": "calories",
+      "gloss": "units for measuring the energy in food"
+    },
+    {
+      "word": "oxygen",
+      "gloss": "the gas in air that living things need"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How much of what we eat is used by the brain?",
+      "options": [
+        "About 20 percent",
+        "About 5 percent",
+        "About half"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Why does moving your body help your brain?",
+      "options": [
+        "It warms the brain up",
+        "More blood flow brings more oxygen",
+        "It uses up extra sugar"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does the brain do while we sleep?",
+      "options": [
+        "Nothing at all",
+        "It practices what we did during the day",
+        "It forgets the day's mistakes"
+      ],
+      "answer": 1
+    }
+  ]
+}

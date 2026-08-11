@@ -1,0 +1,59 @@
+{
+  "id": "2026-08-14-hard",
+  "title": "The Sixth Sense: Intuition",
+  "level": "hard",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 5, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader5/chapter/the-sixth-sense-intuition/"
+  },
+  "body": [
+    "A fire broke out in the kitchen of a house in Chicago, Illinois. A team of firefighters kicked down the door of the house. They stood in the living room as they sprayed water at the fire in the kitchen. Strangely, the fire would not go out. One of the firefighters had a feeling that something was very wrong. “Get out, now!” he ordered . The team ran out of the house. Moments later, the floor they had been standing on in the living room collapsed .",
+    "Looking back, the firefighter believed his brain must have had the ability to know the future. A researcher who studies decision-making wasn’t so sure. He talked to the firefighter about what was going through his mind before he told everyone to get out of the house. The researcher found out that the firefighter had noticed three strange things: water was not putting out the fire, the living room was unusually hot, and the fire was unusually quiet. The researcher believed that the firefighter’s intuition recognized this pattern and knew that the situation was not safe. A part of his brain beyond his own awareness knew that the fire was also in the basement underneath the living room, making the living room unusually hot and the fire unusually quiet.",
+    "The story shows that intuition can be a very important factor in decision-making. Intuition is the ability to know something without any proof. It is sometimes known as a “gut feeling,” “instinct,” or “sixth sense.”"
+  ],
+  "previewWords": [
+    {
+      "word": "intuition",
+      "gloss": "knowing something without being able to explain how"
+    },
+    {
+      "word": "awareness",
+      "gloss": "knowing that something is there or is happening"
+    },
+    {
+      "word": "pattern",
+      "gloss": "a set of things that repeat in a regular way"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did the firefighter do in the burning house?",
+      "options": [
+        "He ordered everyone out",
+        "He called for more water",
+        "He went into the kitchen"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Where was the fire actually burning?",
+      "options": [
+        "On the roof",
+        "In the basement under the living room",
+        "Only in the kitchen"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What is intuition, according to the article?",
+      "options": [
+        "A lucky guess",
+        "Knowing something without any proof",
+        "A skill only firefighters have"
+      ],
+      "answer": 1
+    }
+  ]
+}

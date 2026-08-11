@@ -1,0 +1,60 @@
+{
+  "id": "2026-08-13-hard",
+  "title": "Put to the Test",
+  "level": "hard",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 5, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader5/chapter/put-to-the-test/"
+  },
+  "body": [
+    "Some students bring good luck charms to school on test days. They might keep a four-leaf clover in their pocket or wear a pair of lucky underwear. While these things can’t hurt, there are better ways of doing well on a test.",
+    "Writing a test is like running a marathon . Both activities require you to do your best for a long time. There are a couple of strategies you can use to stay relaxed, focused, and motivated for the whole test.",
+    "Runners train before a big race. They practice their skills in the same conditions they will face in the marathon. You can train for a test in a similar way. Start by thinking about the types of questions that will likely be on the test. For a reading test, there may be comprehension questions on vocabulary, main idea, details, cause and effect, sequence, and inferences. You may also be asked to summarize the text. For a writing test, you will likely be asked to write a paragraph about a given topic. The topics will often involve describing something, explaining how to do something, telling a story about something, or giving your opinion about something. Study what your instructor has taught you about how to answer each question type. The goal of a test is usually to independent ly apply the skills you have learned and practiced in class.",
+    "Just like before a big race, it is a good idea to take care of your basic needs before the test begins. For example, get plenty of sleep the night before. During the day of the test, get enough to eat. Go to the bathroom ahead of time. These things will help you focus."
+  ],
+  "previewWords": [
+    {
+      "word": "strategies",
+      "gloss": "plans for reaching a goal"
+    },
+    {
+      "word": "marathon",
+      "gloss": "a very long running race"
+    },
+    {
+      "word": "motivated",
+      "gloss": "wanting to keep going and do well"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is writing a test compared to?",
+      "options": [
+        "Running a marathon",
+        "Climbing a mountain",
+        "Playing a card game"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What do runners do before a big race?",
+      "options": [
+        "They rest completely for a week",
+        "They practice in the conditions they will face",
+        "They change their running style"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does the article say about lucky charms?",
+      "options": [
+        "They cannot hurt, but there are better ways",
+        "They clearly improve results",
+        "They should never be brought to a test"
+      ],
+      "answer": 0
+    }
+  ]
+}
