@@ -147,10 +147,16 @@ Still to do:
 - [ ] Confirm Add to Home Screen and an airplane-mode reload on real Android and iOS hardware.
 - [ ] Optionally, Cloudflare Web Analytics, which is cookieless, for page views and nothing personal.
 
-## What is actually left
+## Articles
 
-The software is done. What is missing is articles.
+The first week is published: 11 to 15 August 2026, five stories from BC Reads Reader 4 about Viola Desmond, Tommy Douglas, Nellie McClung, Joy Kogawa and Elijah Harper. Canadian civil rights history, written for adult literacy students, under CC BY 4.0.
 
-`site/content/index.json` is empty, so every visit still falls back to the Aesop fable that ships as an example. Until there is a real article scheduled for a real date, the app is a working demonstration rather than something either of us would open tomorrow morning.
+Reader 4 has four more chapters not used yet, on Jim Egan, Gabor Mate, human rights, and one introductory piece. Reader 5 turns to how learning and memory work, and Reader 6 has eleven chapters. Between them that is several more weeks without needing a new source.
 
-Preparing the first batch means going to the sources in `docs/content-sources.md`, picking passages, running the two scripts, and writing the questions. That is the remaining work, and it is not a coding task.
+The routine for adding more is in `docs/content-sources.md`. Roughly: save the source text as it was published, run `new-article.mjs`, delete sentences until `check-article.mjs` passes, then write the questions and the word definitions.
+
+Keep two weeks scheduled ahead. Below that, the app falls back to the sample article and the daily habit quietly breaks.
+
+## What is left
+
+Nothing that blocks daily use. Remaining items are the Lighthouse run, confirming Add to Home Screen and offline reading on real phones, and switching on the daily reminder by setting its secrets.
