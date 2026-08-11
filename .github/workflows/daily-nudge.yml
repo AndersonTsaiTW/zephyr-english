@@ -1,0 +1,85 @@
+name: Daily nudge
+
+# Sends a short WhatsApp message telling each reader that today's article is
+# up. It is a convenience, not part of the product: the site works whether or
+# not this runs, and the share button in the app covers the same ground with
+# no setup at all.
+#
+# Setup, once per reader:
+#   1. Add CallMeBot's WhatsApp number to your contacts.
+#   2. Message it "I allow callmebot to send me messages" from your own phone.
+#   3. It replies with a personal API key. Send that key to whoever maintains
+#      this repo, along with your phone number in E.164 form (+14165550123).
+#   4. The maintainer stores them:
+#        gh secret set NUDGE_PHONE_1   gh secret set NUDGE_KEY_1
+#        gh secret set NUDGE_PHONE_2   gh secret set NUDGE_KEY_2
+#
+# A key only authorises sending to the phone that activated it, so sharing it
+# grants nothing beyond being messaged.
+#
+# CallMeBot is run by one person and offers no guarantee. Fine for two
+# friends, unsuitable as the base of anything public. The replacement is Web
+# Push, which needs no key exchange and lets a reader subscribe with one tap.
+
+on:
+  schedule:
+    # 12:07 UTC. That is 08:07 in Toronto during daylight saving and 07:07
+    # in winter, because GitHub cron is UTC and does not shift.
+    - cron: '7 12 * * *'
+  workflow_dispatch:
+
+jobs:
+  nudge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send
+        env:
+          SITE: https://zephyr-8w8.pages.dev
+          PHONE_1: ${{ secrets.NUDGE_PHONE_1 }}
+          KEY_1: ${{ secrets.NUDGE_KEY_1 }}
+          PHONE_2: ${{ secrets.NUDGE_PHONE_2 }}
+          KEY_2: ${{ secrets.NUDGE_KEY_2 }}
+        run: |
+          set -u
+          sent=0
+          skipped=0
+
+          send() {
+            phone="$1"
+            key="$2"
+            label="$3"
+            if [ -z "$phone" ] || [ -z "$key" ]; then
+              echo "$label: no secrets set, skipping"
+              skipped=$((skipped + 1))
+              return 0
+            fi
+            # --data-urlencode keeps the key out of the visible command line
+            # and encodes the message safely. -o /dev/null so a response that
+            # echoes the request cannot print the key into the log.
+            code=$(curl -sS -G \
+              -o /dev/null -w '%{http_code}' \
+              --retry 3 --retry-delay 5 --max-time 30 \
+              --data-urlencode "phone=$phone" \
+              --data-urlencode "apikey=$key" \
+              --data-urlencode "text=Today's Zephyr is up. $SITE" \
+              https://api.callmebot.com/whatsapp.php) || code=000
+            echo "$label: HTTP $code"
+            if [ "$code" = "200" ]; then
+              sent=$((sent + 1))
+            else
+              echo "$label: send failed"
+              return 1
+            fi
+          }
+
+          failed=0
+          send "$PHONE_1" "$KEY_1" "reader 1" || failed=1
+          send "$PHONE_2" "$KEY_2" "reader 2" || failed=1
+
+          echo "sent=$sent skipped=$skipped"
+
+          if [ "$sent" = "0" ] && [ "$skipped" -gt 0 ]; then
+            echo "Nothing configured yet. Add the NUDGE_* secrets to switch this on."
+            exit 0
+          fi
+          exit $failed
