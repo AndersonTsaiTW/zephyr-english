@@ -5,3 +5,6 @@ Thumbs.db
 
 # 中文筆記，本機自用，不上 GitHub
 notes-zh/
+
+# wrangler local cache
+.wrangler/
