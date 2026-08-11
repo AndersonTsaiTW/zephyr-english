@@ -5,7 +5,8 @@ const $ = (id) => document.getElementById(id);
 const screens = {
   today: $('screen-today'),
   reader: $('screen-reader'),
-  done: $('screen-done'),
+  quiz: $('screen-quiz'),
+  results: $('screen-results'),
   empty: $('screen-empty'),
 };
 
@@ -14,9 +15,88 @@ function show(name) {
   screens[name].classList.add('active');
 }
 
+/* ---------- stored state ---------- */
+
+// Everything lives on the device. There are no accounts and no server.
+const store = {
+  read(key, fallback) {
+    try {
+      const raw = localStorage.getItem(`zephyr.${key}`);
+      return raw === null ? fallback : JSON.parse(raw);
+    } catch {
+      return fallback;
+    }
+  },
+  write(key, value) {
+    try {
+      localStorage.setItem(`zephyr.${key}`, JSON.stringify(value));
+    } catch {
+      // A full or blocked store costs the streak, not the reading.
+    }
+  },
+};
+
+const START_WPM = 110;
+const MIN_WPM = 80;
+const MAX_WPM = 300;
+
+function profile() {
+  return store.read('profile', null);
+}
+
+function history() {
+  const h = store.read('history', []);
+  return Array.isArray(h) ? h : [];
+}
+
+function entryFor(date) {
+  return history().find((e) => e.date === date) ?? null;
+}
+
+function dayKey(d = new Date()) {
+  const p = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+}
+
+function shiftDay(key, days) {
+  const [y, m, d] = key.split('-').map(Number);
+  const date = new Date(y, m - 1, d + days);
+  return dayKey(date);
+}
+
+// Comprehension decides tomorrow's pace, so speed never runs ahead of
+// understanding. Holding steady in the middle keeps it from oscillating.
+function nextWpm(current, score, total) {
+  if (!total) return current;
+  const share = score / total;
+  let next = current;
+  if (share >= 0.8) next = current * 1.05;
+  else if (share < 0.6) next = current * 0.95;
+  return Math.min(MAX_WPM, Math.max(MIN_WPM, Math.round(next / 5) * 5));
+}
+
+function bumpStreak(date) {
+  const streak = store.read('streak', { count: 0, lastDate: null });
+  if (streak.lastDate === date) return streak;
+  streak.count = streak.lastDate === shiftDay(date, -1) ? streak.count + 1 : 1;
+  streak.lastDate = date;
+  store.write('streak', streak);
+  return streak;
+}
+
+// A streak only stands if yesterday or today was the last completed day.
+function liveStreak() {
+  const streak = store.read('streak', { count: 0, lastDate: null });
+  if (!streak.lastDate) return 0;
+  const today = dayKey();
+  if (streak.lastDate === today || streak.lastDate === shiftDay(today, -1)) return streak.count;
+  return 0;
+}
+
 /* ---------- theme ---------- */
 
 const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 function activeTheme() {
   return document.documentElement.dataset.theme || (darkQuery.matches ? 'dark' : 'light');
@@ -37,26 +117,26 @@ function toggleTheme() {
   paintThemeButton();
 }
 
-// Follow the system while nothing is pinned.
 darkQuery.addEventListener('change', () => {
   if (!document.documentElement.dataset.theme) paintThemeButton();
 });
 
-function todayKey() {
-  const d = new Date();
-  const p = (n) => String(n).padStart(2, '0');
-  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
-}
+/* ---------- session state ---------- */
 
 const state = {
   article: null,
   words: 0,
-  wpm: Number(localStorage.getItem('zephyr.wpm')) || 130,
+  wpm: profile()?.currentWpm ?? START_WPM,
+  calibrating: profile() === null,
   y: 0,
   playing: false,
   rafId: null,
+  stepTimer: null,
   last: null,
+  runStart: null,
   elapsed: 0,
+  quiz: null,
+  answered: false,
   lastResult: null,
 };
 
@@ -71,41 +151,88 @@ async function tryFetch(path) {
   }
 }
 
+function countWords(text) {
+  const trimmed = text.trim();
+  return trimmed ? trimmed.split(/\s+/).length : 0;
+}
+
+// Rule 4: an article without provenance does not ship, so the app refuses to
+// render one rather than quietly dropping the credit.
+function hasSource(article) {
+  const s = article?.source;
+  return Boolean(s && s.origin && s.author && s.license);
+}
+
 async function init() {
   paintThemeButton();
   setupShareControls();
-  $('dayLabel').textContent = todayKey();
-  let article = await tryFetch(`content/articles/${todayKey()}.json`);
+  $('dayLabel').textContent = dayKey();
+
+  const today = dayKey();
+  let article = await tryFetch(`content/articles/${today}.json`);
   let isSample = false;
   if (!article) {
     article = await tryFetch('content/articles/sample.json');
-    isSample = true;
+    isSample = Boolean(article);
   }
+
   if (!article) {
     show('empty');
     return;
   }
+
+  if (!hasSource(article) || !Array.isArray(article.body) || article.body.length === 0) {
+    console.warn('Zephyr: refusing to render an article without a source block or body.', article);
+    $('emptyTitle').textContent = 'This article is missing its source';
+    $('emptyHint').textContent = 'Every article needs an author, an origin and a licence before it can be read.';
+    show('empty');
+    return;
+  }
+
   state.article = article;
-  state.words = article.body.join(' ').trim().split(/\s+/).length;
+  state.words = countWords(article.body.join(' '));
+
+  // One article a day. Coming back after finishing shows that day's result.
+  const done = entryFor(today);
+  if (done) {
+    state.lastResult = done;
+    state.answered = true;
+    renderResults(done);
+    show('results');
+    return;
+  }
+
   renderTodayCard(article, isSample);
+  show('today');
 }
 
 function renderTodayCard(article, isSample) {
   $('sampleNote').hidden = !isSample;
+
+  const streak = liveStreak();
+  const line = $('todayStreak');
+  line.hidden = streak === 0;
+  line.textContent = streak === 1 ? 'Day 1' : `${streak} day streak`;
+
   $('cardTitle').textContent = article.title;
   updateCardMeta();
+
   const preview = $('previewWords');
   preview.innerHTML = '';
-  (article.previewWords || []).forEach(({ word, gloss }) => {
-    const div = document.createElement('div');
-    div.className = 'preview-word';
+  (article.previewWords ?? []).forEach(({ word, gloss }) => {
+    const row = document.createElement('div');
+    row.className = 'preview-word';
     const b = document.createElement('b');
     b.textContent = word;
     const span = document.createElement('span');
     span.textContent = gloss;
-    div.append(b, span);
-    preview.append(div);
+    row.append(b, span);
+    preview.append(row);
   });
+
+  $('startHint').textContent = state.calibrating
+    ? 'Adjust the speed while you read. Where you settle becomes your starting pace.'
+    : 'The text scrolls by itself. Keep up, because you cannot scroll back.';
 }
 
 function updateCardMeta() {
@@ -120,9 +247,9 @@ const track = $('track');
 
 function renderTrack(article) {
   track.innerHTML = '';
-  const h = document.createElement('h2');
-  h.textContent = article.title;
-  track.append(h);
+  const heading = document.createElement('h2');
+  heading.textContent = article.title;
+  track.append(heading);
   article.body.forEach((para) => {
     const p = document.createElement('p');
     p.textContent = para;
@@ -147,14 +274,13 @@ function pxPerSec() {
 
 function renderScroll() {
   track.style.transform = `translateY(${-state.y}px)`;
-  $('bar').style.width = `${(state.y / maxY()) * 100}%`;
+  $('bar').style.width = `${Math.min(100, (state.y / maxY()) * 100)}%`;
 }
 
 function frame(t) {
   if (state.last === null) state.last = t;
   const dt = (t - state.last) / 1000;
   state.last = t;
-  state.elapsed += dt;
   state.y += pxPerSec() * dt;
   if (state.y >= maxY()) {
     state.y = maxY();
@@ -166,29 +292,76 @@ function frame(t) {
   state.rafId = requestAnimationFrame(frame);
 }
 
+/* ---------- paragraph steps, for reduced motion ---------- */
+
+// Continuous movement is the whole product, so it cannot simply be switched
+// off. Instead the text advances a paragraph at a time, holding each one for
+// the time it would have taken to scroll past, which keeps the pacing without
+// anything sliding. The block sits near the top of the panel rather than at
+// the focus band so that a long paragraph fits on screen whole.
+function stepBlocks() {
+  const offset = Math.round(reader.clientHeight * 0.12);
+  return [...track.children].map((el) => ({
+    top: el.offsetTop - offset,
+    words: Math.max(1, countWords(el.textContent)),
+  }));
+}
+
+function runSteps(blocks, index) {
+  if (index >= blocks.length) {
+    state.y = maxY();
+    renderScroll();
+    finish();
+    return;
+  }
+  state.y = Math.max(0, Math.min(maxY(), blocks[index].top));
+  renderScroll();
+  const hold = (blocks[index].words / state.wpm) * 60000;
+  state.stepTimer = setTimeout(() => runSteps(blocks, index + 1), hold);
+}
+
+// Time is measured off the clock in both modes, so the speed reported at the
+// end reflects what actually happened rather than what was scheduled.
 function play() {
   if (state.playing) return;
   state.playing = true;
   state.last = null;
+  state.runStart = performance.now();
   $('playBtn').textContent = '⏸';
-  state.rafId = requestAnimationFrame(frame);
+  if (reduceMotion.matches) {
+    const blocks = stepBlocks();
+    const next = blocks.findIndex((b) => b.top > state.y);
+    runSteps(blocks, next === -1 ? blocks.length : next);
+  } else {
+    state.rafId = requestAnimationFrame(frame);
+  }
+}
+
+function bankElapsed() {
+  if (state.runStart !== null) {
+    state.elapsed += (performance.now() - state.runStart) / 1000;
+    state.runStart = null;
+  }
 }
 
 function pause() {
+  bankElapsed();
   state.playing = false;
   $('playBtn').textContent = '▶';
   if (state.rafId) cancelAnimationFrame(state.rafId);
+  if (state.stepTimer) clearTimeout(state.stepTimer);
   state.rafId = null;
+  state.stepTimer = null;
 }
 
 function toggle() {
-  state.playing ? pause() : play();
+  if (state.playing) pause();
+  else play();
 }
 
 function setWpm(delta) {
-  state.wpm = Math.min(300, Math.max(60, state.wpm + delta));
+  state.wpm = Math.min(MAX_WPM, Math.max(60, state.wpm + delta));
   $('wpmVal').textContent = state.wpm;
-  localStorage.setItem('zephyr.wpm', state.wpm);
 }
 
 /* ---------- flow ---------- */
@@ -200,6 +373,7 @@ function startReading() {
   state.y = 0;
   state.elapsed = 0;
   state.last = null;
+  state.runStart = null;
   renderScroll();
   $('wpmVal').textContent = state.wpm;
   countdown(3);
@@ -207,39 +381,138 @@ function startReading() {
 
 function countdown(n) {
   const el = $('countdown');
-  el.hidden = false;
-  el.textContent = n;
   if (n === 0) {
     el.hidden = true;
     play();
     return;
   }
+  el.hidden = false;
+  el.textContent = n;
   setTimeout(() => countdown(n - 1), 800);
+}
+
+function measuredWpm() {
+  const mins = state.elapsed / 60;
+  return mins > 0 ? Math.round(state.words / mins) : state.wpm;
 }
 
 function finish() {
   pause();
-  const mins = state.elapsed / 60;
-  const actualWpm = mins > 0 ? Math.round(state.words / mins) : state.wpm;
 
-  // WP3 adds score and total here, WP4 adds day and streak.
-  state.lastResult = { date: todayKey(), wpm: actualWpm, words: state.words };
+  // The first read exists to find a baseline, so the pace the reader settles
+  // on becomes their starting speed.
+  if (state.calibrating) {
+    store.write('profile', { currentWpm: state.wpm });
+    state.calibrating = false;
+  }
 
-  $('doneStats').textContent = `${state.words} words · ${Math.round(state.elapsed)}s · ${actualWpm} wpm`;
-  const src = state.article.source;
+  const questions = state.article.quiz ?? [];
+  if (state.answered || questions.length === 0) {
+    completeDay(null, 0);
+    return;
+  }
+  startQuiz(questions);
+}
+
+/* ---------- quiz ---------- */
+
+function startQuiz(questions) {
+  state.quiz = { questions, index: 0, correct: 0 };
+  show('quiz');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const { questions, index } = state.quiz;
+  const question = questions[index];
+
+  $('quizCounter').textContent = `${index + 1} / ${questions.length}`;
+  $('quizQuestion').textContent = question.q;
+
+  const list = $('quizOptions');
+  list.innerHTML = '';
+
+  question.options.forEach((label, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option';
+    btn.type = 'button';
+    btn.textContent = label;
+    // The answer index stays in this closure. Writing it into the markup
+    // would put the answer key one devtools panel away.
+    btn.addEventListener('click', () => answer(i, question.answer, list), { once: true });
+    list.append(btn);
+  });
+}
+
+function answer(picked, correct, list) {
+  const buttons = [...list.children];
+  buttons.forEach((b) => { b.disabled = true; });
+  buttons[correct]?.classList.add('right');
+  if (picked !== correct) buttons[picked]?.classList.add('wrong');
+  if (picked === correct) state.quiz.correct += 1;
+
+  setTimeout(() => {
+    state.quiz.index += 1;
+    if (state.quiz.index < state.quiz.questions.length) renderQuestion();
+    else completeDay(state.quiz.correct, state.quiz.questions.length);
+  }, 700);
+}
+
+/* ---------- results ---------- */
+
+function completeDay(score, total) {
+  const date = dayKey();
+  const wpm = measuredWpm();
+  state.answered = true;
+
+  let entry = entryFor(date);
+  if (!entry) {
+    const streak = bumpStreak(date);
+    const log = history();
+    entry = {
+      date,
+      wpm,
+      words: state.words,
+      score: score ?? undefined,
+      total: total || undefined,
+      streak: streak.count,
+      day: log.length + 1,
+      nextWpm: nextWpm(profile()?.currentWpm ?? state.wpm, score ?? 0, total),
+    };
+    log.push(entry);
+    store.write('history', log);
+    store.write('profile', { currentWpm: entry.nextWpm });
+  }
+
+  state.lastResult = entry;
+  renderResults(entry);
+  show('results');
+}
+
+function renderResults(entry) {
+  $('heroWpm').textContent = entry.wpm;
+
+  const streakLine = $('resultStreak');
+  streakLine.hidden = !entry.streak;
+  streakLine.textContent = entry.streak === 1 ? 'Day 1' : `${entry.streak} day streak`;
+
+  $('resultScore').textContent =
+    entry.total ? `${entry.score} of ${entry.total} correct` : `${entry.words} words`;
+
+  $('tomorrowLine').textContent = entry.nextWpm
+    ? `Tomorrow starts at ${entry.nextWpm} wpm.`
+    : 'See you tomorrow.';
+
+  const src = state.article?.source;
   $('attribution').textContent = src ? `${src.origin}, ${src.author} (${src.license})` : '';
-  show('done');
 }
 
 /* ---------- sharing ---------- */
 
-// The deployed address, whatever it turns out to be.
 function siteUrl() {
   return location.origin + location.pathname.replace(/index\.html$/, '');
 }
 
-// Fields appear as later packages produce them: WP3 adds the score, WP4 the
-// day number and the streak. Missing ones are left out rather than shown empty.
 function buildShareText() {
   const r = state.lastResult;
   if (!r) return '';
@@ -254,9 +527,8 @@ function openWhatsApp() {
 }
 
 async function shareResult() {
-  const text = buildShareText();
   try {
-    await navigator.share({ text });
+    await navigator.share({ text: buildShareText() });
   } catch (err) {
     // Dismissing the sheet is not a failure worth reacting to.
     if (err.name !== 'AbortError') openWhatsApp();
@@ -289,8 +561,6 @@ async function copyResult() {
   setTimeout(() => { btn.textContent = 'Copy'; }, 1600);
 }
 
-// One native share button where the browser supports it, two explicit ones
-// where it does not.
 function setupShareControls() {
   const native = typeof navigator.share === 'function';
   $('shareBtn').hidden = !native;
@@ -320,5 +590,15 @@ document.addEventListener('visibilitychange', () => {
 window.addEventListener('resize', () => {
   if (screens.reader.classList.contains('active')) padTrack();
 });
+
+// Registration needs a secure context, so it is skipped over plain http
+// during local development and simply does nothing there.
+if ('serviceWorker' in navigator && window.isSecureContext) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch((err) => {
+      console.warn('Zephyr: service worker registration failed.', err);
+    });
+  });
+}
 
 init();

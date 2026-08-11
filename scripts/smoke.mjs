@@ -97,14 +97,53 @@ await page.locator('#reader').click();
 
 await page.evaluate('state.y = 1e9');
 await page.waitForTimeout(400);
-check('done screen appears at the end', (await activeScreen()) === 'screen-done');
-check('stats are filled in', /\d+ words · \d+s · \d+ wpm/.test(await page.locator('#doneStats').textContent()));
+
+// The quiz only appears when the article carries questions.
+const questions = await page.evaluate('(state.article.quiz || []).length');
+if (questions > 0) {
+  check('quiz follows the read', (await activeScreen()) === 'screen-quiz');
+  check('counter shows the position', /^\d+ \/ \d+$/.test(await page.locator('#quizCounter').textContent()));
+
+  // The answer key must not be reachable from the markup.
+  const leak = await page.evaluate(() => {
+    const html = document.querySelector('#quizOptions').innerHTML;
+    return /answer|correct|data-/i.test(html);
+  });
+  check('answer key is absent from the DOM', !leak);
+
+  for (let i = 0; i < questions; i += 1) {
+    await page.locator('#quizOptions .option').first().click();
+    await page.waitForTimeout(900);
+  }
+}
+
+check('results screen appears', (await activeScreen()) === 'screen-results');
+check('speed is shown', Number(await page.locator('#heroWpm').textContent()) > 0);
 check('attribution is shown', (await page.locator('#attribution').textContent()).length > 5);
+check(
+  'score is reported',
+  questions === 0 || /\d+ of \d+ correct/.test(await page.locator('#resultScore').textContent()),
+  await page.locator('#resultScore').textContent()
+);
+
+// WP4: the day is recorded, and reopening shows the result rather than the article.
+const stored = await page.evaluate("JSON.parse(localStorage.getItem('zephyr.history') || '[]')");
+check('the day is written to history', stored.length === 1, JSON.stringify(stored[0] ?? null));
+check('tomorrow speed is set', stored[0]?.nextWpm >= 80 && stored[0]?.nextWpm <= 300, `${stored[0]?.nextWpm} wpm`);
+check('streak started at 1', stored[0]?.streak === 1);
+
+await page.reload({ waitUntil: 'networkidle' });
+check('same day reopen shows the result', (await activeScreen()) === 'screen-results');
 
 const native = await page.locator('#shareBtn').isVisible();
 const fallback = await page.locator('#shareFallback').isVisible();
 check('exactly one share path is offered', native !== fallback, `native=${native} fallback=${fallback}`);
-check('share text is well formed', /^ZEPHYR · .+\n\d+ wpm\nhttp/.test(await page.evaluate('buildShareText()')));
+const shareText = await page.evaluate('buildShareText()');
+check(
+  'share text is well formed',
+  /^ZEPHYR · .+\n\d+ wpm(?: · \d+\/\d+ correct)?(?: · streak \d+)?\nhttps?:\/\//.test(shareText),
+  JSON.stringify(shareText)
+);
 
 await page.locator('#themeBtn').click();
 const pinned = await page.evaluate('document.documentElement.dataset.theme');
@@ -112,6 +151,28 @@ check('theme toggle pins a theme', pinned === 'light' || pinned === 'dark', pinn
 check('theme choice persists', (await page.evaluate("localStorage.getItem('zephyr.theme')")) === pinned);
 await page.reload({ waitUntil: 'networkidle' });
 check('pinned theme survives reload', (await page.evaluate('document.documentElement.dataset.theme')) === pinned);
+
+// An article with no source block must not render, whatever else is right.
+const guarded = await browser.newPage();
+await guarded.route('**/content/articles/*.json', (route) =>
+  route.fulfill({
+    status: 200,
+    contentType: 'application/json',
+    body: JSON.stringify({ id: 'x', title: 'Unsourced', body: ['Text with no provenance.'] }),
+  })
+);
+await guarded.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle' });
+check('an article without a source is refused', (await guarded.locator('.screen.active').getAttribute('id')) === 'screen-empty');
+await guarded.close();
+
+// PWA pieces are served and well formed.
+const manifest = await page.evaluate(async () => {
+  const res = await fetch('manifest.webmanifest');
+  return res.ok ? res.json() : null;
+});
+check('manifest is valid and standalone', manifest?.display === 'standalone' && manifest.icons.length >= 2);
+const swOk = await page.evaluate(async () => (await fetch('sw.js')).ok);
+check('service worker is served', swOk);
 
 check('no unexpected page errors', errors.length === 0, errors.join(' | '));
 

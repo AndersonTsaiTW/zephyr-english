@@ -120,8 +120,12 @@ main {
   min-height: 0;
 }
 
-/* ---- today card / done ---- */
-#screen-today, #screen-done, #screen-empty { justify-content: center; gap: 0.75rem; text-align: center; }
+/* ---- centred screens ---- */
+#screen-today, #screen-quiz, #screen-results, #screen-empty {
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+}
 h1 {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 500;
@@ -203,6 +207,86 @@ button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   padding: 0.5rem 1rem;
 }
 .text-btn:hover { color: var(--accent); }
+
+/* ---- quiz ---- */
+.counter {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  margin: 0;
+}
+.question {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 0 auto;
+  max-width: 24rem;
+  text-wrap: balance;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+.option {
+  min-height: 3.25rem;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  text-align: left;
+  line-height: 1.45;
+}
+.option:hover:enabled { border-color: var(--accent); }
+.option:disabled { cursor: default; }
+.option.right {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+.option.wrong { color: var(--muted); }
+
+/* ---- results ---- */
+.hero {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.4rem;
+}
+.hero b {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.6rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+.hero span {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+.streak-line {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+.keys {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  text-align: center;
+}
+@media (hover: none) {
+  /* A touch device has no space bar to tell anyone about. */
+  .keys { display: none; }
+}
 
 /* ---- reader ---- */
 #screen-reader { padding-top: 0.25rem; }

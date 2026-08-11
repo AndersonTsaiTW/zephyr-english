@@ -4,6 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Zephyr: daily reading, with the wind</title>
+<meta name="description" content="One short English article a day, scrolling by itself. Keep up, then answer a few questions.">
+<meta name="theme-color" content="#F5F9FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1519" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/zephyr.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Zephyr">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="stylesheet" href="app.css">
 <script>
   // Apply the pinned theme before first paint so the page never flashes the wrong one.
@@ -32,11 +41,12 @@
   <!-- Today card -->
   <section class="screen active" id="screen-today">
     <p class="sample-note" id="sampleNote" hidden>Sample article. Real ones go in <code>content/articles/YYYY-MM-DD.json</code></p>
+    <p class="streak-line" id="todayStreak" hidden></p>
     <h1 id="cardTitle">…</h1>
     <p class="meta" id="cardMeta"></p>
     <div class="preview" id="previewWords"></div>
     <button class="primary" id="startBtn">Start reading</button>
-    <p class="hint">The text scrolls by itself. Keep up, because you cannot scroll back.</p>
+    <p class="hint" id="startHint">The text scrolls by itself. Keep up, because you cannot scroll back.</p>
   </section>
 
   <!-- Reader -->
@@ -55,12 +65,24 @@
       <button id="faster" aria-label="Faster">＋</button>
       <div class="wpm"><b id="wpmVal"></b>wpm</div>
     </div>
+    <p class="hint keys">Space pauses. Up and down change speed.</p>
   </section>
 
-  <!-- Done (replaced by quiz + results in WP3) -->
-  <section class="screen" id="screen-done">
-    <h1>Done</h1>
-    <p class="meta big" id="doneStats"></p>
+  <!-- Quiz -->
+  <section class="screen" id="screen-quiz">
+    <p class="counter" id="quizCounter"></p>
+    <h2 class="question" id="quizQuestion"></h2>
+    <div class="options" id="quizOptions"></div>
+  </section>
+
+  <!-- Results -->
+  <section class="screen" id="screen-results">
+    <p class="streak-line" id="resultStreak" hidden></p>
+    <div class="hero">
+      <b id="heroWpm">0</b><span>wpm</span>
+    </div>
+    <p class="meta" id="resultScore"></p>
+    <p class="hint" id="tomorrowLine"></p>
     <p class="attribution" id="attribution"></p>
     <div class="actions">
       <button class="primary" id="shareBtn" hidden>Share</button>
@@ -74,8 +96,8 @@
 
   <!-- Empty state -->
   <section class="screen" id="screen-empty">
-    <h1>No article today</h1>
-    <p class="hint">The wind is resting. Come back tomorrow.</p>
+    <h1 id="emptyTitle">No article today</h1>
+    <p class="hint" id="emptyHint">The wind is resting. Come back tomorrow.</p>
   </section>
 </main>
 
