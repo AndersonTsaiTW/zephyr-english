@@ -19,7 +19,26 @@ To hand a package to a session:
 
 > Read CLAUDE.md and PLAN.md, then implement WP\<n\> only. Update the PLAN.md status table when done.
 
-The packages are ordered by dependency, so work through them roughly in order. WP6, WP7 and WP8 do not depend on each other and can be taken out of turn.
+## Dependencies and parallel work
+
+The product is three subsystems that only meet through git commits, and the packages parallelize along those seams. Three lanes can run at once.
+
+```text
+Lane 1  reader      WP2 -> WP3 -> WP4 -> WP6      strictly serial
+Lane 2  curation    WP8                           safe to start now
+Lane 3  delivery    WP7-B -> WP5 -> WP7-A         safe to start now
+                          everything -> WP9
+```text
+
+Lane 1 cannot be split. All four packages rewrite the same parts of `site/app.js` and `index.html`. WP3 and WP4 both replace `finish()`, and WP4's rule fires when a quiz is submitted, so it has nothing to hook into until WP3 exists. WP6 attaches a share button to the results screen that WP3 builds.
+
+Lane 2 touches only `scripts/` and `content-raw/` and overlaps with nothing.
+
+Lane 3 is nearly as clean. WP7 option B adds one GitHub Actions workflow file. WP5 adds `manifest.webmanifest`, `sw.js` and `site/icons/`, and its only shared edit is a few meta tags in the `<head>`. Its service worker reads the `content/index.json` that WP2 produces, so running it after WP2 avoids a stub.
+
+WP9 comes last because it touches everything.
+
+If two sessions run at once, the rule that matters is that only one of them may edit `site/app.js`. Beyond that, give each lane its own branch, or its own `git worktree` if they run simultaneously.
 
 ## WP0, repo scaffold (done)
 
