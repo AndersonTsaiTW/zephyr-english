@@ -8,7 +8,7 @@ The whole thing takes two or three minutes. That is the point. It is meant to be
 
 Two people use it. Both are adults learning English for CELPIP, the English test used for Canadian immigration. One speaks Spanish, one speaks Chinese.
 
-The idea behind it: most learners read slowly because their eyes keep jumping backwards to check a word they already passed. If the text physically moves away, you cannot jump back, and you are forced to read forwards the way a native speaker does. That only works if the article is easy enough that you do not need to look back, which is why the difficulty rules below are strict.
+The idea behind it: most learners read slowly because their eyes keep jumping backwards to check a word they already passed. If the text physically moves away, you cannot jump back, and you are forced to read forwards the way a native speaker does. That only works if the article is easy enough that you do not need to look back. Hence the difficulty rules below.
 
 `PLAN.md` lists the work in packages. Take the next unfinished one.
 
@@ -54,7 +54,7 @@ docs/content-sources.md   where articles come from and how to credit them
 notes-zh/                 the owner's own notes in Chinese, not published
 ```
 
-`content-raw/` is worth explaining. When you shorten a source into an article, the full original stays here. It is not published to the web. It exists so the checking script has something to compare against, which is what makes rule 1 enforceable.
+`content-raw/` is worth explaining. When you shorten a source into an article, the full original stays here. It is not published to the web. The checking script compares the published article against it. Without that copy, rule 1 could not be enforced.
 
 ## Check your work before you say you are done
 

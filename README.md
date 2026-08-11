@@ -62,4 +62,4 @@ Take the next unfinished package in [PLAN.md](PLAN.md). Each one is self-contain
 
 > Read AGENTS.md and PLAN.md, then implement WP3 only. Update the PLAN.md status table when done.
 
-Before calling anything finished, run `node scripts/smoke.mjs`. It opens the site in a real browser and reads an article through to the end. Twice now a change has passed every other check while the page came up blank for a human, which is what that script exists to catch.
+Before calling anything finished, run `node scripts/smoke.mjs`. It opens the site in a real browser and reads an article through to the end. Twice now a change has passed every other check while the page came up blank for a human.

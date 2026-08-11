@@ -49,7 +49,7 @@ The initial commit set up the repo layout, the README, CLAUDE.md, this plan, the
 
 Working already: play and pause by tapping the text or the button, speed controls in steps of 10 wpm persisted to localStorage, a progress bar, the focus band with fade masks, a 3-2-1 countdown, automatic pause when the tab is hidden, and a done screen showing the measured speed.
 
-Two gaps roll into WP9. Keyboard shortcuts work (space and the arrow keys) but nothing on screen says so. And `prefers-reduced-motion` should offer a paragraph-step mode rather than just disabling the animation.
+Keyboard shortcuts (space and the arrow keys) were added later along with a hint that appears only where a keyboard exists.
 
 ## WP2, content schema and daily loader (done)
 
@@ -75,13 +75,13 @@ The first read starts at 110 wpm and the pace the reader settles on becomes thei
 
 The streak counts consecutive local dates. `liveStreak()` reports zero once the last completed day is older than yesterday, so a lapsed streak stops being displayed without needing a background job to expire it.
 
-Reopening after finishing shows that day's result rather than the article, which is what keeps one article a day meaning one article a day.
+Reopening after finishing shows that day's result rather than the article. One a day stays one a day.
 
 ## WP5, PWA, installable and offline (done)
 
 `manifest.webmanifest` declares a standalone app with 192 and 512 pixel icons plus a maskable variant. The wind mark is `site/icons/zephyr.svg`, also used as the favicon, rasterised to PNG for the launcher.
 
-`sw.js` precaches the shell on install. On activate it drops old caches, then reads `content/index.json` and caches today's and tomorrow's articles, so crossing midnight without signal still works. Content is network first with a cache fallback because it changes daily; the shell is cache first because it only changes when `CACHE` is bumped at deploy time.
+`sw.js` precaches the shell on install. On activate it drops old caches, then reads `content/index.json` and caches today's and tomorrow's articles, so crossing midnight without signal still works. Everything is served network first with the cache as the offline fallback. Cache first is the usual advice for a shell, but it assumes filenames change with their contents, and ours do not. Under cache first a reader keeps the copy of `app.js` from their first visit until someone remembers to bump `CACHE`, and forgetting once strands them on a broken build.
 
 Registration is skipped outside a secure context, so local development over plain http behaves normally.
 
@@ -105,7 +105,7 @@ The site address comes from `location`, so it is correct wherever the app is dep
 
 Where `navigator.share` exists the screen shows a single Share button and the platform sheet handles the rest. Where it does not, it shows a WhatsApp button opening `https://wa.me/?text=<urlencoded>` and a Copy button. Copy uses the clipboard API and falls back to a selection copy outside a secure context, and the button reports what happened before reverting.
 
-Remaining for WP3: move these controls onto the real results screen, keeping Share primary and "Read again" secondary.
+WP3 moved these controls onto the results screen, with Share as the main action and "Read again" quiet underneath.
 
 ## WP7, daily notifications (done)
 
@@ -113,7 +113,7 @@ Remaining for WP3: move these controls onto the real results screen, keeping Sha
 
 It is deliberately inert until configured. With no `NUDGE_*` secrets set it reports that nothing is configured and exits 0, so it never fails a run or sends failure mail before anyone has set it up. The setup steps for each reader are in the file's header comment.
 
-CallMeBot has no notion of a subscriber. Each reader activates it from their own phone, receives a key, and passes that key to whoever holds the repo secrets. A key only authorises messaging the phone that activated it, so passing it along grants nothing else. It suits two friends and does not generalise, which is why Web Push stays the eventual answer: it needs no key exchange, a reader subscribes with one tap, and it arrives free with the PWA that WP5 already built.
+CallMeBot has no notion of a subscriber. Each reader activates it from their own phone, receives a key, and passes that key to whoever holds the repo secrets. A key only authorises messaging the phone that activated it, so passing it along grants nothing else. It suits two friends and does not generalise. Web Push remains the eventual answer: no key exchange, one tap to subscribe, and it comes free with the PWA that WP5 already built.
 
 ## WP8, curation toolkit (done)
 
@@ -133,7 +133,7 @@ One known quirk: NGSL carries no entries for spelled-out numbers, so `two` and `
 
 Live at <https://zephyr-8w8.pages.dev>, hosted on Cloudflare Pages under the project `zephyr`, with the code on GitHub at `AndersonTsaiTW/zephyr-english`.
 
-Cloudflare rather than GitHub Pages for two reasons that show up later. WP7's Web Push option needs a Worker with KV, and on Cloudflare that can sit behind the same domain as a route rather than a second origin with CORS between them. And `site/_headers` is honored here, which is what keeps a service worker and a day-old article from being served stale; GitHub Pages has no equivalent.
+Cloudflare rather than GitHub Pages for two reasons that show up later. WP7's Web Push option needs a Worker with KV, and on Cloudflare that can sit behind the same domain as a route rather than a second origin with CORS between them. And `site/_headers` is honored here, so a service worker or a day-old article does not get served stale. GitHub Pages has no equivalent.
 
 The project is connected to the GitHub repository, so **pushing to `main` deploys**. Build command is empty, build output is `site`, and root directory is the repo root. Nothing runs at build time; Cloudflare copies `site/` and applies `site/_headers`.
 
