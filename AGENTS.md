@@ -46,6 +46,8 @@ Read `docs/design.md` before touching any screen. Style through the color tokens
 
 Articles run 220 to 320 words, sit at Flesch-Kincaid grade 6 or below, and keep at least 95 percent of their tokens inside `scripts/data/top2000.txt`.
 
+That word list is the New General Service List under CC BY-SA 4.0, and it is the one file here carrying a ShareAlike obligation. Keep its header comment intact, since that header is the attribution. Editing the list means republishing it under the same licence, so leave it alone unless there is a reason. It is an aggregated work rather than part of the site, and nothing else in the repo inherits the licence.
+
 Scripts are Node with ES modules and no dependencies unless a work package says otherwise.
 
 Serve over HTTP when testing, with `npx serve site`, because `fetch()` will not read `file://` URLs.

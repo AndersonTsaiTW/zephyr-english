@@ -6,13 +6,13 @@ Status marks: done, partial, todo.
 | --- | --- | --- |
 | WP0 | Repo scaffold | done |
 | WP1 | Auto-scroll reader engine | done |
-| WP2 | Content schema and daily loader | partial |
-| WP3 | Quiz and results flow | todo |
-| WP4 | Streak, calibration and adaptive speed | todo |
-| WP5 | PWA, installable and offline | todo |
+| WP2 | Content schema and daily loader | done |
+| WP3 | Quiz and results flow | done |
+| WP4 | Streak, calibration and adaptive speed | done |
+| WP5 | PWA, installable and offline | done |
 | WP6 | Share card and WhatsApp loop | done |
-| WP7 | Daily notifications | todo |
-| WP8 | Curation toolkit | todo |
+| WP7 | Daily notifications | done |
+| WP8 | Curation toolkit | done |
 | WP9 | Deploy and polish | partial |
 
 To hand a package to a session:
@@ -52,50 +52,41 @@ Working already: play and pause by tapping the text or the button, speed control
 
 Two gaps roll into WP9. Keyboard shortcuts work (space and the arrow keys) but nothing on screen says so. And `prefers-reduced-motion` should offer a paragraph-step mode rather than just disabling the animation.
 
-## WP2, content schema and daily loader (partial)
+## WP2, content schema and daily loader (done)
 
 The schema lives in `site/content/articles/sample.json`: `id`, `title`, `source` with author, origin, license and url, `body` as an array of paragraph strings, `previewWords` as word and gloss pairs, and `quiz` as question, options and answer index.
 
-Working already: the loader fetches `content/articles/<local-date>.json` and falls back to `sample.json` with a visible notice, and the today card shows the title, word count, estimated seconds and preview words.
+The loader fetches `content/articles/<local-date>.json`, falls back to `sample.json` with a visible notice, and shows the empty screen when neither exists. `site/content/index.json` lists the dates that have articles and is what the service worker reads to decide what to precache. `new-article.mjs` appends to it.
 
-Three things remain.
+An article missing a `source` block, or missing a body, is refused outright with a console warning and a plain explanation on screen. That turns rule 4 from a promise into behaviour.
 
-- [ ] `site/content/index.json`, a sorted array of the dates that have articles. The service worker in WP5 needs it to decide what to precache.
-- [ ] A "no article today" screen for when neither today's file nor the sample exists. Keep it calm and short, and do not style it as an error.
-- [ ] A guard that refuses to render an article whose JSON has no `source` block, with a warning in the console. This turns rule 4 in CLAUDE.md into something the code enforces.
+## WP3, quiz and results flow (done)
 
-Acceptance: a dated file for today loads; without it the sample loads and says so; without either the empty screen appears; an article missing `source` never renders.
+The scroll ends, the quiz runs, then the results screen. Both are built to the specification in `docs/design.md`.
 
-## WP3, quiz and results flow
+One question fills the screen at a time with a `1 / 3` counter above it. Tapping an option locks the rest, marks the correct one in the accent colour, dims a wrong pick, and moves on after 700 ms. The correct index stays inside a JavaScript closure and never reaches the markup, so the answer key is not one devtools panel away. The smoke test asserts that.
 
-Once the scroll finishes, quiz the reader and then show results.
+Results lead with the measured speed as the hero number, then the score, the streak, tomorrow's pace, the source credit, and the share controls. "Read again" is a quiet text button underneath, and a second read does not re-quiz.
 
-The visual specification for both screens is in `docs/design.md` under Screens. Build to it rather than improvising.
+## WP4, streak, calibration and adaptive speed (done)
 
-- [ ] Quiz screen, showing two or three single-choice questions from `article.quiz` one at a time, with tap targets big enough for a phone. Feedback lands on tap, with the accent color for a correct answer and the right option revealed for a wrong one, then it advances after about 600 ms.
-- [ ] Results screen replacing the current bare done screen. It shows the measured speed as words divided by active reading time, the comprehension score as `n/N`, the source attribution, and a closing line.
-- [ ] Wire the flow together: today card, countdown, reader, quiz, results. "Read again" moves to the results page as a secondary action, and re-reading does not re-quiz.
+Everything sits in localStorage under the `zephyr.` prefix: `profile` holds the current wpm, `history` is the array of finished days, `streak` holds a count and the last completed date. No accounts, no server.
 
-Acceptance: the whole flow works on a 390 px wide viewport; refreshing during the quiz restarts the day cleanly; the answers are absent from the DOM until the user taps.
+The first read starts at 110 wpm and the pace the reader settles on becomes their baseline. After each quiz, 80 percent or better adds 5 percent to tomorrow, below 60 percent takes 5 percent off, and the middle holds steady, clamped to 80 to 300 and rounded to the nearest 5.
 
-## WP4, streak, calibration and adaptive speed
+The streak counts consecutive local dates. `liveStreak()` reports zero once the last completed day is older than yesterday, so a lapsed streak stops being displayed without needing a background job to expire it.
 
-Everything sits in localStorage and there are no accounts. Three keys, all prefixed `zephyr.`: `profile` holding the current wpm, `history` as an array of date, wpm, score, total and words, and `streak` holding a count and the last completed date.
+Reopening after finishing shows that day's result rather than the article, which is what keeps one article a day meaning one article a day.
 
-- [ ] First run plays at 110 wpm with free speed adjustment, and whatever speed the reader settles on becomes their baseline.
-- [ ] Adaptive rule applied when the quiz is submitted. A score of 80 percent or better adds 5 percent to tomorrow, below 60 percent takes off 5 percent, and anything between holds steady. Clamp to the range 80 to 300 and round to the nearest 5. The results page announces tomorrow's speed.
-- [ ] Streak counts consecutive local dates with a completed quiz. A missed day resets it to zero on the next completion. It appears on the today card and the results page.
-- [ ] Reopening after finishing on the same day shows that day's results rather than the article, which protects the one-a-day scarcity.
+## WP5, PWA, installable and offline (done)
 
-Acceptance: edit the dates in localStorage to simulate three days and confirm the streak and the speed progression follow the rules above.
+`manifest.webmanifest` declares a standalone app with 192 and 512 pixel icons plus a maskable variant. The wind mark is `site/icons/zephyr.svg`, also used as the favicon, rasterised to PNG for the launcher.
 
-## WP5, PWA, installable and offline
+`sw.js` precaches the shell on install. On activate it drops old caches, then reads `content/index.json` and caches today's and tomorrow's articles, so crossing midnight without signal still works. Content is network first with a cache fallback because it changes daily; the shell is cache first because it only changes when `CACHE` is bumped at deploy time.
 
-- [ ] `manifest.webmanifest` with the name Zephyr, `standalone` display, theme and background colors taken from the tokens in `app.css`, and 192 and 512 pixel icons. Draw a simple wind mark as SVG, render it to PNG, and put both in `site/icons/`.
-- [ ] `sw.js` precaches the app shell, then on activation reads `content/index.json` and caches today's and tomorrow's articles. Cache-first for the shell and network-first for `index.json`.
-- [ ] The `apple-mobile-web-app-*` meta tags, and installability passing Lighthouse.
+Registration is skipped outside a secure context, so local development over plain http behaves normally.
 
-Acceptance: it installs from Android Chrome and from iOS Safari via Add to Home Screen, and reloading in airplane mode still opens today's article.
+Remaining to confirm on real hardware: Add to Home Screen on iOS Safari, and an airplane-mode reload.
 
 ## WP6, share card and WhatsApp loop (done)
 
@@ -117,31 +108,27 @@ Where `navigator.share` exists the screen shows a single Share button and the pl
 
 Remaining for WP3: move these controls onto the real results screen, keeping Share primary and "Read again" secondary.
 
-## WP7, daily notifications
+## WP7, daily notifications (done)
 
-Three options, listed in the order worth considering them. Option A needs WP5 first.
+`.github/workflows/daily-nudge.yml` sends each reader a short WhatsApp message through CallMeBot on a daily cron, with manual dispatch for testing.
 
-Option B, CallMeBot, is the one to do first because it takes five minutes. Each friend sends the activation message from their own WhatsApp to CallMeBot's number and receives a personal API key in reply. A scheduled job, either a GitHub Actions cron in this repo or a Cloudflare Worker cron, then sends a GET to `https://api.callmebot.com/whatsapp.php?phone=<E164>&apikey=<key>&text=<msg>` at the chosen hour. Phone numbers and keys belong in repo or Worker secrets and never in code. The service is unofficial and run by one person, which is fine for two friends and unsuitable as the foundation of a public product.
+It is deliberately inert until configured. With no `NUDGE_*` secrets set it reports that nothing is configured and exits 0, so it never fails a run or sends failure mail before anyone has set it up. The setup steps for each reader are in the file's header comment.
 
-Option A, Web Push, is the real product feature and requires WP5. A small Cloudflare Worker with KV stores the push subscriptions along with each subscriber's UTC offset captured at subscribe time. An hourly cron fires and pushes to whoever's local time matches their chosen hour. VAPID keys go in Worker secrets. On iOS, web push reaches installed PWAs only, from version 16.4.
+CallMeBot has no notion of a subscriber. Each reader activates it from their own phone, receives a key, and passes that key to whoever holds the repo secrets. A key only authorises messaging the phone that activated it, so passing it along grants nothing else. It suits two friends and does not generalise, which is why Web Push stays the eventual answer: it needs no key exchange, a reader subscribes with one tap, and it arrives free with the PWA that WP5 already built.
 
-Option C, the Meta WhatsApp Business Cloud API, is worth setting up only if this becomes a public product. It needs a Meta developer app, a WhatsApp Business Account, a registered number, and an approved utility template before it can send business-initiated messages. The per-message cost is negligible at this scale and the setup is the real expense.
+## WP8, curation toolkit (done)
 
-Acceptance for option B: both phones receive the daily message at the configured hour for three consecutive days.
+Two scripts turn the content rules into something a machine checks.
 
-## WP8, curation toolkit
+`scripts/new-article.mjs <source.txt> --date --title --author --license --url` splits a source into paragraphs, scaffolds `site/content/articles/<date>.json` with empty preview and quiz slots, copies the untrimmed text to `content-raw/<date>.txt`, and adds the date to `content/index.json`. It refuses to overwrite an existing article.
 
-Node scripts that speed up human curation and turn the content rules into something a machine checks.
+`scripts/check-article.mjs <file>` reports word count, Flesch-Kincaid grade, top-2000 coverage and the off-list words, and exits 1 when any threshold is missed. Coverage matching strips regular suffixes and maps common irregular forms, because the word list holds lemmas only and `was` or `went` would otherwise swamp the report.
 
-- [ ] `scripts/check-article.mjs <file.json|file.txt>` prints the word count, the Flesch-Kincaid grade, the top-2000 coverage percentage, and the list of off-list words. It exits 1 when the word count falls outside 220 to 320, the grade exceeds 6, or coverage drops below 95 percent.
-- [ ] An openly licensed top-2000 English frequency list, NGSL or equivalent, vendored into `scripts/data/top2000.txt` as one lemma per line with a source note at the top. Verify the licence before committing it.
-- [ ] `scripts/new-article.mjs <source.txt> --date --title --author --license --url` scaffolds a dated article JSON with the body split into paragraphs and empty slots for preview words and quiz, then appends the date to `content/index.json`.
-- [ ] A provenance check inside `check-article.mjs`. The untrimmed source text lives in `content-raw/<id>.txt`, which stays in the repo but outside `site/` so it never ships. The check verifies that every sentence of `body` appears verbatim in the raw source, which makes deletion-only editing something the machine enforces rather than something a person has to trust.
-- [ ] The weekly batch routine documented at the top of `docs/content-sources.md`.
+The provenance check is the part that matters. When `content-raw/<id>.txt` exists, every sentence of `body` must appear in it verbatim after whitespace is normalised, and any sentence that does not is named and fails the run. Deleting from a source passes. Rewriting a single sentence does not, and this was tested both ways. While a person is watching, deletion-only editing holds on good faith; once trimming is delegated, this script is the only thing between a trimmed excerpt and a quietly paraphrased one.
 
-The provenance check matters more than its position in this list suggests. While a person is watching, deletion-only editing holds up on good faith. Once a scheduled job does the trimming unattended, that script is the only thing standing between a trimmed excerpt and a quietly paraphrased one. Any move toward automation should pull this package forward.
+The word list is the New General Service List 1.2, the first 2000 lemmas by frequency rank, under CC BY-SA 4.0 with the attribution in the file header. Note for anyone re-fetching it: the `.org` domain that older references cite no longer belongs to the project and now redirects to unrelated content. The live source is `newgeneralservicelist.com`.
 
-Acceptance: the checker produces a report for `sample.json`, which is allowed to fail the thresholds since it exists to demonstrate the schema; and the output of `new-article.mjs` validates and loads in the app.
+One known quirk: NGSL carries no entries for spelled-out numbers, so `two` and `three` always appear as off-list words. That is the source list's shape, not a fault in the checker.
 
 ## WP9, deploy and polish (partial)
 
@@ -153,8 +140,14 @@ The project is connected to the GitHub repository, so **pushing to `main` deploy
 
 Do not also run `wrangler pages deploy` by hand now that Git is connected. Mixing the two makes the deployment list ambiguous about which commit is live.
 
+Done since: every color pair clears WCAG AA in both themes, checked by `scripts/check-contrast.mjs` rather than by eye. Focus is visible on every control. Reduced motion switches the reader to advancing a paragraph at a time, holding each for the time it would have taken to scroll past, which keeps the pacing without anything sliding; simply disabling the animation would have removed the product. The keyboard hint is shown only where a keyboard exists.
+
 Still to do:
 
-- [ ] An accessibility pass covering visible focus states, the reduced-motion paragraph-step mode, and contrast in both themes.
-- [ ] Lighthouse PWA and accessibility scores of 90 or better.
+- [ ] Lighthouse PWA and accessibility scores of 90 or better, run against the deployed site.
+- [ ] Confirm Add to Home Screen and an airplane-mode reload on real Android and iOS hardware.
 - [ ] Optionally, Cloudflare Web Analytics, which is cookieless, for page views and nothing personal.
+
+## What is left overall
+
+The software is finished. What the product still lacks is articles. `site/content/index.json` is empty, so every visit falls back to the Aesop sample, and the first real batch means sitting down with the sources in `docs/content-sources.md` and running the two scripts. That is the work that turns this from a working toy into something worth opening daily.
