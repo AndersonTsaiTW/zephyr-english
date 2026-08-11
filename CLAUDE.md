@@ -13,6 +13,8 @@ Zephyr is a daily English reading trainer. One article per day scrolls by itself
 
 Site code lives in `site/` as `index.html`, `app.css` and `app.js`. Keep `app.js` in one file until splitting it genuinely helps.
 
+Read `docs/design.md` before adding or changing any screen. It carries the color tokens, the type scale, the component specs and the layouts for screens that do not exist yet. Style through the tokens and never write a literal color in a component rule, because a literal only works in one theme. After touching a token, run `node scripts/check-contrast.mjs`, which fails if any pair drops below WCAG AA.
+
 Articles live in `site/content/articles/YYYY-MM-DD.json`. The schema is whatever `sample.json` shows. The app works out today from the device's local date and falls back to `sample.json` during development.
 
 An article should run 220 to 320 words, sit at Flesch-Kincaid grade 6 or below, and keep at least 95 percent of its tokens inside a top-2000 frequency list. The checker script that enforces this arrives in WP8.

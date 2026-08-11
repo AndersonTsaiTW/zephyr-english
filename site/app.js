@@ -14,6 +14,34 @@ function show(name) {
   screens[name].classList.add('active');
 }
 
+/* ---------- theme ---------- */
+
+const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+function activeTheme() {
+  return document.documentElement.dataset.theme || (darkQuery.matches ? 'dark' : 'light');
+}
+
+function paintThemeButton() {
+  const btn = $('themeBtn');
+  const dark = activeTheme() === 'dark';
+  btn.classList.toggle('is-dark', dark);
+  btn.classList.toggle('is-light', !dark);
+  btn.title = dark ? 'Switch to light' : 'Switch to dark';
+}
+
+function toggleTheme() {
+  const next = activeTheme() === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = next;
+  localStorage.setItem('zephyr.theme', next);
+  paintThemeButton();
+}
+
+// Follow the system while nothing is pinned.
+darkQuery.addEventListener('change', () => {
+  if (!document.documentElement.dataset.theme) paintThemeButton();
+});
+
 function todayKey() {
   const d = new Date();
   const p = (n) => String(n).padStart(2, '0');
@@ -43,6 +71,7 @@ async function tryFetch(path) {
 }
 
 async function init() {
+  paintThemeButton();
   $('dayLabel').textContent = todayKey();
   let article = await tryFetch(`content/articles/${todayKey()}.json`);
   let isSample = false;
@@ -198,6 +227,7 @@ function finish() {
 
 /* ---------- events ---------- */
 
+$('themeBtn').addEventListener('click', toggleTheme);
 $('startBtn').addEventListener('click', startReading);
 $('againBtn').addEventListener('click', startReading);
 $('playBtn').addEventListener('click', toggle);

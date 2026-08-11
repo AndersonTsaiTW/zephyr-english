@@ -70,6 +70,8 @@ Acceptance: a dated file for today loads; without it the sample loads and says s
 
 Once the scroll finishes, quiz the reader and then show results.
 
+The visual specification for both screens is in `docs/design.md` under Screens. Build to it rather than improvising.
+
 - [ ] Quiz screen, showing two or three single-choice questions from `article.quiz` one at a time, with tap targets big enough for a phone. Feedback lands on tap, with the accent color for a correct answer and the right option revealed for a wrong one, then it advances after about 600 ms.
 - [ ] Results screen replacing the current bare done screen. It shows the measured speed as words divided by active reading time, the comprehension score as `n/N`, the source attribution, and a closing line.
 - [ ] Wire the flow together: today card, countdown, reader, quiz, results. "Read again" moves to the results page as a secondary action, and re-reading does not re-quiz.
