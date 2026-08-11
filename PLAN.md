@@ -28,7 +28,7 @@ Lane 1  reader      WP2 -> WP3 -> WP4 -> WP6      strictly serial
 Lane 2  curation    WP8                           safe to start now
 Lane 3  delivery    WP7-B -> WP5 -> WP7-A         safe to start now
                           everything -> WP9
-```text
+```
 
 Lane 1 cannot be split. All four packages rewrite the same parts of `site/app.js` and `index.html`. WP3 and WP4 both replace `finish()`, and WP4's rule fires when a quiz is submitted, so it has nothing to hook into until WP3 exists. WP6 attaches a share button to the results screen that WP3 builds.
 
