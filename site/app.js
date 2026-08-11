@@ -119,6 +119,53 @@ function liveStreak() {
   return 0;
 }
 
+/* ---------- keeping the record ---------- */
+
+// Browsers are allowed to clear a site's storage when space runs short, and
+// Safari discards it for sites left untouched for a week. Asking marks the
+// data as worth keeping. Permission is granted on engagement, so it tends to
+// be refused on a first visit and granted once the app is used regularly or
+// added to the home screen. Nothing depends on the answer.
+async function requestDurableStorage() {
+  try {
+    if (navigator.storage?.persist) await navigator.storage.persist();
+  } catch {
+    // An older browser without the API loses nothing it had before.
+  }
+}
+
+const BACKUP_KEYS = ['profile', 'history', 'streak', 'level', 'stepMode', 'theme'];
+
+// A backup is a block of text rather than an account. Nothing is uploaded and
+// there is nothing to sign in to. Copy it somewhere safe, paste it into a new
+// phone, and the streak carries over.
+function exportProgress() {
+  const data = {};
+  for (const key of BACKUP_KEYS) {
+    const value = localStorage.getItem(`zephyr.${key}`);
+    if (value !== null) data[key] = value;
+  }
+  const json = JSON.stringify({ v: 1, saved: dayKey(), data });
+  return btoa(unescape(encodeURIComponent(json)));
+}
+
+function importProgress(text) {
+  let parsed;
+  try {
+    parsed = JSON.parse(decodeURIComponent(escape(atob(text.trim()))));
+  } catch {
+    return { ok: false, message: 'That does not look like a Zephyr backup.' };
+  }
+  if (!parsed || parsed.v !== 1 || typeof parsed.data !== 'object') {
+    return { ok: false, message: 'That backup is from a version this app does not understand.' };
+  }
+  for (const [key, value] of Object.entries(parsed.data)) {
+    if (BACKUP_KEYS.includes(key)) localStorage.setItem(`zephyr.${key}`, value);
+  }
+  const days = JSON.parse(parsed.data.history || '[]').length;
+  return { ok: true, message: `Restored ${days} day${days === 1 ? '' : 's'} of reading.` };
+}
+
 /* ---------- theme ---------- */
 
 const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -195,6 +242,7 @@ async function init() {
   paintThemeButton();
   paintStepButton();
   setupShareControls();
+  requestDurableStorage();
   $('dayLabel').textContent = dayKey();
 
   const today = dayKey();
@@ -656,6 +704,43 @@ function setupShareControls() {
 /* ---------- events ---------- */
 
 $('themeBtn').addEventListener('click', toggleTheme);
+
+$('backupBtn').addEventListener('click', () => {
+  const days = history().length;
+  const streak = liveStreak();
+  $('backupSummary').textContent = days
+    ? `${days} day${days === 1 ? '' : 's'} read, ${streak} day streak`
+    : 'Nothing recorded yet.';
+  $('backupText').value = exportProgress();
+  $('backupStatus').hidden = true;
+  $('backupDialog').showModal();
+});
+$('closeBackupBtn').addEventListener('click', () => $('backupDialog').close());
+$('copyBackupBtn').addEventListener('click', async () => {
+  const field = $('backupText');
+  field.select();
+  let copied = false;
+  try {
+    await navigator.clipboard.writeText(field.value);
+    copied = true;
+  } catch {
+    try {
+      copied = document.execCommand('copy');
+    } catch {
+      copied = false;
+    }
+  }
+  const status = $('backupStatus');
+  status.hidden = false;
+  status.textContent = copied ? 'Copied. Keep it somewhere you will find it again.' : 'Press Ctrl+C to copy.';
+});
+$('restoreBtn').addEventListener('click', () => {
+  const result = importProgress($('backupText').value);
+  const status = $('backupStatus');
+  status.hidden = false;
+  status.textContent = result.message;
+  if (result.ok) setTimeout(() => location.reload(), 900);
+});
 $('stepBtn').addEventListener('click', toggleStepMode);
 $('shareBtn').addEventListener('click', shareResult);
 $('waBtn').addEventListener('click', openWhatsApp);

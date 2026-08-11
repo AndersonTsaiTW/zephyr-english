@@ -79,7 +79,7 @@ body {
   font-size: 0.75rem;
   color: var(--muted);
 }
-.theme {
+.iconbtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -91,8 +91,12 @@ body {
   border: none;
   flex: none;
 }
-.theme:hover { color: var(--accent); }
-.theme svg { display: none; width: 1.05rem; height: 1.05rem; }
+.iconbtn:hover { color: var(--accent); }
+.iconbtn svg { width: 1.05rem; height: 1.05rem; }
+
+/* The theme button holds both icons and shows whichever the tap will switch
+   to, so its own svg rule has to be narrower than the shared one above. */
+.theme svg { display: none; }
 .theme.is-dark .sun { display: block; }
 .theme.is-light .moon { display: block; }
 
@@ -145,6 +149,41 @@ h1 {
   padding: 0.4rem 0.7rem;
   margin: 0 auto;
 }
+/* ---- backup dialog ---- */
+dialog {
+  max-width: 32rem;
+  width: calc(100% - 2rem);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  color: var(--ink);
+  padding: 1.5rem;
+}
+dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
+dialog h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin: 0 0 0.75rem;
+}
+dialog .hint { text-align: left; }
+dialog .meta { text-align: left; margin: 0.75rem 0 0.5rem; }
+dialog textarea {
+  width: 100%;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--ground);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.6rem;
+  resize: vertical;
+  word-break: break-all;
+}
+dialog textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+dialog .actions { margin-top: 1rem; }
+
 .levels {
   display: flex;
   justify-content: center;

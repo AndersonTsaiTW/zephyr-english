@@ -83,6 +83,10 @@ When testing locally, run `npx serve site` and open the address it prints. Openi
 
 Do not add tracking, user accounts, or a server unless a work package specifically asks for one.
 
+There are no accounts and there should not be. Reading speed, streak and history live in localStorage on the reader's own device. Two things guard that. The app asks for persistent storage on load, which stops a browser discarding the data when space runs low or, on Safari, after a week untouched. And the backup button in the top bar exports everything as a block of text the reader can paste into another phone, so moving device does not need a sign-in.
+
+What still loses the record: clearing site data by hand, and reading in a private window. Say so plainly if anyone asks rather than implying the data is safer than it is.
+
 ## Two bugs worth knowing about
 
 Both of them looked identical from the outside. You opened the page and the article area was empty. Nothing in the code looked wrong either time, and both took hours to find.

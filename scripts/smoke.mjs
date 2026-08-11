@@ -249,6 +249,34 @@ check('the substitution is explained', await soloLevel.locator('#levelNote').isV
 await soloLevel.close();
 await lvl.close();
 
+// Backup and restore. The point is that a streak survives a new phone
+// without anyone having to create an account.
+const backup = await newPage();
+await backup.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle' });
+await backup.evaluate(() => {
+  localStorage.setItem('zephyr.streak', JSON.stringify({ count: 9, lastDate: '2099-01-01' }));
+  localStorage.setItem('zephyr.history', JSON.stringify([{ date: '2099-01-01', wpm: 150, streak: 9, day: 9 }]));
+  localStorage.setItem('zephyr.profile', JSON.stringify({ currentWpm: 165 }));
+});
+const code = await backup.evaluate('exportProgress()');
+check('a backup is produced', typeof code === 'string' && code.length > 20);
+
+const restored = await backup.evaluate((text) => {
+  localStorage.clear();
+  const result = importProgress(text);
+  return {
+    ok: result.ok,
+    streak: JSON.parse(localStorage.getItem('zephyr.streak') || 'null'),
+    wpm: JSON.parse(localStorage.getItem('zephyr.profile') || 'null'),
+  };
+}, code);
+check('wiped progress can be restored', restored.ok && restored.streak?.count === 9 && restored.wpm?.currentWpm === 165,
+  `streak ${restored.streak?.count}, ${restored.wpm?.currentWpm} wpm`);
+
+const junk = await backup.evaluate("importProgress('not a backup')");
+check('nonsense input is refused', junk.ok === false, junk.message);
+await backup.close();
+
 check('no unexpected page errors', errors.length === 0, errors.join(' | '));
 
 await browser.close();
