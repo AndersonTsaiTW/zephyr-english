@@ -54,13 +54,21 @@ News sites such as CBC, CTV and Global, along with publisher graded readers and 
 
 Anything whose licence cannot be named.
 
-## Difficulty gate
+## How hard an article is allowed to be
 
-The WP8 script enforces three thresholds: 220 to 320 words, Flesch-Kincaid grade 6 or below, and at least 95 percent of tokens inside the top-2000 frequency list.
+Three limits, all checked by `scripts/check-article.mjs`.
 
-## The weekly batch
+Between 220 and 320 words. Below that there is not enough to build a rhythm; above it the session stops being two minutes.
 
-Collect candidates from the sources above, a week or two at a time. A person does this step. Save each candidate as a plain `.txt` file with the full, untrimmed text.
+Flesch-Kincaid grade 6 or lower. That is a standard readability score based on sentence length and how many syllables the words have. Grade 6 is roughly what a twelve year old reads without effort. It sounds low, but you are reading it at speed in a second language, and the difficulty has to come from the pace rather than the vocabulary.
+
+At least 95 of every 100 words come from `scripts/data/top2000.txt`, the two thousand most common English words. So no more than five unfamiliar words per hundred, which is about the point where you can still follow a text without stopping.
+
+## Preparing a batch
+
+Do a week or two at a time.
+
+Pick your candidates from the sources above and save each one as a plain `.txt` file containing the full text, exactly as published. Do not tidy it up. This file is what the checking script later compares against, so if you clean it first, the check no longer proves anything.
 
 Scaffold the article with `scripts/new-article.mjs`:
 
@@ -75,8 +83,22 @@ node scripts/new-article.mjs candidate.txt --date 2026-08-11 \
 
 This writes `site/content/articles/2026-08-11.json` with the source text split into paragraphs and empty `previewWords` and `quiz` arrays, copies the untrimmed text to `content-raw/2026-08-11.txt`, and adds the date to `site/content/index.json`, creating that file if it does not exist yet. It refuses to overwrite either file, so re-running it on the same date is safe.
 
-Trim the `body` paragraphs in the article JSON down to 220 to 320 words by deleting sentences, never by adding or rewriting them. Run `scripts/check-article.mjs site/content/articles/2026-08-11.json` and keep cutting until it passes. The script checks word count, Flesch-Kincaid grade, and top-2000 coverage against `scripts/data/top2000.txt`, a lemma list derived from the New General Service List (NGSL) 1.2, CC BY-SA 4.0, capped at the first 2000 entries by frequency rank. See the header of that file for the exact source and the licence statement it was checked against. The same run also compares every surviving sentence against `content-raw/2026-08-11.txt` and fails if one does not appear there verbatim, which is what makes deletion-only editing something the machine checks rather than something a person has to trust.
+Now cut the `body` paragraphs down to 220 to 320 words. Delete sentences and words. Do not reword anything, do not join two sentences, do not simplify a hard phrase. If a passage will not come down to size by cutting, drop it and use a different part of the source.
 
-Write the quiz and the glosses directly in the article JSON. A model may draft them, and a person approves every question.
+Then run the checker:
 
-Keep at least fourteen days of buffer ahead in `site/content/index.json`.
+```text
+node scripts/check-article.mjs site/content/articles/2026-08-11.json
+```
+
+It tells you the word count, the reading grade, the percentage of common words, and lists every word that fell outside the common two thousand. Keep cutting until it passes.
+
+It also compares every sentence you kept against `content-raw/2026-08-11.txt` and fails if one does not appear there word for word. That is the part that makes "only delete" a rule the computer checks instead of a promise someone has to keep. Deleting passes. Changing a single word does not, and the failure names the sentence.
+
+The word list behind the common-word check comes from the New General Service List, a published frequency ranking, trimmed to its first two thousand entries. It is shared under a licence requiring credit and requiring any modified version to be shared on the same terms, so leave the file alone. The full source and licence wording are in the comment at the top of it.
+
+One quirk to expect: that list has no entries for spelled-out numbers, so `two` and `three` will always be reported as uncommon words. Ignore those.
+
+Last, write the quiz questions and the word definitions straight into the article file. A model may draft them, but read every question yourself before it ships.
+
+Keep at least two weeks of articles scheduled ahead.

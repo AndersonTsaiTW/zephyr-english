@@ -1,130 +1,126 @@
-# Design system
+# Design guide
 
-Everything a session needs to build a screen that looks like it belongs. Read this before adding UI. If a value you need is missing here, pick the nearest one on the scales below rather than inventing a new number.
+Read this before building or changing a screen. If you need a value that is not here, use the nearest one on the scales below rather than inventing a new number. That is what keeps screens built months apart looking like the same product.
 
-The product is a reading tool, so the article is the only thing on screen that should feel designed. Interface chrome stays quiet and gets out of the way.
+The article is the only thing on screen that should feel designed. Everything else stays quiet and gets out of the way.
 
-## Color
+## Colours
 
-Tokens live at the top of `site/app.css`. Always style through a token and never write a literal color in a component rule, because a literal only works in one theme.
+All colours are defined once, as named variables at the top of `site/app.css`. Always use the variable. Never write an actual colour code inside a rule for a button or a card, because the site has a light theme and a dark theme, and a fixed colour will be wrong in one of them.
 
-| Token | Light | Dark | Used for |
+| Variable | Light | Dark | What it is for |
 | --- | --- | --- | --- |
-| `--ground` | `#F5F9FA` | `#0D1519` | Page background |
-| `--surface` | `#FFFFFF` | `#142027` | Cards, the reader panel, buttons at rest |
-| `--ink` | `#17262E` | `#DAE5EA` | Body and heading text |
-| `--muted` | `#5C7079` | `#8CA3AD` | Captions, labels, secondary numbers |
-| `--accent` | `#1D7387` | `#56B4C8` | The one hue: brand mark, primary button, progress, focus band |
-| `--accent-soft` | `#E1EFF2` | `#17323A` | Accent at low intensity: focus band, notices, correct answers |
+| `--ground` | `#F5F9FA` | `#0D1519` | The page background |
+| `--surface` | `#FFFFFF` | `#142027` | Cards, the reading panel, buttons |
+| `--ink` | `#17262E` | `#DAE5EA` | Ordinary text |
+| `--muted` | `#5C7079` | `#8CA3AD` | Small print, labels, secondary numbers |
+| `--accent` | `#1D7387` | `#56B4C8` | The one colour: logo, main button, progress bar |
+| `--accent-soft` | `#E1EFF2` | `#17323A` | A faint wash of the accent, for the reading band |
 | `--line` | `#D9E3E7` | `#223440` | Borders and dividers |
-| `--on-accent` | `#FFFFFF` | `#0D1519` | Text and icons sitting on an `--accent` fill |
+| `--on-accent` | `#FFFFFF` | `#0D1519` | Text sitting on top of an accent-coloured button |
 
-`--on-accent` flips because the dark theme's accent is a lighter cyan. White on it measures 2.4:1, which fails the 4.5:1 minimum, while the near-black reaches 7.7:1. Any element filled with `--accent` takes its foreground from this token rather than a literal white.
+The greys are very slightly blue, so they sit with the accent instead of fighting it. Keep that if you add a shade.
 
-The neutrals carry a slight cyan bias so they sit with the accent rather than fighting it. Keep it that way if you add a shade.
+There is one accent colour and it means "Zephyr" or "this is active". Do not introduce a second one. Quiz feedback is the only place a colour carries meaning, and even there, a correct answer uses the soft accent rather than a new green.
 
-`node scripts/check-contrast.mjs` measures every text-on-background pair in both themes and exits non-zero if any drops below 4.5:1. Run it after touching a token. The tightest pair today is the accent as text on `--accent-soft` at 4.63:1, so there is very little headroom and eyeballing a new shade will not do.
+`--on-accent` flips between themes for a reason worth knowing. Text needs to be about four and a half times brighter or darker than what is behind it to be comfortably readable. White text on the light theme's accent passes. On the dark theme the accent is a much paler blue, and white on it fails badly, so it switches to near-black instead.
 
-There is one accent and it means "Zephyr" or "active". Do not add a second brand hue. Quiz feedback is the one place semantic color is allowed, and even there the correct state uses `--accent-soft` rather than a new green.
+Run `node scripts/check-contrast.mjs` after touching any colour. It measures every combination in both themes and fails if one is too close. The tightest pair right now has almost no room to spare, so judging a new shade by eye will not work.
 
-### Theme structure
+### How the two themes are wired
 
-Three states, and all three have to work. `:root` defines the full light palette. The `prefers-color-scheme: dark` block redefines the tokens under `:root:not([data-theme="light"])`, so a reader who pinned light beats a dark operating system. `:root[data-theme="dark"]` redefines them again so a pinned dark beats a light system.
+There are three situations to handle, not two. Someone can explicitly choose light, explicitly choose dark, or leave it alone and follow their phone or computer.
 
-An inline script in `<head>` applies the stored preference before first paint, which is what stops the page flashing the wrong theme on load. Leave it in `<head>` and inline. Moving it into `app.js` reintroduces the flash.
+So: the plain `:root` block holds the complete light palette. A `prefers-color-scheme: dark` block overrides those variables for people whose device is set to dark, but skips anyone who explicitly chose light. A third block overrides them again for anyone who explicitly chose dark, so that beats a device set to light.
 
-## Type
+A small script in the page `<head>` applies a saved choice before anything is drawn. That is what stops the page flashing white for an instant before turning dark. Leave it in the `<head>` and leave it inline. Moving it into `app.js` brings the flash back.
 
-Three faces, each with one job. Georgia is the reading and display face and carries the product's book-like feel. `system-ui` handles interface text. A monospace face handles labels and anything with digits that line up.
+## Text
 
-| Step | Size | Face | Used for |
+Three typefaces, each with one job. Georgia is for reading and for headings; it is what makes the app feel like a book rather than a dashboard. The system font handles buttons and labels. A monospaced font handles small labels and anything with numbers that should line up.
+
+| Name | Size | Font | Used for |
 | --- | --- | --- | --- |
-| Hero | 2.6rem | Georgia 500 | The speed number on the results screen |
-| Display | 1.8rem | Georgia 500 | Screen titles |
-| Title | 1.35rem | Georgia 500 | Article title in the reader, quiz question |
-| Reading | 1.2rem | Georgia 400 | Article body, line height 1.8 |
-| Body | 1rem | system-ui | Interface text, line height 1.6 |
-| Caption | 0.85rem | system-ui | Hints, secondary lines |
-| Label | 0.75rem | monospace | Uppercase labels, dates, counters, letter-spacing 0.18em |
+| Hero | 2.6rem | Georgia | The speed number on the results screen |
+| Display | 1.8rem | Georgia | Screen titles |
+| Title | 1.35rem | Georgia | Article title, quiz question |
+| Reading | 1.2rem | Georgia | The article itself, line spacing 1.8 |
+| Body | 1rem | System font | Buttons and ordinary interface text |
+| Caption | 0.85rem | System font | Hints and secondary lines |
+| Label | 0.75rem | Monospace | Small uppercase labels, dates, counters |
 
-Reading size and line height are the two values most worth protecting. At 1.2rem with line height 1.8 a phone gets roughly 40 characters per line, which is where the scroll stays comfortable. Changing either changes how the scroll feels, so treat them as fixed.
+The reading size and its line spacing are the two values most worth protecting. At 1.2rem with 1.8 line spacing, a phone fits roughly forty characters per line, which is where the scrolling feels comfortable rather than frantic. Changing either changes how the whole product feels, so treat them as settled.
 
-Numbers that a reader compares across days, meaning speed, score and streak, get `font-variant-numeric: tabular-nums` so they do not jitter.
+Numbers a reader compares between days, meaning speed, score and streak, use `font-variant-numeric: tabular-nums` so the digits do not shuffle sideways as they change.
 
-The current CSS has a few sizes off this scale, specifically 0.92rem and 0.78rem. Reconcile them to Caption and Label in WP9 rather than adding more steps now.
+A few sizes in the stylesheet are slightly off this scale. Pull them onto it when convenient rather than adding more steps.
 
-## Two layout rules that have already bitten
+## Two layout rules learned the hard way
 
-Every flex item on the path from `body` down to `.reader` sets `min-height: 0`. Flex items default to `min-height: auto`, which refuses to shrink below the content, so a long article pushes the reader taller than the viewport. When that happens `scrollHeight` and `clientHeight` come out equal, there is nothing to scroll through, and the read ends on its first frame. Any new scroll container needs the same treatment.
+Both of these caused the same bug: a blank panel where the article should be.
 
-`[hidden] { display: none !important; }` sits near the top of the stylesheet. A `display` value in a stylesheet outranks the browser's own rule for the `hidden` attribute, so an element given `display: flex` by its class stays on screen no matter what the attribute says. The countdown overlay hid the entire article this way. Toggle visibility through the attribute and let that rule do the work rather than writing per-element `display` toggles.
+Every element in the chain from `body` down to `.reader` sets `min-height: 0`. In a flexible layout, an element normally refuses to shrink below the size of the text inside it. Without this, a long article stretched the reading panel taller than the screen, which left nothing to scroll through, so the article finished instantly. Any new scrolling area needs the same line.
+
+Near the top of the stylesheet sits `[hidden] { display: none !important; }`. HTML's `hidden` attribute is supposed to hide an element, but if a stylesheet says that element is visible, the stylesheet wins. Our countdown overlay had exactly that problem and stayed on screen forever, covering the article in the same colour as the panel behind it. With that rule in place, hiding something with the attribute works. Use the attribute and let the rule do the work.
 
 ## Spacing and shape
 
-Space runs on a 4px base: 0.25, 0.5, 0.75, 1, 1.5, 2 and 3rem. Lay groups out with flex or grid and `gap`, not per-element margins.
+Spacing uses multiples of 4 pixels: 0.25, 0.5, 0.75, 1, 1.5, 2 and 3rem. Lay groups out with `gap` rather than putting margins on each item, because margins between neighbours collapse into each other in ways that are hard to predict.
 
-Content sits in a 560px column, centered, with 1.25rem of side padding. That column holds on a phone and stops the layout stretching on a laptop.
+Content sits in a column 560 pixels wide, centred, with 1.25rem of padding at the sides. That holds together on a phone and stops lines getting uncomfortably long on a laptop.
 
-Corner radii carry meaning. Pills at 999px are controls you press. Cards and panels use 18px, option buttons and small cards 12px, and inline notices 10px.
+Rounded corners carry meaning. Fully rounded means you can press it. Cards and panels use 18 pixels, smaller cards and quiz options 12, small notices 10.
 
-Borders are always 1px in `--line`. There is one shadow in the product, on nothing at present, and adding more is a regression.
+Borders are always one pixel in `--line`. There are no drop shadows in this product, and adding one is a step backwards.
 
-## Components
+## The pieces
 
-**Primary button.** Pill shape, `--accent` background, white text, 0.8rem by 2rem padding, 1.05rem text. One per screen at most.
+**Main button.** Fully rounded, accent background, `--on-accent` text, 0.8rem by 2rem of padding. At most one per screen.
 
-**Icon button.** Pill, 2.5rem square, `--surface` background, 1px `--line` border. Border turns `--accent` on hover. The reader's play button is the enlarged variant at 3.2rem with an accent fill.
+**Icon button.** Fully rounded, 2.5rem square, surface background with a one pixel border that turns accent on hover. The play button in the reader is the same thing at 3.2rem, filled with the accent.
 
-**Card row.** `--surface` background, 1px `--line` border, 12px radius, 0.5rem by 0.9rem padding. The preview word rows use this and the quiz options extend it.
+**Card row.** Surface background, one pixel border, 12 pixel corners. The preview words use this, and the quiz options are the same thing made taller.
 
-**Focus.** Every interactive element shows `2px solid var(--accent)` at 2px offset on `:focus-visible`. Do not remove it.
+**Focus.** Every control shows a two pixel accent outline when reached by keyboard. Never remove it. Someone navigating without a mouse has no other way to tell where they are.
 
-Any tappable target is at least 44px in its smaller dimension.
+Anything you tap must be at least 44 pixels on its shorter side.
 
-## Screens
+## The screens
 
-### Today card
+### Today
 
-Vertically centered, text centered. The article title at Display, then a Caption line reading word count, estimated seconds and current speed, then the preview words as card rows, then the primary button, then a one-line hint. Once WP4 lands, the streak sits above the title as a Label.
+Centred on the screen. The streak sits above the title if there is one, then the article title, then a line giving the word count and roughly how long it will take, then the preview words as card rows, then the button, then a single line of explanation.
 
 ### Reader
 
-The panel fills the available height with `--surface`, an 18px radius and a 1px border. Text scrolls under a focus band at 37 percent from the top, 26 percent tall, painted in `--accent-soft` at half opacity. Fade masks 28 percent tall at each end blend the text into the panel.
+The panel fills the available height. Text scrolls upward underneath a faint band about a third of the way down, which gives your eyes somewhere fixed to rest. The text fades out towards the top and bottom edges so lines arrive and leave gently instead of being cut off.
 
-Controls sit below in one centered row: slower, play, faster, then the current speed as a Label with the number one step larger in `--ink`.
+Below sit the slower, play and faster buttons, and the current speed. Under that, a thin progress bar.
 
-The progress bar is a 3px `--line` track with an `--accent` fill.
+### Quiz
 
-### Quiz (WP3)
+One question per screen, centred, with a small counter like `1 / 3` above it. The question wraps at about 24rem so it breaks into readable lines. Options stack down the screen as tall card rows with text aligned left.
 
-One question per screen, vertically centered like the today card.
+Tapping an option locks the rest. The correct one takes an accent border and a soft accent fill. If the tap was wrong, that option fades to grey and the correct one lights up beside it. After about seven tenths of a second the next question replaces it.
 
-A Label counter at the top reads the position, for example `1 / 3`. The question follows at Title size, centered, capped at about 24rem so it wraps in a readable shape. Options stack full width below with 0.6rem between them, each a card row at 12px radius with at least 3.25rem of height and left-aligned Body text.
+The correct answer must stay in JavaScript. Putting it in the HTML, even as a class name or a data attribute, means anyone can open developer tools and read the answers.
 
-On tap the correct option takes an `--accent` border with an `--accent-soft` fill. When the tapped one is wrong it drops to `--muted` text and keeps its plain border, and the correct one lights up alongside it. After roughly 600ms the next question replaces the current one. Once an option has been tapped the rest stop responding.
+### Results
 
-The correct index stays in JavaScript. Writing it into a `data-` attribute or a class before the tap puts the answer key in the DOM, which the acceptance criteria rule out.
+The reading speed is the hero: a large number with a small `wpm` label beside it. Then the score, then the streak, then tomorrow's starting speed, then the credit for the source. The share button is the main action, with "Read again" as quiet text underneath.
 
-### Results (WP3, filled out by WP4)
+### Nothing today
 
-The measured speed is the hero: the number at Hero size in Georgia with a `wpm` Label beside it, both centered. Comprehension follows as Body text reading `2 / 3 correct`. The streak comes next as a Label. Tomorrow's speed sits under that in Caption `--muted`, phrased as a plain statement rather than a promise.
+A title, one line under it, nothing else. It is a calm message, not an error, so no warning colours and no icon.
 
-Attribution is last before the actions, at Label size in `--muted`, naming the source, author and licence.
+## Movement
 
-Actions are the share button as primary, with "Read again" below it as a plain text button in `--muted`.
+There is one animation in this product and it is the scroll. Everything else changes state immediately or fades over at most a sixth of a second.
 
-### Empty state
+The countdown holds each numeral for a little under a second, large and in the accent colour.
 
-Display-size line, one Caption line under it, nothing else. It is a calm message and not an error, so no warning color and no icon.
-
-## Motion
-
-The product has one animation, which is the scroll. Everything else changes state instantly or fades over 150ms at most.
-
-The 3-2-1 countdown holds each numeral for 800ms at 4rem in `--accent` over `--surface`.
-
-Under `prefers-reduced-motion: reduce`, the reader switches to advancing one paragraph at a time on the same overall schedule instead of scrolling continuously. Turning the animation off entirely would break the product, so the paragraph-step mode is required rather than optional.
+Some people get motion sickness from text that slides, and their device tells us so. For them the reader moves a paragraph at a time instead, holding each paragraph for as long as it would have taken to scroll past, so the pacing is unchanged and nothing slides. The paragraph sits near the top of the panel rather than at the reading band, so a long one fits on screen in one piece. Simply switching the animation off is not an option, because the movement is the product.
 
 ## Things that would look wrong here
 
-Gradients on anything except the existing fade masks and focus band. A second accent hue. Emoji as interface decoration, including in section headings and buttons. Drop shadows on cards. Full-width edge-to-edge layouts on a laptop. Any font that is not one of the three named above. Animated page transitions between screens.
+Gradients, apart from the existing fades and the reading band. A second accent colour. Emoji used as decoration in headings or buttons. Shadows under cards. Layouts that stretch edge to edge on a laptop. Any font other than the three above. Screens that slide or fade into each other.

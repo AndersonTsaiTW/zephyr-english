@@ -1,83 +1,120 @@
 # Working on Zephyr
 
-Zephyr is a daily English reading trainer. One article a day scrolls by itself at a controlled speed, a short quiz follows, and the reader sees their speed and their streak. The audience is two adults preparing for CELPIP, the Canadian English test.
+## What this is
 
-`PLAN.md` is the source of truth for scope. Take the next unchecked work package and do that one.
+Zephyr shows you one short English article a day. The text scrolls upward on its own at a set speed, so you cannot stop and re-read a sentence. You just keep up. When the text runs out you answer two or three questions to show you understood it, and then you see how fast you read and how many days in a row you have done this.
 
-## Rules that do not bend
+The whole thing takes two or three minutes. That is the point. It is meant to be a small daily habit, not a study session.
 
-**1. No LLM-authored article text.** An article `body` must be an excerpt of a human-written, properly licensed source listed in `docs/content-sources.md`. You may trim a source by deleting sentences or words. You may not add, rewrite, or paraphrase a body sentence. `scripts/check-article.mjs` enforces this by comparing every published sentence against the untrimmed original in `content-raw/`, so the rule is machine-checked rather than a matter of good faith. You are free to write quiz questions, glosses, UI copy, code and documentation.
+Two people use it. Both are adults learning English for CELPIP, the English test used for Canadian immigration. One speaks Spanish, one speaks Chinese.
 
-**2. The interface is in English.** One reader speaks Spanish and the other Chinese, so English is both the shared language and the subject of the product. Glosses are short English definitions, never translations.
+The idea behind it: most learners read slowly because their eyes keep jumping backwards to check a word they already passed. If the text physically moves away, you cannot jump back, and you are forced to read forwards the way a native speaker does. That only works if the article is easy enough that you do not need to look back, which is why the difficulty rules below are strict.
 
-**3. No frameworks and no build step.** Vanilla HTML, CSS and JavaScript with static JSON for content. `site/` has to stay deployable exactly as it is. Cloudflare Pages copies that folder and runs nothing.
+`PLAN.md` lists the work in packages. Take the next unfinished one.
 
-**4. Every article carries a `source` block** with author, origin, licence and url. The app refuses to render an article without one.
+## Four rules you must not break
 
-## Layout
+### 1. Never write the article text yourself
+
+This is the most important rule in the project.
+
+The `body` of an article has to be real text, written by a real person, copied from a source we are allowed to use. Those sources are listed in `docs/content-sources.md`.
+
+You are allowed to shorten a source by deleting whole sentences or individual words. You are not allowed to add a sentence, reword a sentence, or rewrite something to make it simpler. If a passage is too hard, delete it and use a different one.
+
+This is checked by a script, not left to trust. `scripts/check-article.mjs` compares every sentence you publish against the untouched original saved in `content-raw/`. Delete things and it passes. Change so much as a word order and it fails and names the sentence.
+
+You can freely write everything else: the quiz questions, the word definitions, the buttons and labels, the code, and the documentation.
+
+### 2. Write the interface in English
+
+One reader speaks Spanish, the other Chinese, so English is the only language they share, and it is also the thing they are here to practise. Word definitions are short explanations in simple English, not translations.
+
+### 3. No frameworks, no build step
+
+Plain HTML, CSS and JavaScript. Articles are plain JSON files. The `site/` folder is uploaded exactly as it sits, and nothing is compiled or generated on the way. Cloudflare copies the folder and serves it.
+
+### 4. Every article says where it came from
+
+Each article file carries a `source` block naming the author, the publication, the licence and the link. The app refuses to display an article that is missing it, so this is not something you can forget.
+
+## Where things live
 
 ```text
-site/                     the deployable static site, nothing else ships
+site/                     everything that gets published, and nothing else
   index.html app.css app.js
-  _headers                cache rules, honored by Cloudflare Pages
-  content/articles/       one JSON per day, YYYY-MM-DD.json, plus sample.json
-  content/index.json      sorted array of the dates that have articles
-content-raw/              untrimmed source text, kept for the provenance check
-scripts/                  Node ESM, zero dependencies
-docs/design.md            tokens, type scale, component and screen specs
+  _headers                tells Cloudflare how long browsers may cache files
+  content/articles/       one file per day, named 2026-08-12.json
+  content/articles/sample.json   shown when there is no article for today
+  content/index.json      the list of dates that have an article
+content-raw/              the original untrimmed text of each article
+scripts/                  small Node programs, no libraries installed
+docs/design.md            colours, type sizes and what each screen looks like
 docs/content-sources.md   where articles come from and how to credit them
-notes-zh/                 the author's Chinese notes, gitignored
+notes-zh/                 the owner's own notes in Chinese, not published
 ```
 
-## Before you call a package done
+`content-raw/` is worth explaining. When you shorten a source into an article, the full original stays here. It is not published to the web. It exists so the checking script has something to compare against, which is what makes rule 1 enforceable.
+
+## Check your work before you say you are done
 
 ```text
-node scripts/smoke.mjs           drives the real site in a real browser
-node scripts/check-contrast.mjs  every color pair against WCAG AA
+node scripts/smoke.mjs           opens the real site in a real browser
+node scripts/check-contrast.mjs  checks every colour combination is readable
 ```
 
-The smoke test matters more than it looks. Two bugs shipped past `node --check`, element-reference checks, contrast checks and HTTP status codes, because all of those pass happily on a page that renders blank. Extend the smoke test when you add a screen.
+The first one matters more than it sounds. Twice now, a change passed every check we had, and the page still came up blank when a person opened it. Checking that the JavaScript parses, that the file downloads, and that the server returns "OK" all pass happily on a page showing nothing at all. Only opening it in a browser catches that.
 
-## Conventions
+So `smoke.mjs` opens the site in Chrome, clicks through a whole reading session, and checks that words actually appear on screen. If you add a screen, add checks for it.
 
-Site code stays as `index.html`, `app.css` and `app.js`. Keep `app.js` in one file until splitting it genuinely helps.
+## How to write code here
 
-Read `docs/design.md` before touching any screen. Style through the color tokens and never write a literal color in a component rule, because a literal only works in one theme. Run the contrast checker after changing a token.
+Keep the site as three files: `index.html`, `app.css`, `app.js`. One JavaScript file is fine at this size. Split it only when it genuinely gets in the way.
 
-Articles run 220 to 320 words, sit at Flesch-Kincaid grade 6 or below, and keep at least 95 percent of their tokens inside `scripts/data/top2000.txt`.
+Read `docs/design.md` before you touch any screen. Colours come from named variables at the top of `app.css`. Never write an actual colour like `#FFFFFF` inside a rule for a button or a card, because that colour will be wrong in one of the two themes. Use the variable, and run the contrast checker afterwards.
 
-That word list is the New General Service List under CC BY-SA 4.0, and it is the one file here carrying a ShareAlike obligation. Keep its header comment intact, since that header is the attribution. Editing the list means republishing it under the same licence, so leave it alone unless there is a reason. It is an aggregated work rather than part of the site, and nothing else in the repo inherits the licence.
+Articles must be 220 to 320 words, score grade 6 or lower on the Flesch-Kincaid reading scale (roughly what a twelve year old reads comfortably), and use words from `scripts/data/top2000.txt` for at least 95 of every 100 words.
 
-Scripts are Node with ES modules and no dependencies unless a work package says otherwise.
+One note about that word list. It comes from a research project and is shared under a licence that says: use it freely, credit us, and if you change it, share your changed version on the same terms. The credit is the comment block at the top of the file. Practically, this means leave the file alone. Nothing else in this repository is affected by that licence.
 
-Serve over HTTP when testing, with `npx serve site`, because `fetch()` will not read `file://` URLs.
+Scripts are plain Node with no packages installed.
 
-Do not add analytics, accounts or backend services unless the package explicitly calls for them.
+When testing locally, run `npx serve site` and open the address it prints. Opening `index.html` by double-clicking will not work, because browsers refuse to let a page loaded from your hard drive fetch other files.
 
-## Two layout traps that already cost a day
+Do not add tracking, user accounts, or a server unless a work package specifically asks for one.
 
-Every flex item from `body` down to `.reader` sets `min-height: 0`. Flex items default to `min-height: auto` and refuse to shrink below their content, so a long article pushes the reader taller than the viewport. Then `scrollHeight` equals `clientHeight`, there is no travel, and the read ends on its first frame.
+## Two bugs that will happen again if you do not know about them
 
-`[hidden] { display: none !important; }` sits near the top of the stylesheet. A `display` value in a stylesheet outranks the browser's own rule for the `hidden` attribute, so an element given `display: flex` by its class stays on screen whatever the attribute says. The countdown overlay hid the whole article this way. Toggle visibility through the attribute and let that rule do the work.
+Both of these produced the same symptom: a blank panel where the article should be. Both took a long time to find, because nothing in the code looked wrong.
 
-## Prose written for people
+**The reader grew taller than the screen.** In CSS, an element inside a flexible layout will not shrink smaller than the text inside it unless you explicitly say `min-height: 0`. Without that, a long article stretched the reading panel past the bottom of the screen. Because the panel was then exactly as tall as its text, there was nothing left to scroll through, so the article "finished" on the very first frame. Every element in the chain from `body` down to `.reader` now sets `min-height: 0`. If you add another scrolling area, it needs the same.
 
-Documentation, UI copy and commit messages get read by humans, so avoid the usual AI writing tells: em dashes and en dashes, three-part lists that pad rather than inform, a bolded phrase followed by a colon as a bullet format, emoji as section markers, and cheerful closing paragraphs that restate what came before. Plain sentences of varying length. The `humanizer` skill has the full list.
+**The countdown never went away.** HTML has a `hidden` attribute that should hide an element. But if a stylesheet tells that same element to be visible, the stylesheet wins. Our "3, 2, 1" countdown had a style making it visible, so it stayed on screen forever, covering the entire article in the same colour as the panel behind it. The fix is one line near the top of the stylesheet, `[hidden] { display: none !important; }`, which makes the attribute win again. Hide things with the attribute and let that rule do the work.
 
-## Git
+## Writing for people
 
-Commit subjects are short, imperative, and name the package: `WP3: quiz flow`. Explain in the body why a change was needed, not just what changed.
+Anything a person reads, meaning documentation, text on screen, and commit messages, should sound like a person wrote it. Avoid the habits that make writing feel machine-made: long dashes, lists of exactly three things that pad rather than inform, a bolded phrase followed by a colon used as a bullet, emoji used as decoration, and closing paragraphs that cheerfully restate what you just said.
 
-Pushing to `main` deploys to <https://zephyr-8w8.pages.dev> through the Cloudflare Pages Git integration. Do not run `wrangler pages deploy` by hand; mixing the two makes the deployment list ambiguous about which commit is live.
+Explain a term the first time you use it, or do not use it. A reader who has to look something up to follow your sentence has been failed by the sentence.
 
-## Running several sessions at once
+Vary your sentence length. The `humanizer` skill has the full list of things to avoid.
 
-The product is three subsystems that meet only through git commits, and the packages parallelize along those seams.
+## Git and deploying
+
+Commit messages start with the work package and say what changed in plain words, for example `WP3: quiz flow`. In the body, explain why the change was needed, not just what moved.
+
+Pushing to `main` publishes the site to <https://zephyr-8w8.pages.dev> automatically, usually within a couple of minutes. Do not run `wrangler pages deploy` by hand, because then the deployment history no longer tells you which commit is actually live.
+
+One warning from experience: right after a push, the old version is still being served, and every file still returns "OK". A successful download does not mean your change is live. Check that something you actually changed appears on the page.
+
+## Running more than one session at once
+
+The project splits into three parts that only touch each other through committed files, so three people or sessions can work at once:
 
 ```text
-Lane 1  reader      WP2 -> WP3 -> WP4 -> WP6      strictly serial
-Lane 2  curation    WP8                           independent
-Lane 3  delivery    WP7 -> WP5                    independent
+the reader itself       WP2, WP3, WP4, WP6      must be done in order
+choosing articles       WP8                     independent
+delivery and reminders  WP7, WP5                independent
 ```
 
-Lane 1 cannot be split because all four packages rewrite the same parts of `app.js`. Only one session may edit `site/app.js` at a time. Beyond that, give each lane its own branch.
+The reader packages all edit the same parts of `app.js`, so they cannot be split up, and only one session may edit `site/app.js` at a time. Otherwise, give each line of work its own branch.

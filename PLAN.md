@@ -15,30 +15,29 @@ Status marks: done, partial, todo.
 | WP8 | Curation toolkit | done |
 | WP9 | Deploy and polish | partial |
 
-To hand a package to a session:
+To hand a package to a session, say:
 
-> Read CLAUDE.md and PLAN.md, then implement WP\<n\> only. Update the PLAN.md status table when done.
+> Read AGENTS.md and PLAN.md, then implement WP3 only. Update the PLAN.md status table when done.
 
-## Dependencies and parallel work
+## What can be worked on at the same time
 
-The product is three subsystems that only meet through git commits, and the packages parallelize along those seams. Three lanes can run at once.
+Zephyr is really three separate things that only meet through committed files. That is what decides which packages can run in parallel.
+
+There is the app the reader uses. There is the process of choosing and preparing articles, which happens on someone's laptop and produces files. And there is delivery, meaning installing the app and sending reminders, which sits outside the app entirely.
 
 ```text
-Lane 1  reader      WP2 -> WP3 -> WP4 -> WP6      strictly serial
-Lane 2  curation    WP8                           safe to start now
-Lane 3  delivery    WP7-B -> WP5 -> WP7-A         safe to start now
-                          everything -> WP9
+the reader itself       WP2, WP3, WP4, WP6      one at a time, in order
+choosing articles       WP8                     independent
+delivery and reminders  WP7, WP5                independent
 ```
 
-Lane 1 cannot be split. All four packages rewrite the same parts of `site/app.js` and `index.html`. WP3 and WP4 both replace `finish()`, and WP4's rule fires when a quiz is submitted, so it has nothing to hook into until WP3 exists. WP6 attaches a share button to the results screen that WP3 builds.
+The reader packages cannot be split up. They all rewrite the same parts of `site/app.js`. Two of them replace the same function, and the adaptive speed rule in WP4 runs when a quiz is submitted, so it has nothing to attach to until WP3 has built the quiz. The share button in WP6 sits on the results screen that WP3 creates.
 
-Lane 2 touches only `scripts/` and `content-raw/` and overlaps with nothing.
+Choosing articles touches only `scripts/` and `content-raw/`, so it never collides with anything.
 
-Lane 3 is nearly as clean. WP7 option B adds one GitHub Actions workflow file. WP5 adds `manifest.webmanifest`, `sw.js` and `site/icons/`, and its only shared edit is a few meta tags in the `<head>`. Its service worker reads the `content/index.json` that WP2 produces, so running it after WP2 avoids a stub.
+Delivery is nearly as clean. The reminder is one workflow file. The installable-app work adds new files and changes only a few lines in the page header, though its offline caching reads a file that WP2 creates, so it goes second.
 
-WP9 comes last because it touches everything.
-
-If two sessions run at once, the rule that matters is that only one of them may edit `site/app.js`. Beyond that, give each lane its own branch, or its own `git worktree` if they run simultaneously.
+If two sessions run at once, the rule that matters is that only one may edit `site/app.js`. Beyond that, give each line of work its own branch.
 
 ## WP0, repo scaffold (done)
 
@@ -148,6 +147,10 @@ Still to do:
 - [ ] Confirm Add to Home Screen and an airplane-mode reload on real Android and iOS hardware.
 - [ ] Optionally, Cloudflare Web Analytics, which is cookieless, for page views and nothing personal.
 
-## What is left overall
+## What is actually left
 
-The software is finished. What the product still lacks is articles. `site/content/index.json` is empty, so every visit falls back to the Aesop sample, and the first real batch means sitting down with the sources in `docs/content-sources.md` and running the two scripts. That is the work that turns this from a working toy into something worth opening daily.
+The software is done. What is missing is articles.
+
+`site/content/index.json` is empty, so every visit still falls back to the Aesop fable that ships as an example. Until there is a real article scheduled for a real date, the app is a working demonstration rather than something either of us would open tomorrow morning.
+
+Preparing the first batch means going to the sources in `docs/content-sources.md`, picking passages, running the two scripts, and writing the questions. That is the remaining work, and it is not a coding task.
