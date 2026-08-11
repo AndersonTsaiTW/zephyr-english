@@ -1,0 +1,39 @@
+{
+  "id": "sample",
+  "title": "The North Wind and the Sun",
+  "source": {
+    "author": "Aesop, translated by George Fyler Townsend (1867)",
+    "origin": "Aesop's Fables",
+    "license": "Public domain",
+    "url": "https://www.gutenberg.org/ebooks/21",
+    "note": "Schema demo only. Verify quoted text against the source before publishing any real article. This fable is shorter and harder than the 220-320 word / FK<=6 target."
+  },
+  "body": [
+    "The North Wind and the Sun disputed as to which was the most powerful, and agreed that he should be declared the victor who could first strip a wayfaring man of his clothes.",
+    "The North Wind first tried his power and blew with all his might, but the keener his blasts, the closer the Traveler wrapped his cloak around him, until at last, resigning all hope of victory, the Wind called upon the Sun to see what he could do.",
+    "The Sun suddenly shone out with all his warmth. The Traveler no sooner felt his genial rays than he took off one garment after another, and at last, fairly overcome with heat, undressed and bathed in a stream that lay in his path.",
+    "Persuasion is better than Force."
+  ],
+  "previewWords": [
+    { "word": "dispute", "gloss": "to argue about something" },
+    { "word": "cloak", "gloss": "a loose coat with no sleeves" },
+    { "word": "persuasion", "gloss": "getting someone to agree with gentle words, not force" }
+  ],
+  "quiz": [
+    {
+      "q": "What did the Wind and the Sun want to find out?",
+      "options": ["Which of them was stronger", "Which of them was warmer", "Who could travel faster"],
+      "answer": 0
+    },
+    {
+      "q": "What did the traveler do when the Wind blew hard?",
+      "options": ["He took off his cloak", "He held his cloak more tightly", "He ran away"],
+      "answer": 1
+    },
+    {
+      "q": "Who won, and why?",
+      "options": ["The Wind, because it was louder", "The Sun, because gentle warmth worked better than force", "Nobody won"],
+      "answer": 1
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zephyr — daily reading, with the wind</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="topbar">
+  <span class="brand">ZEPHYR</span>
+  <span class="day" id="dayLabel"></span>
+</header>
+
+<main>
+  <!-- Today card -->
+  <section class="screen active" id="screen-today">
+    <p class="sample-note" id="sampleNote" hidden>Sample article — publish real ones as <code>content/articles/YYYY-MM-DD.json</code></p>
+    <h1 id="cardTitle">…</h1>
+    <p class="meta" id="cardMeta"></p>
+    <div class="preview" id="previewWords"></div>
+    <button class="primary" id="startBtn">Start reading</button>
+    <p class="hint">The text scrolls by itself. Keep up — you can't scroll back.</p>
+  </section>
+
+  <!-- Reader -->
+  <section class="screen" id="screen-reader">
+    <div class="reader" id="reader" tabindex="0" aria-label="Reading area. Tap to pause or resume.">
+      <div class="track" id="track"></div>
+      <div class="band" aria-hidden="true"></div>
+      <div class="fade top" aria-hidden="true"></div>
+      <div class="fade bottom" aria-hidden="true"></div>
+      <div class="countdown" id="countdown" hidden></div>
+    </div>
+    <div class="progress"><i id="bar"></i></div>
+    <div class="controls">
+      <button id="slower" aria-label="Slower">−</button>
+      <button class="play" id="playBtn" aria-label="Play or pause">⏸</button>
+      <button id="faster" aria-label="Faster">＋</button>
+      <div class="wpm"><b id="wpmVal"></b>wpm</div>
+    </div>
+  </section>
+
+  <!-- Done (replaced by quiz + results in WP3) -->
+  <section class="screen" id="screen-done">
+    <h1>Done ✓</h1>
+    <p class="meta big" id="doneStats"></p>
+    <p class="attribution" id="attribution"></p>
+    <p class="hint">Quiz and streak arrive with WP3/WP4 — see PLAN.md.</p>
+    <button class="primary" id="againBtn">Read again</button>
+  </section>
+
+  <!-- Empty state -->
+  <section class="screen" id="screen-empty">
+    <h1>No article today</h1>
+    <p class="hint">The wind is resting. Come back tomorrow.</p>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
