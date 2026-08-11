@@ -1,0 +1,15 @@
+# None of these filenames carry a content hash, so they must be revalidated
+# rather than held. no-cache still allows a 304, so this costs one cheap
+# request per file and never serves yesterday's app or yesterday's article.
+
+/*
+  Cache-Control: no-cache
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/content/articles/*
+  Cache-Control: no-cache
+
+# A held service worker keeps updating itself out of reach. Never cache it.
+/sw.js
+  Cache-Control: no-cache
