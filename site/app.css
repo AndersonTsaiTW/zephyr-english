@@ -184,30 +184,6 @@ dialog textarea {
 dialog textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 dialog .actions { margin-top: 1rem; }
 
-.levels {
-  display: flex;
-  justify-content: center;
-  gap: 0.25rem;
-  padding: 0.25rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  align-self: center;
-}
-.level {
-  border: none;
-  background: none;
-  color: var(--muted);
-  font-size: 0.85rem;
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-}
-.level:hover { color: var(--accent); }
-.level.on {
-  background: var(--accent);
-  color: var(--on-accent);
-}
-
 .preview {
   display: flex;
   flex-direction: column;

@@ -54,33 +54,17 @@ News sites such as CBC, CTV and Global, along with publisher graded readers and 
 
 Anything whose licence cannot be named.
 
-## Three reading levels
-
-Each day can carry up to three versions of that day, at different difficulties. You pick your level once and the app remembers it. You still read one article a day.
-
-The levels map onto the BC Reads volumes, which are already graded by their publisher:
-
-```text
-Easier    Reader 3    BC nature and history, short sentences
-Standard  Reader 4    Canadian civil rights, adult topics
-Harder    Reader 5    how learning, memory and personality work
-```
-
-A day does not need all three. If the chosen level has nothing scheduled, the reader gets the nearest level that does, and the card says so.
-
-Files are named `2026-08-12.json` for standard, `2026-08-12-easy.json` and `2026-08-12-hard.json` for the others. Pass `--level easy` or `--level hard` to `new-article.mjs`.
-
 ## How hard an article is allowed to be
 
-Three limits, all checked by `scripts/check-article.mjs`. Length is the same for every level; the other two depend on the level.
+Three limits, all checked by `scripts/check-article.mjs`.
 
-Between 220 and 320 words, whatever the level. Below that there is not enough to build a rhythm; above it the session stops being two minutes.
+Between 220 and 320 words. Below that there is not enough to build a rhythm; above it the session stops being two minutes.
 
-Flesch-Kincaid grade at or below 5.5 for easier, 6 for standard, 9 for harder. Flesch-Kincaid is a readability score based on sentence length and syllable count, so grade 6 is roughly what a twelve year old reads without effort. The caps come from measuring the BC Reads volumes each level draws on, and sit slightly above each volume's range.
+Flesch-Kincaid grade 9 or lower. Flesch-Kincaid is a readability score based on sentence length and syllable count. The cap takes in BC Reads volumes 3 through 5, which is the range these articles come from.
 
-At least 88 of every 100 words for easier, 90 for standard, 84 for harder, taken from `scripts/data/top2000.txt`, the two thousand most common English words.
+At least 84 of every 100 words come from `scripts/data/top2000.txt`, the two thousand most common English words.
 
-These numbers started at a flat 95 and came down after measuring, which is recorded here so nobody quietly raises them again. Eleven BC Reads texts, written by curriculum designers for exactly these readers, were run through the checker untouched. They scored between 89.8 and 96.1 percent, clustering near 94, and several are written at Flesch-Kincaid grade 2. A threshold that fails grade-2 text written for adult literacy students is measuring the size of the word list, not the difficulty of the writing.
+That number started at 95 and came down after measuring, which is recorded here so nobody quietly raises them again. Eleven BC Reads texts, written by curriculum designers for exactly these readers, were run through the checker untouched. They scored between 89.8 and 96.1 percent, clustering near 94, and several are written at Flesch-Kincaid grade 2. A threshold that fails grade-2 text written for adult literacy students is measuring the size of the word list, not the difficulty of the writing.
 
 A word you have already met is not charged again. Beyond two appearances an unfamiliar word stops counting against the total, because in an article about salmon the word "salmon" appears eleven times and is the subject rather than an obstacle. You learn it once. Counting all eleven says more about the topic than about how hard the text is.
 
@@ -104,6 +88,8 @@ node scripts/new-article.mjs candidate.txt --date 2026-08-11 \
 ```
 
 This writes `site/content/articles/2026-08-11.json` with the source text split into paragraphs and empty `previewWords` and `quiz` arrays, copies the untrimmed text to `content-raw/2026-08-11.txt`, and adds the date to `site/content/index.json`, creating that file if it does not exist yet. It refuses to overwrite either file, so re-running it on the same date is safe.
+
+One article a day, no difficulty levels. Fifteen chapters across three BC Reads volumes run as fifteen consecutive days, with difficulty varying from day to day. Splitting them into three parallel levels was tried and reverted: a reader gets one article a day either way, so three levels burned the source material three times faster for no gain.
 
 Now cut the `body` paragraphs down to 220 to 320 words. Delete sentences and words. Do not reword anything, do not join two sentences, do not simplify a hard phrase. If a passage will not come down to size by cutting, drop it and use a different part of the source.
 

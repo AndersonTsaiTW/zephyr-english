@@ -1,64 +1,59 @@
 {
   "id": "2026-08-15",
-  "title": "The Story of Elijah Harper",
-  "level": "core",
+  "title": "The Journey of the Salmon",
   "source": {
     "author": "Shantel Ivits",
-    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 4, BCcampus Open Education",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 3, BCcampus Open Education",
     "license": "CC BY 4.0",
-    "url": "https://opentextbc.ca/abealfreader4/chapter/the-story-of-elijah-harper/"
+    "url": "https://opentextbc.ca/abealfreader3/chapter/the-journey-of-the-salmon/"
   },
   "body": [
-    "An eight-year-old boy named Elijah sat in the forest with his grandfather. He lived on a reserve in Manitoba called Red Sucker Lake. Elijah loved spending time on the land. He had learned all about hunting and fishing from his grandfather.",
-    "One day, a small plane landed on the lake. A white man stepped out. He was sent by the government. His job was to take Elijah from his grandparents and bring him to residential school, or boarding school. Elijah didn’t want to get on the plane, but he had no choice. At that time, First Nations people didn’t have any rights.",
-    "Elijah spent the next 10 years in residential school. The teachers cut his hair. He was punished if he tried to speak his own language. During that time, many of his classmates tried to run away.",
-    "Elijah had an idea. If he was in government, he could help First Nations people stand up for their rights. So, in 1981, he ran to be an MLA, or member of the government. He won! He was the first Aboriginal MLA in the history of Manitoba.",
-    "In Ottawa, the prime minister of Canada wanted to pass a bill, or a suggested law. It said that Canada was created by the English and the French. But it didn’t say anything about the role of First Nations people in building Canada.",
-    "The prime minister needed all of the MLAs in Manitoba to agree to the bill to make it a law. But when it was Elijah’s turn to vote, he held up an eagle feather and spoke the word, “No.”",
-    "It was a moment that put First Nations issues front and centre in Canadian politics.",
-    "Elijah Harper inspired a new wave of First Nations people to take part in politics."
+    "For many First Nations people in British Columbia, the salmon is a symbol of trusting your senses and working hard at your goals. Salmon sense the right time to leave the sea. Starting in the fall, they swim thousands of kilometres to return to the same place where they were born. It is a difficult journey. They must swim upriver . They must leap up waterfalls . They must avoid bears and eagles. If they are lucky, they make it back to the place where they were born . They turn bright red to show that they are ready to mate. The female digs a nest. Then she lays thousands of eggs. The male puts sperm on the eggs at the same time. Both of the salmon die soon after.",
+    "Only a few of the eggs hatch. The young salmon leave the nest after a couple of days. They swim downriver to the sea. On the way, the bears and eagles are a threat once more. Many salmon do not make it to the sea. Those that do make it live in the ocean until they are about four years old. Then they return to their birthplace , just like their parents did. The amazing cycle of life continues.",
+    "Scientists do not know how salmon are able to find their way to their birthplace . Some say they can smell their way back.",
+    "Birds , bears, and even trees depend on the salmon. Dead salmon left on the forest floor by animals act like food for the trees. Salmon is also a traditional food for many First Nations people in British Columbia. They have fished salmon from the rivers and oceans since the beginning of time. Some communities hold a ceremony to welcome the salmon as they return to their birthplaces ."
   ],
   "previewWords": [
     {
-      "word": "reserve",
-      "gloss": "land the government set aside for First Nations people to live on"
+      "word": "upriver",
+      "gloss": "towards the place a river starts"
     },
     {
-      "word": "bill",
-      "gloss": "a suggested law, before it has been passed"
+      "word": "hatch",
+      "gloss": "to come out of an egg"
     },
     {
-      "word": "feather",
-      "gloss": "one of the light parts that cover a bird"
+      "word": "ceremony",
+      "gloss": "a formal event held to mark something important"
     }
   ],
   "quiz": [
     {
-      "q": "Why was Elijah taken away on the plane?",
+      "q": "Where do salmon swim to when they leave the sea?",
       "options": [
-        "To visit family in another town",
-        "Because the law forced him to attend residential school",
-        "To get medical treatment"
-      ],
-      "answer": 1
-    },
-    {
-      "q": "What was missing from the prime minister's bill?",
-      "options": [
-        "Any mention of First Nations people",
-        "Protection for the French language",
-        "A plan to keep the country united"
+        "The place where they were born",
+        "The nearest warm water",
+        "A new river each year"
       ],
       "answer": 0
     },
     {
-      "q": "What did Elijah do when it was his turn to vote?",
+      "q": "What do young salmon do after leaving the nest?",
       "options": [
-        "He left the room",
-        "He held up an eagle feather and said no",
-        "He voted yes but spoke against it"
+        "They stay in the river for four years",
+        "They swim downriver to the sea",
+        "They follow their parents"
       ],
       "answer": 1
+    },
+    {
+      "q": "How do dead salmon help the forest?",
+      "options": [
+        "They feed the trees",
+        "They keep bears away",
+        "They clean the river"
+      ],
+      "answer": 0
     }
   ]
 }

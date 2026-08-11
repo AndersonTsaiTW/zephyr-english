@@ -220,34 +220,6 @@ check(
 );
 await reduced.close();
 
-// Reading levels: the choice sticks, and a level with nothing scheduled falls
-// back to its nearest neighbour rather than showing an empty day.
-const lvl = await newPage();
-await lvl.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle' });
-check('three levels are offered', (await lvl.locator('#levelPicker .level').count()) === 3);
-check('standard is the default', (await lvl.evaluate('state.level')) === 'core');
-
-const coreTitle = await lvl.locator('#cardTitle').textContent();
-await lvl.locator('#levelPicker .level', { hasText: 'Easier' }).click();
-await lvl.waitForTimeout(500);
-const easyTitle = await lvl.locator('#cardTitle').textContent();
-check('choosing a level loads a different article', easyTitle !== coreTitle, `${coreTitle.trim()} -> ${easyTitle.trim()}`);
-check('the choice is stored', (await lvl.evaluate("localStorage.getItem('zephyr.level')")) === 'easy');
-
-await lvl.reload({ waitUntil: 'networkidle' });
-check('the choice survives reload', (await lvl.locator('#cardTitle').textContent()) === easyTitle);
-
-// With only the standard level present for a date, an easy reader still reads.
-const soloLevel = await newPage();
-await soloLevel.route('**/content/articles/*-easy.json', (route) => route.fulfill({ status: 404, body: '' }));
-await soloLevel.route('**/content/articles/*-hard.json', (route) => route.fulfill({ status: 404, body: '' }));
-await soloLevel.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle' });
-await soloLevel.evaluate("localStorage.setItem('zephyr.level','easy')");
-await soloLevel.reload({ waitUntil: 'networkidle' });
-check('a missing level falls back rather than showing nothing', (await soloLevel.locator('.screen.active').getAttribute('id')) === 'screen-today');
-check('the substitution is explained', await soloLevel.locator('#levelNote').isVisible());
-await soloLevel.close();
-await lvl.close();
 
 // Backup and restore. The point is that a streak survives a new phone
 // without anyone having to create an account.

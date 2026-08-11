@@ -1,0 +1,59 @@
+{
+  "id": "2026-08-20",
+  "title": "The Story of Joy Kogawa",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 4, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader4/chapter/the-story-of-joy-kogawa/"
+  },
+  "body": [
+    "Joy Kogawa remembers her childhood home in Vancouver fondly. The house always had the smell of wood burning in the fireplace. The sounds of music, storytelling, and laughter sailed through the air. A cherry tree stood in the yard outside her window. But her happy days there were cut short.",
+    "In 1941, a warplane from Japan dropped a bomb on the United States. Canada went to war with Japan. The prime minister of Canada thought that Japanese Canadians might be spies. So he had all Japanese Canadians taken from their homes. They were sent to live and work in camps. Most of the people sent to the camps were born in Canada. He wanted Canada to be mostly for white people.",
+    "Joy Kogawa was six years old when her family was forced from their home. They were put onto a train and shipped to a camp in Slocan, British Columbia. The family had to live in a one-room shack. Her family was forced to work on a farm. She dreamed of going back to her home in Vancouver.",
+    "After the war, Joy did not want to be thought of as Japanese. It was a way of trying to forget the painful past. One day, Joy came across some letters. These letters gave Joy an idea. She decided to write a story based on what had happened to her family. She wrote a book called Obasan. As she wrote it, she began to accept herself as Japanese Canadian."
+  ],
+  "previewWords": [
+    {
+      "word": "spies",
+      "gloss": "people who secretly collect information for an enemy"
+    },
+    {
+      "word": "shack",
+      "gloss": "a small, roughly built hut"
+    },
+    {
+      "word": "painful",
+      "gloss": "causing hurt, in the body or the mind"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why were Japanese Canadians taken from their homes?",
+      "options": [
+        "The prime minister thought they might be spies",
+        "Their homes were unsafe",
+        "They asked to move"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "How old was Joy when her family was forced to leave?",
+      "options": [
+        "Six",
+        "Twelve",
+        "Nineteen"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What gave Joy the idea to write her book?",
+      "options": [
+        "A visit back to Vancouver",
+        "Letters written by another Japanese Canadian woman",
+        "A conversation with her brother"
+      ],
+      "answer": 1
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "2026-08-17",
+  "title": "The Story of Nellie McClung",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 4, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader4/chapter/the-story-of-nellie-mcclung/"
+  },
+  "body": [
+    "In 1882, a nine-year-old girl from the Prairies was at a community picnic. And boys were lining up for a race. The nine-year old girl wanted to run in that race. But she was told that races were for boys only. A fire was lit inside her that day. One day, she would see to it that women could do the things that men could do — like vote. Her name was Nellie McClung.",
+    "Running in races wasn’t the only thing girls weren’t allowed to do. Back then, it was illegal for women to vote, be in government, own property, or go to university. This is because men were thought to be more reasonable than women. Women were seen as emotional.",
+    "When Nellie grew up, she poked holes in these old ideas. She spoke to large crowds in favour of women’s right to vote. With a colourful hat on her head and a charming sense of humour, Nellie changed hearts and minds.",
+    "Nellie used humour, instead. She starred in a play where she debated men’s right to vote. She began by telling the men how nice they looked. How could these people be trusted with politics? Big crowds came to see Nellie’s play. They roared with laughter. It became fashionable to support women’s rights.",
+    "White women were finally allowed to vote in federal elections in 1918. As a result of racist laws, women of colour and Aboriginal women would not be allowed to vote until much later."
+  ],
+  "previewWords": [
+    {
+      "word": "illegal",
+      "gloss": "against the law"
+    },
+    {
+      "word": "humour",
+      "gloss": "the quality of being funny"
+    },
+    {
+      "word": "federal",
+      "gloss": "belonging to the national government, not a province"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What was Nellie not allowed to do at the picnic?",
+      "options": [
+        "Eat with the boys",
+        "Run in the race",
+        "Sit on the grass"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "How was her way of arguing different from other activists?",
+      "options": [
+        "She used humour instead of violence",
+        "She wrote letters to the king",
+        "She refused to speak in public"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Who still could not vote after 1918?",
+      "options": [
+        "Women who owned no property",
+        "Women of colour and Aboriginal women",
+        "Women under thirty"
+      ],
+      "answer": 1
+    }
+  ]
+}

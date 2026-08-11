@@ -1,58 +1,58 @@
 {
   "id": "2026-08-12",
-  "title": "The Story of Tommy Douglas",
-  "level": "core",
+  "title": "The Rare Spirit Bear",
   "source": {
     "author": "Shantel Ivits",
-    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 4, BCcampus Open Education",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 3, BCcampus Open Education",
     "license": "CC BY 4.0",
-    "url": "https://opentextbc.ca/abealfreader4/chapter/the-story-of-tommy-douglas/"
+    "url": "https://opentextbc.ca/abealfreader3/chapter/the-rare-spirit-bear/"
   },
   "body": [
-    "In 1919, Tommy Douglas was a teenager standing on a rooftop in downtown Winnipeg. He was looking down on a huge crowd of workers protesting low wages. They could not give their families a good quality of life, even though they worked very hard. Suddenly, the police pulled out their guns and shot over 20 of the protesting workers. Two people died. Tommy was deeply affected by what he saw that day. He believed everyone should have a good quality of life, whether they were rich or poor.",
-    "When he was 26, he became a minister so he could help people. When the miners in his town went on strike, he brought them food and blankets. Once more, the police came in. They shot and killed three people. Tommy had seen enough. He decided to go into politics to make life better for poor people.",
-    "During that time, Tommy kept his promises to make life better for everyone in Saskatchewan. Tommy brought in power across the province. He made a law that bosses had to give workers at least two weeks of paid vacation. He made a bill of rights saying people of all races and genders are equal. The biggest change of all was that he brought in free health care for everyone in the province.",
-    "Health care was personal for Tommy. When he was a young boy, he got an infection in his leg. His family was poor and could not afford health care. He was going to lose his leg. Thankfully, a doctor agreed to operate on his leg for free. In 1959, Tommy brought in free health care for everyone in Saskatchewan, rich and poor."
+    "There are lots of wonders in the Great Bear Rainforest. There are trees that are more than a thousand years old. There are waterfalls rushing off mossy mountains. There are wolves that fish — and there are black bears that are white. These bears are known as “spirit bears.”",
+    "Spirit bears are rare. They are only found in British Columbia. In all of British Columbia, only about 1 in 100 black bears has white fur. Most spirit bears live in the Great Bear Rainforest. This rainforest is on the coast of British Columbia. On some of the islands in the Great Bear Rainforest as many as 1 in 3 black bears has white fur.",
+    "Spirit bears, like other black bears, eat plants such as berries, nuts, and fruits. They also eat small animals such as baby deer and baby moose. Most of all, they love salmon. Spirit bears have an easier time than black bears at catching salmon. Their white fur makes them harder for the salmon to see. After getting nice and fat over the spring, summer, and fall, the bears sleep in their dens all winter. During the winter, spirit bears can go without food for up to seven months.",
+    "Spirit bears mostly live alone. They mate in the summer but do not stay with their partner. The mother gives birth in January or February . By the time the cubs are a year and a half old, they are ready to go out on their own.",
+    "The Great Bear Rainforest is the traditional land of 12 different First Nations. These First Nations groups have never hunted the spirit bear. It is now against the law for anyone in British Columbia to hunt a spirit bear. Without the threat of people or any other animals, spirit bears can live to over 25 years old."
   ],
   "previewWords": [
     {
-      "word": "strike",
-      "gloss": "when workers stop working to demand better pay or conditions"
+      "word": "rare",
+      "gloss": "not often seen or found"
     },
     {
-      "word": "infection",
-      "gloss": "an illness caused by germs entering the body"
+      "word": "fur",
+      "gloss": "the thick hair that covers an animal"
     },
     {
-      "word": "afford",
-      "gloss": "to have enough money to pay for something"
+      "word": "den",
+      "gloss": "the hidden place where a wild animal sleeps"
     }
   ],
   "quiz": [
     {
-      "q": "What did Tommy see in Winnipeg in 1919?",
+      "q": "What is a spirit bear?",
       "options": [
-        "A crowd celebrating the end of a war",
-        "Police shooting at workers who were protesting",
-        "His first day of school"
-      ],
-      "answer": 1
-    },
-    {
-      "q": "Why was health care personal to him?",
-      "options": [
-        "He nearly lost his leg because his family could not pay a doctor",
-        "He trained as a doctor himself",
-        "His father worked in a hospital"
+        "A black bear with white fur",
+        "A kind of polar bear",
+        "A bear found all over Canada"
       ],
       "answer": 0
     },
     {
-      "q": "What did he bring to Saskatchewan in 1959?",
+      "q": "Why is white fur useful when catching salmon?",
       "options": [
-        "Paid vacation for all workers",
-        "Free health care for everyone",
-        "Electric power to the cities"
+        "It keeps the bear warm in the river",
+        "The salmon find it harder to see",
+        "It helps other bears find them"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What protects spirit bears today?",
+      "options": [
+        "They live where no people go",
+        "Hunting them is against the law",
+        "Other animals hunt them instead"
       ],
       "answer": 1
     }
