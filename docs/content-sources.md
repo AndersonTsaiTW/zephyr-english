@@ -60,14 +60,23 @@ The WP8 script enforces three thresholds: 220 to 320 words, Flesch-Kincaid grade
 
 ## The weekly batch
 
-Collect candidates from the sources above, a week or two at a time. A person does this step.
+Collect candidates from the sources above, a week or two at a time. A person does this step. Save each candidate as a plain `.txt` file with the full, untrimmed text.
 
-Trim each to 220 to 320 words. A model may assist by deleting sentences, never by adding or rewriting them, and the provenance check verifies the result against the original.
+Scaffold the article with `scripts/new-article.mjs`:
 
-Run `scripts/check-article.mjs` and cut or swap sentences containing off-list words until it passes.
+```text
+node scripts/new-article.mjs candidate.txt --date 2026-08-11 \
+  --title "Renting your first apartment" \
+  --author "Government of Canada" \
+  --license "Open Government Licence - Canada" \
+  --url "https://www.canada.ca/..." \
+  --origin "Newcomer guides"
+```
 
-Write the quiz and the glosses. A model may draft them, and a person approves every question.
+This writes `site/content/articles/2026-08-11.json` with the source text split into paragraphs and empty `previewWords` and `quiz` arrays, copies the untrimmed text to `content-raw/2026-08-11.txt`, and adds the date to `site/content/index.json`, creating that file if it does not exist yet. It refuses to overwrite either file, so re-running it on the same date is safe.
 
-Save as `site/content/articles/YYYY-MM-DD.json`, add the date to `content/index.json`, and keep at least fourteen days of buffer ahead.
+Trim the `body` paragraphs in the article JSON down to 220 to 320 words by deleting sentences, never by adding or rewriting them. Run `scripts/check-article.mjs site/content/articles/2026-08-11.json` and keep cutting until it passes. The script checks word count, Flesch-Kincaid grade, and top-2000 coverage against `scripts/data/top2000.txt`, a lemma list derived from the New General Service List (NGSL) 1.2, CC BY-SA 4.0, capped at the first 2000 entries by frequency rank. See the header of that file for the exact source and the licence statement it was checked against. The same run also compares every surviving sentence against `content-raw/2026-08-11.txt` and fails if one does not appear there verbatim, which is what makes deletion-only editing something the machine checks rather than something a person has to trust.
 
-Keep the untrimmed original in `content-raw/<id>.txt`, which stays in the repo so the provenance check has something to compare against.
+Write the quiz and the glosses directly in the article JSON. A model may draft them, and a person approves every question.
+
+Keep at least fourteen days of buffer ahead in `site/content/index.json`.
