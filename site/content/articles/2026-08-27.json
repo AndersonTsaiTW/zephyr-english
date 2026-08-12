@@ -1,0 +1,59 @@
+{
+  "id": "2026-08-27",
+  "title": "Searching for Sasquatches",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 3, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader3/chapter/searching-for/"
+  },
+  "body": [
+    "When you talk to a judge, you have to tell the whole truth and nothing but the truth. A man named Albert Ostman from British Columbia told a judge that he was once kidnapped by a family of sasquatches. Was he telling the truth?",
+    "In 1924, Ostman said he went camping in the woods of British Columbia. One night, he was sleeping in his sleeping bag. Suddenly, something lifted him up. It carried him through the woods while he was balled up in his sleeping bag. This went on for three hours. Then he was dumped out onto the ground. He looked up to see a family of four sasquatches looking down at him. The sasquatch family held him at their camp. They would not let him leave. After six days, he was finally able to escape.",
+    "A reporter named John Green was interested in stories like this one. He wanted to get to the bottom of the mystery of the sasquatch . So he put together hundreds of reports by people who said they had seen the animal. Green’s research says the sasquatch is a big and hairy beast that looks like an ape. It walks on two legs. It stands three metres tall. It can run very fast, and it smells very, very bad.",
+    "Harrison Hot Springs is a place in British Columbia’s Fraser Valley. If you drive to Harrison Hot Springs, you will see a sign that says, “Land of the Sasquatch. ” Many people say they have seen a sasquatch in this area. In 1957, the government of Harrison Hot Springs started a search party to look for the beast. They didn’t find it."
+  ],
+  "previewWords": [
+    {
+      "word": "kidnapped",
+      "gloss": "taken away by force"
+    },
+    {
+      "word": "beast",
+      "gloss": "a large or frightening animal"
+    },
+    {
+      "word": "escape",
+      "gloss": "to get away from a place you are held in"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did Albert Ostman tell a judge?",
+      "options": [
+        "That sasquatches had kidnapped him",
+        "That he had photographed a sasquatch",
+        "That sasquatches were not real"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "How long did he say he was held?",
+      "options": [
+        "Three hours",
+        "Six days",
+        "One night"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What did the search party of 1957 find?",
+      "options": [
+        "Footprints",
+        "Nothing",
+        "A sasquatch camp"
+      ],
+      "answer": 1
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "2026-08-31",
+  "title": "What's Your Story?",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 6, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader6/chapter/whats-your-story/"
+  },
+  "body": [
+    "Even though we tell stories every day at school, over the dinner table, and on the phone, being asked to write a story down on paper can feel overwhelming . We may suddenly feel that what we have to say is not interesting or important enough to share. But a story doesn’t have to be as dramatic as a Hollywood movie to be worth telling. Everyday life is full of valuable stories. Joe Lambert of the Center for Digital Storytelling identifies some common story types, as well as some questions that may help us find the story we want to tell.",
+    "These stories may be about finding meaning in a relationship with a family member, friend, neighbour, or co-worker. The story may be a way to remember and honour someone who has passed away. It may be a story about romantic love.",
+    "These are stories about our travels and what we realized along the way.",
+    "These are stories about achieving a goal, like getting a job or winning a sports game.",
+    "These are stories about special places like a home, a town, a gathering place, a mountain, or a forest. These places can shape our values and sense of community.",
+    "These are stories about your job, hobby, or volunteer role.",
+    "These are stories about learning. They might be about a first, an embarrassing moment, or a mistake."
+  ],
+  "previewWords": [
+    {
+      "word": "overwhelming",
+      "gloss": "too much to deal with"
+    },
+    {
+      "word": "honour",
+      "gloss": "to show respect for someone"
+    },
+    {
+      "word": "values",
+      "gloss": "the things a person believes matter most"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does the article say about everyday life?",
+      "options": [
+        "It is full of valuable stories",
+        "It rarely makes good stories",
+        "It only matters to your family"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Does a story need to be dramatic to be worth telling?",
+      "options": [
+        "Yes, like a Hollywood movie",
+        "No, everyday stories are worth telling",
+        "Only if it is about travel"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What can a story about someone who has died do?",
+      "options": [
+        "Remember and honour them",
+        "Replace a funeral",
+        "Settle an argument"
+      ],
+      "answer": 0
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "2026-09-02",
+  "title": "Writing the Script",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 6, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader6/chapter/writing-the-script/"
+  },
+  "body": [
+    "One of the most common pieces of advice given to storytellers is, “Show, don’t tell.” This means that a storyteller should allow the audience to experience the story through scenes , rather than through a summary of events. A scene is alive with action, words, thoughts, feelings, and senses. A summary simply tells the facts of what happened. We will return to the difference shortly.",
+    "Before creating a scene , the storyteller needs to identify which scenes will best tell the story and its insight. There may be one scene or many. The most important scene to include is usually the moment of change. In Tanya , Monte Hallis starts by explaining she didn’t really know what a friend was. The digital story ends with a scene where Tanya asks Monte to lie down next to her so she can tell her a secret. In this moment, Tanya refers to her as “Monte Faye.” Monte was stunned that Tanya knew her middle name. Monte does not say, “This is when I knew I had made a real friend,” but the audience can powerfully feel it through the scene. This was Monte’s moment of change.",
+    "In Go Around , Cathy Jaynes starts by explaining she had been in an abusive relationship. During that time, her feelings and her voice didn’t matter. She once told a helicopter pilot that he was about to crash and he ignored her warning. Once again, what she had to say was ignored . The digital story ends with a scene where Cathy tells a helicopter pilot to stop, or they will land on a bunch of wires. The pilot listens. Cathy did not say, “This was when I knew that my voice matters and there are people who will listen to me,” but the audience can feel it through the scene . This was Cathy’s moment of change."
+  ],
+  "previewWords": [
+    {
+      "word": "scene",
+      "gloss": "a moment shown in full, with action and feeling"
+    },
+    {
+      "word": "summary",
+      "gloss": "a short account that only gives the facts"
+    },
+    {
+      "word": "stunned",
+      "gloss": "so surprised you cannot speak"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does show, don't tell mean?",
+      "options": [
+        "Let the audience experience the story through scenes",
+        "Use pictures instead of words",
+        "Keep the story short"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Which scene matters most in a story?",
+      "options": [
+        "The opening scene",
+        "The moment of change",
+        "The longest scene"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "How does the audience learn what Monte felt?",
+      "options": [
+        "She says it directly",
+        "They feel it through the scene",
+        "A narrator explains it"
+      ],
+      "answer": 1
+    }
+  ]
+}

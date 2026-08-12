@@ -1,0 +1,59 @@
+{
+  "id": "2026-09-04",
+  "title": "What's Your Message?",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 6, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader6/chapter/whatsyourmessage/"
+  },
+  "body": [
+    "The stories that stay with us tend to be more than an event with a beginning, middle, and end. The stories that stay with us hold a bit of insight into what it means to be human. This insight is the main idea or message of the story. For example, the Ojibwe nation has told stories for thousands of years about a character named Nanabush. Nanabush stories are used to teach children lessons such as the importance of sharing and the value of our elders.",
+    "While listening to stories can leave the audience with an important lesson, telling stories can also help the storyteller find a lesson. This is one of the goals of the digital storytelling process. Examining our stories helps us reflect on who we have been, who we are, and who we will become.",
+    "In 2008, a project called Nurstory was launched. The project used digital storytelling to help nurses reflect on the way they practiced nursing. By sharing their digital stories with their colleagues, the nurses improved their ability to cope with a difficult job, work well with others, be leaders, and make ethical decisions.",
+    "Cathy Jaynes is one of the nurses who participated in the Nurstory project. She worked as an emergency nurse. Her job involved flying in helicopters to the scene of an accident . On the surface, her digital story Go Around is about a helicopter ride that almost ended in disaster."
+  ],
+  "previewWords": [
+    {
+      "word": "insight",
+      "gloss": "a clear understanding of something true"
+    },
+    {
+      "word": "reflect",
+      "gloss": "to think carefully about something"
+    },
+    {
+      "word": "colleagues",
+      "gloss": "the people you work with"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What do the stories that stay with us hold?",
+      "options": [
+        "A surprise ending",
+        "Insight into what it means to be human",
+        "A famous person"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What are Nanabush stories used for?",
+      "options": [
+        "To teach children lessons",
+        "To record family history",
+        "To celebrate the harvest"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What did the Nurstory project help nurses do?",
+      "options": [
+        "Learn new medical skills",
+        "Reflect on how they practised nursing",
+        "Find better paid work"
+      ],
+      "answer": 1
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": "2026-09-01",
+  "title": "The Shooting of Ginger Goodwin",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 3, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader3/chapter/the-shooting-of-ginger-goodwin/"
+  },
+  "body": [
+    "On a spring day in England in 1887, a baby with red hair was born. His name was Albert Goodwin, but his family called him “Ginger.”",
+    "Coal was very important back then. Coal is a black rock that can be used for fuel. It was used to run trains and steamboats. Albert “Ginger” Goodwin became a coal miner at age 15. That is how he found himself in British Columbia. There were lots of coal mining jobs on Vancouver Island.",
+    "Coal mining was not a safe job. The coal dust made the workers sick. Sometimes gas in the ground made the workers sick, too. Sometimes mines caved in. Many miners wanted the right to be safe at work. So in 1912, some workers on Vancouver Island went on strike. Ginger was one of them. He spoke out for workers’ rights. When the strike ended, the mining company would not give him his job back. The company was angry that he had spoken out. So Ginger moved to the mainland of British Columbia. He continued to fight for workers’ rights .",
+    "At that time, Canada was fighting in World War I. In 1917, the government made a law that all men aged 20 to 35 must fight in the war. Ginger did not believe in war. He also had many health problems from working in the mines. A doctor looked at him and said he was not fit to go to war. Ginger began to speak out against the law that forced men to go to war. Shortly after, he got a letter from the government saying he needed to be seen by a doctor again . This time, the doctor said he was fit for war. Many people were sure that the government was trying to get rid of him for speaking out."
+  ],
+  "previewWords": [
+    {
+      "word": "coal",
+      "gloss": "a black rock burned for fuel"
+    },
+    {
+      "word": "miner",
+      "gloss": "someone who digs for coal or metal underground"
+    },
+    {
+      "word": "fit",
+      "gloss": "here: healthy enough for something"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How old was Ginger Goodwin when he became a coal miner?",
+      "options": [
+        "Fifteen",
+        "Twenty",
+        "Twelve"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Why was coal mining dangerous?",
+      "options": [
+        "The dust and gas made workers sick",
+        "The mines were far from towns",
+        "The pay was too low"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What did many people believe about the second medical exam?",
+      "options": [
+        "The doctor made an honest mistake",
+        "The government wanted rid of him for speaking out",
+        "He had recovered his health"
+      ],
+      "answer": 1
+    }
+  ]
+}

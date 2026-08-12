@@ -149,13 +149,13 @@ Still to do:
 
 ## Articles
 
-The first week is published: 11 to 15 August 2026, five stories from BC Reads Reader 4 about Viola Desmond, Tommy Douglas, Nellie McClung, Joy Kogawa and Elijah Harper. Canadian civil rights history, written for adult literacy students, under CC BY 4.0.
+Twenty-six days are published, 11 August to 5 September 2026, one article a day. Every chapter of BC Reads that works as a reading is now used.
 
-Reader 4 has four more chapters not used yet, on Jim Egan, Gabor Mate, human rights, and one introductory piece. Reader 5 turns to how learning and memory work, and Reader 6 has eleven chapters. Between them that is several more weeks without needing a new source.
+The remaining chapters were checked and ruled out for reasons worth recording, so nobody re-treads the ground. Readers 1 and 2 are all under 220 words, too short once trimmed. Several Reader 6 chapters are software instructions for WeVideo rather than readings. Two more, on standing up for your human rights and on publishing a digital story, are worksheets whose lists live in HTML that does not survive extraction, leaving paragraphs ending in a colon with nothing after them.
 
-The routine for adding more is in `docs/content-sources.md`. Roughly: save the source text as it was published, run `new-article.mjs`, delete sentences until `check-article.mjs` passes, then write the questions and the word definitions.
+One chapter is set aside rather than ruled out. "The Many Pathways to Knowledge" from Reader 5 is good writing, but it describes a suicide attempt. The textbook handles it carefully and ends on recovery, and it is a reasonable thing to publish. It is left out only because meeting it unannounced in a two minute morning habit is a decision for the people reading, not for whoever prepares the batch.
 
-Keep two weeks scheduled ahead. Below that, the app falls back to the sample article and the daily habit quietly breaks.
+For a twenty-seventh day onwards, the source list in `docs/content-sources.md` has canada.ca, VOA Learning English and Project Gutenberg Canada. VOA is the only one with an archive deep enough to run for a year, and it is American rather than Canadian.
 
 ## What is left
 

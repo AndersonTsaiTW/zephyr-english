@@ -1,0 +1,59 @@
+{
+  "id": "2026-09-03",
+  "title": "All Together Now: BC Festivals",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 3, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader3/chapter/all-together-now-bc-festivals/"
+  },
+  "body": [
+    "In places across British Columbia, people come together for festivals that celebrate the things that make their hometown special.",
+    "Every year, about 20,000 grey whales swim past the west coast of Vancouver Island. The whales travel from Mexico to the Arctic and back again. The whole trip is about 16,000 kilometres . This is one of the longest yearly journeys of any mammal . Each March, the people who live around the Pacific Rim National Park hold a festival to celebrate the whales’ journey. The festival is known as the Pacific Rim Whale Festival. The whales travel very close to the shore as they swim north. This allows people to gather together to watch them from land as well as from boats.",
+    "On the east coast of Vancouver Island, you can spot mammals of a different sort moving through the water — people in bathtub boats! The city of Nanaimo is home to the world’s oldest and best-known bathtub boat race. It started out as a silly event in 1967. Today, Nanaimo’s World Championship Bathtub Race is a serious sport that brings racers and visitors from around the world.",
+    "Vancouver is home to another famous festival on the water — the Dragon Boat Festival. Dragon boat racing started in China over 2,000 years ago. It was brought to Vancouver during Expo 86. It returned as a yearly event in 1989 as a way to celebrate the many cultures living together in the city. The festival begins with a ceremony to awaken the dragon and give the people and boats the dragon’s strength. Each boat has a dragon’s head carved on the front and a tail on the back. The boat holds a team of about 20 people, who paddle to the beat of a drummer seated at the front."
+  ],
+  "previewWords": [
+    {
+      "word": "festival",
+      "gloss": "a public celebration held every year"
+    },
+    {
+      "word": "mammal",
+      "gloss": "an animal that feeds its young with milk"
+    },
+    {
+      "word": "paddle",
+      "gloss": "to move a boat using a short oar"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How far do the grey whales travel each year?",
+      "options": [
+        "About 16,000 kilometres",
+        "About 1,600 kilometres",
+        "About 160 kilometres"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "When is the Pacific Rim Whale Festival held?",
+      "options": [
+        "Each March",
+        "Each July",
+        "Each December"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "How many people are in a dragon boat team?",
+      "options": [
+        "About 20",
+        "About 5",
+        "About 50"
+      ],
+      "answer": 0
+    }
+  ]
+}

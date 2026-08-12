@@ -1,0 +1,58 @@
+{
+  "id": "2026-08-26",
+  "title": "The Story of Jim Egan",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 4, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader4/chapter/the-story-of-jim-egan/"
+  },
+  "body": [
+    "At one time, the word “ queer “ was an insult. Today, it is a word many people proudly use to describe themselves. The road to pride began with Jim Egan.",
+    "Jim was born in Toronto in 1921. As a young man, he began visiting bars quietly known to be gay meeting places. He had to be careful. The police in Toronto often went to these places. They would trick gay men by pretending to be gay, too. Then they would arrest them. The men’s names would be printed in newspapers. They often lost their jobs, their family, and their friends. Landlords would not rent to them. Being gay meant being left out by the world. Jim met a man named Jack in one of those bars. They fell in love. The world seemed like a less lonely place.",
+    "Jim loved to read. He noticed queer people were being written about a lot more in the newspapers. But queer people were always talked about as being sick and immoral. This upset Jim. He could not stay silent. So, in 1949, he began writing letters to the newspapers. He protested the way they talked about gay people. He called for equal rights under the law. This was at a time when no one else was speaking up. Over the next 10 years, his letters appeared in many places, including TIME magazine. In 1963, a reporter from Maclean’s magazine wrote a story about Jim. It was the first positive report about queer people by a major Canadian news company. Jim used a fake name to avoid arrest."
+  ],
+  "previewWords": [
+    {
+      "word": "insult",
+      "gloss": "a rude word meant to hurt someone"
+    },
+    {
+      "word": "arrest",
+      "gloss": "to be taken away by the police"
+    },
+    {
+      "word": "landlord",
+      "gloss": "a person who rents out a home to others"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did police in Toronto trap gay men?",
+      "options": [
+        "By pretending to be gay themselves",
+        "By reading their letters",
+        "By following them home"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What happened to men whose names were printed in newspapers?",
+      "options": [
+        "They were given fines",
+        "They often lost jobs, family and friends",
+        "They had to leave the country"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Why did Jim use a false name?",
+      "options": [
+        "To sell more magazines",
+        "To avoid being arrested",
+        "Because his own name was hard to spell"
+      ],
+      "answer": 1
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": "2026-09-05",
+  "title": "Setting the Tone",
+  "source": {
+    "author": "Shantel Ivits",
+    "origin": "BC Reads: Adult Literacy Fundamental English, Reader 6, BCcampus Open Education",
+    "license": "CC BY 4.0",
+    "url": "https://opentextbc.ca/abealfreader6/chapter/setting-the-tone/"
+  },
+  "body": [
+    "Part of the magic of storytelling is that it can reduce the distance between people. It can create connection and community. In a world where loneliness is far too common, this is a valuable gift.",
+    "Stories reduce the distance between people when they honestly tap into the emotion of the events. If the emotions are exaggerated , the story seems dishonest . If there are no emotions, the story will also seem dishonest .",
+    "It can be difficult to honestly tap into the emotion of our stories. Many of us are not used to identifying our feelings. Our feelings vocabulary might need room to grow. Below is a list of words that might help you build your vocabulary.",
+    "A story can contain many different emotions. The overall emotional feeling of a story is called the tone. For example, the tone of All the Important Things might be described as hopeful. The storyteller has found a career that allows him to help others with HIV, and he is hopeful that he will have a bright future despite his illness. The tone of 7th Word might be described as curious. The storyteller is surprised he knew the Lakota word for berry pudding and curious about what else he will learn from the world around him. The tone of Go Around might be described as empowered. The storyteller is empowered because she is able to use her voice to keep herself and others safe, and nowadays people listen to what she has to say."
+  ],
+  "previewWords": [
+    {
+      "word": "tone",
+      "gloss": "the overall feeling a story gives"
+    },
+    {
+      "word": "exaggerated",
+      "gloss": "made to sound bigger than it really is"
+    },
+    {
+      "word": "empowered",
+      "gloss": "feeling able to act and be heard"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What can storytelling do, according to the article?",
+      "options": [
+        "Reduce the distance between people",
+        "Replace conversation",
+        "Make people forget their problems"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What happens if the emotions in a story are exaggerated?",
+      "options": [
+        "The story becomes more moving",
+        "The story seems dishonest",
+        "The audience laughs"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What is the tone of a story?",
+      "options": [
+        "Its overall emotional feeling",
+        "How loudly it is read",
+        "The order of its scenes"
+      ],
+      "answer": 0
+    }
+  ]
+}
