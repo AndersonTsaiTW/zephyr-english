@@ -249,6 +249,50 @@ const junk = await backup.evaluate("importProgress('not a backup')");
 check('nonsense input is refused', junk.ok === false, junk.message);
 await backup.close();
 
+// The share card is drawn in the browser, so it has to actually produce an
+// image and lay out without one block landing on another.
+const card = await page.evaluate(() => {
+  const canvas = drawShareCard();
+  return { w: canvas.width, h: canvas.height, data: canvas.toDataURL('image/png').length };
+});
+check('the share card renders', card.w === 1080 && card.h === 1240 && card.data > 5000, `${card.w}x${card.h}, ${card.data} chars`);
+
+check(
+  'milestones are exact, not ranges',
+  await page.evaluate(() => streakHeadline(12) === 'DAYS IN A ROW' && streakHeadline(7) === 'A WEEK STRAIGHT'),
+  await page.evaluate(() => [1, 7, 12, 14].map((n) => `${n}=${streakHeadline(n)}`).join(' '))
+);
+
+// A long title and a long topic together are the case that used to collide
+// with the address at the foot of the card.
+const fits = await page.evaluate(() => {
+  state.article = {
+    ...state.article,
+    title: 'Spread the Word: First Nations Languages in BC',
+    topic: 'Thirty-two languages, and the young people bringing them back.',
+  };
+  const canvas = drawShareCard();
+  const ctx = canvas.getContext('2d');
+  // Read the clear band between the end of the topic and the top of the
+  // address. Ink here means one has run into the other. The card is drawn at
+  // twice its layout size, so these are doubled coordinates.
+  const strip = ctx.getImageData(0, 1096, canvas.width, 24).data;
+  let lit = 0;
+  for (let i = 0; i < strip.length; i += 4) {
+    if (strip[i] > 40 || strip[i + 1] > 40 || strip[i + 2] > 40) lit++;
+  }
+  return lit;
+});
+check('nothing overlaps the address on the card', fits === 0, `${fits} lit pixels in the gap`);
+
+await page.reload({ waitUntil: 'networkidle' });
+await page.locator('#cardBtn').click();
+await page.locator('#cardImage').evaluate(
+  (img) => img.complete || new Promise((res) => { img.onload = res; })
+);
+const shown = await page.locator('#cardImage').boundingBox();
+check('the card can be shown on the page', shown !== null && shown.height > 100, `${Math.round(shown?.width ?? 0)}x${Math.round(shown?.height ?? 0)}`);
+
 check('no unexpected page errors', errors.length === 0, errors.join(' | '));
 
 await browser.close();

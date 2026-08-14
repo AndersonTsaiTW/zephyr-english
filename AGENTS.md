@@ -95,6 +95,12 @@ The first was the reading panel growing taller than the window. Inside a flexibl
 
 The second was a countdown that would not leave. HTML's `hidden` attribute is supposed to hide an element, but a stylesheet saying that element is visible beats it. Our three-two-one overlay had such a style, so it sat on top of the article permanently, painted in the same colour as the panel behind it. That is why nothing looked broken. One line near the top of the stylesheet, `[hidden] { display: none !important; }`, gives the attribute its authority back. Hide things with the attribute and let that line do the work.
 
+## The share card
+
+Finishing a day offers a card to share. It is drawn on a canvas in the browser, in `drawShareCard()`, so it works offline and needs no server. Web Share carries the image and the text together where the browser supports files; where it does not, the card can be shown on the page and saved by hand.
+
+Two things about it are deliberate. It is always the dark palette, because a card lands in a chat beside other people's photographs and a white square reads as a blank message. And the streak wording only celebrates exact milestones, seven days, fourteen, thirty, and so on. Ranges would call day twelve "a week straight", which is both untrue and the kind of praise that stops meaning anything once you notice it.
+
 ## Writing for people
 
 Anything a person reads, meaning documentation, text on screen, and commit messages, should sound like a person wrote it. Avoid the habits that make writing feel machine-made: long dashes, lists of exactly three things that pad rather than inform, a bolded phrase followed by a colon used as a bullet, emoji used as decoration, and closing paragraphs that cheerfully restate what you just said.

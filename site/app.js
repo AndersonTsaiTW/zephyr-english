@@ -589,17 +589,204 @@ function buildShareText() {
   return [`ZEPHYR · ${r.day ? `Day ${r.day}` : r.date}`, stats.join(' · '), siteUrl()].join('\n');
 }
 
+/* ---------- the share card ---------- */
+
+// Drawn in the browser rather than fetched, so sharing works offline and
+// needs no server. Always the dark palette: a card lands in a chat next to
+// other people's photos, and a white square looks like a blank message.
+const CARD = {
+  width: 540,
+  height: 620,
+  ground: '#0D1519',
+  surface: '#142027',
+  ink: '#DAE5EA',
+  muted: '#8CA3AD',
+  accent: '#56B4C8',
+  line: '#223440',
+  serif: 'Georgia, "Times New Roman", serif',
+  mono: 'ui-monospace, Consolas, monospace',
+};
+
+// Milestones are exact. A range would call day twelve "a week straight",
+// which is both wrong and the kind of empty praise that stops meaning
+// anything. Every other day just says what it is.
+const MILESTONES = {
+  7: 'A WEEK STRAIGHT',
+  14: 'TWO WEEKS STRAIGHT',
+  21: 'THREE WEEKS STRAIGHT',
+  30: 'A MONTH STRAIGHT',
+  50: 'FIFTY DAYS',
+  100: 'ONE HUNDRED DAYS',
+  365: 'A WHOLE YEAR',
+};
+
+function streakHeadline(streak) {
+  if (MILESTONES[streak]) return MILESTONES[streak];
+  if (streak > 1) return 'DAYS IN A ROW';
+  return 'DAY ONE';
+}
+
+function wrapLines(ctx, text, maxWidth, limit) {
+  const words = text.split(/\s+/);
+  const lines = [];
+  let line = '';
+  for (const word of words) {
+    const candidate = line ? `${line} ${word}` : word;
+    if (ctx.measureText(candidate).width > maxWidth && line) {
+      lines.push(line);
+      line = word;
+      if (lines.length === limit) return lines;
+    } else {
+      line = candidate;
+    }
+  }
+  if (line && lines.length < limit) lines.push(line);
+  return lines;
+}
+
+function drawShareCard() {
+  const r = state.lastResult;
+  const S = CARD.width;
+  const H = CARD.height;
+  const scale = 2;
+  const canvas = document.createElement('canvas');
+  canvas.width = S * scale;
+  canvas.height = H * scale;
+  const ctx = canvas.getContext('2d');
+  ctx.scale(scale, scale);
+
+  ctx.fillStyle = CARD.ground;
+  ctx.fillRect(0, 0, S, H);
+
+  // Three drifting strokes above the wordmark, the same mark as the app icon.
+  ctx.strokeStyle = CARD.line;
+  ctx.lineWidth = 2;
+  ctx.lineCap = 'round';
+  [[54, 0], [76, -22], [38, 22]].forEach(([len, offset], i) => {
+    const y = 52 + i * 9;
+    ctx.beginPath();
+    ctx.moveTo(S / 2 + offset - len / 2, y);
+    ctx.lineTo(S / 2 + offset + len / 2, y);
+    ctx.stroke();
+  });
+
+  ctx.textAlign = 'center';
+
+  ctx.fillStyle = CARD.accent;
+  ctx.font = `500 22px ${CARD.serif}`;
+  ctx.letterSpacing = '10px';
+  ctx.fillText('ZEPHYR', S / 2 + 5, 110);
+  ctx.letterSpacing = '0px';
+
+  // The streak is the celebration, so it gets the largest type on the card.
+  const streak = r.streak || 1;
+  // Georgia sets old-style figures, so 3, 4, 5, 7 and 9 drop below the
+  // baseline. The label needs clear air underneath or a 7 lands on top of it.
+  ctx.fillStyle = CARD.ink;
+  ctx.font = `500 120px ${CARD.serif}`;
+  ctx.fillText(String(streak), S / 2, 226);
+
+  ctx.fillStyle = CARD.accent;
+  ctx.font = `600 15px ${CARD.mono}`;
+  ctx.letterSpacing = '4px';
+  ctx.fillText(streakHeadline(streak), S / 2, 278);
+  ctx.letterSpacing = '0px';
+
+  ctx.strokeStyle = CARD.line;
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(140, 306);
+  ctx.lineTo(S - 140, 306);
+  ctx.stroke();
+
+  const stats = [`${r.wpm} wpm`];
+  if (r.score != null && r.total != null) stats.push(`${r.score}/${r.total} correct`);
+  ctx.fillStyle = CARD.ink;
+  ctx.font = `18px ${CARD.mono}`;
+  ctx.fillText(stats.join('   ·   '), S / 2, 346);
+
+  // The title and topic each wrap to at most two lines, so the block below the
+  // divider is between one and four lines tall. Measuring it first and
+  // centring what it comes to keeps the card balanced whatever the article is
+  // called, instead of letting a long title run into the address.
+  const article = state.article ?? {};
+  const TITLE_LEADING = 32;
+  const TOPIC_LEADING = 24;
+
+  ctx.font = `500 26px ${CARD.serif}`;
+  const titleLines = wrapLines(ctx, article.title ?? '', S - 110, 2);
+  ctx.font = `16px ${CARD.serif}`;
+  const topicLines = article.topic ? wrapLines(ctx, article.topic, S - 130, 2) : [];
+
+  const blockHeight =
+    titleLines.length * TITLE_LEADING + (topicLines.length ? 10 + topicLines.length * TOPIC_LEADING : 0);
+  const bandTop = 380;
+  const bandBottom = H - 70;
+  let y = bandTop + Math.max(0, (bandBottom - bandTop - blockHeight) / 2) + 24;
+
+  ctx.fillStyle = CARD.ink;
+  ctx.font = `500 26px ${CARD.serif}`;
+  for (const line of titleLines) {
+    ctx.fillText(line, S / 2, y);
+    y += TITLE_LEADING;
+  }
+
+  if (topicLines.length) {
+    ctx.fillStyle = CARD.muted;
+    ctx.font = `16px ${CARD.serif}`;
+    y += 10;
+    for (const line of topicLines) {
+      ctx.fillText(line, S / 2, y);
+      y += TOPIC_LEADING;
+    }
+  }
+
+  ctx.fillStyle = CARD.muted;
+  ctx.font = `13px ${CARD.mono}`;
+  ctx.letterSpacing = '2px';
+  ctx.fillText(siteUrl().replace(/^https?:\/\//, '').replace(/\/$/, ''), S / 2, H - 36);
+  ctx.letterSpacing = '0px';
+
+  return canvas;
+}
+
+function shareCardBlob() {
+  return new Promise((resolve) => drawShareCard().toBlob(resolve, 'image/png'));
+}
+
 function openWhatsApp() {
   window.open(`https://wa.me/?text=${encodeURIComponent(buildShareText())}`, '_blank', 'noopener');
 }
 
 async function shareResult() {
+  const text = buildShareText();
   try {
-    await navigator.share({ text: buildShareText() });
+    const blob = await shareCardBlob();
+    const file = new File([blob], `zephyr-day-${state.lastResult?.day ?? 1}.png`, { type: 'image/png' });
+    // Some platforms drop the text when a file is attached, so the card
+    // carries the address as well and the message still reads on its own.
+    if (navigator.canShare?.({ files: [file] })) {
+      await navigator.share({ files: [file], text });
+      return;
+    }
+    await navigator.share({ text });
   } catch (err) {
     // Dismissing the sheet is not a failure worth reacting to.
     if (err.name !== 'AbortError') openWhatsApp();
   }
+}
+
+// Where the browser cannot hand a file to another app, the card is shown on
+// the page instead. On a phone that is a long press away from saving.
+async function revealCard() {
+  const holder = $('cardHolder');
+  const img = $('cardImage');
+  const blob = await shareCardBlob();
+  img.src = URL.createObjectURL(blob);
+  img.alt = `Zephyr day ${state.lastResult?.day ?? 1}, ${state.lastResult?.wpm} words per minute`;
+  holder.hidden = false;
+  $('saveCardBtn').href = img.src;
+  $('saveCardBtn').download = `zephyr-day-${state.lastResult?.day ?? 1}.png`;
 }
 
 async function copyResult() {
@@ -678,6 +865,7 @@ $('stepBtn').addEventListener('click', toggleStepMode);
 $('shareBtn').addEventListener('click', shareResult);
 $('waBtn').addEventListener('click', openWhatsApp);
 $('copyBtn').addEventListener('click', copyResult);
+$('cardBtn').addEventListener('click', revealCard);
 $('startBtn').addEventListener('click', startReading);
 $('againBtn').addEventListener('click', startReading);
 $('playBtn').addEventListener('click', toggle);

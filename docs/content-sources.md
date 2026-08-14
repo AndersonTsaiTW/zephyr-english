@@ -107,6 +107,8 @@ The word list behind the common-word check comes from the New General Service Li
 
 One quirk to expect: that list has no entries for spelled-out numbers, so `two` and `three` will always be reported as uncommon words. Ignore those.
 
+Write a one line `topic` too. It appears on the share card, so it should say what the article is about in a way that would make someone curious, not summarise it. Around ten words.
+
 Last, write the quiz questions and the word definitions straight into the article file. A model may draft them, but read every question yourself before it ships.
 
 Keep at least two weeks of articles scheduled ahead.
