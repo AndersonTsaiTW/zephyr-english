@@ -1,0 +1,65 @@
+{
+  "id": "2026-09-14",
+  "title": "American Places: Gettysburg",
+  "topic": "Three days of fighting, then two minutes of speaking.",
+  "source": {
+    "author": "VOA Learning English",
+    "origin": "VOA Learning English",
+    "license": "Public domain (work of the US federal government)",
+    "url": "https://learningenglish.voanews.com/a/american-places-gettysburg-pennsylvania/.html"
+  },
+  "body": [
+    "The Gettysburg National Military Park is in the small town of Gettysburg in the eastern state of Pennsylvania.",
+    "Much of the area around Gettysburg still looks like it did in the 1860s, during the American Civil War. The town is in the middle of good farmland. Roads pass through Gettysburg that lead to Baltimore, Washington, D.C., and other eastern cities. It is hard to believe that two huge armies fought there.",
+    "One fighting force was the United States Army of the Potomac, commanded by General George Meade. The other was the Confederate Army of Northern Virginia led by General Robert E. Lee. Lee’s troops had moved north into Pennsylvania from Virginia.",
+    "The battle of Gettysburg began on July 1, 1863. About 170,000 soldiers fought for three days. When it ended on July 3, more than 50,000 soldiers were dead, wounded or missing.",
+    "Many visitors start their visit to Gettysburg at the Gettysburg Museum of the Civil War. The museum has a large collection of Civil War objects. The museum has more than 1 million artifacts , from soldiers’ private notebooks and clothing to maps of the battlefield.",
+    "The museum also houses the Gettysburg cyclorama painting. This kind of artwork completely surrounds the people looking at it.",
+    "The painting shows the artist’s vision of the final major attack of the battle on July 3, 1863. Over time, it has come to be called Pickett's Charge.",
+    "The charge failed. Southern forces would never again reach so far north. Soon after the battle, people began to visit Gettysburg to try to understand what happened there. One of those visitors, on November 19, 1863, was President Abraham Lincoln. He was invited to help dedicate a burial ground for Union soldiers killed in the battle.",
+    "Lincoln spoke for just two minutes. But his speech, known as “The Gettysburg Address,” is one of the most famous pieces of American oratory ."
+  ],
+  "previewWords": [
+    {
+      "word": "artifact",
+      "gloss": "an object from the past that is kept and studied"
+    },
+    {
+      "word": "dedicate",
+      "gloss": "to open a place formally, in someone's honour"
+    },
+    {
+      "word": "oratory",
+      "gloss": "the art of making speeches"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How long did the battle of Gettysburg last?",
+      "options": [
+        "One afternoon",
+        "Three days",
+        "Three weeks"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What is a cyclorama?",
+      "options": [
+        "A painting that surrounds the people looking at it",
+        "A room where soldiers slept",
+        "A map drawn during the battle"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Why did Lincoln come to Gettysburg in November 1863?",
+      "options": [
+        "To command the Northern army",
+        "To visit the museum",
+        "To help dedicate a burial ground"
+      ],
+      "answer": 2
+    }
+  ]
+}

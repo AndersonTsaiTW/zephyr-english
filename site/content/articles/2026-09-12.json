@@ -1,0 +1,64 @@
+{
+  "id": "2026-09-12",
+  "title": "A Short History of Moon Landings",
+  "topic": "Sixty years of arriving on the moon, softly and otherwise.",
+  "source": {
+    "author": "VOA Learning English",
+    "origin": "VOA Learning English",
+    "license": "Public domain (work of the US federal government)",
+    "url": "https://learningenglish.voanews.com/a/a-short-history-of-spacecraft-landings-on-the-moon/.html"
+  },
+  "body": [
+    "Many years have passed since the first spacecraft landed on the moon in 1966. From then until now, there have been many additional attempts with some succeeding and others failing.",
+    "The Soviet Union’s Luna 9 spacecraft was the first to land on the moon. It touched down on the lunar surface in 1966. The landing came after several other Soviet spacecraft either did not reach the moon or crashed on the surface.",
+    "The American space agency NASA says Luna 9 was the first spacecraft to carry out a soft landing on the moon. It was also the first to send “photographic data” from the moon’s surface to Earth.",
+    "In 1969, NASA successfully landed Apollo 11 astronauts Neil Armstrong and Buzz Aldrin on the moon. The U.S. Apollo program sent 12 astronauts to explore the moon over six missions. Apollo 17 was the last in 1972. The U.S. is still the only country to land humans on the moon.",
+    "In 2013, China became the third country to successfully land a spacecraft on the moon. China followed with the Yutu-2 rover in 2019, this time touching down on the moon’s unexplored far side.",
+    "In 2023, Russia tried its first moon landing in nearly 50 years. The Luna 25 spacecraft was attempting to land near the lunar south pole. But it is believed to have crash landed on the moon’s surface.",
+    "After its first lander crashed into the moon in 2019, India made its second attempt in 2023. The country successfully landed its Chandrayaan-3 spacecraft on the lunar surface. The mission made India the fourth nation to complete a moon landing.",
+    "In January 2024, Japan became the fifth country to successfully land a spacecraft on the moon. But the SLIM spacecraft landed upside down. This caused some power and communication problems, but the lander was able to operate for a short time."
+  ],
+  "previewWords": [
+    {
+      "word": "spacecraft",
+      "gloss": "a vehicle built to travel in space"
+    },
+    {
+      "word": "lunar",
+      "gloss": "having to do with the moon"
+    },
+    {
+      "word": "rover",
+      "gloss": "a vehicle that drives across another world"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Which country landed the first spacecraft on the moon?",
+      "options": [
+        "The Soviet Union",
+        "The United States",
+        "China"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Which country is still the only one to land people on the moon?",
+      "options": [
+        "China",
+        "India",
+        "The United States"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What happened to Japan's SLIM spacecraft?",
+      "options": [
+        "It never left the Earth",
+        "It landed upside down",
+        "It missed the moon completely"
+      ],
+      "answer": 1
+    }
+  ]
+}

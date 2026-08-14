@@ -1,0 +1,66 @@
+{
+  "id": "2026-09-13",
+  "title": "The Rocket Scientist Robert Goddard",
+  "topic": "They laughed when he said a rocket could reach the moon.",
+  "source": {
+    "author": "VOA Learning English",
+    "origin": "VOA Learning English",
+    "license": "Public domain (work of the US federal government)",
+    "url": "https://learningenglish.voanews.com/a/american-inventors-rocket-scientist-robert-goddard/.html"
+  },
+  "body": [
+    "Today rocket launches and space missions are common. But in the early 1900s, space travel seemed like a dream.",
+    "One of the most influential people in the field of rocket science was American Robert Goddard.",
+    "Robert Goddard once said that \"the dream of yesterday is the hope of today and the reality of tomorrow.\" His scientific work gave hope to many dreams about space travel. He turned some of those dreams into reality.",
+    "More than one hundred years ago, Goddard carried out studies and tests of rocket engines.",
+    "In 1925, he made and tested the first rocket engine using a soft chemical fuel. The next year, he successfully launched the world's first liquid-fuel rocket.",
+    "Goddard's work proved that machines could travel outside of Earth's atmosphere and into space.",
+    "During his early research, he received money and support from the U.S. Smithsonian Institution. The Smithsonian published several reports about his efforts.",
+    "One publication, called “A Method of Reaching Extreme Altitudes,” wrote about his search for ways to send weather recording instruments higher than balloons could fly.",
+    "In that report, Goddard also suggested the possibility of a rocket someday reaching the moon. At the time, there was a big dispute in the press about this claim. Many people thought he was foolish for suggesting something that seemed so impossible.",
+    "Many of Goddard’s ideas are still used in rocket development. So, in a way, every rocket that flies today could be considered a Goddard rocket."
+  ],
+  "previewWords": [
+    {
+      "word": "atmosphere",
+      "gloss": "the layer of air around the Earth"
+    },
+    {
+      "word": "liquid",
+      "gloss": "able to flow, the way water does"
+    },
+    {
+      "word": "dispute",
+      "gloss": "an argument between people who disagree"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did Goddard launch a year after 1925?",
+      "options": [
+        "The first weather balloon",
+        "The world's first liquid-fuel rocket",
+        "The first airplane to carry mail"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Who supported Goddard's early research?",
+      "options": [
+        "A newspaper company",
+        "The Wright brothers",
+        "The Smithsonian Institution"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "How did many people react to his idea of a rocket reaching the moon?",
+      "options": [
+        "They thought he was foolish",
+        "They gave him a prize for it",
+        "They asked him to build one"
+      ],
+      "answer": 0
+    }
+  ]
+}
