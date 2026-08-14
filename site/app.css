@@ -125,8 +125,15 @@ main {
 }
 
 /* ---- centred screens ---- */
+/* Centred flex content that grows taller than its container overflows in both
+   directions, and the part above the top edge cannot be scrolled to. The
+   results screen does exactly that once the share card is shown. "safe"
+   centring falls back to packing from the start instead of clipping; the
+   plain value on the line above covers browsers that do not know the keyword. */
 #screen-today, #screen-quiz, #screen-results, #screen-empty {
   justify-content: center;
+  justify-content: safe center;
+  overflow-y: auto;
   gap: 0.75rem;
   text-align: center;
 }

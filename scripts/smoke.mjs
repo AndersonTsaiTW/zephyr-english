@@ -97,6 +97,49 @@ const room = await page.evaluate(
 check('there is something to scroll through', room > 100, `${room}px of travel`);
 check('first paragraph is visible', await page.locator('#track p').first().isVisible());
 
+// The run-out has to be a whole screen tall, or the last line stops partway
+// down the panel and the read ends with text still on display.
+const runOut = await page.evaluate(() => {
+  const track = document.querySelector('#track');
+  const reader = document.querySelector('#reader');
+  return {
+    pad: parseFloat(getComputedStyle(track).paddingBottom),
+    panel: reader.clientHeight,
+  };
+});
+check(
+  'the text scrolls clear of the top before it ends',
+  runOut.pad >= runOut.panel - 1,
+  `run-out ${Math.round(runOut.pad)}px for a ${runOut.panel}px panel`
+);
+
+// Words per minute must describe the text, not the text plus its padding.
+// Timed from the first line reaching the reading band to the last line
+// leaving it, which is the stretch where words actually arrive. The whole
+// animation runs a little longer, because the last line still has to rise off
+// the top, and no new words arrive during that tail.
+const pace = await page.evaluate(() => {
+  const track = document.querySelector('#track');
+  const style = getComputedStyle(track);
+  const pads = parseFloat(style.paddingTop) + parseFloat(style.paddingBottom);
+  const content = track.scrollHeight - pads;
+  return {
+    reading: content / pxPerSec(),
+    total: maxY() / pxPerSec(),
+    expected: (state.words / state.wpm) * 60,
+  };
+});
+check(
+  'words cross at the stated speed',
+  Math.abs(pace.reading - pace.expected) / pace.expected < 0.02,
+  `${pace.reading.toFixed(1)}s against ${pace.expected.toFixed(1)}s`
+);
+check(
+  'the tail after the last word is short',
+  pace.total > pace.reading && (pace.total - pace.reading) / pace.expected < 0.3,
+  `${(pace.total - pace.reading).toFixed(1)}s of run-out`
+);
+
 const before = await page.evaluate('state.y');
 await page.waitForTimeout(900);
 const after = await page.evaluate('state.y');
@@ -292,6 +335,33 @@ await page.locator('#cardImage').evaluate(
 );
 const shown = await page.locator('#cardImage').boundingBox();
 check('the card can be shown on the page', shown !== null && shown.height > 100, `${Math.round(shown?.width ?? 0)}x${Math.round(shown?.height ?? 0)}`);
+
+// On a short screen the results screen grows taller than the space it has.
+// Centred flex content overflows in both directions and the top half cannot
+// be scrolled to, which hid the card completely on a real phone.
+const short = await newPage({ viewport: { width: 390, height: 480 } });
+await short.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle' });
+await short.evaluate(() => {
+  state.lastResult = { date: '2026-01-01', wpm: 142, words: 275, score: 3, total: 3, streak: 4, day: 4 };
+  show('results');
+  renderResults(state.lastResult);
+});
+await short.locator('#cardBtn').click();
+await short.locator('#cardImage').evaluate(
+  (img) => (img.complete && img.naturalWidth ? true : new Promise((res) => { img.onload = res; }))
+);
+const reach = await short.evaluate(() => {
+  const screen = document.getElementById('screen-results');
+  screen.scrollTop = screen.scrollHeight;
+  const box = document.getElementById('cardImage').getBoundingClientRect();
+  return { top: Math.round(box.top), bottom: Math.round(box.bottom), vh: innerHeight };
+});
+check(
+  'the card is reachable on a short screen',
+  reach.top >= -1 && reach.bottom <= reach.vh + 1,
+  `${reach.top}..${reach.bottom} of ${reach.vh}`
+);
+await short.close();
 
 check('no unexpected page errors', errors.length === 0, errors.join(' | '));
 

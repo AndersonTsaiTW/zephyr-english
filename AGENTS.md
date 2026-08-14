@@ -101,6 +101,12 @@ Finishing a day offers a card to share. It is drawn on a canvas in the browser, 
 
 Two things about it are deliberate. It is always the dark palette, because a card lands in a chat beside other people's photographs and a white square reads as a blank message. And the streak wording only celebrates exact milestones, seven days, fourteen, thirty, and so on. Ranges would call day twelve "a week straight", which is both untrue and the kind of praise that stops meaning anything once you notice it.
 
+## Two more layout traps
+
+Centred flex content that outgrows its container overflows in both directions, and the part above the top edge cannot be scrolled to at all. The results screen does this once the share card is shown, and on a shorter phone the card was simply invisible with no way to reach it. Those screens now use `justify-content: safe center` with `overflow-y: auto`, keeping the plain `center` on the line above for browsers that do not know the keyword.
+
+The reader's run-out is a whole panel height, not a fraction of one. With a smaller run-out the last line stops partway down the panel and the read is declared over while text is still on screen. And the pace is measured against the height of the text alone: counting the padding as if it were words made the article cross faster than the speed on display claimed.
+
 ## Writing for people
 
 Anything a person reads, meaning documentation, text on screen, and commit messages, should sound like a person wrote it. Avoid the habits that make writing feel machine-made: long dashes, lists of exactly three things that pad rather than inform, a bolded phrase followed by a colon used as a bullet, emoji used as decoration, and closing paragraphs that cheerfully restate what you just said.

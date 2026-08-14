@@ -307,19 +307,30 @@ function renderTrack(article) {
   });
 }
 
+// The lead-in puts the first line at the focus band. The run-out is a whole
+// screen, so the last line keeps rising until it leaves the top rather than
+// stopping in the middle of the panel with the read declared over.
 function padTrack() {
-  const pad = Math.round(reader.clientHeight * 0.42);
-  track.style.paddingTop = `${pad}px`;
-  track.style.paddingBottom = `${pad}px`;
+  track.style.paddingTop = `${Math.round(reader.clientHeight * 0.42)}px`;
+  track.style.paddingBottom = `${reader.clientHeight}px`;
 }
 
 function maxY() {
   return Math.max(1, track.scrollHeight - reader.clientHeight);
 }
 
-// Constant reading rate: the whole track passes at wpm words per minute.
+// The height of the text itself, with the empty lead-in and run-out removed.
+function contentHeight() {
+  const style = getComputedStyle(track);
+  const pads = parseFloat(style.paddingTop) + parseFloat(style.paddingBottom);
+  return Math.max(1, track.scrollHeight - pads);
+}
+
+// Words per minute has to describe the text, not the track. Measuring against
+// the full track counts the empty padding as if it were words, which made the
+// text cross the screen faster than the number on screen claimed.
 function pxPerSec() {
-  return (state.wpm / 60) * (track.scrollHeight / state.words);
+  return (state.wpm / 60) * (contentHeight() / state.words);
 }
 
 function renderScroll() {
