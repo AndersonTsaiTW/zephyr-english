@@ -31,7 +31,10 @@ const { chromium } = await loadPlaywright();
 
 const server = createServer(async (req, res) => {
   const requested = decodeURIComponent(new URL(req.url, 'http://x').pathname);
-  const path = requested === '/' ? '/index.html' : requested;
+  // Cloudflare serves a folder's index.html when the folder itself is asked
+  // for, so this has to as well, or /about/ is a page in production and a 404
+  // in every test.
+  const path = requested.endsWith('/') ? `${requested}index.html` : requested;
   try {
     const body = await readFile(join(SITE, path));
     res.writeHead(200, { 'Content-Type': TYPES[extname(path)] ?? 'text/plain' });
@@ -221,6 +224,45 @@ await guarded.route('**/content/articles/*.json', (route) =>
 await guarded.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle' });
 check('an article without a source is refused', (await guarded.locator('.screen.active').getAttribute('id')) === 'screen-empty');
 await guarded.close();
+
+// The about page is the only prose on the site that a search engine can read
+// without running the app, so it has to be there, be prose, and be reachable
+// from the card. A crawler that finds nothing but an empty shell has no
+// reason to keep the site.
+const about = await newPage();
+await about.goto(`http://localhost:${PORT}/about/`, { waitUntil: 'networkidle' });
+const aboutWords = (await about.locator('main').innerText()).split(/\s+/).filter(Boolean).length;
+check('the about page is real prose', aboutWords > 400, `${aboutWords} words`);
+check('the about page names itself', (await about.title()).toLowerCase().includes('zephyr'));
+check(
+  'the about page describes itself for a search result',
+  ((await about.locator('meta[name="description"]').getAttribute('content')) ?? '').length > 80
+);
+check('the about page leads back to the app', (await about.locator('main a[href="/"]').count()) > 0);
+await about.close();
+check('the card links to the about page', (await page.locator('#screen-today a[href="/about/"]').count()) > 0);
+const structured = await page.evaluate(
+  () => document.querySelector('script[type="application/ld+json"]')?.textContent ?? ''
+);
+check(
+  'the app describes itself in structured data',
+  (() => {
+    try {
+      return JSON.parse(structured)['@type'] === 'WebApplication';
+    } catch {
+      return false;
+    }
+  })()
+);
+const { robotsText, sitemapText } = await page.evaluate(async () => {
+  const read = async (path) => {
+    const res = await fetch(path);
+    return res.ok ? res.text() : '';
+  };
+  return { robotsText: await read('/robots.txt'), sitemapText: await read('/sitemap.xml') };
+});
+check('robots.txt allows crawling and names the sitemap', /Allow: \//.test(robotsText) && /Sitemap:/.test(robotsText));
+check('the sitemap lists both pages', /zephyr-english\.com\/</.test(sitemapText) && /\/about\//.test(sitemapText));
 
 // PWA pieces are served and well formed.
 const manifest = await page.evaluate(async () => {

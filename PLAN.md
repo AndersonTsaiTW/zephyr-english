@@ -141,21 +141,27 @@ Do not also run `wrangler pages deploy` by hand now that Git is connected. Mixin
 
 Done since: every color pair clears WCAG AA in both themes, checked by `scripts/check-contrast.mjs` rather than by eye. Focus is visible on every control. Reduced motion switches the reader to advancing a paragraph at a time, holding each for the time it would have taken to scroll past, which keeps the pacing without anything sliding; simply disabling the animation would have removed the product. The keyboard hint is shown only where a keyboard exists.
 
+Also done: the site can now be read by something that is not a browser. `site/about/` is a plain page of prose explaining what Zephyr is, why the text moves, how the speed is set and where the articles come from, linked from the today card and from the empty screen. The app itself carries a `WebApplication` description in JSON-LD, because every heading in it is written by JavaScript and a crawler reading the raw file finds an empty shell. The sitemap lists both pages.
+
 Still to do:
 
+- [ ] Submit the site in Google Search Console and Bing Webmaster Tools. Nothing in the repository can do this; it needs someone signed in.
+- [ ] Get one link to the site from a page Google already crawls and does not mark nofollow. GitHub marks its own README and About links nofollow, so the repository alone will not do it.
 - [ ] Lighthouse PWA and accessibility scores of 90 or better, run against the deployed site.
 - [ ] Confirm Add to Home Screen and an airplane-mode reload on real Android and iOS hardware.
 - [ ] Optionally, Cloudflare Web Analytics, which is cookieless, for page views and nothing personal.
 
 ## Articles
 
-Twenty-six days are published, 11 August to 5 September 2026, one article a day. Every chapter of BC Reads that works as a reading is now used.
+Thirty-six days are published, 11 August to 15 September 2026, one article a day. Every chapter of BC Reads that works as a reading is now used, and 6 to 15 September come from VOA Learning English instead.
 
 The remaining chapters were checked and ruled out for reasons worth recording, so nobody re-treads the ground. Readers 1 and 2 are all under 220 words, too short once trimmed. Several Reader 6 chapters are software instructions for WeVideo rather than readings. Two more, on standing up for your human rights and on publishing a digital story, are worksheets whose lists live in HTML that does not survive extraction, leaving paragraphs ending in a colon with nothing after them.
 
 One chapter is set aside rather than ruled out. "The Many Pathways to Knowledge" from Reader 5 is good writing, but it describes a suicide attempt. The textbook handles it carefully and ends on recovery, and it is a reasonable thing to publish. It is left out only because meeting it unannounced in a two minute morning habit is a decision for the people reading, not for whoever prepares the batch.
 
-For a twenty-seventh day onwards, the source list in `docs/content-sources.md` has canada.ca, VOA Learning English and Project Gutenberg Canada. VOA is the only one with an archive deep enough to run for a year, and it is American rather than Canadian.
+The VOA batch is two kinds of piece. Six of them are Words and Their Stories, which explains an idiom and suits a reader learning to hear English as a native speaker uses it. Those arrive with a radio introduction, a sign-off, a glossary and sometimes a scripted dialogue, none of which belongs in a two minute read, so the trimming is mostly a matter of finding the article inside the broadcast. The other four are history and science pieces that needed only their byline and their longest sentences removed.
+
+For a thirty-seventh day onwards, the source list in `docs/content-sources.md` has canada.ca, VOA Learning English and Project Gutenberg Canada. VOA is the only one with an archive deep enough to run for a year, and it is American rather than Canadian.
 
 ## What is left
 

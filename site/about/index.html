@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How Zephyr works: one English article a day that does not wait</title>
+<meta name="description" content="Zephyr gives you one short English article a day and scrolls it past at a set speed, so you cannot stop and re-read. Two minutes, then a few questions. Free, no account, built for adults learning English.">
+<link rel="canonical" href="https://zephyr-english.com/about/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Zephyr">
+<meta property="og:title" content="How Zephyr works: one English article a day that does not wait">
+<meta property="og:description" content="The text scrolls past at a set speed, so going back to a sentence stops being an option. Here is why that helps, and where the articles come from.">
+<meta property="og:url" content="https://zephyr-english.com/about/">
+<meta property="og:image" content="https://zephyr-english.com/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Zephyr, learning English one short article a day">
+<meta property="og:locale" content="en_CA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F5F9FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1519" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/icons/zephyr.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="stylesheet" href="/app.css">
+<style>
+  /* This page is a document, not a screen, so it scrolls and reads wide.
+     Colours come from the variables at the top of app.css, never from a
+     literal, because every one of them changes between the two themes. */
+  .topbar .brand { text-decoration: none; }
+  .doc { padding: 1rem 0 3rem; }
+  .doc h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.6rem;
+    line-height: 1.25;
+    margin: 0 0 0.75rem;
+  }
+  .doc .standfirst { font-size: 1.05rem; color: var(--muted); margin: 0 0 2rem; }
+  .doc h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.15rem;
+    margin: 2.25rem 0 0.6rem;
+  }
+  .doc p { margin: 0 0 1rem; }
+  .doc a { color: var(--accent); }
+  .doc .back {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--on-accent);
+    text-decoration: none;
+  }
+</style>
+<script>
+  // Same as the app: apply a pinned theme before first paint, so moving
+  // between the two pages does not flash the wrong one.
+  (function () {
+    var t = localStorage.getItem('zephyr.theme');
+    if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+  })();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "How Zephyr works",
+  "url": "https://zephyr-english.com/about/",
+  "inLanguage": "en",
+  "description": "How Zephyr works, why the text scrolls on its own, how the reading speed is set, and where the articles come from.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Zephyr",
+    "url": "https://zephyr-english.com/"
+  }
+}
+</script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/">ZEPHYR</a>
+</header>
+
+<main>
+  <article class="doc">
+    <h1>One short English article a day, and it does not wait for you</h1>
+    <p class="standfirst">Zephyr scrolls the text past at a set speed. You cannot go back to a sentence you missed, which is the whole point.</p>
+
+    <p>Open Zephyr and you get one article. Press start, a countdown runs, and the text begins moving up the screen. When the last line leaves the top, the reading is over, and two or three questions ask what the article said. Then you see how fast you read and how many days in a row you have done this.</p>
+    <p>It takes two or three minutes. That is deliberate. It is meant to be a habit you keep rather than a study session you put off.</p>
+
+    <h2>Why the text moves</h2>
+    <p>Most people reading in a second language read slower than they need to, and the reason is usually not vocabulary. Their eyes jump backwards. A word goes by that felt uncertain, so they flick back to check it, rejoin the sentence, lose the thread, and flick back again. From the inside this feels like being careful.</p>
+    <p>Moving the text takes the option away. Going back is not a temptation you have to resist, because the sentence is already gone. What is left is reading forwards, which is what a fluent reader does anyway.</p>
+    <p>This only works when the article is easy enough that you do not need to look back. A hard text on a moving screen produces panic and nothing else. So every article is measured before it is published. It has to be between 220 and 320 words, score a Flesch-Kincaid reading grade of 9 or lower, and take at least 84 of every 100 words from the two thousand commonest words in English.</p>
+
+    <h2>How the speed is decided</h2>
+    <p>Your first read starts at 110 words per minute, and the pace you settle on becomes your baseline.</p>
+    <p>After that the speed follows your comprehension instead of your ambition. Answer 80 percent or more of the questions correctly and tomorrow starts 5 percent faster. Fall below 60 percent and it drops by 5 percent. Anywhere in between and it holds where it is. The slowest it will go is 80 words per minute and the fastest is 300.</p>
+    <p>The quiz is what buys the extra speed. Without it, a rising number on the screen would only mean the words went past quicker.</p>
+
+    <h2>Where the articles come from</h2>
+    <p>No article on Zephyr is written by a language model. Every one is real text by a real writer, taken from a source that allows reuse, and credited on the results screen.</p>
+    <p>They come from BC Reads, a set of graded readers written for adult literacy students in British Columbia and published by BCcampus under a Creative Commons licence. From Government of Canada pages written in plain language about renting a home, health and taxes. From VOA Learning English, which is in the public domain. And from Project Gutenberg Canada, for older Canadian writing.</p>
+    <p>An article may be shortened. Whole sentences and single words are deleted to bring a long source down to size. Nothing is reworded, and that is checked by a program rather than trusted to whoever did the shortening. The untouched original is kept beside the published version, and every sentence has to appear in it word for word.</p>
+
+    <h2>Who it is for</h2>
+    <p>It was built for two adults preparing for CELPIP, the English test used in Canadian immigration. One speaks Spanish and one speaks Chinese. Everything on screen is in English because that is the only language they share, and it is also the thing they came here to practise. Unfamiliar words get a short definition in simple English rather than a translation.</p>
+    <p>You do not have to be sitting an exam. If you read English slowly and you would like to stop reading every sentence twice, this was built for you too.</p>
+
+    <h2>What it costs and what it knows about you</h2>
+    <p>It is free. There is no account, no sign-in, no analytics script and no advertising.</p>
+    <p>Your reading speed, your streak and your history are stored by your own browser on your own device, and none of it is sent anywhere. The trade is that the record is only as durable as that storage. Clearing site data by hand will erase it, and so will reading in a private window. A button in the top bar copies everything as a block of text you can paste into another phone, which is how you move to a new device without an account to sign into.</p>
+
+    <h2>Reading it on a phone</h2>
+    <p>Zephyr installs. Open it in your phone browser, add it to your home screen, and it opens full screen like any other app. It also keeps today's and tomorrow's article, so a morning commute with no signal still works.</p>
+
+    <a class="back" href="/">Read today's article</a>
+  </article>
+</main>
+</body>
+</html>

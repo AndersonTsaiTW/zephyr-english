@@ -43,6 +43,8 @@ Each article file carries a `source` block naming the author, the publication, t
 ```text
 site/                     everything that gets published, and nothing else
   index.html app.css app.js
+  about/index.html        what Zephyr is, in prose, for people and for crawlers
+  robots.txt sitemap.xml  what a search engine reads first
   _headers                tells Cloudflare how long browsers may cache files
   content/articles/       one file per day, named 2026-08-12.json
   content/articles/sample.json   shown when there is no article for today
@@ -69,7 +71,7 @@ So `smoke.mjs` opens the site in Chrome, clicks through a whole reading session,
 
 ## How to write code here
 
-Keep the site as three files: `index.html`, `app.css`, `app.js`. One JavaScript file is fine at this size. Split it only when it genuinely gets in the way.
+Keep the app itself to three files: `index.html`, `app.css`, `app.js`. One JavaScript file is fine at this size. Split it only when it genuinely gets in the way. The about page is a separate document that borrows `app.css` for its colours, not a fourth piece of the app.
 
 Read `docs/design.md` before you touch any screen. Colours come from named variables at the top of `app.css`. Never write an actual colour like `#FFFFFF` inside a rule for a button or a card, because that colour will be wrong in one of the two themes. Use the variable, and run the contrast checker afterwards.
 
@@ -100,6 +102,14 @@ The second was a countdown that would not leave. HTML's `hidden` attribute is su
 Finishing a day offers a card to share. It is drawn on a canvas in the browser, in `drawShareCard()`, so it works offline and needs no server. Web Share carries the image and the text together where the browser supports files; where it does not, the card can be shown on the page and saved by hand.
 
 Two things about it are deliberate. It is always the dark palette, because a card lands in a chat beside other people's photographs and a white square reads as a blank message. And the streak wording only celebrates exact milestones, seven days, fourteen, thirty, and so on. Ranges would call day twelve "a week straight", which is both untrue and the kind of praise that stops meaning anything once you notice it.
+
+## Being found
+
+Everything on the app screen is written by JavaScript once an article has loaded, so the file a crawler downloads holds a title, a button, and nothing anyone would want to read. That is why `site/about/` exists. It is a plain page of prose saying what Zephyr is, why the text moves, how the speed is decided and where the articles come from, and it is the only thing on the site a search engine can read without running the app. The today card and the empty screen both link to it. If you change what Zephyr does, change that page in the same commit.
+
+The app page also carries a `WebApplication` description in JSON-LD. `robots.txt` allows everything and names the sitemap, and `sitemap.xml` lists both pages. `smoke.mjs` checks all of this, because files of this kind get quietly broken by an unrelated change and nobody notices for a month.
+
+Two things the repository cannot do for itself. Someone has to submit the site in Google Search Console while signed in, and something Google already crawls has to link to it. A new domain with nothing pointing at it is not waiting to be found. It is invisible.
 
 ## Two more layout traps
 

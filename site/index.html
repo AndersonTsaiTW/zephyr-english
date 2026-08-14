@@ -29,6 +29,28 @@
 <meta name="apple-mobile-web-app-title" content="Zephyr">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="stylesheet" href="app.css">
+
+<!-- Every heading and paragraph of the app itself is written by JavaScript
+     after an article loads, so a crawler reading the raw file finds almost
+     no words. This block says what the thing is in a form that does not
+     depend on the page having run. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Zephyr",
+  "url": "https://zephyr-english.com/",
+  "description": "One short English article a day, scrolled past at a set speed so you cannot stop and re-read, followed by a few questions on what it said.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any device with a web browser",
+  "browserRequirements": "Requires JavaScript",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CAD" },
+  "audience": { "@type": "EducationalAudience", "educationalRole": "student" },
+  "featureList": "Auto-scrolling reader, comprehension questions, measured reading speed, daily streak, works offline"
+}
+</script>
 <script>
   // Apply the pinned theme before first paint so the page never flashes the wrong one.
   (function () {
@@ -63,11 +85,12 @@
   <section class="screen active" id="screen-today">
     <p class="sample-note" id="sampleNote" hidden>Sample article. Real ones go in <code>content/articles/YYYY-MM-DD.json</code></p>
     <p class="streak-line" id="todayStreak" hidden></p>
-    <h1 id="cardTitle">…</h1>
+    <h1 id="cardTitle">One short English article a day</h1>
     <p class="meta" id="cardMeta"></p>
     <div class="preview" id="previewWords"></div>
     <button class="primary" id="startBtn">Start reading</button>
     <p class="hint" id="startHint">The text scrolls by itself. Keep up, because you cannot scroll back.</p>
+    <p class="hint"><a href="/about/">What is Zephyr?</a></p>
   </section>
 
   <!-- Reader -->
@@ -150,6 +173,7 @@
   <section class="screen" id="screen-empty">
     <h1 id="emptyTitle">No article today</h1>
     <p class="hint" id="emptyHint">The wind is resting. Come back tomorrow.</p>
+    <p class="hint"><a href="/about/">What is Zephyr?</a></p>
   </section>
 </main>
 

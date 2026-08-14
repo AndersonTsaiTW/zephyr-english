@@ -147,6 +147,8 @@ h1 {
 .meta { color: var(--muted); margin: 0; font-variant-numeric: tabular-nums; }
 .meta.big { font-size: 1.15rem; }
 .hint { color: var(--muted); font-size: 0.85rem; margin: 0; }
+/* The only link in the app leads to the page explaining what Zephyr is. */
+.hint a { color: var(--accent); }
 .attribution { color: var(--muted); font-size: 0.78rem; margin: 0; }
 .sample-note {
   background: var(--accent-soft);
