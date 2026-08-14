@@ -1,0 +1,61 @@
+{
+  "id": "2026-09-17",
+  "title": "'To Build a Fire,' by Jack London",
+  "topic": "A man, a dog, and ice that is thinner in places.",
+  "source": {
+    "author": "VOA Learning English",
+    "origin": "VOA Learning English, American Stories",
+    "license": "Public domain (work of the US federal government)",
+    "url": "https://learningenglish.voanews.com/a/to-build-a-fire-by-jack-london/4773627.html"
+  },
+  "body": [
+    "The man walked down the trail on a cold, gray day. Pure white snow and ice covered the Earth for as far as he could see. This was his first winter in Alaska. He was wearing heavy clothes and fur boots. But he still felt cold and uncomfortable.",
+    "The man was on his way to a camp near Henderson Creek. His friends were already there. He expected to reach Henderson Creek by six o'clock that evening. It would be dark by then. His friends would have a fire and hot food ready for him.",
+    "A dog walked behind the man. It was a big gray animal, half dog and half wolf. The dog did not like the extreme cold. It knew the weather was too cold to travel.",
+    "The man continued to walk down the trail. He came to a frozen stream called Indian Creek. He began to walk on the snow-covered ice. It was a trail that would lead him straight to Henderson Creek and his friends.",
+    "As he walked, he looked carefully at the ice in front of him. Once, he stopped suddenly, and then walked around a part of the frozen stream. He saw that an underground spring flowed under the ice at that spot. It made the ice thin. If he stepped there, he might break through the ice into a pool of water. To get his boots wet in such cold weather might kill him. His feet would turn to ice quickly. He could freeze to death."
+  ],
+  "previewWords": [
+    {
+      "word": "trail",
+      "gloss": "a rough path through wild country"
+    },
+    {
+      "word": "spring",
+      "gloss": "water coming up from under the ground"
+    },
+    {
+      "word": "freeze",
+      "gloss": "to turn to ice"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Where is the man walking to?",
+      "options": [
+        "A camp near Henderson Creek",
+        "The nearest town",
+        "A cabin he built himself"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does the dog understand that the man does not?",
+      "options": [
+        "The way back is shorter",
+        "The weather is too cold to travel",
+        "There is food under the snow"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Why does he walk around one part of the frozen stream?",
+      "options": [
+        "A tree had fallen across it",
+        "The dog refused to cross",
+        "A spring underneath had made the ice thin"
+      ],
+      "answer": 2
+    }
+  ]
+}

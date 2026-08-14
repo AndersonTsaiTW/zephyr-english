@@ -1,0 +1,65 @@
+{
+  "id": "2026-09-21",
+  "title": "Health care in Canada",
+  "topic": "Finding a doctor in a country you only just arrived in.",
+  "source": {
+    "author": "Government of Canada",
+    "origin": "Canada.ca",
+    "license": "Non-commercial reproduction permitted with attribution",
+    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/health-care/find-doctors.html"
+  },
+  "body": [
+    "After moving to Canada, it’s a good idea to look for a doctor right away. Seeing your doctor is a good way to benefit from our unique health care system.",
+    "Anyone who doesn’t have a family doctor can always go to a walk-in clinic for non-urgent care. At a walk-in clinic, you register when you arrive and you’ll see the first doctor with an available appointment time. If the clinic is busy, you may have to wait.",
+    "In most cases, you don’t need to have an appointment to see a doctor at a walk-in clinic.",
+    "If you don’t communicate in English or French, bring an interpreter with you when you go to a doctor. You can find interpreters for spoken languages and sign language, depending on your needs and preferences.",
+    "Some doctors and other health care providers have interpretation services for a range of languages. Availability will depend on the province, territory or region where you live.",
+    "You can find a dentist by searching online or asking someone you know for a recommendation. It’s very common for dentists to take on new patients.",
+    "While most public health insurance plans don’t cover dental care, some private plans do. Check with your employer before you go to a dentist or be prepared to pay on your own.",
+    "It is free to call 911. All emergency medical services are free in hospitals.",
+    "Most health care plans don’t pay for ambulances. If you use an ambulance, you may have to pay for it."
+  ],
+  "previewWords": [
+    {
+      "word": "clinic",
+      "gloss": "a place to see a doctor without staying the night"
+    },
+    {
+      "word": "interpreter",
+      "gloss": "someone who turns speech into another language"
+    },
+    {
+      "word": "ambulance",
+      "gloss": "a vehicle that carries sick people to hospital"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What can you do if you have no family doctor?",
+      "options": [
+        "Wait until you are given one",
+        "Go to a walk-in clinic",
+        "Call 911 for any illness"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What should you bring if you speak neither English nor French?",
+      "options": [
+        "A written translation of your records",
+        "An interpreter",
+        "A letter from your old doctor"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What do most public health insurance plans not pay for?",
+      "options": [
+        "Emergency care in hospital",
+        "Visits to a walk-in clinic",
+        "Dental care"
+      ],
+      "answer": 2
+    }
+  ]
+}

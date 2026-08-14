@@ -1,63 +1,61 @@
 {
   "id": "2026-09-11",
-  "title": "How Daylight Saving Time Affects Health",
-  "topic": "One hour moves on the clock, and the body needs a week.",
+  "title": "Wilbur and Orville Wright: The First Airplane",
+  "topic": "Twelve seconds above a sandy hill, and everything after it.",
   "source": {
     "author": "VOA Learning English",
-    "origin": "VOA Learning English",
+    "origin": "VOA Learning English, Science & Technology",
     "license": "Public domain (work of the US federal government)",
-    "url": "https://learningenglish.voanews.com/a/how-daylight-savings-time-affects-health/.html"
+    "url": "https://learningenglish.voanews.com/a/wilbur-and-orville-wright-the-first-airplane/7998765.html"
   },
   "body": [
-    "Much of the United States “springs forward” on Sunday, March 9th, for daylight saving time. Worldwide, many other countries also observe daylight saving time, starting and ending on different dates.",
-    "The time change can leave people tired and perhaps unhappy the next day. But it also might even harm health. Some studies have found an increase in heart attacks and strokes right after the March time change.",
-    "However, there are ways to ease the effects of the time change, including getting more sunshine. The light helps reset your circadian rhythm for healthful sleep.",
-    "The brain has a kind of clock that is set by exposure to sunlight and darkness. This clock, known as the circadian rhythm, is on a roughly 24-hour cycle . It governs when we become sleepy and when we are more wakeful. The rhythms change with age. This is one reason that early-to-rise young children turn into hard-to-wake teenagers.",
-    "Morning light resets the rhythm. By evening, levels of a hormone called melatonin begin to increase, leading to tiredness. Too much light in the evening — that extra hour from daylight saving time — delays the melatonin increase. As a result, the cycle gets delayed.",
-    "The circadian rhythm affects more than sleep. It also influences heart rate, blood pressure, hormone releases and other systems.",
-    "Sleep deprivation, or lack of sleep, is linked to heart disease, weight conditions, problems with thinking and remembering, and more.",
-    "To prepare for daylight saving time, experts offer some advice. Slowly move bedtimes about 15 or 20 minutes earlier for several nights before the time change. Try to rise earlier the next morning, too. Go outside for early morning sunshine the first week of daylight saving time. This is another way to help reset your body’s clock.",
-    "Daytime sleeping, the drug caffeine and light from phones and other electronic devices can make an earlier bedtime even harder."
+    "Wilbur and Orville Wright are the American inventors who made a small engine-powered flying machine. They proved that flight without the aid of gas-filled balloons was possible.",
+    "Wilbur Wright was born in 1867 near Melville, Indiana. His brother Orville was born four years later in Dayton, Ohio.",
+    "As they grew up, the Wright brothers experimented with mechanical things. Later, the Wright brothers began to design their own flying machine. They used ideas they had developed from earlier experiments with a toy helicopter, kites, the printing machine and bicycles.",
+    "Soon, they needed a place to test their ideas about flight. The best place with the best wind conditions seemed to be a piece of sandy land in North Carolina along the coast of the Atlantic Ocean. It was called Kill Devil Hill, near the town of Kitty Hawk.",
+    "The Wright brothers did many tests with gliders at Kitty Hawk. With these tests, they learned how to solve many problems.",
+    "By the autumn of 1903, Wilbur and Orville had designed and built an airplane powered by a gasoline engine. The plane had wings 12 meters across. It weighed about 340 kilograms, including the pilot.",
+    "On December 17th, 1903, they made the world's first flight in a machine that was heavier than air and powered by an engine. Orville flew the plane 36 meters. He was in the air for 12 seconds. The two brothers made three more flights that day."
   ],
   "previewWords": [
     {
-      "word": "rhythm",
-      "gloss": "a pattern that repeats in time"
+      "word": "glider",
+      "gloss": "an aircraft that flies without an engine"
     },
     {
-      "word": "hormone",
-      "gloss": "a chemical the body makes to control itself"
+      "word": "experiment",
+      "gloss": "to test an idea and see what happens"
     },
     {
-      "word": "deprivation",
-      "gloss": "not getting enough of something you need"
+      "word": "powered",
+      "gloss": "driven by an engine"
     }
   ],
   "quiz": [
     {
-      "q": "What is the circadian rhythm?",
+      "q": "Why did the brothers test their ideas at Kill Devil Hill?",
       "options": [
-        "A kind of exercise done in the morning",
-        "The body's clock, set by light and darkness",
-        "A medicine that helps people sleep"
+        "It was close to their home",
+        "The wind conditions there were best",
+        "The land there was free"
       ],
       "answer": 1
     },
     {
-      "q": "What does too much light in the evening do?",
+      "q": "What did they fly at Kitty Hawk before the airplane?",
       "options": [
-        "It delays the rise of melatonin",
-        "It makes the body produce more melatonin",
-        "It has no effect on sleep at all"
+        "Gliders",
+        "Balloons",
+        "Kites made of metal"
       ],
       "answer": 0
     },
     {
-      "q": "What do experts suggest before the time change?",
+      "q": "How long did the first powered flight last?",
       "options": [
-        "Sleep late on the first morning",
-        "Drink coffee in the evening",
-        "Move bedtime a little earlier for several nights"
+        "Twelve minutes",
+        "Twelve hours",
+        "Twelve seconds"
       ],
       "answer": 2
     }

@@ -51,12 +51,17 @@ site/                     everything that gets published, and nothing else
   content/index.json      the list of dates that have an article
 content-raw/              the original untrimmed text of each article
 scripts/                  small Node programs, no libraries installed
+  fetch-source.mjs        a page on the web to plain text, no model involved
+  list-voa.mjs            what VOA has, and whether it is VOA's own writing
+  propose-trim.mjs        proposes a cut. You still have to read it
 docs/design.md            colours, type sizes and what each screen looks like
 docs/content-sources.md   where articles come from and how to credit them
 notes-zh/                 the owner's own notes in Chinese, not published
 ```
 
 `content-raw/` is worth explaining. When you shorten a source into an article, the full original stays here. It is not published to the web. The checking script compares the published article against it. Without that copy, rule 1 could not be enforced.
+
+Which is why `fetch-source.mjs` is written the way it is. It downloads a page and pulls the paragraphs out of the HTML by walking the tags. It cannot summarise, because it has no way to write a sentence. Anything that could paraphrase on the way into `content-raw/` would leave the provenance check passing and meaning nothing.
 
 ## Check your work before you say you are done
 

@@ -1,0 +1,63 @@
+{
+  "id": "2026-09-18",
+  "title": "Driving in Canada",
+  "topic": "The paperwork standing between you and the road here.",
+  "source": {
+    "author": "Government of Canada",
+    "origin": "Canada.ca",
+    "license": "Non-commercial reproduction permitted with attribution",
+    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/driving.html"
+  },
+  "body": [
+    "To legally drive a car in Canada, you’ll need a driver’s licence issued by the government of your province or territory. You must have it with you whenever you’re driving. With it, you can drive anywhere in Canada.",
+    "If you have a valid licence from your home country, you’ll probably be able to use this to drive in Canada for a short time after you arrive. Check with the government of your province or territory for details.",
+    "If you plan to use a foreign driver’s licence in Canada, you should get an International Driving Permit (IDP) in your home country. An IDP will give you a translation of your licence into French and English.",
+    "You may choose to pay for driving lessons to get ready for the driving tests. Search online for lessons.",
+    "Once you have a licence, you will have to renew it every so often. The expiry date will be printed on your licence.",
+    "It is illegal to drive without car insurance in Canada. If you own a car, you must get insurance coverage. If you regularly drive a car that belongs to a relative or friend, you should make sure you’re listed on their car insurance plan.",
+    "You must follow Canada’s driving laws. Before you start driving, take time to learn the laws in your province or territory."
+  ],
+  "previewWords": [
+    {
+      "word": "licence",
+      "gloss": "an official card allowing you to do something"
+    },
+    {
+      "word": "permit",
+      "gloss": "an official paper giving you permission"
+    },
+    {
+      "word": "insurance",
+      "gloss": "money you pay so you are covered if things go wrong"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Who issues a driver's licence in Canada?",
+      "options": [
+        "The government of your province or territory",
+        "The national government in Ottawa",
+        "The company that sells you the car"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does an International Driving Permit give you?",
+      "options": [
+        "Permission to drive anywhere in the world",
+        "A translation of your licence into English and French",
+        "A discount on car insurance"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What is illegal in Canada?",
+      "options": [
+        "Driving a car that belongs to a friend",
+        "Learning to drive without lessons",
+        "Driving without car insurance"
+      ],
+      "answer": 2
+    }
+  ]
+}

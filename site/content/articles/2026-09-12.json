@@ -1,64 +1,63 @@
 {
   "id": "2026-09-12",
-  "title": "A Short History of Moon Landings",
-  "topic": "Sixty years of arriving on the moon, softly and otherwise.",
+  "title": "Yellowstone: The World’s First National Park",
+  "topic": "A park sitting on a volcano that has not finished yet.",
   "source": {
     "author": "VOA Learning English",
-    "origin": "VOA Learning English",
+    "origin": "VOA Learning English, As It Is",
     "license": "Public domain (work of the US federal government)",
-    "url": "https://learningenglish.voanews.com/a/a-short-history-of-spacecraft-landings-on-the-moon/.html"
+    "url": "https://learningenglish.voanews.com/a/yellowstone-the-world-s-first-national-park/7974034.html"
   },
   "body": [
-    "Many years have passed since the first spacecraft landed on the moon in 1966. From then until now, there have been many additional attempts with some succeeding and others failing.",
-    "The Soviet Union’s Luna 9 spacecraft was the first to land on the moon. It touched down on the lunar surface in 1966. The landing came after several other Soviet spacecraft either did not reach the moon or crashed on the surface.",
-    "The American space agency NASA says Luna 9 was the first spacecraft to carry out a soft landing on the moon. It was also the first to send “photographic data” from the moon’s surface to Earth.",
-    "In 1969, NASA successfully landed Apollo 11 astronauts Neil Armstrong and Buzz Aldrin on the moon. The U.S. Apollo program sent 12 astronauts to explore the moon over six missions. Apollo 17 was the last in 1972. The U.S. is still the only country to land humans on the moon.",
-    "In 2013, China became the third country to successfully land a spacecraft on the moon. China followed with the Yutu-2 rover in 2019, this time touching down on the moon’s unexplored far side.",
-    "In 2023, Russia tried its first moon landing in nearly 50 years. The Luna 25 spacecraft was attempting to land near the lunar south pole. But it is believed to have crash landed on the moon’s surface.",
-    "After its first lander crashed into the moon in 2019, India made its second attempt in 2023. The country successfully landed its Chandrayaan-3 spacecraft on the lunar surface. The mission made India the fourth nation to complete a moon landing.",
-    "In January 2024, Japan became the fifth country to successfully land a spacecraft on the moon. But the SLIM spacecraft landed upside down. This caused some power and communication problems, but the lander was able to operate for a short time."
+    "Yellowstone National Park in the western United States was the world’s first national park.",
+    "Established in 1872, it is famous for its geothermal activity and wild animals. It includes beautiful mountains, deep canyons, lakes and rivers.",
+    "Yellowstone is still one of the largest national parks in the U.S. It takes up almost 9,000 square kilometers. Most of the park lies within the western state of Wyoming.",
+    "The park is unusual because of what lies underneath it. It sits on top of an ancient super volcano, known as the Yellowstone Caldera. The caldera remains an active volcano.",
+    "A lake of hot liquid rock is about six kilometers under the park. Experts say this lake is under huge amounts of pressure. The pressure and heat cause geysers to shoot hot water out of the ground and mud to boil at Yellowstone.",
+    "The park is home to more than 300 geysers. There are more geysers and hot springs in Yellowstone than any other place on Earth. “Old Faithful” is the name of the park’s most famous geyser because it erupts about every 90 minutes.",
+    "Yellowstone is on a high plateau with an average height of 2,400 meters above sea level. This makes the weather very cold in winter, with January temperatures averaging between -18 degrees and -7 degrees Celsius. However, some areas of the park remain open to visitors throughout the year."
   ],
   "previewWords": [
     {
-      "word": "spacecraft",
-      "gloss": "a vehicle built to travel in space"
+      "word": "geyser",
+      "gloss": "a spring that shoots hot water into the air"
     },
     {
-      "word": "lunar",
-      "gloss": "having to do with the moon"
+      "word": "caldera",
+      "gloss": "the wide bowl left where a volcano fell in"
     },
     {
-      "word": "rover",
-      "gloss": "a vehicle that drives across another world"
+      "word": "plateau",
+      "gloss": "a high, flat stretch of land"
     }
   ],
   "quiz": [
     {
-      "q": "Which country landed the first spacecraft on the moon?",
+      "q": "What lies underneath Yellowstone?",
       "options": [
-        "The Soviet Union",
-        "The United States",
-        "China"
+        "An ancient super volcano",
+        "An underground river",
+        "A layer of solid gold"
       ],
       "answer": 0
     },
     {
-      "q": "Which country is still the only one to land people on the moon?",
+      "q": "Why is the geyser called Old Faithful?",
       "options": [
-        "China",
-        "India",
-        "The United States"
-      ],
-      "answer": 2
-    },
-    {
-      "q": "What happened to Japan's SLIM spacecraft?",
-      "options": [
-        "It never left the Earth",
-        "It landed upside down",
-        "It missed the moon completely"
+        "It is the oldest in the park",
+        "It erupts about every 90 minutes",
+        "It never stops running"
       ],
       "answer": 1
+    },
+    {
+      "q": "Why are winters at Yellowstone so cold?",
+      "options": [
+        "It is close to the North Pole",
+        "The hot springs cool the air",
+        "The park sits high above sea level"
+      ],
+      "answer": 2
     }
   ]
 }

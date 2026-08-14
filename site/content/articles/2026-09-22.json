@@ -1,0 +1,61 @@
+{
+  "id": "2026-09-22",
+  "title": "'After Twenty Years,' by O. Henry",
+  "topic": "Two friends agreed to meet here tonight. That was twenty years ago.",
+  "source": {
+    "author": "VOA Learning English",
+    "origin": "VOA Learning English, American Stories",
+    "license": "Public domain (work of the US federal government)",
+    "url": "https://learningenglish.voanews.com/a/after-twenty-years-by-o-henry/4656570.html"
+  },
+  "body": [
+    "The cop moved along the street, looking strong and important. This was the way he always moved. He was not thinking of how he looked. There were few people on the street to see him. It was only about ten at night, but it was cold. And there was a wind with a little rain in it.",
+    "He stopped at doors as he walked along, trying each door to be sure that it was closed for the night. Now and then he turned and looked up and down the street. He was a fine-looking cop, watchful, guarding the peace.",
+    "People in this part of the city went home early. Now and then you might see the lights of a shop or of a small restaurant. But most of the doors belonged to business places that had been closed hours ago.",
+    "Then the cop suddenly slowed his walk. Near the door of a darkened shop a man was standing. As the cop walked toward him, the man spoke quickly.",
+    "“It’s all right, officer,” he said. “I’m waiting for a friend. Twenty years ago we agreed to meet here tonight. It sounds strange to you, doesn’t it? I’ll explain if you want to be sure that everything’s all right. About twenty years ago there was a restaurant where this shop stands. ‘Big Joe’ Brady’s restaurant.”"
+  ],
+  "previewWords": [
+    {
+      "word": "cop",
+      "gloss": "a police officer"
+    },
+    {
+      "word": "guarding",
+      "gloss": "watching over something to keep it safe"
+    },
+    {
+      "word": "darkened",
+      "gloss": "with the lights turned off"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is the cop doing as he walks?",
+      "options": [
+        "Trying each door to be sure it is shut",
+        "Looking for somewhere to eat",
+        "Following the man in the doorway"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What is the street like that night?",
+      "options": [
+        "Crowded and noisy",
+        "Cold, windy and nearly empty",
+        "Warm and full of open shops"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Why is the man standing in the dark doorway?",
+      "options": [
+        "He is waiting out the rain",
+        "He has lost his key",
+        "He is keeping an appointment made twenty years ago"
+      ],
+      "answer": 2
+    }
+  ]
+}

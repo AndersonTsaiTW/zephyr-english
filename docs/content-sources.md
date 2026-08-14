@@ -24,6 +24,10 @@ Pages and datasets marked with the Open Government Licence allow commercial use 
 
 Credit it as: `Source: <page title>, Government of Canada, <url>.`
 
+The settlement guides under `/services/settle-canada/` are the closest thing on the web to a CELPIP topic list written by the people who set the test's context: driving, health care, schools, taxes, banking, human rights. Start there, then the health and employment sitemaps.
+
+Expect most pages to be unusable, and not because of the writing. Roughly one page in twelve survives. A government page carries its meaning in bulleted lists, and a list does not survive being turned into plain text, so what comes out the other end is a sentence ending in a colon and then nothing. `propose-trim.mjs` drops any paragraph ending in a colon for exactly this reason, which usually takes the page below the word floor and rejects it. That is the right outcome. A page that was mostly a list has no article in it.
+
 ### VOA Learning English, public domain
 
 News graded for learners and updated daily. Level 1 stays within a core vocabulary of roughly 1,500 words. It is American rather than Canadian, but it is the only daily-updated graded news that is free to reuse.
@@ -31,6 +35,14 @@ News graded for learners and updated daily. Level 1 stays within a core vocabula
 <https://learningenglish.voanews.com/>
 
 Take only text credited to VOA. AP and Reuters items syndicated on the site are not public domain, and photographs frequently belong to someone else too, so take text and nothing more.
+
+That warning turns out to matter far more than it reads. Of 813 articles pulled from six sections, 534 were adapted from the Associated Press or Reuters. Two thirds. Health & Lifestyle and Science & Technology are almost entirely wire copy, and so is As It Is. The page gives nothing away: same layout, same graded English, same VOA writer named at the top of the adaptation. Only the credit at the foot of the story says whose words they are, and it usually reads "X reported on this story for the Associated Press. Y adapted it for VOA Learning English."
+
+Two sections are reliably VOA's own writing. Words and Their Stories explains one idiom per piece and is written in house. American Stories are VOA's retellings of literature that is out of copyright anyway. Between them they carry most of what this project can take from the site.
+
+Ten articles were published before anyone checked this, and two of them were wire copy sitting under a licence line that claimed public domain. They were replaced. `scripts/list-voa.mjs --bylines` now reads the credit and marks each story `voa` or `AGENCY`, and `harvest` refuses the agency ones outright, so the mistake needs someone to work at it now.
+
+The other thing to know is that the recorded URL has to carry the article number. `/a/some-slug/.html` looks plausible and returns 404. The real address is `/a/some-slug/7972056.html`. A source block whose link goes nowhere fails rule 4 as surely as no source block at all.
 
 ### Project Gutenberg Canada, public domain
 
@@ -75,6 +87,14 @@ Names do not count towards this figure. A reader meeting "Viola Desmond" is not 
 Do a week or two at a time.
 
 Pick your candidates from the sources above and save each one as a plain `.txt` file containing the full text, exactly as published. Do not tidy it up. This file is what the checking script later compares against, so if you clean it first, the check no longer proves anything.
+
+`scripts/fetch-source.mjs <url> --out content-raw/<date>.txt` does the saving. It walks the HTML, takes the paragraphs and turns the entities back into characters. It has no way to write a sentence, and that is the point: if the raw copy could have been through anything that paraphrases, the provenance check would still pass and would no longer mean anything.
+
+`scripts/list-voa.mjs --section 987 --pages 10 --bylines` lists what is available and says whether each story is VOA's own.
+
+Then `scripts/propose-trim.mjs <article.json>` proposes the cut. It drops the broadcast introduction, the sign-off, the byline, the appended glossary, scripted conversations and any paragraph ending in a colon, then takes paragraphs from the top until the piece is long enough. Over the reading-grade cap it deletes the longest sentences, because Flesch-Kincaid rises with sentence length and cutting the short plain ones makes the score worse.
+
+It proposes. It does not judge. On a news story the leading paragraphs are the article and it gets it right; on an essay it can stop halfway through an argument, and on a piece that ends "this gives us two idioms" it will happily stop before either idiom is explained. Read what it gives you and move the window. That reading is the job, and it is the part no script does.
 
 Scaffold the article with `scripts/new-article.mjs`:
 

@@ -16,7 +16,7 @@
 // Zero dependencies, Node ESM.
 
 import { readFileSync, existsSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { dirname, join, resolve, basename, extname } from 'node:path';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -39,7 +39,7 @@ function fail(message) {
 
 // --- Top-2000 list -----------------------------------------------------
 
-function loadTop2000() {
+export function loadTop2000() {
   const path = join(root, 'scripts/data/top2000.txt');
   const text = readFileSync(path, 'utf8');
   const set = new Set();
@@ -98,7 +98,7 @@ const IRREGULAR_FORMS = {
 // morphological analyzer, so it will still miss irregular forms outside
 // IRREGULAR_FORMS above, such as "children" for "child". Those show up
 // as off-list words and a curator can judge them by eye.
-function candidatesFor(token) {
+export function candidatesFor(token) {
   const w = token.toLowerCase();
   const out = new Set([w]);
 
@@ -162,7 +162,7 @@ function straightenQuotes(text) {
   return text.replace(/[‘’ʼ]/g, "'");
 }
 
-function wordsOf(text) {
+export function wordsOf(text) {
   return straightenQuotes(text).match(WORD_RE) || [];
 }
 
@@ -203,7 +203,7 @@ function properNounsIn(text, top2000) {
   return names;
 }
 
-function sentencesOf(text) {
+export function sentencesOf(text) {
   const trimmed = text.trim();
   if (!trimmed) return [];
   const matches = trimmed.match(/[^.!?]+[.!?]+(?=\s|$)|[^.!?]+$/g) || [];
@@ -227,7 +227,7 @@ function countSyllables(word) {
   return Math.max(groups ? groups.length : 1, 1);
 }
 
-function fleschKincaidGrade(text) {
+export function fleschKincaidGrade(text) {
   const words = wordsOf(text);
   const sentences = sentencesOf(text);
   const wordCount = words.length || 1;
@@ -236,7 +236,7 @@ function fleschKincaidGrade(text) {
   return 0.39 * (wordCount / sentenceCount) + 11.8 * (syllableCount / wordCount) - 15.59;
 }
 
-function coverageOf(text, top2000) {
+export function coverageOf(text, top2000) {
   const words = wordsOf(text);
   if (words.length === 0) return { percent: 100, offList: [], names: [] };
 
@@ -295,7 +295,7 @@ function normalizeWhitespace(text) {
 // rewrite one. This checks the mechanical half of that rule: every
 // sentence surviving into body must appear, word for word once
 // whitespace is normalized, somewhere in the raw source.
-function checkProvenance(body, rawText) {
+export function checkProvenance(body, rawText) {
   const normalizedRaw = normalizeWhitespace(rawText);
   const mismatches = [];
   body.forEach((paragraph, paragraphIndex) => {
@@ -411,4 +411,9 @@ function main() {
   process.exit(failures.length ? 1 : 0);
 }
 
-main();
+// The curation scripts import the measurements above so that "easy enough"
+// has one definition rather than two that can drift apart. Running the file
+// directly still checks a single article and sets an exit code.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main();
+}

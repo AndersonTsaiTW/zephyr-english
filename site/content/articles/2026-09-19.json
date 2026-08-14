@@ -1,0 +1,64 @@
+{
+  "id": "2026-09-19",
+  "title": "Thomas Edison: Inventor and Busy Team Leader",
+  "topic": "He slept four hours and filed a hundred patents a year.",
+  "source": {
+    "author": "VOA Learning English",
+    "origin": "VOA Learning English, Science & Technology",
+    "license": "Public domain (work of the US federal government)",
+    "url": "https://learningenglish.voanews.com/a/thomas-edison-inventor-and-busy-team-leader/7974949.html"
+  },
+  "body": [
+    "The inventor Thomas Alva Edison had a major effect on the lives of people around the world. Thomas Edison is remembered most for the electric light, his phonograph, and his work with motion pictures.",
+    "Edison was born on February 11, 1847, in Milan, Ohio. He was mostly self-taught. His mother taught him reading, writing, and mathematics. He learned from books, and he experimented.",
+    "At the age of 10, he experimented with chemicals and electricity. He built a telegraph machine and, at the age of 16, he went to work as a telegraph operator.",
+    "He continued his work with electricity, making improved telegraph machines, and he invented an electrical voting machine.",
+    "Edison earned enough money from his early inventions to start his own company in 1871. Instead of working alone, he worked with a group of employees on many different projects at one time. They asked the United States government for patents to protect more than one hundred devices or inventions each year. He was an extremely busy man.",
+    "In 1913, a popular magazine at the time called Thomas Edison the most useful man in America.",
+    "He almost never slept more than four or five hours a night. He usually worked 18 hours each day because he enjoyed what he was doing.",
+    "A reporter asked Edison in 1917 which of his many inventions he enjoyed the most. He answered, the phonograph was really the most interesting. The hardest invention to develop, he said, was the electric light. He said that it was the most difficult and the most important. He also invented the modern motion picture film."
+  ],
+  "previewWords": [
+    {
+      "word": "patent",
+      "gloss": "a legal right to be the only maker of an invention"
+    },
+    {
+      "word": "phonograph",
+      "gloss": "an early machine for playing recorded sound"
+    },
+    {
+      "word": "telegraph",
+      "gloss": "an early machine for sending messages along a wire"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did Edison learn?",
+      "options": [
+        "At a famous university",
+        "Mostly by himself, from books and experiments",
+        "From his father, who was an inventor"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What changed about his work after he started his own company?",
+      "options": [
+        "He worked with a group on many projects at once",
+        "He stopped inventing and sold other people's work",
+        "He moved to Europe"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Which of his inventions did he call the hardest to develop?",
+      "options": [
+        "The phonograph",
+        "The motion picture film",
+        "The electric light"
+      ],
+      "answer": 2
+    }
+  ]
+}
