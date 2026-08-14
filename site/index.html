@@ -101,14 +101,21 @@
         <button class="primary" id="waBtn">WhatsApp</button>
         <button class="wide" id="copyBtn">Copy</button>
       </div>
+      <button class="wide" id="linkBtn">Send a link</button>
       <button class="text-btn" id="cardBtn">See the card</button>
-      <div class="card-holder" id="cardHolder" hidden>
-        <img id="cardImage" alt="">
-        <a class="wide" id="saveCardBtn" download>Save the image</a>
-      </div>
       <button class="text-btn" id="againBtn">Read again</button>
     </div>
   </section>
+
+  <!-- Share card -->
+  <dialog id="cardDialog">
+    <div class="card-holder">
+      <img id="cardImage" alt="">
+      <p class="hint" id="cardHint">Press and hold the picture to save or send it.</p>
+      <a class="primary" id="saveCardBtn" download>Save the image</a>
+      <button class="text-btn" id="closeCardBtn">Close</button>
+    </div>
+  </dialog>
 
   <!-- Backup -->
   <dialog id="backupDialog">

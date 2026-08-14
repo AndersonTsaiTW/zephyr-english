@@ -119,7 +119,7 @@ Vary your sentence length. The `humanizer` skill has the full list of things to 
 
 Commit messages start with the work package and say what changed in plain words, for example `WP3: quiz flow`. In the body, explain why the change was needed, not just what moved.
 
-Pushing to `main` publishes the site to <https://zephyr-8w8.pages.dev> automatically, usually within a couple of minutes. Do not run `wrangler pages deploy` by hand, because then the deployment history no longer tells you which commit is actually live.
+Pushing to `main` publishes the site to <https://zephyr-english.com> automatically, usually within a couple of minutes. Do not run `wrangler pages deploy` by hand, because then the deployment history no longer tells you which commit is actually live.
 
 One warning from experience: right after a push, the old version is still being served, and every file still returns "OK". A successful download does not mean your change is live. Check that something you actually changed appears on the page.
 

@@ -607,7 +607,7 @@ function buildShareText() {
 // other people's photos, and a white square looks like a blank message.
 const CARD = {
   width: 540,
-  height: 620,
+  height: 640,
   ground: '#0D1519',
   surface: '#142027',
   ink: '#DAE5EA',
@@ -686,8 +686,14 @@ function drawShareCard() {
   ctx.fillStyle = CARD.accent;
   ctx.font = `500 22px ${CARD.serif}`;
   ctx.letterSpacing = '10px';
-  ctx.fillText('ZEPHYR', S / 2 + 5, 110);
+  ctx.fillText('ZEPHYR', S / 2 + 5, 108);
   ctx.letterSpacing = '0px';
+
+  // Whoever receives this has never heard of Zephyr. Without a line saying
+  // what it is, the card is a number from a stranger.
+  ctx.fillStyle = CARD.muted;
+  ctx.font = `14px ${CARD.serif}`;
+  ctx.fillText('Learning English, one short article a day', S / 2, 134);
 
   // The streak is the celebration, so it gets the largest type on the card.
   const streak = r.streak || 1;
@@ -695,26 +701,26 @@ function drawShareCard() {
   // baseline. The label needs clear air underneath or a 7 lands on top of it.
   ctx.fillStyle = CARD.ink;
   ctx.font = `500 120px ${CARD.serif}`;
-  ctx.fillText(String(streak), S / 2, 226);
+  ctx.fillText(String(streak), S / 2, 246);
 
   ctx.fillStyle = CARD.accent;
   ctx.font = `600 15px ${CARD.mono}`;
   ctx.letterSpacing = '4px';
-  ctx.fillText(streakHeadline(streak), S / 2, 278);
+  ctx.fillText(streakHeadline(streak), S / 2, 298);
   ctx.letterSpacing = '0px';
 
   ctx.strokeStyle = CARD.line;
   ctx.lineWidth = 1;
   ctx.beginPath();
-  ctx.moveTo(140, 306);
-  ctx.lineTo(S - 140, 306);
+  ctx.moveTo(140, 326);
+  ctx.lineTo(S - 140, 326);
   ctx.stroke();
 
   const stats = [`${r.wpm} wpm`];
   if (r.score != null && r.total != null) stats.push(`${r.score}/${r.total} correct`);
   ctx.fillStyle = CARD.ink;
   ctx.font = `18px ${CARD.mono}`;
-  ctx.fillText(stats.join('   ·   '), S / 2, 346);
+  ctx.fillText(stats.join('   ·   '), S / 2, 366);
 
   // The title and topic each wrap to at most two lines, so the block below the
   // divider is between one and four lines tall. Measuring it first and
@@ -731,7 +737,7 @@ function drawShareCard() {
 
   const blockHeight =
     titleLines.length * TITLE_LEADING + (topicLines.length ? 10 + topicLines.length * TOPIC_LEADING : 0);
-  const bandTop = 380;
+  const bandTop = 400;
   const bandBottom = H - 70;
   let y = bandTop + Math.max(0, (bandBottom - bandTop - blockHeight) / 2) + 24;
 
@@ -765,8 +771,34 @@ function shareCardBlob() {
   return new Promise((resolve) => drawShareCard().toBlob(resolve, 'image/png'));
 }
 
-function openWhatsApp() {
-  window.open(`https://wa.me/?text=${encodeURIComponent(buildShareText())}`, '_blank', 'noopener');
+// Sent on its own, the card is a scoreboard from a stranger. This says what
+// Zephyr is and invites the reader in, which is the only reason someone would
+// follow the link.
+function buildInviteText() {
+  const streak = state.lastResult?.streak ?? 1;
+  const days = streak === 1 ? 'my first day' : `${streak} days in a row`;
+  return [
+    `I am learning English with Zephyr, ${days} so far.`,
+    'One short article a day. The text scrolls by itself so you cannot slow down, and the whole thing takes about two minutes.',
+    `Come and read with me: ${siteUrl()}`,
+  ].join('\n\n');
+}
+
+function openWhatsApp(text = buildShareText()) {
+  window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+}
+
+async function shareInvite() {
+  const text = buildInviteText();
+  try {
+    if (typeof navigator.share === 'function') {
+      await navigator.share({ text });
+      return;
+    }
+    openWhatsApp(text);
+  } catch (err) {
+    if (err.name !== 'AbortError') openWhatsApp(text);
+  }
 }
 
 async function shareResult() {
@@ -790,14 +822,14 @@ async function shareResult() {
 // Where the browser cannot hand a file to another app, the card is shown on
 // the page instead. On a phone that is a long press away from saving.
 async function revealCard() {
-  const holder = $('cardHolder');
   const img = $('cardImage');
   const blob = await shareCardBlob();
-  img.src = URL.createObjectURL(blob);
+  const url = URL.createObjectURL(blob);
+  img.src = url;
   img.alt = `Zephyr day ${state.lastResult?.day ?? 1}, ${state.lastResult?.wpm} words per minute`;
-  holder.hidden = false;
-  $('saveCardBtn').href = img.src;
+  $('saveCardBtn').href = url;
   $('saveCardBtn').download = `zephyr-day-${state.lastResult?.day ?? 1}.png`;
+  $('cardDialog').showModal();
 }
 
 async function copyResult() {
@@ -877,6 +909,8 @@ $('shareBtn').addEventListener('click', shareResult);
 $('waBtn').addEventListener('click', openWhatsApp);
 $('copyBtn').addEventListener('click', copyResult);
 $('cardBtn').addEventListener('click', revealCard);
+$('linkBtn').addEventListener('click', shareInvite);
+$('closeCardBtn').addEventListener('click', () => $('cardDialog').close());
 $('startBtn').addEventListener('click', startReading);
 $('againBtn').addEventListener('click', startReading);
 $('playBtn').addEventListener('click', toggle);

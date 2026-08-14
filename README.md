@@ -1,6 +1,6 @@
 # Zephyr
 
-Live at **<https://zephyr-8w8.pages.dev>**
+Live at **<https://zephyr-english.com>**
 
 One short English article a day. The text scrolls upward by itself at a set speed, so you cannot stop and re-read a sentence. You keep up, or you miss it. When the article ends you answer two or three questions to show you followed it, and then you see your reading speed and how many days in a row you have done this. Two or three minutes, then it is over until tomorrow.
 

@@ -131,7 +131,7 @@ One known quirk: NGSL carries no entries for spelled-out numbers, so `two` and `
 
 ## WP9, deploy and polish (partial)
 
-Live at <https://zephyr-8w8.pages.dev>, hosted on Cloudflare Pages under the project `zephyr`, with the code on GitHub at `AndersonTsaiTW/zephyr-english`.
+Live at <https://zephyr-english.com>, hosted on Cloudflare Pages under the project `zephyr`, with the code on GitHub at `AndersonTsaiTW/zephyr-english`.
 
 Cloudflare rather than GitHub Pages for two reasons that show up later. WP7's Web Push option needs a Worker with KV, and on Cloudflare that can sit behind the same domain as a route rather than a second origin with CORS between them. And `site/_headers` is honored here, so a service worker or a day-old article does not get served stale. GitHub Pages has no equivalent.
 

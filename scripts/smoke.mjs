@@ -298,7 +298,7 @@ const card = await page.evaluate(() => {
   const canvas = drawShareCard();
   return { w: canvas.width, h: canvas.height, data: canvas.toDataURL('image/png').length };
 });
-check('the share card renders', card.w === 1080 && card.h === 1240 && card.data > 5000, `${card.w}x${card.h}, ${card.data} chars`);
+check('the share card renders', card.w === 1080 && card.h === 1280 && card.data > 5000, `${card.w}x${card.h}, ${card.data} chars`);
 
 check(
   'milestones are exact, not ranges',
@@ -319,7 +319,7 @@ const fits = await page.evaluate(() => {
   // Read the clear band between the end of the topic and the top of the
   // address. Ink here means one has run into the other. The card is drawn at
   // twice its layout size, so these are doubled coordinates.
-  const strip = ctx.getImageData(0, 1096, canvas.width, 24).data;
+  const strip = ctx.getImageData(0, 1136, canvas.width, 24).data;
   let lit = 0;
   for (let i = 0; i < strip.length; i += 4) {
     if (strip[i] > 40 || strip[i + 1] > 40 || strip[i + 2] > 40) lit++;
@@ -330,38 +330,26 @@ check('nothing overlaps the address on the card', fits === 0, `${fits} lit pixel
 
 await page.reload({ waitUntil: 'networkidle' });
 await page.locator('#cardBtn').click();
-await page.locator('#cardImage').evaluate(
-  (img) => img.complete || new Promise((res) => { img.onload = res; })
-);
+// The card is drawn before the dialog opens, so waiting on the image alone
+// races: an <img> with no src reports itself complete straight away.
+await page.waitForFunction(() => {
+  const img = document.getElementById('cardImage');
+  return document.getElementById('cardDialog').open && img.complete && img.naturalWidth > 0;
+});
 const shown = await page.locator('#cardImage').boundingBox();
 check('the card can be shown on the page', shown !== null && shown.height > 100, `${Math.round(shown?.width ?? 0)}x${Math.round(shown?.height ?? 0)}`);
 
-// On a short screen the results screen grows taller than the space it has.
-// Centred flex content overflows in both directions and the top half cannot
-// be scrolled to, which hid the card completely on a real phone.
-const short = await newPage({ viewport: { width: 390, height: 480 } });
-await short.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle' });
-await short.evaluate(() => {
-  state.lastResult = { date: '2026-01-01', wpm: 142, words: 275, score: 3, total: 3, streak: 4, day: 4 };
-  show('results');
-  renderResults(state.lastResult);
-});
-await short.locator('#cardBtn').click();
-await short.locator('#cardImage').evaluate(
-  (img) => (img.complete && img.naturalWidth ? true : new Promise((res) => { img.onload = res; }))
-);
-const reach = await short.evaluate(() => {
-  const screen = document.getElementById('screen-results');
-  screen.scrollTop = screen.scrollHeight;
-  const box = document.getElementById('cardImage').getBoundingClientRect();
-  return { top: Math.round(box.top), bottom: Math.round(box.bottom), vh: innerHeight };
-});
+// The card opens over the page. Inline it grew the results screen taller than
+// a short phone, and centred flex content overflows in both directions with
+// the top half unreachable, so it was invisible with no way to scroll to it.
+check('the card opens as a dialog', await page.locator('#cardDialog').evaluate((d) => d.open));
+
+const invite = await page.evaluate('buildInviteText()');
 check(
-  'the card is reachable on a short screen',
-  reach.top >= -1 && reach.bottom <= reach.vh + 1,
-  `${reach.top}..${reach.bottom} of ${reach.vh}`
+  'the link message explains what Zephyr is',
+  /learning English with Zephyr/i.test(invite) && /https?:\/\//.test(invite) && invite.length > 120,
+  invite.split('\n')[0]
 );
-await short.close();
 
 check('no unexpected page errors', errors.length === 0, errors.join(' | '));
 
