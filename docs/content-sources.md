@@ -64,7 +64,7 @@ Flesch-Kincaid grade 9 or lower. Flesch-Kincaid is a readability score based on 
 
 At least 84 of every 100 words come from `scripts/data/top2000.txt`, the two thousand most common English words.
 
-That number started at 95 and came down after measuring, which is recorded here so nobody quietly raises them again. Eleven BC Reads texts, written by curriculum designers for exactly these readers, were run through the checker untouched. They scored between 89.8 and 96.1 percent, clustering near 94, and several are written at Flesch-Kincaid grade 2. A threshold that fails grade-2 text written for adult literacy students is measuring the size of the word list, not the difficulty of the writing.
+That number started at 95 and came down after measuring, which is recorded here so nobody quietly raises it again. Eleven BC Reads texts, written by curriculum designers for exactly these readers, were run through the checker untouched. They scored between 89.8 and 96.1 percent, clustering near 94, and several are written at Flesch-Kincaid grade 2. A threshold that fails grade-2 text written for adult literacy students is measuring the size of the word list, not the difficulty of the writing.
 
 A word you have already met is not charged again. Beyond two appearances an unfamiliar word stops counting against the total, because in an article about salmon the word "salmon" appears eleven times and is the subject rather than an obstacle. You learn it once. Counting all eleven says more about the topic than about how hard the text is.
 
