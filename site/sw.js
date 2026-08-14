@@ -6,7 +6,7 @@
 //
 // The old cache is deleted on activate.
 
-const CACHE = 'zephyr-v2';
+const CACHE = 'zephyr-v3';
 
 const SHELL = [
   './',
@@ -17,6 +17,7 @@ const SHELL = [
   './icons/zephyr.svg',
   './icons/icon-192.png',
   './icons/icon-512.png',
+  './icons/og.png',
   './content/articles/sample.json',
 ];
 
