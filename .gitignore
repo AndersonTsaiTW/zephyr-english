@@ -11,3 +11,6 @@ notes-zh/
 
 # agent worktrees
 .claude/worktrees/
+
+# personal permission overrides
+.claude/settings.local.json
