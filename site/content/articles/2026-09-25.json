@@ -1,0 +1,65 @@
+{
+  "id": "2026-09-25",
+  "title": "Prepare to cross the border to settle in Canada as a newcomer",
+  "topic": "The papers to keep in your hand, not in your suitcase.",
+  "source": {
+    "author": "Government of Canada",
+    "origin": "Canada.ca",
+    "license": "Non-commercial reproduction permitted with attribution",
+    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/border-crossing.html"
+  },
+  "body": [
+    "There are documents you must have to cross the border into Canada. Without these documents, we won’t allow you into the country.",
+    "Don’t pack these documents in your luggage. Keep them with you at all times.",
+    "You can make the process easier by filling out a BSF186, Personal Effects Accounting Documents form before you travel and giving it to the officer when you arrive.",
+    "Tell a Canadian official when you arrive in Canada if you’re carrying more than CAN $10,000. If you don’t, you may be fined, and your funds could be seized.",
+    "Children in Canada are vaccinated (immunized) starting when they are newborns. Vaccinations help to prevent serious infections or diseases.",
+    "When you travel to Canada, bring official documents that state what vaccinations you and your family have already had. If you or your child hasn’t been vaccinated, call your doctor or local public health clinic right away.",
+    "In Canada, your children need immunization or vaccination records to enrol in school.",
+    "Make photocopies of all these types of documents, in case the originals get lost. Be sure to keep the photocopies in a separate place from the originals.",
+    "Before you arrive in Canada, you may be asked to complete a Customs Declaration Card. Complete this card before meeting with customs and immigration officials, even if you aren’t a Canadian citizen."
+  ],
+  "previewWords": [
+    {
+      "word": "luggage",
+      "gloss": "the bags you travel with"
+    },
+    {
+      "word": "seized",
+      "gloss": "taken away by an official"
+    },
+    {
+      "word": "immunized",
+      "gloss": "protected against a disease by a vaccine"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Where should you keep the documents you need at the border?",
+      "options": [
+        "With you at all times, not in your luggage",
+        "In your checked bags",
+        "Posted ahead to your new address"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What must you tell an official when you arrive?",
+      "options": [
+        "Which city you plan to settle in",
+        "If you are carrying more than CAN $10,000",
+        "How long you plan to stay"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What do children need before they can enrol in school?",
+      "options": [
+        "A Customs Declaration Card",
+        "A translated birth certificate",
+        "Records of their vaccinations"
+      ],
+      "answer": 2
+    }
+  ]
+}

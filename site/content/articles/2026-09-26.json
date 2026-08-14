@@ -1,0 +1,63 @@
+{
+  "id": "2026-09-26",
+  "title": "'The Celebrated Jumping Frog of Calaveras County,' by Mark Twain",
+  "topic": "He asked one simple question and was trapped in a corner.",
+  "source": {
+    "author": "VOA Learning English",
+    "origin": "VOA Learning English, American Stories",
+    "license": "Public domain (work of the US federal government)",
+    "url": "https://learningenglish.voanews.com/a/celebrated-jumping-frog-calaveras-county-mark-twain/3160704.html"
+  },
+  "body": [
+    "A friend of mine in the East asked me to visit old Simon Wheeler, to ask about my friends friend, Leonidas W. Smiley. I did as my friend asked me to do and this story is the result.",
+    "I found Simon Wheeler sleeping by the stove in the ruined mining camp of Angels.",
+    "I saw that he was fat and had no hair, and had a gentle and simple look upon his peaceful face. He woke up, and gave me \"good-day.\"",
+    "I told him a friend had asked me to find out about a friend named Leonidas W. Smiley, who he heard was at one time living in Angels Camp. I added that if Mr. Wheeler could tell me anything about this Leonidas W. Smiley, I would feel a great responsibility to him.",
+    "Simon Wheeler forced me into a corner with his chair and began telling me this long story. He never smiled, he never frowned. But all through the endless story there was a feeling of great seriousness and honesty. This showed me plainly that he thought the heroes of the story were men of great intelligence.",
+    "I let him go on in his own way, and never stopped him once. This is the story Simon Wheeler told.",
+    "Leonidas W. …. hm… Le… well, there was a man here once by the name of Jim Smiley, in the winter of 1849 -- or may be it was the spring of 1850. Anyway, he was the strangest man. He was always making money on anything that turned up if he could get anybody to try to make money on the other side. And if he could not do that, he would change sides."
+  ],
+  "previewWords": [
+    {
+      "word": "peaceful",
+      "gloss": "calm and quiet"
+    },
+    {
+      "word": "endless",
+      "gloss": "going on and on with no end"
+    },
+    {
+      "word": "heroes",
+      "gloss": "the main people in a story"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did the narrator go to see Simon Wheeler?",
+      "options": [
+        "A friend asked him to ask about Leonidas W. Smiley",
+        "He wanted to buy the mining camp",
+        "He was looking for somewhere to sleep"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "How did Wheeler behave while he told his story?",
+      "options": [
+        "He laughed at his own jokes",
+        "He never smiled and never frowned",
+        "He kept stopping to think"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What was Jim Smiley always doing?",
+      "options": [
+        "Digging for gold",
+        "Travelling between camps",
+        "Making money on anything, so long as someone took the other side"
+      ],
+      "answer": 2
+    }
+  ]
+}

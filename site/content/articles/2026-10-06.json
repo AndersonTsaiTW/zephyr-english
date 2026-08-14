@@ -1,0 +1,64 @@
+{
+  "id": "2026-10-06",
+  "title": "Newcomers: Housing in Canada",
+  "topic": "The number a bank looks at before it lends you a house.",
+  "source": {
+    "author": "Government of Canada",
+    "origin": "Canada.ca",
+    "license": "Non-commercial reproduction permitted with attribution",
+    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/housing/buying.html"
+  },
+  "body": [
+    "Fraud is a small but growing concern for homebuyers in Canada.",
+    "Protect yourself from real estate fraud.",
+    "Once you find a home that you’re interested in, you can make an offer to purchase. If you’re using a real estate agent, they will help you make the offer.",
+    "If your offer of purchase is accepted, you need to hire a lawyer or notary to transfer the home to your name. You can find a lawyer online or ask your real estate agent to recommend one.",
+    "You pay back a mortgage through regular payments over a period of time (usually 25 years). Each payment will be split between paying down your loan balance (the principal) and paying the interest you’re charged to borrow the money.",
+    "Your mortgage is equal to the home’s price minus your down payment. Your down payment is money you pay up front when buying a home. The minimum down payment you need depends on the home’s price.",
+    "Your credit history shows how well you’ve managed your financial accounts, credit cards and other loans in the past. Your credit score is a number value based on your credit history and other factors.",
+    "Lenders look at your credit score when deciding whether to give you a mortgage. If you’re new to Canada, banks here may not recognize your credit history from another country. You can start building your credit score in Canada by making regular payments on your credit cards and other accounts."
+  ],
+  "previewWords": [
+    {
+      "word": "mortgage",
+      "gloss": "a long loan taken out to buy a home"
+    },
+    {
+      "word": "principal",
+      "gloss": "the part of a loan you still owe"
+    },
+    {
+      "word": "lenders",
+      "gloss": "banks and others who lend money"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Who transfers the home into your name once your offer is accepted?",
+      "options": [
+        "A lawyer or notary",
+        "The real estate agent",
+        "The bank that lends you the money"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What is a down payment?",
+      "options": [
+        "The first monthly payment on the loan",
+        "Money you pay up front when buying a home",
+        "A fee paid to the agent"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Why might a newcomer's credit history not help here?",
+      "options": [
+        "Credit scores are not used in Canada",
+        "Newcomers cannot borrow for five years",
+        "Canadian banks may not recognise a history from another country"
+      ],
+      "answer": 2
+    }
+  ]
+}

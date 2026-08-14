@@ -1,0 +1,63 @@
+{
+  "id": "2026-10-13",
+  "title": "When Does a Problem 'Snowball'?",
+  "topic": "Why some snow makes a ball and some just falls apart.",
+  "source": {
+    "author": "VOA Learning English",
+    "origin": "VOA Learning English, Words and Their Stories",
+    "license": "Public domain (work of the US federal government)",
+    "url": "https://learningenglish.voanews.com/a/when-does-a-problem-snowball-/7398657.html"
+  },
+  "body": [
+    "If you live in a part of the world that is experiencing winter right now, it might be snowing.",
+    "But even if you do not live in a snowy climate, try to image cold, snowy weather. Imagine having a snowball fight with your friends. A snowball is, of course, a ball of snow. But not all snow makes good snowballs. If the snow is too light and dry, it will not hold together. It is powdery. Wetter snow makes for great snowballs. You can pack it into a tight ball, which is great for throwing.",
+    "A snowball might hurt a bit, but it would not cause a lot of damage. But imagine that snowball rolling down a hill. As it rolls, it picks up more and more snow. It gets bigger and bigger until it crashes into something and causes damage!",
+    "And that gives us “snowball” as a verb.",
+    "Dictionary.com defines the verb “snowball” as becoming “larger, greater, more intense…” very quickly.",
+    "If something like a project, campaign, or business snowballs, its progress rapidly increases and grows. For example, after a photographer posted a picture on Instagram of a monkey protecting a human baby, her followers snowballed to over 1 million within a week!",
+    "However, when we use this expression the ending results are usually not good. Something that snowballs in a bad way goes downhill quickly. For example, when we do not take care of small problems, they can snowball into bigger ones."
+  ],
+  "previewWords": [
+    {
+      "word": "powdery",
+      "gloss": "dry and light, like dust"
+    },
+    {
+      "word": "damage",
+      "gloss": "harm done to something"
+    },
+    {
+      "word": "rapidly",
+      "gloss": "very quickly"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What kind of snow makes a good snowball?",
+      "options": [
+        "Wetter snow, which packs tight",
+        "Light, dry, powdery snow",
+        "Snow that has already frozen hard"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What happens to a snowball rolling down a hill?",
+      "options": [
+        "It melts before it reaches the bottom",
+        "It picks up more snow and grows bigger",
+        "It breaks into pieces at once"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "When we say a problem snowballs, what do we mean?",
+      "options": [
+        "It stays the same size for a long time",
+        "It disappears on its own",
+        "It grows fast, usually in a bad way"
+      ],
+      "answer": 2
+    }
+  ]
+}

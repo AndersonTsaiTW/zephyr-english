@@ -1,0 +1,65 @@
+{
+  "id": "2026-09-24",
+  "title": "Prepare financially",
+  "topic": "What your money is worth once you land, and what it buys.",
+  "source": {
+    "author": "Government of Canada",
+    "origin": "Canada.ca",
+    "license": "Non-commercial reproduction permitted with attribution",
+    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/prepare-financially.html"
+  },
+  "body": [
+    "Estimate how much it’ll cost you to live in Canada.",
+    "Find out how much it costs to live where you’re planning to settle in Canada. The cost of living will vary depending on where you decide to settle. Some costs will be similar for items and services across Canada.",
+    "You’ll need to provide proof of your funds to the Canadian visa office in your home country when you apply to immigrate.",
+    "Your life in Canada will be different than in your home country.",
+    "You may have to take a job with lower pay while you upgrade your skills or get experience working here. That means your financial status could change.",
+    "Even if you earn a higher salary in Canada than you were earning in your home country, the cost of living in Canada may be higher than you’re used to.",
+    "Most Canadians spend 35% to 50% of their income on housing and utilities. This includes the cost of renting your home or paying your mortgage (a mortgage is a long-term loan.) It also includes the often-high cost of heating your home and paying for electricity, telephone service and water.",
+    "Many newcomers choose to rent an apartment on a monthly basis. Rental costs vary across cities and across Canada. They usually cost less outside large cities.",
+    "You will likely pay at least $350 a month to rent a room. You can pay at least $2,000 a month to rent a larger apartment or a large house. An immigrant-serving organization where you plan to settle can help you find a home that you can afford."
+  ],
+  "previewWords": [
+    {
+      "word": "mortgage",
+      "gloss": "a long loan taken out to buy a home"
+    },
+    {
+      "word": "utilities",
+      "gloss": "services like heat, water and electricity"
+    },
+    {
+      "word": "salary",
+      "gloss": "the money a job pays you"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How much of their income do most Canadians spend on housing and utilities?",
+      "options": [
+        "Between 35 and 50 percent",
+        "About 10 percent",
+        "Almost all of it"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Why might a newcomer earn less at first?",
+      "options": [
+        "Wages are lower everywhere in Canada",
+        "They may take lower-paid work while building skills and experience here",
+        "Newcomers are not allowed to work full time"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does the article say about rent outside large cities?",
+      "options": [
+        "It costs about the same",
+        "It is usually higher",
+        "It usually costs less"
+      ],
+      "answer": 2
+    }
+  ]
+}

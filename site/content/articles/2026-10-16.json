@@ -1,0 +1,61 @@
+{
+  "id": "2026-10-16",
+  "title": "Sleep Apnea",
+  "topic": "Breathing that stops half a minute at a time, all night.",
+  "source": {
+    "author": "Government of Canada",
+    "origin": "Canada.ca",
+    "license": "Non-commercial reproduction permitted with attribution",
+    "url": "https://www.canada.ca/en/public-health/services/chronic-diseases/sleep-apnea.html"
+  },
+  "body": [
+    "Sleep apnea is a serious disorder that causes your breathing to stop repeatedly while you sleep. These breathing pauses or \"apneas\" usually last 10 to 30 seconds and can happen many times throughout the night.",
+    "The most common type of sleep apnea is obstructive sleep apnea, which happens when the upper airway gets blocked during sleep. Often, the blockage happens when the soft tissue in the back of the throat collapses and closes during sleep. Relaxed throat muscles, a narrow airway, a large tongue or extra fatty tissue in the throat can also block the airway. Central apnea and mixed apnea are other types of sleep apnea, but are more rare.",
+    "Snoring by itself doesn't necessarily mean that you have sleep apnea. It is true that loud snoring is common in people with this disorder, but there's a big difference between simple snoring and sleep apnea.",
+    "There are easy and effective treatments for sleep apnea. Your treatment will depend on whether your sleep apnea is mild, moderate or severe. Your doctor can help you choose the best treatment for you. The most common treatment for sleep apnea is CPAP or continuous positive airway pressure. CPAP involves wearing a special mask that keeps the throat open and stops the snoring and pauses in breathing.",
+    "The key is to confirm whether you have sleep apnea so you can start treatment. If you have any of the signs and symptoms listed above, see your doctor. Your doctor may send you for overnight testing at a sleep disorder centre where your condition can be studied thoroughly. You may also be required to do some home tests."
+  ],
+  "previewWords": [
+    {
+      "word": "disorder",
+      "gloss": "a problem with the way the body works"
+    },
+    {
+      "word": "airway",
+      "gloss": "the passage air travels through to your lungs"
+    },
+    {
+      "word": "severe",
+      "gloss": "very bad or serious"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How long do the breathing pauses usually last?",
+      "options": [
+        "10 to 30 seconds",
+        "2 to 3 seconds",
+        "Several minutes"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What happens in obstructive sleep apnea?",
+      "options": [
+        "The lungs stop working",
+        "The upper airway becomes blocked",
+        "The heart beats too slowly"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What is the most common treatment?",
+      "options": [
+        "An operation on the throat",
+        "Sleeping tablets",
+        "CPAP, a mask that keeps the throat open"
+      ],
+      "answer": 2
+    }
+  ]
+}

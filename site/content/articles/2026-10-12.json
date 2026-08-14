@@ -1,0 +1,64 @@
+{
+  "id": "2026-10-12",
+  "title": "'Mammon and the Archer' by O. Henry",
+  "topic": "A soap millionaire decides to paint his house red, white and blue.",
+  "source": {
+    "author": "VOA Learning English",
+    "origin": "VOA Learning English, American Stories",
+    "license": "Public domain (work of the US federal government)",
+    "url": "https://learningenglish.voanews.com/a/mammon-and-the-archer-by-o-henry/4480405.html"
+  },
+  "body": [
+    "Old Anthony Rockwall, who made millions of dollars by making and selling Rockwall’s soap, stood at the window of his large Fifth Avenue house. He was looking out at his neighbor, G. Van Schuylight Suffolk-Jones. His neighbor is a proud member of a proud old New York family. He came out of his door and got into a cab. He looked once quickly, as usual, at Anthony Rockwall’s house. The look showed that Suffolk-Jones was a very important man, while a rich soapmaker was nothing.",
+    "“I will have this house painted red, white, and blue next summer,” said the Soap King to himself. “And we’ll see how he likes that.”",
+    "And then Anthony Rockwall turned around and shouted, “Mike!” in a loud voice. He never used a bell to call a servant.",
+    "“Tell my son,” he said when the servant came, “to come to me before he leaves the house.”",
+    "When young Rockwall entered the room, the old man put down the newspaper he had been reading. “Richard,” said Anthony Rockwall, “what do you pay for the soap that you use?”",
+    "Richard had finished college six months before, and he had come home to live. He had not yet learned to understand his father. He was always being surprised.",
+    "He said, “Six dollars for twelve pieces.”",
+    "“And your clothes?”"
+  ],
+  "previewWords": [
+    {
+      "word": "proud",
+      "gloss": "thinking well of yourself or your family"
+    },
+    {
+      "word": "cab",
+      "gloss": "a car you pay to ride in"
+    },
+    {
+      "word": "servant",
+      "gloss": "someone employed to work in a person's house"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did Anthony Rockwall make his millions?",
+      "options": [
+        "Making and selling soap",
+        "Buying land on Fifth Avenue",
+        "Publishing a newspaper"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does he plan to do to his house next summer?",
+      "options": [
+        "Sell it to his neighbour",
+        "Paint it red, white and blue",
+        "Pull it down and rebuild"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "How does he call a servant?",
+      "options": [
+        "He rings a bell",
+        "He sends a written note",
+        "He shouts, and never uses a bell"
+      ],
+      "answer": 2
+    }
+  ]
+}

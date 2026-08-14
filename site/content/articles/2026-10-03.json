@@ -1,0 +1,61 @@
+{
+  "id": "2026-10-03",
+  "title": "The Cask of Amontillado",
+  "topic": "He smiled at his friend, and the smile was about his death.",
+  "source": {
+    "author": "VOA Learning English",
+    "origin": "VOA Learning English, American Stories",
+    "license": "Public domain (work of the US federal government)",
+    "url": "https://learningenglish.voanews.com/a/cask-of-amontillado-edgar-allan-poe-american-stories/3249195.html"
+  },
+  "body": [
+    "Fortunato was bigger, richer and more handsome than I was. And he enjoyed making me look like a fool. He hurt my feelings a thousand times during the years of my childhood. I never showed my anger, however. So, he thought we were good friends. But I promised myself that one day I would punish Fortunato for his insults to me.",
+    "Many years passed. Fortunato married a rich and beautiful woman who gave him sons. Deep in my heart I hated him, but I never said or did anything that showed him how I really felt. When I smiled at him, he thought it was because we were friends.",
+    "He did not know it was the thought of his death that made me smile.",
+    "Everyone in our town respected Fortunato. Some men were afraid of him because he was so rich and powerful. He had a weak spot, however. He thought he was an excellent judge of wine. I also was an expert on wine. I spent a lot of money buying rare and costly wines. I stored the wines in the dark rooms under my family's palace.",
+    "Our palace was one of the oldest buildings in the town. The Montresor family had lived in it for hundreds of years. We had buried our dead in the rooms under the palace. These tombs were quiet, dark places that no one but myself ever visited."
+  ],
+  "previewWords": [
+    {
+      "word": "insults",
+      "gloss": "rude things said to hurt someone"
+    },
+    {
+      "word": "respected",
+      "gloss": "thought well of by other people"
+    },
+    {
+      "word": "tombs",
+      "gloss": "places where the dead are buried"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did Fortunato treat the narrator when they were children?",
+      "options": [
+        "He enjoyed making him look like a fool",
+        "He protected him from others",
+        "He ignored him completely"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Why did Fortunato believe they were friends?",
+      "options": [
+        "They had married into the same family",
+        "The narrator never showed his anger",
+        "They worked together"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What was Fortunato's weak spot?",
+      "options": [
+        "He was afraid of the dark",
+        "He owed money everywhere",
+        "He believed he was an excellent judge of wine"
+      ],
+      "answer": 2
+    }
+  ]
+}

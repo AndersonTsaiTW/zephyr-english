@@ -38,21 +38,44 @@ const FURNITURE = [
   // This is the single most common way a government page falls apart.
   /:\s*$/,
   /^our story today is/i,
-  /^we present (the|our)\b/i,
+  /\bwe present (a|the|our)\b/i,
   /originally adapted and recorded by/i,
   /^on this program we explore/i,
   /^now,? the (weekly|voa|special)/i,
-  /here is .{0,40} with the story/i,
+  /^and now (an?|the)\b/i,
+  /^editor['’]?s note/i,
+  /^here is the story .{0,60}voa learning english/i,
+  // These pieces are written for radio, and half of them stop to play a
+  // recorded conversation. A reader was never going to hear it, so a
+  // sentence pointing at what "we just heard" is pointing at silence.
+  /\blet['’]?s hear\b/i,
+  /\b(we|you) (just )?heard\b/i,
+  /\blisten (again|to (this|the))\b/i,
+  /\bin the (example|conversation) (we|you)\b/i,
+  // An all-capital speaker label anywhere in a paragraph means the piece
+  // is a script rather than an article.
+  /\b[A-Z]{2,15}:\s/,
+  /^learn more about\b/i,
+  /^find out more\b/i,
+  /^check processing times\b/i,
+  /^today['’]?s (story|version|show)\b/i,
+  // A sentence pointing at something that was a list or a table on the page
+  // is pointing at nothing once the page is plain text.
+  /\b(listed below|the list below|below is|below are|as follows|the following|this list|the table)\b/i,
+  /here is .{0,40} with (our|the) story/i,
   /^\*\*/,
   /^(learn|find out|use this page|read) about\b/i,
   /^(for more information|newcomer services|search online)/i,
   /^see the .{0,60}(in your province|department)/i,
   /^and now,?\s+(words and their stories|the health|science|as it is)/i,
-  /^and that('|’)s\s+(all\s+)?(the time we have for this\s+)?(words and their stories|our program|as it is)/i,
-  /^(i'm|i’m)\s+[A-Z][a-z]+(\s+[A-Z][a-zA-Z.'’-]+)*\.?$/,
+  /^and that['’]s\s+(all\s+)?(the time we have for this\s+)?(words and their stories|our program|as it is)/i,
+  /^i['’]m\s+[A-Z][a-z]+(\s+[A-Z][a-zA-Z.'’-]+)*\.?$/,
   /^(this is\s+)?(voa|the voa)\s+learning english/i,
   /(wrote|reported|adapted|produced)\s+(on\s+)?(this|the)\s+(story|report|lesson|program)/i,
   /adapted (it|the report|this story) for/i,
+  /\b(adapted|produced) (for|by)\b.{0,60}\b(learning english|voa)\b/i,
+  /^your storyteller was\b/i,
+  /^the video was produced\b/i,
   /^words in this story/i,
   /^_+$/,
   /^-+$/,
@@ -62,24 +85,31 @@ const FURNITURE = [
   /^see how well you understand/i,
   /^(quiz|practice)\s*[-–—:]/i,
   /^until next time/i,
-  /^that('|’)s all for/i,
+  /^that['’]s all for/i,
   /^join us again/i,
 ];
 
 // The glossary VOA appends, in the shape "word -n. what it means".
 const GLOSSARY = /^[^.]{1,40}\s[-–—]\s?(n|v|adj|adv|prep|conj|phrasal)\b\.?/i;
 
-// A scripted conversation, which reads as dialogue rather than as an article.
-const DIALOGUE = /^[A-Z]\s*:\s/;
+// A scripted conversation, or a radio cue naming who reads the next part.
+// "A: ", "BEN: ", "Storyteller: ". A speaker label, not a sentence.
+const DIALOGUE = [/^[A-Z]{1,12}\s*:\s/, /^(storyteller|narrator|announcer|host|voice \d)\s*:\s/i];
 
 export function isFurniture(paragraph) {
   const p = paragraph.trim();
   if (!p) return true;
   if (GLOSSARY.test(p)) return true;
-  if (DIALOGUE.test(p)) return true;
-  // A fragment with no sentence in it is a heading or a navigation label
-  // that lost its markup on the way out of the page.
-  if (wordsOf(p).length < 7 && !/[.!?]["'”’]?$/.test(p)) return true;
+  if (DIALOGUE.some((re) => re.test(p))) return true;
+  // A run of words with no sentence-ending punctuation anywhere in it is a
+  // heading or a navigation label that lost its markup on the way out of
+  // the page. Length is no guide: "If your identification is lost or
+  // stolen" is seven words and still a heading.
+  if (!/[.!?]/.test(p)) return true;
+  // Ending without it is the same wound in a different place. "You can get
+  // a mortgage loan from" was a sentence introducing a bulleted list, and
+  // the list is gone.
+  if (!/[.!?]["'”’)]?$/.test(p)) return true;
   return FURNITURE.some((re) => re.test(p));
 }
 

@@ -1,0 +1,61 @@
+{
+  "id": "2026-10-17",
+  "title": "'Transients in Arcadia' by O. Henry",
+  "topic": "A hotel its guests hope nobody else ever finds.",
+  "source": {
+    "author": "VOA Learning English",
+    "origin": "VOA Learning English, American Stories",
+    "license": "Public domain (work of the US federal government)",
+    "url": "https://learningenglish.voanews.com/a/transients-in-arcadia-by-o-henry/4480427.html"
+  },
+  "body": [
+    "There is a certain hotel on Broadway that is very pleasant in the summer. Not many people have heard about it. It is wide and cool. Its rooms have walls of dark wood. There are green trees around it, and soft winds. It has all the pleasures of mountain living, and none of the pains. You will eat better fish there than you could catch for yourself in streams in the hills. You will have better meat than a hunter brings home from the forest.",
+    "A few have discovered this cool spot in the hot summer of New York. You will see these few guests, eating dinner in the hotel restaurant. They are happy to be there, and happy to know that they are very few. They feel especially wise because they have found this delightful place.",
+    "More waiters than necessary are always near. They bring what is wanted before anyone asks for it.",
+    "The pleasing distant noise of Broadway sounds like running water in a forest. At every strange footstep, the guests turn quickly and look. They are afraid that the restless pleasure-seekers will find their hotel and destroy its pleasant quiet.",
+    "And so these few live during the hot season. They enjoy the delights of mountain and seashore. All is brought to them in their Broadway hotel."
+  ],
+  "previewWords": [
+    {
+      "word": "guests",
+      "gloss": "people staying at a hotel"
+    },
+    {
+      "word": "delightful",
+      "gloss": "very pleasing"
+    },
+    {
+      "word": "restless",
+      "gloss": "unable to stay still or settle"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What are the guests afraid of?",
+      "options": [
+        "That pleasure-seekers will find the hotel and spoil its quiet",
+        "That the hotel will close for the winter",
+        "That the prices will rise"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does the distant noise of Broadway sound like there?",
+      "options": [
+        "A crowd at a fair",
+        "Running water in a forest",
+        "Rain on a roof"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Why do the guests feel especially wise?",
+      "options": [
+        "They pay less than other people do",
+        "They know the waiters by name",
+        "They found this delightful place when few others have"
+      ],
+      "answer": 2
+    }
+  ]
+}

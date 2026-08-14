@@ -1,0 +1,67 @@
+{
+  "id": "2026-10-09",
+  "title": "Transportation",
+  "topic": "How a country this wide moves people from one end to the other.",
+  "source": {
+    "author": "Government of Canada",
+    "origin": "Canada.ca",
+    "license": "Non-commercial reproduction permitted with attribution",
+    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/settle-canada/transportation.html"
+  },
+  "body": [
+    "Due to Canada’s large size, people often travel between major cities by airplane.",
+    "All main cities have airports with regularly scheduled flights to and from many places. Some places don’t have a main airport, such as small towns or rural areas.",
+    "Canada’s rail network runs across the country.",
+    "Trains in Canada are safe and comfortable. It’s often cheaper to buy train tickets in advance.",
+    "You can find out more and buy tickets from Via Rail Canada or going to a train station in person.",
+    "The largest network of bus routes is run by a company called Greyhound and its partners. You can find out more and buy bus tickets by calling or visiting your local bus station.",
+    "In coastal areas of Canada such as British Columbia and the Atlantic region, ferry boats are a common way to travel. Many ferries transport both passengers and vehicles.",
+    "You can find out more and buy tickets from ferry companies that operate routes in your area.",
+    "Canada has a large network of highways, making long distance travel by car possible between most places.",
+    "If you plan to use public transportation, research your options before you decide where to live.",
+    "The bus is the most common form of urban transportation in Canada. Some cities have other modes of public transit. In most cases, you can easily transfer from one mode of transportation to another."
+  ],
+  "previewWords": [
+    {
+      "word": "rural",
+      "gloss": "in the countryside, away from towns"
+    },
+    {
+      "word": "ferry",
+      "gloss": "a boat that carries people and cars across water"
+    },
+    {
+      "word": "transit",
+      "gloss": "the system of buses and trains in a city"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why do people often fly between Canadian cities?",
+      "options": [
+        "Because of the country's large size",
+        "Because trains are unsafe",
+        "Because flights are always cheapest"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Where are ferries a common way to travel?",
+      "options": [
+        "Across the prairies",
+        "In coastal areas such as British Columbia",
+        "Between airports"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What is the most common form of city transport in Canada?",
+      "options": [
+        "The train",
+        "The ferry",
+        "The bus"
+      ],
+      "answer": 2
+    }
+  ]
+}

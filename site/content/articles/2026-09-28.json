@@ -1,0 +1,71 @@
+{
+  "id": "2026-09-28",
+  "title": "Chicken Little",
+  "topic": "A petal lands on her tail, and the sky is falling.",
+  "source": {
+    "author": "VOA Learning English",
+    "origin": "VOA Learning English, American Stories",
+    "license": "Public domain (work of the US federal government)",
+    "url": "https://learningenglish.voanews.com/a/american-stories-chicken-little/6947104.html"
+  },
+  "body": [
+    "One day, Chicken Little fell asleep under some flowers.",
+    "Cow wandered by, reached over the fence and bit off some flowers.",
+    "The noise wakened Chicken Little just as a flower petal fell on her tail.",
+    "\"Squawk! Squawk!” cried Chicken Little, frightened by the petal’s landing.",
+    "“The sky is falling,” she continued, her call rising louder with her terror. “Squawk! Squawk!”",
+    "And, she jumped up and began to run, moving as fast as her two legs would carry her. She did not stop running until she came to the barnyard. There, she found Henny Penny scratching in the dirt of the barnyard.",
+    "“Oh, Henny Penny, do not scratch—run!” cried Chicken Little. “The sky is falling.”",
+    "The scratching stopped. Then Hen called out: “How do you know that, Chicken Little?”",
+    "“I saw it with my eyes, I heard it with my ears, and part of it fell on my tail. Let us run, until we get some place.”",
+    "“Squawk! Squawk,” cried Hen in return, a look of shock on her face. Then, run she did, speeding away from the barnyard.",
+    "Chicken Little followed close behind.",
+    "They almost ran right past the little lake, just as Ducky Lucky was going in for a swim.",
+    "“Oh, Ducky Lucky! Ducky Lucky! Do not try to swim,” cried Henny Penny. “The sky is falling.”",
+    "“Seriously, Henny Penny? Why do you think that?” asked Ducky Lucky.",
+    "“Chicken Little told me.”"
+  ],
+  "previewWords": [
+    {
+      "word": "petal",
+      "gloss": "one of the coloured parts of a flower"
+    },
+    {
+      "word": "barnyard",
+      "gloss": "the open ground around a farm building"
+    },
+    {
+      "word": "wakened",
+      "gloss": "woken up"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What actually fell on Chicken Little?",
+      "options": [
+        "A flower petal",
+        "A piece of the sky",
+        "A stone from the fence"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Why did it fall?",
+      "options": [
+        "The wind blew it down",
+        "A cow reached over the fence and bit off some flowers",
+        "Henny Penny knocked it loose"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does Henny Penny do when she hears the news?",
+      "options": [
+        "She laughs at Chicken Little",
+        "She goes to look for herself",
+        "She runs, without checking"
+      ],
+      "answer": 2
+    }
+  ]
+}

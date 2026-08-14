@@ -1,0 +1,65 @@
+{
+  "id": "2026-10-05",
+  "title": "The Purloined Letter by Edgar Allan Poe",
+  "topic": "A robbery so simple that the police cannot solve it.",
+  "source": {
+    "author": "VOA Learning English",
+    "origin": "VOA Learning English, American Stories",
+    "license": "Public domain (work of the US federal government)",
+    "url": "https://learningenglish.voanews.com/a/the-purloined-letter-edgar-allan-poe/3307412.html"
+  },
+  "body": [
+    "One evening in Paris, during the autumn of eighteen forty-five, I went to visit a friend, Auguste Dupin. We were smoking our pipes and talking when the door of his apartment opened. Mr. Germont, the head of the Paris police force, came into the room.",
+    "\"I came to ask your advice,\" Germont said to my friend Dupin. \"I am trying to solve a very important case. It is also a very simple case, so I really need your help. But I thought you would like to hear about it, because it is so strange.",
+    "\"My men and I have worked on this case for three months,\" Germont said. \"It is a very simple case of robbery. But we still cannot solve it.\"",
+    "Dupin took the pipe out of his mouth. \"Perhaps the mystery is too simple,\" he said.",
+    "Germont began to laugh. \"Too simple?\" he said. \"Who ever heard of such a thing?\"",
+    "I looked at Germont. \"Why don't you tell us the problem?\" I said.",
+    "Germont stopped laughing and sat down.",
+    "\"All right,\" he said. \"But you must never tell anyone I told you this.\"",
+    "\"The wife of a very important person needs help. I cannot tell you her name, because her husband is a powerful man in the French government. Let us just call her Madame X. Three months ago, someone stole a letter from Madame X. She is offering a large amount of money to anyone who can return the letter to her."
+  ],
+  "previewWords": [
+    {
+      "word": "advice",
+      "gloss": "an opinion about what someone should do"
+    },
+    {
+      "word": "robbery",
+      "gloss": "the crime of stealing"
+    },
+    {
+      "word": "powerful",
+      "gloss": "having a lot of control over others"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Who comes to Dupin's apartment that evening?",
+      "options": [
+        "The head of the Paris police",
+        "Madame X herself",
+        "A thief asking for help"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "How long have the police worked on the case?",
+      "options": [
+        "Three days",
+        "Three months",
+        "Three years"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does Dupin suggest about the mystery?",
+      "options": [
+        "It was never a crime at all",
+        "The police are hiding something",
+        "It may be too simple"
+      ],
+      "answer": 2
+    }
+  ]
+}
