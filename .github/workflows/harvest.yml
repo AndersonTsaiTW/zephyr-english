@@ -52,6 +52,11 @@ jobs:
     if: github.repository_owner == 'AndersonTsaiTW'
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The default is a shallow clone of one commit, which leaves the
+          # incoming branch and main with no shared ancestor. Merging them
+          # then fails with "refusing to merge unrelated histories".
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
