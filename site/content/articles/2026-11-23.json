@@ -1,7 +1,7 @@
 {
   "id": "2026-11-23",
   "title": "'The Count and the Wedding Guest' by O. Henry",
-  "topic": "",
+  "topic": "A quiet young woman in black catches a boarding house neighbour's eye.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -16,6 +16,47 @@
     "Coming out of the door was Miss Conway. She was wearing a night-black dress of soft, thin cloth. Her hat was black. She was putting black gloves on her hand. There was no white and no color anywhere about her. All black. Someone in her family had died. Mr. Donovan was certain about that.",
     "Her rich golden hair lay soft and thick at the back of her neck. Her face was not really pretty, but her large gray eyes made it almost beautiful. She looked up into the sky with an expression of sadness."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "furnished",
+      "gloss": "supplied with furniture like beds and tables"
+    },
+    {
+      "word": "certain",
+      "gloss": "completely sure about something"
+    },
+    {
+      "word": "expression",
+      "gloss": "the look on someone's face"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Where did Andy Donovan first meet Miss Conway?",
+      "options": [
+        "at a wedding",
+        "at a train station",
+        "at dinner in the house where he lived"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What was Miss Conway wearing when Andy saw her two weeks later?",
+      "options": [
+        "a night-black dress",
+        "a plain brown dress",
+        "a bright red coat"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Why did Andy assume Miss Conway was in mourning?",
+      "options": [
+        "she told him someone in her family had died",
+        "she was dressed entirely in black",
+        "she was crying at dinner"
+      ],
+      "answer": 1
+    }
+  ]
 }

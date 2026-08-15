@@ -1,7 +1,7 @@
 {
   "id": "2027-01-28",
   "title": "When Do You 'Go Against the Grain'?",
-  "topic": "",
+  "topic": "Why cutting wood the wrong way explains standing up for yourself.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -18,6 +18,47 @@
     "An idea or action that goes against the grain is difficult to do or accept. Usually, it goes against a person’s ideals, beliefs, or principles.",
     "If an idea or action goes against the grain, it is the opposite of what you believe is right or normal. You might find it difficult to accept. In some situations, it takes courage to go against the grain of what others are saying or doing and stand up for what you believe in."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "grain",
+      "gloss": "the pattern of lines in wood"
+    },
+    {
+      "word": "fibers",
+      "gloss": "thin thread-like strands that make up material"
+    },
+    {
+      "word": "principles",
+      "gloss": "strong beliefs about what is right"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What tool would you use to cut a wood board with the grain?",
+      "options": [
+        "a crosscut saw",
+        "a rip saw",
+        "a hand drill"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What might happen if you cut against the wood's grain?",
+      "options": [
+        "you might tear out pieces of wood",
+        "the wood becomes perfectly smooth",
+        "the tool becomes sharper"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does it take to go against the grain of what others believe, the article says?",
+      "options": [
+        "a lot of spare time",
+        "a large amount of money",
+        "courage"
+      ],
+      "answer": 2
+    }
+  ]
 }

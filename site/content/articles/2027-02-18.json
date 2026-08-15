@@ -1,7 +1,7 @@
 {
   "id": "2027-02-18",
   "title": "'The Tell-Tale Heart' by Edgar Allan Poe",
-  "topic": "",
+  "topic": "Why a man says his senses grew sharper, not weaker, from illness.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -15,6 +15,47 @@
     "Now this is the point. You think that I am mad. Madmen know nothing. But you should have seen me. You should have seen how wisely and carefully I went to work!",
     "I was never kinder to the old man than during the whole week before I killed him. And every night, late at night, I turned the lock of his door and opened it – oh, so gently! And then, when I had made an opening big enough for my head, I put in a dark lantern, all closed that no light shone out, and then I stuck in my head. I moved it slowly, very slowly, so that I might not interfere with the old man's sleep. And then, when my head was well in the room, I undid the lantern just so much that a single thin ray of light fell upon the vulture eye."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "vulture",
+      "gloss": "a large bird that feeds on dead animals"
+    },
+    {
+      "word": "wronged",
+      "gloss": "treated unfairly or badly"
+    },
+    {
+      "word": "sharpened",
+      "gloss": "made more sensitive or keen"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does the narrator claim happened to his senses because of his disease?",
+      "options": [
+        "they were completely destroyed",
+        "they were sharpened, not destroyed",
+        "they stayed exactly the same"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What part of the old man bothered the narrator?",
+      "options": [
+        "his eye",
+        "his gold",
+        "his voice"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What did the narrator do every night before killing the old man?",
+      "options": [
+        "he wrote the old man a letter",
+        "he asked the old man for money",
+        "he quietly opened the old man's door"
+      ],
+      "answer": 2
+    }
+  ]
 }

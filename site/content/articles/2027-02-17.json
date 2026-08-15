@@ -1,7 +1,7 @@
 {
   "id": "2027-02-17",
   "title": "How the Animals Lost Their Tails by Carl Sandburg",
-  "topic": "",
+  "topic": "How one weather watcher's mistake cost every animal its tail.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -18,6 +18,47 @@
     "But then a cold wind came and froze all the tails solid. A big wind followed and blew and blew and blew until all the animals’ tails flew off their bodies.",
     "It was easy for the hogs with their short tails. But it was not so easy for the blue fox, who uses his tail to run and to write secret letters in the snow."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "repetition",
+      "gloss": "saying or doing the same thing again and again"
+    },
+    {
+      "word": "careless",
+      "gloss": "not paying enough attention"
+    },
+    {
+      "word": "softened",
+      "gloss": "made less hard or stiff"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Who did Carl Sandburg write the Rootabaga Stories for?",
+      "options": [
+        "his students",
+        "the readers of a newspaper",
+        "his three daughters"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What caused the animals' tails to soften?",
+      "options": [
+        "a fire",
+        "a rain",
+        "a snowstorm"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Why was losing a tail harder for the blue fox than for the hogs?",
+      "options": [
+        "the fox used its tail to run and write in the snow",
+        "the fox had a much longer tail than the hogs",
+        "the fox needed its tail to fly"
+      ],
+      "answer": 0
+    }
+  ]
 }

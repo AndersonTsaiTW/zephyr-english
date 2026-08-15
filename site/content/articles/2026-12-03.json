@@ -1,7 +1,7 @@
 {
   "id": "2026-12-03",
   "title": "Sometimes Help Is Just 'A Phone Call Away'",
-  "topic": "",
+  "topic": "What it really means when someone says they're just a phone call away.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -18,6 +18,47 @@
     "But maybe not all the time.",
     "We all have someone in our lives who contacts us too much. They may blow up our phones with a flood of calls and text messages. When your phone blows up, someone is trying to contact you repeatedly."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "fingertips",
+      "gloss": "right at hand, very easy to reach"
+    },
+    {
+      "word": "assignments",
+      "gloss": "pieces of work given to you, like homework"
+    },
+    {
+      "word": "repeatedly",
+      "gloss": "happening again and again"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does it mean to say smartphones give us 'the world at our fingertips'?",
+      "options": [
+        "information and connection are easily available",
+        "phones are physically very small",
+        "phones are made of the same material as fingertips"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does it mean when your phone 'blows up'?",
+      "options": [
+        "the phone explodes",
+        "someone contacts you repeatedly",
+        "the battery dies quickly"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "In the example, why is the friend having a hard time with his course?",
+      "options": [
+        "he lost his textbook",
+        "he missed too many classes",
+        "the teacher has not answered his emails"
+      ],
+      "answer": 2
+    }
+  ]
 }

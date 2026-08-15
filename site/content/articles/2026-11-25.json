@@ -1,7 +1,7 @@
 {
   "id": "2026-11-25",
   "title": "'Two Thanksgiving Day Gentlemen,' by O. Henry",
-  "topic": "",
+  "topic": "A poor man's yearly Thanksgiving ritual is about to be tested again.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -16,6 +16,47 @@
     "Stuffy Pete sat down on a seat in the New York City park named Union Square. It was the third seat to the right as you enter Union Square from the east.",
     "Every Thanksgiving for nine years he had sat down there at one in the afternoon. Every time, things had happened to him. They were wonderful things. They made his heart feel full of joy—and they filled another part of him, too. They filled the part below his heart."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "tradition",
+      "gloss": "a custom passed down over time"
+    },
+    {
+      "word": "Puritans",
+      "gloss": "early English settlers known for strict religious beliefs"
+    },
+    {
+      "word": "purely",
+      "gloss": "completely, with nothing else mixed in"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Which group is linked to the first Thanksgiving in the story?",
+      "options": [
+        "the pioneers",
+        "the Puritans",
+        "the Confederates"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Where does Stuffy Pete sit every Thanksgiving?",
+      "options": [
+        "on a seat in Union Square",
+        "in front of the White House",
+        "at a restaurant table"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What food is traditionally eaten for Thanksgiving dinner in the story?",
+      "options": [
+        "fish",
+        "ham",
+        "turkey"
+      ],
+      "answer": 2
+    }
+  ]
 }

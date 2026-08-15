@@ -1,7 +1,7 @@
 {
   "id": "2027-01-17",
   "title": "Many People 'Thank Their Lucky Stars'",
-  "topic": "",
+  "topic": "Why looking up at a starry sky became a way to say thanks.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -17,6 +17,47 @@
     "We often use the expression with the word “should.” For example: My friend should thank her lucky stars for her amazing brother. He has helped her many times over the years.",
     "This saying means that you should be grateful for your good luck. Thanking the stars in ancient times may have been a type of superstition. But these days, it simply means we are thankful."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "gratitude",
+      "gloss": "a feeling of being thankful"
+    },
+    {
+      "word": "superstition",
+      "gloss": "a belief not based on reason, often about luck"
+    },
+    {
+      "word": "astrology",
+      "gloss": "the belief that stars affect people's lives"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What feeling does the expression 'thank your lucky stars' express?",
+      "options": [
+        "anger about something bad",
+        "gratitude for something good",
+        "confusion about the future"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Who looks to the stars for guidance and advice today, the article says?",
+      "options": [
+        "ancient star-gazers only",
+        "sailors crossing the ocean",
+        "people who believe in astrology"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What word does the article often pair with the expression 'thank your lucky stars'?",
+      "options": [
+        "should",
+        "would",
+        "must"
+      ],
+      "answer": 0
+    }
+  ]
 }

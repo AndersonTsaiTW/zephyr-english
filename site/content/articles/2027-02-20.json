@@ -1,7 +1,7 @@
 {
   "id": "2027-02-20",
   "title": "How Do You Stay 'In Shape'?",
-  "topic": "",
+  "topic": "Why a boss might tell a lazy worker to ship out.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -16,6 +16,47 @@
     "Using the word “shape” when talking about fitness and health makes sense. Sometimes, we can describe the human body in terms of size and shape. But we can also use the word “shape” to talk about our projects, our activities, our actions and behaviors.",
     "So, shape up also means to correct bad behavior. For example, a boss might warn an underperforming employee to shape up. The boss may take this expression one step further. She or he might add a threat by saying shape up or ship out."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "underperforming",
+      "gloss": "doing worse than what is expected"
+    },
+    {
+      "word": "monuments",
+      "gloss": "structures built to honour a person or event"
+    },
+    {
+      "word": "neighborhood",
+      "gloss": "the area close to where someone lives"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What kept the writer in shape before working from home?",
+      "options": [
+        "walking to the train station and around the office",
+        "going to the gym every night",
+        "playing team sports on weekends"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What did the writer add to stay in shape after starting to work from home?",
+      "options": [
+        "yoga and cycling",
+        "running and weightlifting",
+        "swimming and short walks"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does shape up or ship out warn someone to do?",
+      "options": [
+        "go on a diet immediately",
+        "improve their behaviour or leave",
+        "take a vacation from work"
+      ],
+      "answer": 1
+    }
+  ]
 }

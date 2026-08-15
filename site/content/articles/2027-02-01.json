@@ -1,7 +1,7 @@
 {
   "id": "2027-02-01",
   "title": "Influence Others from a 'Bully Pulpit'",
-  "topic": "",
+  "topic": "How Theodore Roosevelt turned the presidency into his loudest microphone.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -19,6 +19,47 @@
     "Experts say that bully pulpit comes from the 26th president of the United States, Theodore Roosevelt. When he was in office, he once said, “I suppose my critics will call that preaching, but I have got such a bully pulpit!”",
     "Roosevelt observed that his time in office at the White House was a platform for speaking out for what he believed in. He could influence others. He understood that his presidency was his bully pulpit."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "pulpit",
+      "gloss": "a raised platform used for preaching"
+    },
+    {
+      "word": "aggressive",
+      "gloss": "forceful and ready to attack or threaten"
+    },
+    {
+      "word": "influence",
+      "gloss": "the power to affect what others think or do"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is a 'bully pulpit'?",
+      "options": [
+        "a public position that lets you spread your ideas widely",
+        "a church platform used only for weddings",
+        "a place where bullies are punished"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Who is credited with coining the phrase 'bully pulpit'?",
+      "options": [
+        "Abraham Lincoln",
+        "Theodore Roosevelt",
+        "Thomas Jefferson"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "As a verb, what does the article say it means to 'bully' someone?",
+      "options": [
+        "to treat them in a cruel or aggressive way",
+        "to praise them publicly",
+        "to ignore their opinions politely"
+      ],
+      "answer": 0
+    }
+  ]
 }

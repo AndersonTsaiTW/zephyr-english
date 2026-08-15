@@ -1,7 +1,7 @@
 {
   "id": "2027-02-15",
   "title": "Asthma - quick-relief drugs",
-  "topic": "",
+  "topic": "When quick-relief asthma medicine means your daily plan needs a change.",
   "source": {
     "author": "U.S. National Library of Medicine",
     "origin": "MedlinePlus",
@@ -18,6 +18,47 @@
     "Tell your provider if you are using quick-relief medicines twice a week or more to control your asthma symptoms. Your asthma may not be under control, and your provider may need to change your dose of daily control medicines.",
     "Your provider might prescribe oral steroids when you have an asthma attack that is not going away. These are medicines that you take by mouth as pills, capsules, or liquids."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "bronchodilators",
+      "gloss": "medicines that open up the airways"
+    },
+    {
+      "word": "wheezing",
+      "gloss": "breathing with a whistling or rasping sound"
+    },
+    {
+      "word": "prescribe",
+      "gloss": "to officially recommend a medicine for someone to use"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "When should you take quick-relief medicines?",
+      "options": [
+        "when you are coughing, wheezing, or having trouble breathing",
+        "every morning before breakfast",
+        "only once a year"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What are short-acting beta-agonists also known as?",
+      "options": [
+        "oral steroids",
+        "control medicines",
+        "bronchodilators"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What might it mean if you use quick-relief medicine twice a week or more?",
+      "options": [
+        "you are using too much water",
+        "your asthma may not be under control",
+        "your prescription has expired"
+      ],
+      "answer": 1
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "2027-02-03",
   "title": "US Presidents Like to Make Up Words, Expressions",
-  "topic": "",
+  "topic": "The odd words three US presidents invented, from malarkey to Anglomania.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -16,6 +16,47 @@
     "Abraham Lincoln, the country’s 16th president, is known for making powerful speeches during the Civil War. One of his best-known phrases, \"A house divided against itself cannot stand,” is drawn from the Bible.",
     "Historians note that Teddy Roosevelt, the 26th president, was the first president to use media to connect with the public. And he added several memorable words and phrases to American English."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "coin",
+      "gloss": "to invent a new word or phrase"
+    },
+    {
+      "word": "Anglomania",
+      "gloss": "an extreme love of all things English"
+    },
+    {
+      "word": "fringe",
+      "gloss": "a small, extreme group at the edge of a larger one"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Which US president is credited with creating more than a hundred words?",
+      "options": [
+        "Thomas Jefferson",
+        "Abraham Lincoln",
+        "Theodore Roosevelt"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does Jefferson's word 'Anglomania' mean?",
+      "options": [
+        "a fear of the English language",
+        "an extreme love of all things English",
+        "a type of English poetry"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Which president was the first to use media to connect directly with the public?",
+      "options": [
+        "Joe Biden",
+        "Abraham Lincoln",
+        "Theodore Roosevelt"
+      ],
+      "answer": 2
+    }
+  ]
 }

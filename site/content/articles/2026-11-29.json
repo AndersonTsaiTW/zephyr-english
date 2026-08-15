@@ -1,7 +1,7 @@
 {
   "id": "2026-11-29",
   "title": "American Places – Gettysburg, Pennsylvania",
-  "topic": "",
+  "topic": "A quiet Pennsylvania farm town once held one of history's bloodiest battles.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, As It Is",
@@ -18,6 +18,47 @@
     "Many visitors start their visit to Gettysburg at the Gettysburg Museum of the Civil War. The museum has a large collection of Civil War objects. The museum has more than 1 million artifacts, from soldiers’ private notebooks and clothing to maps of the battlefield.",
     "The museum also houses the Gettysburg cyclorama painting. This kind of artwork completely surrounds the people looking at it."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "Confederate",
+      "gloss": "relating to the southern states in the Civil War"
+    },
+    {
+      "word": "artifacts",
+      "gloss": "objects made or used by people in the past"
+    },
+    {
+      "word": "cyclorama",
+      "gloss": "a huge painting that wraps around viewers"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Who led the Confederate Army of Northern Virginia?",
+      "options": [
+        "General George Meade",
+        "President Abraham Lincoln",
+        "General Robert E. Lee"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "How long did the Battle of Gettysburg last?",
+      "options": [
+        "three days",
+        "one day",
+        "two weeks"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does the cyclorama at the Gettysburg museum do?",
+      "options": [
+        "it lists soldiers' names",
+        "it completely surrounds visitors with a painting",
+        "it shows a short film about the war"
+      ],
+      "answer": 1
+    }
+  ]
 }

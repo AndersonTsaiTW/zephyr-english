@@ -1,7 +1,7 @@
 {
   "id": "2027-01-25",
   "title": "'The Cop and the Anthem,' by O. Henry",
-  "topic": "",
+  "topic": "A homeless man who dreams of winter behind bars, not on a beach.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -15,6 +15,47 @@
     "Soapy’s hopes for the winter were not very high. He was not thinking of sailing away on a ship. He was not thinking of southern skies, or of the Bay of Naples. Three months in the prison on Blackwell’s Island was what he wanted. Three months of food every day and a bed every night. Three months safe from the cold north wind and safe from cops. This seemed to Soapy the most desirable thing in the world.",
     "For years Blackwell’s Island had been his winter home. Richer New Yorkers made their large plans to go to Florida or to the shore of the Mediterranean Sea each winter. Soapy made his small plans for going to the Island."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "restlessly",
+      "gloss": "in a way that shows you cannot relax"
+    },
+    {
+      "word": "desirable",
+      "gloss": "wanted or attractive"
+    },
+    {
+      "word": "Mediterranean",
+      "gloss": "the sea between Europe and Africa"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What sign told Soapy that winter was coming?",
+      "options": [
+        "A dead leaf fell at his feet",
+        "Snow began to fall in the park",
+        "The birds stopped singing"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What did Soapy actually hope for that winter?",
+      "options": [
+        "A ship to sail south",
+        "Three months in the prison on Blackwell's Island",
+        "A trip to the Mediterranean Sea"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Where did richer New Yorkers go for the winter, the story says?",
+      "options": [
+        "Blackwell's Island",
+        "Madison Square",
+        "Florida or the Mediterranean shore"
+      ],
+      "answer": 2
+    }
+  ]
 }

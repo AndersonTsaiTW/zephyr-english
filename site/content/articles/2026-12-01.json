@@ -1,7 +1,7 @@
 {
   "id": "2026-12-01",
   "title": "Ticks in Canada",
-  "topic": "",
+  "topic": "Tiny bloodsucking bugs can be active in Canada nearly year round.",
   "source": {
     "author": "Government of Canada",
     "origin": "Canada.ca",
@@ -20,6 +20,47 @@
     "Established ticks live and reproduce in the location they are found.",
     "Adventitious ticks are brought in by migratory animals such as birds and deer or other hosts from outside of Canada. Some of these adventitious ticks have become established in Canada in areas where habitats are suitable for reproducing."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "lifecycle",
+      "gloss": "the stages a living thing grows through"
+    },
+    {
+      "word": "adventitious",
+      "gloss": "arriving from somewhere else, not native"
+    },
+    {
+      "word": "established",
+      "gloss": "settled and living permanently in a place"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What do adult female ticks need in order to lay eggs?",
+      "options": [
+        "sunlight",
+        "a blood meal",
+        "cold temperatures"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "When are ticks most likely to be encountered?",
+      "options": [
+        "spring, summer and fall",
+        "only in winter",
+        "only at night"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What are adventitious ticks?",
+      "options": [
+        "ticks found only in labs",
+        "ticks born locally that never travel",
+        "ticks brought in by migratory animals from outside Canada"
+      ],
+      "answer": 2
+    }
+  ]
 }

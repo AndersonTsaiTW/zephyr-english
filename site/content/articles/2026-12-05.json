@@ -1,7 +1,7 @@
 {
   "id": "2026-12-05",
   "title": "'The Californian's Tale,' by Mark Twain",
-  "topic": "",
+  "topic": "A gold rush town's rise and fall left one house untouched.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -15,6 +15,47 @@
     "Grass now grew in the streets. And the little houses were covered by wild rose bushes. Only the sound of insects filled the air as I walked through the empty town that summer day so long ago. Then, I realized I was not alone after all.",
     "A man was smiling at me as he stood in front of one of the little houses. This house was not covered by wild rose bushes. A nice little garden in front of the house was full of blue and yellow flowers. White curtains hung from the windows and floated in the soft summer wind."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "disappeared",
+      "gloss": "vanished completely"
+    },
+    {
+      "word": "insects",
+      "gloss": "small creatures like bugs"
+    },
+    {
+      "word": "curtains",
+      "gloss": "cloth hung over a window"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did the town in the Stanislau hills become empty?",
+      "options": [
+        "a flood destroyed it",
+        "the gold disappeared",
+        "a war forced people out"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What covered most of the abandoned houses when the narrator arrived?",
+      "options": [
+        "fresh paint",
+        "fallen leaves",
+        "wild rose bushes"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What was different about the one house that was not covered in rose bushes?",
+      "options": [
+        "it had a well-kept garden and white curtains",
+        "it had no windows",
+        "it had been painted bright red"
+      ],
+      "answer": 0
+    }
+  ]
 }

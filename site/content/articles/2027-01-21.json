@@ -1,7 +1,7 @@
 {
   "id": "2027-01-21",
   "title": "Snow Day? Don't Be 'Left Out in the Cold'",
-  "topic": "",
+  "topic": "How a swirl of Arctic air gave English a handful of icy sayings.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -16,6 +16,47 @@
     "In the dead of winter, many people like to skate on frozen lakes. But watch out! You don’t want to skate on thin ice. That is dangerous. If it breaks you could fall into the cold, dark water below. You could even drown.",
     "So, the expression skating on thin ice serves as a warning. For example, if a friend is always late to work, you might tell him he is skating on thin ice with his employer."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "vortex",
+      "gloss": "a fast spinning mass of air or water"
+    },
+    {
+      "word": "iceberg",
+      "gloss": "a huge block of ice floating in the sea"
+    },
+    {
+      "word": "drown",
+      "gloss": "to die from being underwater too long"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What weather event does the article say caused record heat in some places and extreme cold in North America?",
+      "options": [
+        "a tropical storm",
+        "the polar vortex",
+        "a heavy snowstorm"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What warning does the expression 'skating on thin ice' give?",
+      "options": [
+        "that a situation is safe to try",
+        "that something is enjoyable",
+        "that a situation is risky"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does 'the tip of the iceberg' mean in the article?",
+      "options": [
+        "the end of a long journey",
+        "a small visible part of something bigger",
+        "the coldest part of winter"
+      ],
+      "answer": 1
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "2027-02-12",
   "title": "'Watching the Grass Grow' Is Not Fun",
-  "topic": "",
+  "topic": "What sitting in a field taught English about being bored.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -17,6 +17,47 @@
     "Now, grass grows on the ground all the time. And usually, we don’t give it much thought. If you stand in one place for a long time, the grass will continue to grow under your feet.",
     "For people who are always active, always moving, always on-the-go, we can say they don't let grass grow under their feet. We can also say beneath their feet. And sometimes we use this expression as a command."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "tedious",
+      "gloss": "boring, slow and tiresome"
+    },
+    {
+      "word": "acceptance",
+      "gloss": "agreeing to receive or take something, like an award"
+    },
+    {
+      "word": "on-the-go",
+      "gloss": "constantly busy and moving from place to place"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does like watching grass grow describe?",
+      "options": [
+        "something fast and exciting",
+        "something dangerous",
+        "something boring and uninteresting"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "How long was the politician's acceptance speech?",
+      "options": [
+        "one hour",
+        "two hours",
+        "thirty minutes"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does it mean if someone doesn't let grass grow under their feet?",
+      "options": [
+        "they are always active and moving",
+        "they enjoy sitting still",
+        "they are lazy and slow"
+      ],
+      "answer": 0
+    }
+  ]
 }

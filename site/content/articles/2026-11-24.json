@@ -1,7 +1,7 @@
 {
   "id": "2026-11-24",
   "title": "What Does 'On a Shoestring' Mean?",
-  "topic": "",
+  "topic": "How an old piece of shoelace explains living on very little money.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -16,6 +16,47 @@
     "But now let’s go back to our shoestrings. You can do a lot of things “on a shoestring.”",
     "For example, if you can travel on a shoestring, you travel very cheaply. You do not spend money on costly hotels. You look for good deals. You might use coupons, discount offers or other ways to save money. And you may plan to travel at less costly times. People who travel on a shoestring are often called budget travelers."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "budget",
+      "gloss": "a plan for how much you can spend"
+    },
+    {
+      "word": "coupons",
+      "gloss": "papers that give you a discount"
+    },
+    {
+      "word": "necessities",
+      "gloss": "things you must have to live"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does it mean to live 'on a shoestring'?",
+      "options": [
+        "to have a lot of extra money",
+        "to get by with very little money",
+        "to buy only shoes and clothing"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What is another way to describe living paycheck to paycheck?",
+      "options": [
+        "living high on the hog",
+        "living rent-free",
+        "living hand-to-mouth"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What do budget travelers do to save money while travelling?",
+      "options": [
+        "they use coupons and look for good deals",
+        "they stay only in luxury hotels",
+        "they avoid coupons and discounts"
+      ],
+      "answer": 0
+    }
+  ]
 }

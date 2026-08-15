@@ -1,7 +1,7 @@
 {
   "id": "2026-11-20",
   "title": "What is COPD and can it be prevented?",
-  "topic": "",
+  "topic": "A lung disease that slowly steals your breath is largely preventable.",
   "source": {
     "author": "Government of Canada",
     "origin": "Canada.ca",
@@ -15,6 +15,47 @@
     "The good news about COPD is that it is almost completely preventable. If you're a smoker, the single best thing you can do to reduce your chance of getting COPD is to stop smoking. It's never too late to quit. Quitting smoking not only reduces your risk of developing COPD in the first place, but it also helps to slow down the disease once you have it.",
     "Also, the earlier a doctor detects COPD, the easier it is to treat. It's very important for smokers and former smokers to ask their doctors for a simple breathing test, called spirometry. This quick, painless test measures how much and how fast you can move air in and out of your lungs. It's the best way for doctors to detect COPD."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "emphysema",
+      "gloss": "a lung disease that damages air sacs"
+    },
+    {
+      "word": "spirometry",
+      "gloss": "a simple test that measures your breathing"
+    },
+    {
+      "word": "progressive",
+      "gloss": "gradually getting worse over time"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is the best way to reduce the risk of getting COPD?",
+      "options": [
+        "stopping smoking",
+        "taking medicine daily",
+        "doing breathing exercises"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does spirometry measure?",
+      "options": [
+        "the amount of mucus produced",
+        "the strength of the heart",
+        "how much and how fast air moves in and out of the lungs"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "About how many Canadians have received a COPD diagnosis?",
+      "options": [
+        "about 70,000",
+        "more than 700,000",
+        "nearly 7 million"
+      ],
+      "answer": 1
+    }
+  ]
 }

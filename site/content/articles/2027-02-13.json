@@ -1,7 +1,7 @@
 {
   "id": "2027-02-13",
   "title": "Education in Canada: Life in Canadian schools",
-  "topic": "",
+  "topic": "What a Canadian school expects of you, and what it provides.",
   "source": {
     "author": "Government of Canada",
     "origin": "Canada.ca",
@@ -20,6 +20,47 @@
     "Bullying is the “wilful, repeated aggressive behaviour with negative intent used by a child to maintain power over another child.” Bullying is not tolerated. If your child is a victim of bullying, talk to their teacher or principal.",
     "There are lots of activities, events and community initiatives going on at schools."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "curriculum",
+      "gloss": "the set of subjects and skills students must learn"
+    },
+    {
+      "word": "guardians",
+      "gloss": "adults responsible for a child, not always the parents"
+    },
+    {
+      "word": "wilful",
+      "gloss": "done on purpose, deliberately"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Who decides the curriculum for each grade?",
+      "options": [
+        "the child's parents",
+        "the province or territory",
+        "the individual teacher"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Who usually provides pencils, paper and notebooks?",
+      "options": [
+        "the school",
+        "the government of Canada",
+        "parents or guardians"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What should you do if your child is bullied?",
+      "options": [
+        "talk to their teacher or principal",
+        "ignore it and hope it stops",
+        "wait until the report card comes"
+      ],
+      "answer": 0
+    }
+  ]
 }

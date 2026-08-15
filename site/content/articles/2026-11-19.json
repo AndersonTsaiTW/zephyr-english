@@ -1,7 +1,7 @@
 {
   "id": "2026-11-19",
   "title": "‘Dead Giveaway’ Is Not as Dark as It Sounds",
-  "topic": "",
+  "topic": "Why calling something dead can mean it is perfectly exact.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -19,6 +19,47 @@
     "A completely dark house and a huge pile of mail outside the door were two dead giveaways that no one had been home in quite some time.",
     "She said that she was staying home for the night. But with all the makeup on her face, her hair styled, and her party clothes on, her appearance was a dead giveaway. She was clearly going out."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "giveaway",
+      "gloss": "a clue that reveals the truth"
+    },
+    {
+      "word": "plumb",
+      "gloss": "perfectly vertical, straight up and down"
+    },
+    {
+      "word": "horizontal",
+      "gloss": "perfectly flat and level"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does the expression 'dead giveaway' actually mean?",
+      "options": [
+        "something related to death or tragedy",
+        "a clue that reveals the truth completely",
+        "a gift given for free"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "In this context, what can the word 'dead' mean?",
+      "options": [
+        "exact or complete",
+        "frightening",
+        "old-fashioned"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Which phrase does the article say people never use?",
+      "options": [
+        "dead center",
+        "dead level",
+        "dead plumb"
+      ],
+      "answer": 2
+    }
+  ]
 }

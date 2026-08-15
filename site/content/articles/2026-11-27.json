@@ -1,7 +1,7 @@
 {
   "id": "2026-11-27",
   "title": "'Straight from the Horse's Mouth'",
-  "topic": "",
+  "topic": "Why the most trustworthy gossip supposedly comes straight from a horse.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -18,6 +18,47 @@
     "One traditional explanation is about buying horses. Before buying a horse, a possible buyer would look into the horse’s mouth. This is because you can tell a bit about a horse’s health and age from its gums and teeth.",
     "Another explanation involves horse racing. At the horse races, people talk about which horses will win and which ones will lose. The most valuable opinions are from the people who know the horses the best – the riders and trainers. Since you can’t ask the horse, these people are the next best thing. “Straight from the horse's mouth” suggests the most knowledgeable source of information."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "grapevine",
+      "gloss": "an informal way information spreads indirectly"
+    },
+    {
+      "word": "gums",
+      "gloss": "the soft flesh around your teeth"
+    },
+    {
+      "word": "trainers",
+      "gloss": "people who train animals like racehorses"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does 'straight from the horse's mouth' mean?",
+      "options": [
+        "information from an indirect source",
+        "a rumour that is probably false",
+        "information from the most knowledgeable source"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What is the opposite expression mentioned in the article?",
+      "options": [
+        "out of the blue",
+        "through the grapevine",
+        "under the weather"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "In one explanation, why did buyers look into a horse's mouth?",
+      "options": [
+        "to check its teeth and gums for health and age",
+        "to see if it liked apples",
+        "to count its teeth for fun"
+      ],
+      "answer": 0
+    }
+  ]
 }

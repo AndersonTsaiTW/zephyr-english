@@ -1,7 +1,7 @@
 {
   "id": "2027-01-24",
   "title": "What Are Your ‘True Colors’?",
-  "topic": "",
+  "topic": "Feeling blue, seeing red: what colour idioms reveal about you.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -16,6 +16,47 @@
     "For example, I have a friend who loves the sun and sea. When she is at the beach, she shows her “true colors.” She's very active -- swimming in the sea, walking along the beach, and enjoying other outdoor activities. When she is away from the beach, she doesn’t seem herself. She is often inside and not very active.",
     "However, showing one’s true colors does not always mean something good. Some people may present themselves in a way other than how they really are. They might seem to have positive characteristics. They act kind, pleasant, generous, or helpful. But in fact, they are really the opposite. They are not showing their “true colors.” They keep their “true nature\" hidden."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "envy",
+      "gloss": "a feeling of wanting what someone else has"
+    },
+    {
+      "word": "reveal",
+      "gloss": "to show something that was hidden"
+    },
+    {
+      "word": "personality",
+      "gloss": "a person's character or nature"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does it mean to feel 'blue' in the article?",
+      "options": [
+        "to feel sad",
+        "to feel excited",
+        "to feel jealous"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does showing your 'true colors' mean?",
+      "options": [
+        "changing your appearance often",
+        "being true to your real nature",
+        "hiding your feelings completely"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Why might someone's 'true colors' not always be good?",
+      "options": [
+        "Because colours can fade over time",
+        "Because some people act kind but are really the opposite",
+        "Because true colours only appear at the beach"
+      ],
+      "answer": 1
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "2027-01-27",
   "title": "When Is Something 'Ancient History'?",
-  "topic": "",
+  "topic": "When your old fax machine becomes ancient history overnight.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -16,6 +16,47 @@
     "Let’s say a business owner wants to modernize and update her workspace. She says she wants to get a new fax machine. But then, her young son tells her fax machines are ancient history.",
     "Ancient history can describe events in a person’s past. Let’s say a co-worker always talks about his time in high school. When he asks about yours, you might say that your high school days are ancient history. You barely remember them."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "buff",
+      "gloss": "a person with a strong interest in a subject"
+    },
+    {
+      "word": "outdated",
+      "gloss": "no longer useful or modern"
+    },
+    {
+      "word": "relevant",
+      "gloss": "connected to what is happening now"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is a 'history buff'?",
+      "options": [
+        "someone with a strong interest in history",
+        "a type of old book",
+        "a museum tour guide"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does it mean if something is 'up your alley'?",
+      "options": [
+        "it is far away from home",
+        "it matches your interests",
+        "it is very expensive"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "In the fax machine example, who says fax machines are 'ancient history'?",
+      "options": [
+        "the business owner herself",
+        "her young son",
+        "a co-worker at the office"
+      ],
+      "answer": 1
+    }
+  ]
 }

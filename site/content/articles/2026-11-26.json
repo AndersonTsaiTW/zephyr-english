@@ -1,7 +1,7 @@
 {
   "id": "2026-11-26",
   "title": "Thanksgiving: An American Tradition",
-  "topic": "",
+  "topic": "Why turkey, stuffing and gravy became the trio at Thanksgiving tables.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Arts & Culture",
@@ -19,6 +19,47 @@
     "One of many side dishes. Families often make other foods like mashed potatoes, sweet potatoes, cranberry sauce and vegetable casseroles. A casserole is a dish that cooks slowly in an oven.",
     "And do not forget about the gravy. This rich sauce is made from the fatty liquid that comes off the turkey as it cooks. People cover their turkey meat, stuffing and mashed potatoes with gravy."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "quintessential",
+      "gloss": "the perfect example of something"
+    },
+    {
+      "word": "harvest",
+      "gloss": "the gathering of crops when ripe"
+    },
+    {
+      "word": "casserole",
+      "gloss": "a dish cooked slowly in the oven"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "When is Thanksgiving celebrated?",
+      "options": [
+        "the fourth Thursday in November",
+        "the first Monday in October",
+        "the last Friday in December"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does 'quintessential' mean, as used in the article?",
+      "options": [
+        "a strange smell",
+        "a spicy flavour",
+        "the perfect example of something"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What is gravy made from in this description?",
+      "options": [
+        "mashed potatoes and butter",
+        "the fatty liquid that comes off the cooking turkey",
+        "cranberries and sugar"
+      ],
+      "answer": 1
+    }
+  ]
 }

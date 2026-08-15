@@ -1,7 +1,7 @@
 {
   "id": "2027-02-11",
   "title": "Goal! Do You Have One for 2024?",
-  "topic": "",
+  "topic": "Why moving the goal posts can ruin your perfect kick.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -15,6 +15,47 @@
     "Let’s continue talking about sports. Many sports involve not only goals but also a goal line. A goal line gives the space on the field in which you can score or make a goal.",
     "Let’s talk about American football for a minute. That sport involves tall goal posts. To make a point, a kicker can kick a football between the posts and score. Now, imagine if you are kicking that ball. You have the goal posts in your sights. You kick! It looks good! It looks like the ball is going to go between the posts. But then, at the last minute, someone moves the goal posts, and your ball does not go through."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "resolutions",
+      "gloss": "promises people make to change their behaviour"
+    },
+    {
+      "word": "goalie",
+      "gloss": "the player whose job is to stop the ball"
+    },
+    {
+      "word": "kicker",
+      "gloss": "the player who kicks the ball toward the posts"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is a goal in this passage?",
+      "options": [
+        "a type of sports uniform",
+        "something you want to reach and work toward",
+        "a penalty for breaking the rules"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What happens in American football when a kicker aims for the goal posts?",
+      "options": [
+        "the kicker tries to kick the ball between the posts",
+        "the kicker throws the ball to the goalie",
+        "the kicker runs the ball across the goal line"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What is a goal line used for in sports?",
+      "options": [
+        "it shows how many resolutions a team made",
+        "it separates the fans from the players",
+        "it marks the space where a goal can be scored"
+      ],
+      "answer": 2
+    }
+  ]
 }

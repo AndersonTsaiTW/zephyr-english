@@ -1,7 +1,7 @@
 {
   "id": "2027-02-19",
   "title": "'Birds of a Feather ...'",
-  "topic": "",
+  "topic": "What bees and birds can teach you about finding your people.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -18,6 +18,47 @@
     "And sometimes, I can joke that I share the same brain with those who share my thinking and attitudes.",
     "If you a spiritual kind of person, you can call them your kindred spirits. If you are more of a science person, you can say you are on the same wavelength."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "kindred",
+      "gloss": "closely related in nature, spirit or interests"
+    },
+    {
+      "word": "wavelength",
+      "gloss": "here, a shared way of thinking"
+    },
+    {
+      "word": "flock",
+      "gloss": "a group that moves or gathers together"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does birds of a feather flock together mean?",
+      "options": [
+        "birds always travel alone",
+        "opposites naturally attract each other",
+        "people with similar interests tend to find each other"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What is a hive mind?",
+      "options": [
+        "a type of beehive shape",
+        "people who share similar thoughts and work together",
+        "a disagreement between coworkers"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What might a spiritual person call people who think like them?",
+      "options": [
+        "kindred spirits",
+        "hive workers",
+        "like bodies"
+      ],
+      "answer": 0
+    }
+  ]
 }

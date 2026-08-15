@@ -1,7 +1,7 @@
 {
   "id": "2026-11-28",
   "title": "'The Romance of a Busy Broker' by O. Henry",
-  "topic": "",
+  "topic": "A secretary's odd mood catches her boss's assistant off guard one morning.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -15,6 +15,47 @@
     "On this morning she seemed to shine softly. Her eyes were dreaming but bright. Her face was warmly colored, and her expression was happy.",
     "Pitcher watched her. There was a question about her in his mind. She was different this morning. Instead of going straight to the room where she worked, she waited. She seemed not to know what to do. Once she went over to Maxwell’s table, near enough for him to see that she was there."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "broker",
+      "gloss": "someone who buys and sells for others"
+    },
+    {
+      "word": "jewels",
+      "gloss": "valuable gems or decorative stones"
+    },
+    {
+      "word": "rushed",
+      "gloss": "moved somewhere very quickly"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What was Harvey Maxwell's job?",
+      "options": [
+        "a broker",
+        "a secretary",
+        "a teacher"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "How long had the young lady worked as Maxwell's secretary?",
+      "options": [
+        "one month",
+        "one year",
+        "five years"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What was unusual about the secretary that morning, as Pitcher noticed?",
+      "options": [
+        "she arrived late",
+        "she was crying loudly",
+        "she seemed different and hesitant"
+      ],
+      "answer": 2
+    }
+  ]
 }

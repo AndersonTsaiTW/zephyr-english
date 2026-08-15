@@ -1,7 +1,7 @@
 {
   "id": "2027-01-30",
   "title": "'Dip Your Toes' or 'Take the Plunge'?",
-  "topic": "",
+  "topic": "Two ways to face the unknown: a cautious toe or a bold jump.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -19,6 +19,47 @@
     "Testing the waters means you get a feel for something before committing to it. For example, if you want to move to a new city, you probably want to test the waters first by going there for a short stay.",
     "Taking the plunge is the opposite of dipping your toes. When you take the plunge, you jump right into something. You do not wait or hesitate."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "cautious",
+      "gloss": "careful and not willing to take risks"
+    },
+    {
+      "word": "adventurous",
+      "gloss": "willing to try new and exciting things"
+    },
+    {
+      "word": "hesitate",
+      "gloss": "to pause because you are unsure"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does it mean to 'test the waters'?",
+      "options": [
+        "to get a feel for something before committing",
+        "to swim across a lake quickly",
+        "to avoid trying anything new"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What kind of person jumps right in feet first, the article says?",
+      "options": [
+        "someone who is cautious and careful",
+        "someone who is bold and adventurous",
+        "someone who is confused and unsure"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What is described as the opposite of dipping your toes?",
+      "options": [
+        "testing the waters slowly",
+        "standing still and waiting",
+        "taking the plunge"
+      ],
+      "answer": 2
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "2027-02-08",
   "title": "Walk Before You Can Run",
-  "topic": "",
+  "topic": "Why learning English is like a baby learning to walk.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -20,6 +20,47 @@
     "Learning a language is a lifelong process. To keep yourself from burning out, take baby steps. Learn a little every day, and soon your English will be fabulous!",
     "And that’s all the time we have this Words and Their Stories!"
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "chords",
+      "gloss": "groups of musical notes played together"
+    },
+    {
+      "word": "gait",
+      "gloss": "a person's particular way of walking"
+    },
+    {
+      "word": "unsteady",
+      "gloss": "not steady or balanced, likely to fall"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What comes first when learning to play an instrument?",
+      "options": [
+        "playing short, easy songs immediately",
+        "learning how to hold or sit at the instrument",
+        "performing in front of a large audience"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What happens to babies the more they practise walking?",
+      "options": [
+        "they fall down more often",
+        "they stay unsteady forever",
+        "they become steadier on their feet"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does the baby steps expression suggest about big goals?",
+      "options": [
+        "taking small steps toward a bigger goal",
+        "giving up when things get hard",
+        "skipping ahead without practice"
+      ],
+      "answer": 0
+    }
+  ]
 }

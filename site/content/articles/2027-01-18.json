@@ -1,7 +1,7 @@
 {
   "id": "2027-01-18",
   "title": "The Ambitious Guest by Nathaniel Hawthorne",
-  "topic": "",
+  "topic": "A mountain family that welcomed every stranger who knocked in a storm.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -14,6 +14,47 @@
     "The family lived in an especially cold and dangerous spot. Stones from the top of the mountain above their house would often roll down the mountainside and wake them in the middle of the night. No other family lived near them on the mountain. But this family was never lonely. They enjoyed each other's company, and often had visitors. Their house was built near an important road that connected the White Mountains to the Saint Lawrence River.",
     "People traveling through the mountains in wagons always stopped at the family's door for a drink of water and a friendly word. Lonely travelers, crossing the mountains on foot, would step into the house to share a hot meal. Sometimes, the wind became so wild and cold that these strangers would spend the night with the family. The family offered every traveler who stopped at their home a kindness that money could not buy."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "violently",
+      "gloss": "with great force"
+    },
+    {
+      "word": "mountainside",
+      "gloss": "the sloping side of a mountain"
+    },
+    {
+      "word": "wagons",
+      "gloss": "carts pulled by horses"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Where had the family built their home?",
+      "options": [
+        "A busy town square",
+        "A valley near a lake",
+        "High up in the White Mountains"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What often woke the family in the middle of the night?",
+      "options": [
+        "Stones rolling down the mountainside",
+        "Wagons rattling on the road",
+        "The baby crying in its bed"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Why did the family never feel lonely, even though no other family lived near them?",
+      "options": [
+        "They travelled to town every day",
+        "They kept many farm animals for company",
+        "They often had visitors stop at their home"
+      ],
+      "answer": 2
+    }
+  ]
 }

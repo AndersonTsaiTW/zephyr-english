@@ -1,7 +1,7 @@
 {
   "id": "2027-02-06",
   "title": "Do You Have a 'Doppelgänger'?",
-  "topic": "",
+  "topic": "The German ghost story behind the word for your lookalike stranger.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -18,6 +18,47 @@
     "Sometimes, racehorse owners would race a horse under a false name and pedigree. They did this to trick people who bet money on race results. These horses were called “ringers.”",
     "Here is how to use this expression in a sentence: My best friend in college is a dead ringer for George Clooney. When we’re out in public, he gets asked for his autograph all the time."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "doppelgänger",
+      "gloss": "a person who looks exactly like someone else"
+    },
+    {
+      "word": "folklore",
+      "gloss": "traditional stories and beliefs passed down over time"
+    },
+    {
+      "word": "pedigree",
+      "gloss": "a record of ancestry, especially for animals"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Where does the word 'doppelgänger' come from?",
+      "options": [
+        "German folklore",
+        "American horse racing",
+        "British sailing terms"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What is a 'dead ringer'?",
+      "options": [
+        "a bell that no longer works",
+        "someone who looks exactly like another person",
+        "a horse that lost a race"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Why did some racehorse owners race a horse under a false name?",
+      "options": [
+        "to avoid paying entry fees",
+        "to protect the horse's true identity from rivals",
+        "to trick people who bet on the results"
+      ],
+      "answer": 2
+    }
+  ]
 }

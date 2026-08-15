@@ -1,7 +1,7 @@
 {
   "id": "2027-02-21",
   "title": "'Boilerplate' Language Is All Business",
-  "topic": "",
+  "topic": "Where boring, standard business writing actually got its odd name.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -20,6 +20,47 @@
     "The website Meriam-Webster.com explains how the term “boilerplate” came to mean standard or non-creative writing.",
     "Boilerplate comes from syndicated stories used especially by weekly newspapers. These stories were ready-to-print and required no additional writing."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "hackneyed",
+      "gloss": "overused and no longer fresh or original"
+    },
+    {
+      "word": "trite",
+      "gloss": "boring because it has been repeated too often"
+    },
+    {
+      "word": "syndicated",
+      "gloss": "sold to many newspapers or outlets at once"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What kind of writing is boilerplate language used for?",
+      "options": [
+        "poetry and song lyrics",
+        "contracts and legal documents",
+        "personal letters to friends"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What do the words hackneyed and trite both mean?",
+      "options": [
+        "extremely rare and unusual",
+        "highly technical and precise",
+        "overused and not original"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Where does the term boilerplate come from?",
+      "options": [
+        "syndicated stories for weekly newspapers",
+        "a nickname for old typewriters",
+        "a term for legal courtrooms"
+      ],
+      "answer": 0
+    }
+  ]
 }

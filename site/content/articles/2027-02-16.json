@@ -1,7 +1,7 @@
 {
   "id": "2027-02-16",
   "title": "Take a Moment to 'Count Your Blessings'",
-  "topic": "",
+  "topic": "Why the word blessing means different things to different people.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -17,6 +17,47 @@
     "But now, let's take a step back. What exactly is a blessing?",
     "In English, the word “blessing” has at least two meanings. As we said, a blessing is something that brings you happiness or helps you. To religious people, a blessing is approval and help from a higher source -- God."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "grateful",
+      "gloss": "feeling or showing thanks"
+    },
+    {
+      "word": "appreciative",
+      "gloss": "aware of and thankful for something good"
+    },
+    {
+      "word": "granted",
+      "gloss": "accepted as expected, without noticing its value"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What holiday does the article mention as a time for counting blessings?",
+      "options": [
+        "Christmas",
+        "Thanksgiving",
+        "New Year's Day"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does it mean to take something for granted?",
+      "options": [
+        "to not appreciate it",
+        "to give it away",
+        "to celebrate it publicly"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "To religious people, what can a blessing mean?",
+      "options": [
+        "a type of holiday meal",
+        "a list of New Year's resolutions",
+        "approval and help from a higher source"
+      ],
+      "answer": 2
+    }
+  ]
 }

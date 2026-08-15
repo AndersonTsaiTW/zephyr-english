@@ -1,7 +1,7 @@
 {
   "id": "2027-01-20",
   "title": "Is It Real or Bogus?",
-  "topic": "",
+  "topic": "Why a fake diamond ring made bogus the word to know today.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -20,6 +20,47 @@
     "Here’s a fun fact: You can call bogus, counterfeit money funny money.",
     "Here is another word related to bogus – sham. Sham, a noun, describes a fake, made-up situation. We use shams to cover up the truth."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "bogus",
+      "gloss": "fake or not genuine"
+    },
+    {
+      "word": "fraudulent",
+      "gloss": "dishonest and meant to deceive"
+    },
+    {
+      "word": "counterfeit",
+      "gloss": "made to look real in order to trick people"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What was actually wrong with the man's huge diamond ring?",
+      "options": [
+        "It was too big to wear",
+        "It was stolen from a shop",
+        "It was just a piece of glass"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does the article say 'did not hold water' means?",
+      "options": [
+        "It was not believable",
+        "It was very expensive",
+        "It was completely true"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "In the early 1800s, what did the word 'bogus' first refer to?",
+      "options": [
+        "a slang word for a liar",
+        "a machine that made fake money",
+        "a type of counterfeit jewelry"
+      ],
+      "answer": 1
+    }
+  ]
 }

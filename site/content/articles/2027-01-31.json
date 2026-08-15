@@ -1,7 +1,7 @@
 {
   "id": "2027-01-31",
   "title": "Read the Riot Act",
-  "topic": "",
+  "topic": "How an old law against protest became a way to scold anyone.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -17,6 +17,47 @@
     "We read someone the riot act to severely scold them. Reading the riot act can include some shouting – and, in fact, often does.",
     "We can use this expression in just about any situation where someone has made a big mistake – at work, with our friends, and with our family."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "riot",
+      "gloss": "a violent public disturbance"
+    },
+    {
+      "word": "reprimand",
+      "gloss": "a formal scolding for doing something wrong"
+    },
+    {
+      "word": "enforced",
+      "gloss": "made to be obeyed by law"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What was the original 'Riot Act' passed to do?",
+      "options": [
+        "reward peaceful protestors",
+        "break up gatherings of 12 or more people",
+        "build new prisons in London"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What happens today when someone 'reads the riot act' to another person?",
+      "options": [
+        "they severely scold that person",
+        "they invite them to a party",
+        "they ignore them completely"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Is the original Riot Act law still enforced in Britain today?",
+      "options": [
+        "yes, it is used every week",
+        "no, it is no longer enforced",
+        "only during royal celebrations"
+      ],
+      "answer": 1
+    }
+  ]
 }

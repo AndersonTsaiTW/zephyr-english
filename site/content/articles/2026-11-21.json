@@ -1,7 +1,7 @@
 {
   "id": "2026-11-21",
   "title": "The Birthmark by Nathaniel Hawthorne",
-  "topic": "",
+  "topic": "A scientist's obsession with one small mark threatens his new marriage.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -17,6 +17,47 @@
     "\"No,\" she said smiling. But seeing the seriousness of his question, she said, \"The mark has so often been called a charm that I was simple enough to imagine it might be so.\"",
     "\"On another face it might,\" answered her husband, \"but not on yours. No dear, Nature made you so perfectly that this small defect shocks me as being a sign of earthly imperfection.\""
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "laboratory",
+      "gloss": "a room used for scientific experiments"
+    },
+    {
+      "word": "defect",
+      "gloss": "a flaw or fault in something"
+    },
+    {
+      "word": "imperfection",
+      "gloss": "something that is not perfect"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did Aylmer want to remove from his wife?",
+      "options": [
+        "her wedding ring",
+        "her memories of the past",
+        "the birthmark on her cheek"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What was Aylmer's profession?",
+      "options": [
+        "a painter",
+        "a scientist",
+        "a merchant"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "How had people described Georgiana's mark before Aylmer's comment?",
+      "options": [
+        "as a charm",
+        "as a curse",
+        "as a flaw"
+      ],
+      "answer": 0
+    }
+  ]
 }

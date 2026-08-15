@@ -1,7 +1,7 @@
 {
   "id": "2027-02-14",
   "title": "Asthma - control drugs",
-  "topic": "",
+  "topic": "Why asthma control medicines need weeks before you feel them work.",
   "source": {
     "author": "U.S. National Library of Medicine",
     "origin": "MedlinePlus",
@@ -19,6 +19,47 @@
     "If your child cannot use an inhaler, your provider may give you a medicine to use with a nebulizer. This machine turns liquid medicine into a spray so your child can breathe the medicine in.",
     "These medicines relax the muscles of your airways to help keep your asthma symptoms away."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "corticosteroids",
+      "gloss": "medicines that reduce swelling and irritation"
+    },
+    {
+      "word": "inflamed",
+      "gloss": "swollen and irritated"
+    },
+    {
+      "word": "nebulizer",
+      "gloss": "a machine that turns liquid medicine into a spray"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How long might it take to feel the full effect of control medicines?",
+      "options": [
+        "a few hours",
+        "one week",
+        "at least a month"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What should you do after using an inhaled steroid?",
+      "options": [
+        "rinse your mouth with water and spit it out",
+        "wait five minutes before eating",
+        "shake the inhaler for one minute"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What device might a young child use instead of an inhaler?",
+      "options": [
+        "a spacer alone",
+        "a nebulizer",
+        "a thermometer"
+      ],
+      "answer": 1
+    }
+  ]
 }

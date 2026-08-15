@@ -1,7 +1,7 @@
 {
   "id": "2026-11-22",
   "title": "An Eye for an Eye",
-  "topic": "",
+  "topic": "An ancient law of revenge still shapes how we talk about payback today.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -19,6 +19,47 @@
     "To remind others of the proverb, people often simply say an eye for an eye.",
     "For some people, every second counts when they are looking to settle a score. For others, the revenge method might require patience. Some people wait years or a lifetime to get their revenge."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "retaliating",
+      "gloss": "paying back harm with harm"
+    },
+    {
+      "word": "proverb",
+      "gloss": "a short traditional saying with wisdom"
+    },
+    {
+      "word": "Babylonian",
+      "gloss": "relating to ancient Babylon, an old kingdom"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does 'in kind' mean in this context?",
+      "options": [
+        "in the same way",
+        "in a kind and gentle manner",
+        "in a short amount of time"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Where does the expression 'an eye for an eye' appear?",
+      "options": [
+        "only in modern movies",
+        "in the Bible and the Code of Hammurabi",
+        "in a Shakespeare play"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Under this way of thinking, what should happen to a person who causes harm?",
+      "options": [
+        "they should apologize publicly",
+        "they should pay a large fine",
+        "they should suffer the same amount in the same way"
+      ],
+      "answer": 2
+    }
+  ]
 }
