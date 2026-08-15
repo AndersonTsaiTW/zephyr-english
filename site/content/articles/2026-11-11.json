@@ -1,7 +1,7 @@
 {
   "id": "2026-11-11",
   "title": "When Is Two Too Many? When It's a 'Double Whammy'!",
-  "topic": "",
+  "topic": "Why two bad things at once earn the name double whammy.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -19,6 +19,47 @@
     "Others say the cartoonist Al Capp popularized the word whammy in his 1950s comic strip Li’l Abner. A character named Evil-Eye Fleegle could stop someone by simply looking at them. The single whammy was a look with one eye, and the feared double whammy used both eyes.",
     "Today, my friend Jonah lost his job. And then, on the way home, he fell and broke his leg. Talk about a double whammy! It has NOT been his best day."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "consecutively",
+      "gloss": "one right after another"
+    },
+    {
+      "word": "popularized",
+      "gloss": "made widely known and liked"
+    },
+    {
+      "word": "unfavorable",
+      "gloss": "not helpful, working against you"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is a double whammy?",
+      "options": [
+        "a single stroke of good luck",
+        "two bad things happening together or one after another",
+        "a magic trick performed twice"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Who is credited with popularizing the word whammy in a comic strip?",
+      "options": [
+        "Al Capp",
+        "Evil-Eye Fleegle",
+        "Merriam-Webster"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "In the story about Jonah, what two things happened to him in one day?",
+      "options": [
+        "he won money and lost his job",
+        "he broke his leg and won a prize",
+        "he broke his leg and lost his job"
+      ],
+      "answer": 2
+    }
+  ]
 }

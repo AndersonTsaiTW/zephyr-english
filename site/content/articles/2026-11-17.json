@@ -1,7 +1,7 @@
 {
   "id": "2026-11-17",
   "title": "Explore from Your 'Armchair'",
-  "topic": "",
+  "topic": "How sitting in an armchair became a word for living through others.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -15,6 +15,47 @@
     "Armchair detectives are not real detectives investigating crimes. An armchair detective enjoys reading detective novels or watching true crime shows. Armchair detectives may even try to solve a crime. But all their efforts are done from the safety and comfort of their homes.",
     "Living vicariously through others can be a wonderful chance to escape. Let’s say you do not have the time or money to travel. But you still want to experience the pleasure of traveling. You can read about places that you would like to visit. You can watch travel documentaries about them too. And you can do these things from the comfort of your own home. So, you could call yourself an armchair traveler."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "vicariously",
+      "gloss": "experiencing something through someone else, not yourself"
+    },
+    {
+      "word": "investigating",
+      "gloss": "looking closely to find facts about something"
+    },
+    {
+      "word": "documentaries",
+      "gloss": "films that show real events or information"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is an armchair detective?",
+      "options": [
+        "a police officer who works from a desk",
+        "someone who enjoys detective stories but does not investigate real crimes",
+        "a judge who decides criminal cases"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does it mean to live vicariously?",
+      "options": [
+        "to experience something through watching or reading about others",
+        "to plan your own adventure trip",
+        "to avoid all forms of entertainment"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What is an armchair traveler?",
+      "options": [
+        "someone who travels for a living",
+        "someone who only travels by armchair-shaped cars",
+        "someone who experiences travel through books and shows instead of going in person"
+      ],
+      "answer": 2
+    }
+  ]
 }

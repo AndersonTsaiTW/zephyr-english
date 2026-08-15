@@ -1,7 +1,7 @@
 {
   "id": "2026-11-16",
   "title": "'A White Heron,' by Sarah Orne Jewett",
-  "topic": "",
+  "topic": "A farm girl's walk home through a forest at dusk.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -15,6 +15,47 @@
     "She had never before been alone in the forest as late as this. The air was soft and sweet. Sylvie felt as if she were a part of the gray shadows and the silver leaves that moved in the evening breeze.",
     "She began thinking how it was only a year ago that she came to her grandmother's farm. Before that, she had lived with her mother and father in a dirty, crowded factory town. One day, Sylvie's grandmother had visited them and had chosen Sylvie from all her brothers and sisters to be the one to help her on her farm in Vermont."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "hurried",
+      "gloss": "moved quickly because of little time"
+    },
+    {
+      "word": "narrow",
+      "gloss": "not wide, with little space"
+    },
+    {
+      "word": "crowded",
+      "gloss": "full of many people or things"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What was Sylvie's job every evening?",
+      "options": [
+        "to bring the family cow home",
+        "to fetch water from the stream",
+        "to feed the chickens"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Where did Sylvie live before moving to her grandmother's farm?",
+      "options": [
+        "a large city by the sea",
+        "a small fishing village",
+        "a dirty, crowded factory town"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Why was Sylvie worried on this particular evening?",
+      "options": [
+        "she was afraid of the cow",
+        "she thought her grandmother would be angry that she was late",
+        "she had lost her way home completely"
+      ],
+      "answer": 1
+    }
+  ]
 }

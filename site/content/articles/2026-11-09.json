@@ -1,7 +1,7 @@
 {
   "id": "2026-11-09",
   "title": "'Paul Bunyan,' An American Folk Tale",
-  "topic": "",
+  "topic": "The giant lumberjack who was so big five birds had to help.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -15,6 +15,47 @@
     "Early in the twentieth century, a writer prepared a collection of Paul Bunyan stories. They were included in a publication from the Red River Lumber Company in Minnesota. It is not known if the stories helped the company’s sales, but they became extremely popular.",
     "Many years ago, Paul Bunyan was born in the northeastern American state of Maine. His mother and father were shocked when they first saw the boy. Paul was so large at birth that five large birds had to carry him to his parents. When the boy was only a few weeks old, he weighed more than 45 kilograms."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "exaggerated",
+      "gloss": "described as bigger than it really is"
+    },
+    {
+      "word": "lumberjacks",
+      "gloss": "workers who cut down trees for a living"
+    },
+    {
+      "word": "publication",
+      "gloss": "a printed work, like a book or magazine"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is a tall tale?",
+      "options": [
+        "a true history of famous workers",
+        "a short poem about nature",
+        "a story about a person who is larger than life"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "How many birds had to carry baby Paul Bunyan to his parents?",
+      "options": [
+        "seven",
+        "five",
+        "three"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Where do some people say the stories about Paul Bunyan came from?",
+      "options": [
+        "French Canada",
+        "the Rocky Mountains",
+        "New York City"
+      ],
+      "answer": 0
+    }
+  ]
 }

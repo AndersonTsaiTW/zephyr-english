@@ -193,6 +193,13 @@ function judge(html, top2000, source) {
 
 // --- Dates --------------------------------------------------------------
 
+// Gaps inside the run come first, then days past the end.
+//
+// A missing day in the middle is worse than a missing day at the end. The
+// end has not arrived yet; the middle is a morning when someone opens the
+// app and is told the wind is resting, in the middle of a streak they have
+// been keeping. Filling forwards only would leave those holes there for
+// good, which is what happened the first time this ran.
 function nextEmptyDates(count) {
   const dir = join(root, 'site/content/articles');
   const taken = new Set(
@@ -200,12 +207,21 @@ function nextEmptyDates(count) {
       .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
       .map((f) => f.replace('.json', ''))
   );
-  const last = [...taken].sort().pop();
+  const sorted = [...taken].sort();
+  const first = sorted[0] ?? new Date().toISOString().slice(0, 10);
+  const last = sorted[sorted.length - 1] ?? first;
+
   const out = [];
-  const d = new Date(`${last ?? new Date().toISOString().slice(0, 10)}T00:00:00Z`);
+  const cursor = new Date(`${first}T00:00:00Z`);
+  const end = new Date(`${last}T00:00:00Z`);
+  while (cursor <= end && out.length < count) {
+    const date = cursor.toISOString().slice(0, 10);
+    if (!taken.has(date)) out.push(date);
+    cursor.setUTCDate(cursor.getUTCDate() + 1);
+  }
   while (out.length < count) {
-    d.setUTCDate(d.getUTCDate() + 1);
-    const date = d.toISOString().slice(0, 10);
+    end.setUTCDate(end.getUTCDate() + 1);
+    const date = end.toISOString().slice(0, 10);
     if (!taken.has(date)) out.push(date);
   }
   return out;

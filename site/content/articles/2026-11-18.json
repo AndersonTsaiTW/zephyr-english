@@ -1,7 +1,7 @@
 {
   "id": "2026-11-18",
   "title": "What Is Your 'North Star'?",
-  "topic": "",
+  "topic": "How an ordinary star became a symbol for staying on track.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -19,6 +19,47 @@
     "As the world changes around you and grows more complex, you can look to your North Star to help guide you. Your North Star can keep you focused and on track. It reminds you of what is important.",
     "Some people may say their North Star is their guiding light. It is something very important to them, and it keeps them on the right path."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "figuratively",
+      "gloss": "in a symbolic way, not literally true"
+    },
+    {
+      "word": "compass",
+      "gloss": "a tool that shows which way is north"
+    },
+    {
+      "word": "geographic",
+      "gloss": "about location on Earth, not magnetic direction"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What can the North Star help you find if you are physically lost?",
+      "options": [
+        "the nearest city",
+        "true north, or geographic north",
+        "the closest body of water"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Is the North Star the brightest star in the sky?",
+      "options": [
+        "yes, it is the brightest star visible anywhere",
+        "no, and it is very hard to see",
+        "no, but it is usually easy to see"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does someone's North Star mean in a figurative sense?",
+      "options": [
+        "something important that guides and focuses a person",
+        "a person's favourite hobby",
+        "a star only visible in winter"
+      ],
+      "answer": 0
+    }
+  ]
 }

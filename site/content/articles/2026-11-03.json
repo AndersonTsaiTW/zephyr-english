@@ -1,7 +1,7 @@
 {
   "id": "2026-11-03",
   "title": "Healthy eating on a budget",
-  "topic": "",
+  "topic": "Why grocery stores put pricier items right at eye level.",
   "source": {
     "author": "Government of Canada",
     "origin": "Canada.ca",
@@ -21,6 +21,47 @@
     "Stock up on canned goods and staples when they are on sale.",
     "Buying foods in bulk can help you save money. Be careful not to buy more than you need, because this can lead to waste."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "impulse",
+      "gloss": "a sudden wish to buy something without planning"
+    },
+    {
+      "word": "bruised",
+      "gloss": "having marks from being bumped or damaged"
+    },
+    {
+      "word": "staples",
+      "gloss": "basic foods you keep on hand"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What happens to the price of food close to its best before date?",
+      "options": [
+        "it is not safe to eat",
+        "it should be thrown away immediately",
+        "it may be sold at a lower price"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Why do companies pay to place their products at eye level?",
+      "options": [
+        "to keep prices lower",
+        "to make shoppers more likely to buy them",
+        "to reduce food waste"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What is true about buying food in bulk?",
+      "options": [
+        "it can save money if you don't buy more than you need",
+        "it never saves money",
+        "it always leads to waste"
+      ],
+      "answer": 0
+    }
+  ]
 }

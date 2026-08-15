@@ -1,7 +1,7 @@
 {
   "id": "2026-11-08",
   "title": "Pearl S. Buck: The First American Woman to Win a Nobel Prize in Literature",
-  "topic": "",
+  "topic": "How a childhood in China shaped a Nobel Prize winner.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, As It Is",
@@ -16,6 +16,47 @@
     "In 1910, Pearl went back to the United States to study philosophy at Randolph-Macon Woman’s College in Lynchburg, Virginia. After graduation, she returned to China. Three years later, she met John Lossing Buck. He was a religious worker who studied agriculture. They were married and moved to a small village in the north of China. Their life among the poorest people provided the subject matter for many of the books she later wrote.",
     "The Good Earth is the story of a poor Chinese man named Wang Lung. His wife is O-Lan. They work very hard together and finally make enough money to buy some land for a farm."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "philosophy",
+      "gloss": "the study of ideas about knowledge and life"
+    },
+    {
+      "word": "religious",
+      "gloss": "connected to religion or faith"
+    },
+    {
+      "word": "agriculture",
+      "gloss": "farming and growing crops"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What prize did Pearl S. Buck win in 1938?",
+      "options": [
+        "the Nobel Prize in Literature",
+        "the Pulitzer Prize",
+        "the National Book Award"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Who taught Pearl at home in China besides her mother?",
+      "options": [
+        "her father",
+        "a Chinese teacher",
+        "a French tutor"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What is The Good Earth about?",
+      "options": [
+        "an American woman studying in China",
+        "a war between two villages",
+        "a poor Chinese farmer and his wife"
+      ],
+      "answer": 2
+    }
+  ]
 }

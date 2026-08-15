@@ -1,7 +1,7 @@
 {
   "id": "2026-11-12",
   "title": "Keep Your Nose to the Grindstone",
-  "topic": "",
+  "topic": "What a spinning stone has to do with hard work.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -17,6 +17,47 @@
     "On his website Phrase Finder, writer and language researcher Gary Martin suggests two possible beginnings. Both are set in work environments of long ago: a place for milling grain and a place for sharpening tools.",
     "Some online sources claim that keeping your nose to the grindstone comes from milling grain. If the stone got too hot while grinding, it could burn the grain. So, workers would have to keep their noses close to the stone and smell for any sign of burning."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "perseverance",
+      "gloss": "continuing to try despite difficulty"
+    },
+    {
+      "word": "axle",
+      "gloss": "a rod that a wheel or stone turns on"
+    },
+    {
+      "word": "milling",
+      "gloss": "grinding grain into flour"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does it mean to keep your nose to the grindstone?",
+      "options": [
+        "to smell for smoke in a factory",
+        "to work very hard for a long time without giving up",
+        "to quit a difficult task quickly"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What is a grindstone used for?",
+      "options": [
+        "storing grain safely",
+        "measuring distances on a farm",
+        "sharpening, shaping, or smoothing tools"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Why did workers milling grain keep their noses close to the stone, in one theory?",
+      "options": [
+        "to smell for any sign of the grain burning",
+        "to keep dust out of their eyes",
+        "to listen for the axle breaking"
+      ],
+      "answer": 0
+    }
+  ]
 }

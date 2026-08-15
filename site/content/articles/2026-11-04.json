@@ -1,7 +1,7 @@
 {
   "id": "2026-11-04",
   "title": "Is ‘Pie in the Sky’ Just a Dream?",
-  "topic": "",
+  "topic": "Why a dream that sounds too good is called pie in the sky.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -18,6 +18,47 @@
     "An unpublished writer may have pie-in-the-sky dreams about her book being turned into a multi-million dollar film project.",
     "A teacher may have pie-in-the-sky wishes that all his students complete their homework on time."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "optimistic",
+      "gloss": "believing good things will happen"
+    },
+    {
+      "word": "crust",
+      "gloss": "the baked outer layer of a pie"
+    },
+    {
+      "word": "daydream",
+      "gloss": "to imagine something pleasant while not paying attention"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does the expression pie in the sky describe?",
+      "options": [
+        "a wish that is unlikely to come true",
+        "a plan that always succeeds",
+        "a dessert that is easy to make"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Who has pie-in-the-sky dreams about a book being turned into a film?",
+      "options": [
+        "a teacher",
+        "a company chief",
+        "an unpublished writer"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "In the business example, why were the company chief's claims called pie in the sky?",
+      "options": [
+        "the company had record profits",
+        "she had no plan or data to support them",
+        "competitors had copied her idea"
+      ],
+      "answer": 1
+    }
+  ]
 }

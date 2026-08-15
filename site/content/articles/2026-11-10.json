@@ -1,7 +1,7 @@
 {
   "id": "2026-11-10",
   "title": "How Do You Define Success?",
-  "topic": "",
+  "topic": "Why dressing for success might mean dressing for the job you want.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -15,6 +15,47 @@
     "However, success takes more than just the right clothes. It also takes hard work. Oftentimes others do not see all the hard work that goes into a project. They think success comes suddenly, for example overnight. Let’s say an unknown writer makes it big with her first book. People may call her an overnight success. But they do not know about the many years she spent studying and writing.",
     "Another ingredient in the recipe for success is a plan. To reach your goal, you need to get organized and break the goal down into doable steps. You know what they say – if you fail to plan, you plan to fail."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "strategies",
+      "gloss": "plans used to reach a goal"
+    },
+    {
+      "word": "corporate",
+      "gloss": "relating to a large business company"
+    },
+    {
+      "word": "ingredient",
+      "gloss": "one part needed to make something work"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is described as a key to success?",
+      "options": [
+        "really knowing yourself",
+        "copying what successful people wear",
+        "avoiding hard work"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What else does success require besides hard work and the right clothes?",
+      "options": [
+        "a large amount of money",
+        "a famous mentor",
+        "a plan with doable steps"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What is an overnight success in this context?",
+      "options": [
+        "someone who succeeds without any real effort",
+        "someone whose years of hard work go unnoticed until sudden fame",
+        "someone who quits after one failure"
+      ],
+      "answer": 1
+    }
+  ]
 }

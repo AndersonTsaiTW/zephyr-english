@@ -1,7 +1,7 @@
 {
   "id": "2026-11-15",
   "title": "How to Use 'Swimming' to Deal with Life's Situations",
-  "topic": "",
+  "topic": "Why swimming upstream means making life harder for yourself.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -20,6 +20,47 @@
     "As an expression, swimming upstream means you take a more difficult path to do something. You make it harder for yourself.",
     "Dealing with money is not my strong suit. In fact, last year I was drowning in debt. Every month when bills arrived, I felt like I was swimming upstream. So I went to a financial advisor. Now I’m free of debt and staying on a budget."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "choppy",
+      "gloss": "full of small, rough waves"
+    },
+    {
+      "word": "downstream",
+      "gloss": "in the direction the water flows"
+    },
+    {
+      "word": "drowning",
+      "gloss": "here, overwhelmed by too much of something"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does swim downstream mean as an expression?",
+      "options": [
+        "to face a very difficult challenge",
+        "to give up on a goal",
+        "to use the easy way to get something done"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does swim upstream mean as an expression?",
+      "options": [
+        "to relax and take things slowly",
+        "to take a harder path and make things difficult for yourself",
+        "to ask someone else for help"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What helped the speaker stop feeling like they were swimming upstream with money?",
+      "options": [
+        "going to a financial advisor",
+        "borrowing more money from a bank",
+        "ignoring the bills completely"
+      ],
+      "answer": 0
+    }
+  ]
 }

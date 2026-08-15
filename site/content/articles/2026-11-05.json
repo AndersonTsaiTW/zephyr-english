@@ -1,7 +1,7 @@
 {
   "id": "2026-11-05",
   "title": "Ups and Downs, Highs and Lows",
-  "topic": "",
+  "topic": "Why down in the dumps means sad, and down-low means secret.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -19,6 +19,47 @@
     "Now, let’s move up to a few expressions with “high.”",
     "Imagine you are driving in an area with a lot of traffic. You see a car waiting to turn onto your street, so you stop and let that car make the turn. But this makes the car behind you slow down. The driver of this car now honks the horn for a long time, leans out the car window, and shouts at you."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "dumps",
+      "gloss": "feeling sad or unhappy"
+    },
+    {
+      "word": "down-low",
+      "gloss": "kept secret from other people"
+    },
+    {
+      "word": "moral",
+      "gloss": "about what is right or wrong"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does it mean to be down and out?",
+      "options": [
+        "feeling depressed and unhappy",
+        "poor, without enough money for what you need",
+        "keeping a secret from friends"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does getting the low-down mean?",
+      "options": [
+        "getting information",
+        "losing money",
+        "feeling depressed"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does the driver behind you do in the traffic example?",
+      "options": [
+        "waves and smiles",
+        "drives away quietly",
+        "honks the horn and shouts"
+      ],
+      "answer": 2
+    }
+  ]
 }

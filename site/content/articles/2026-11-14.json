@@ -1,7 +1,7 @@
 {
   "id": "2026-11-14",
   "title": "'Feathertop,' by Nathaniel Hawthorne",
-  "topic": "",
+  "topic": "A witch's broomstick plan to save her corn from hungry crows.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -13,6 +13,47 @@
     "After the long winter months, the crows, the big black birds, were hungry. And when they saw the little green plants, they flew down to eat them. Old Mother Rigby tried to make the noisy and hungry birds go away. They made her very angry. She did not want the black birds to eat her corn. But the birds would not go away. So, early one morning, just as the sun started to rise, Mother Rigby jumped out of bed. She had a plan to stop those black birds from eating her corn.",
     "Mother Rigby could do anything. She was a witch, a woman with strange powers. She could make water run uphill, or change a beautiful woman into a white horse. Many nights when the moon was full and bright, she could be seen flying over the tops of the houses in the village, sitting on a long wooden stick. It was a broomstick, and it helped her to do all sorts of strange tricks."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "broomstick",
+      "gloss": "a long stick used for sweeping or flying"
+    },
+    {
+      "word": "uphill",
+      "gloss": "upward, against a slope"
+    },
+    {
+      "word": "strange",
+      "gloss": "unusual or hard to explain"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did the crows fly down to Mother Rigby's field?",
+      "options": [
+        "to eat the young green corn plants",
+        "to build nests in the trees",
+        "to drink water from a stream"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What strange things could Mother Rigby do?",
+      "options": [
+        "make crows disappear forever",
+        "change a woman into a white horse",
+        "turn corn into gold"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What season had just ended as the story begins?",
+      "options": [
+        "autumn",
+        "summer",
+        "winter"
+      ],
+      "answer": 2
+    }
+  ]
 }

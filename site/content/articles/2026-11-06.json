@@ -1,7 +1,7 @@
 {
   "id": "2026-11-06",
   "title": "The Bad Side of Roses",
-  "topic": "",
+  "topic": "Why the ancient Greeks linked roses with love, and thorns with pain.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -18,6 +18,47 @@
     "Now, here is an example of how to use the expression, every rose has its thorns.",
     "Let’s say you were on a game show and won a new car and a trip to Mexico. You are very excited but then find out that you must pay taxes on all the winnings. As you get ready to pay the big tax bill, you could say: “Well, every rose has its thorns.”"
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "prick",
+      "gloss": "a small, sharp, painful puncture"
+    },
+    {
+      "word": "ancient",
+      "gloss": "from a very long time ago"
+    },
+    {
+      "word": "unpleasant",
+      "gloss": "not nice, unwelcome or uncomfortable"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did the ancient Greeks and Romans connect roses with?",
+      "options": [
+        "good luck in business",
+        "the goddess of love",
+        "the change of seasons"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does the saying every rose has its thorns mean?",
+      "options": [
+        "good things are rare and hard to find",
+        "roses are more dangerous than people think",
+        "even good things can have a bad side"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "In the game show example, what is the unpleasant part of winning a car and a trip?",
+      "options": [
+        "having to pay taxes on the winnings",
+        "having to give the car away",
+        "having to wait a year for the trip"
+      ],
+      "answer": 0
+    }
+  ]
 }
