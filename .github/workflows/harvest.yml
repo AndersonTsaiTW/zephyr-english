@@ -52,6 +52,11 @@ jobs:
     if: github.repository_owner == 'AndersonTsaiTW'
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The default is a shallow clone of one commit, which leaves the
+          # incoming branch and main with no shared ancestor. Merging them
+          # then fails with "refusing to merge unrelated histories".
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -75,38 +80,57 @@ jobs:
             --scaffold "${{ github.event.inputs.scaffold || '12' }}" \
             --budget "${{ github.event.inputs.budget || '400' }}"
 
+      # New files are untracked until they are staged, and an unstaged file is
+      # invisible to git diff. Staging first is what makes the check below
+      # actually look at something: without it the gate passed every run by
+      # finding nothing to check.
+      - name: Stage what was found
+        run: git add -A
+
       # The harvester applies tighter limits than check-article.mjs does, so
       # this should never fail. If it ever does, something in the trimmer has
-      # drifted and the run should stop rather than open a pull request full
-      # of articles nobody can publish.
+      # drifted, and the run should stop rather than hand over a pile of
+      # articles nobody can publish.
       - name: Check every new article against the real rules
         run: |
+          files=$(git diff --cached --name-only --diff-filter=A -- site/content/articles)
+          if [ -z "$files" ]; then
+            echo 'Nothing new. The sources are exhausted, or every page failed the screening.'
+            exit 0
+          fi
           status=0
-          for file in $(git diff --name-only --diff-filter=A -- site/content/articles); do
+          for file in $files; do
             node scripts/check-article.mjs "$file" > /dev/null || { echo "FAILED $file"; status=1; }
           done
+          echo "$(echo "$files" | wc -l) articles checked"
           exit $status
 
-      - name: Open or update the pull request
+      - name: Commit, push, and open the pull request
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if git diff --quiet && git diff --cached --quiet; then
-            echo 'Nothing new. The sources are exhausted, or every page failed the checks.'
+          added=$(git diff --cached --name-only --diff-filter=A -- site/content/articles | wc -l)
+          if git diff --cached --quiet; then
+            echo 'Nothing to commit.'
             exit 0
           fi
-          added=$(git diff --name-only --diff-filter=A -- site/content/articles | wc -l)
-          git add -A
           git commit -m "Harvest: ${added} articles waiting for a quiz
 
           Bodies are trimmed and sourced. The topic line, the word
           explanations and the quiz still have to be written by hand, and
           site/content/index.json is untouched until they are."
           git push -u origin content/incoming
-          if ! gh pr view content/incoming > /dev/null 2>&1; then
-            gh pr create \
-              --base main \
-              --head content/incoming \
-              --title 'Harvested articles waiting for a quiz' \
-              --body 'Scaffolded by .github/workflows/harvest.yml. Each article has a title, a source block and a body trimmed by deletion only. Write the topic line, three word explanations and three questions, then run scripts/check-article.mjs and add the date to site/content/index.json.'
+          if gh pr view content/incoming > /dev/null 2>&1; then
+            echo 'Pull request already open; it now has the new commits.'
+            exit 0
           fi
+          # Creating a pull request needs "Allow GitHub Actions to create and
+          # approve pull requests" under Settings, Actions, General. Without
+          # it the work is still safely on the branch, so this reports the
+          # link and finishes rather than failing a run that did its job.
+          gh pr create \
+            --base main \
+            --head content/incoming \
+            --title 'Harvested articles waiting for a quiz' \
+            --body 'Scaffolded by .github/workflows/harvest.yml. Each article has a title, a source block and a body trimmed by deletion only. Write the topic line, three word explanations and three questions, then run scripts/check-article.mjs and add the date to site/content/index.json.' \
+            || echo "Could not open the pull request. The branch is pushed: https://github.com/${GITHUB_REPOSITORY}/compare/content/incoming?expand=1"
