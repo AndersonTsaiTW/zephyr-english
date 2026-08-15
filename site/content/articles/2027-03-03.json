@@ -1,7 +1,7 @@
 {
   "id": "2027-03-03",
   "title": "American English vs. British English",
-  "topic": "",
+  "topic": "How the same language split into two very different vocabularies.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -19,6 +19,47 @@
     "And, if we need to look in our car’s dark trunk for something, we use a flashlight. They would use a torch to search their dark boot.",
     "Then there are idioms. Some British and American idioms have the same meaning, but use different words. For example, in the U.S. if you want to add your opinion to a conversation, you put in your two cents. In the U.K., they put in their tuppence (or two pence) worth. Makes sense. They have pence and we don’t."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "elevators",
+      "gloss": "machines that carry people between floors"
+    },
+    {
+      "word": "nappies",
+      "gloss": "British word for baby diapers"
+    },
+    {
+      "word": "tuppence",
+      "gloss": "British slang for a small amount of money"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What do the British call the storage area of a car that Americans call a 'trunk'?",
+      "options": [
+        "A boot",
+        "A bonnet",
+        "A hold"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What word do Americans use instead of the British 'petrol'?",
+      "options": [
+        "Fuel",
+        "Diesel",
+        "Gas"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What do the British say instead of 'put in your two cents'?",
+      "options": [
+        "Give your two pounds worth",
+        "Add your tuppence worth",
+        "Share your opinion loudly"
+      ],
+      "answer": 1
+    }
+  ]
 }

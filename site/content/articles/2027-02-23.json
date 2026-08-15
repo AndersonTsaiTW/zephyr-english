@@ -1,7 +1,7 @@
 {
   "id": "2027-02-23",
   "title": "What Is 'Empty Nest Syndrome'?",
-  "topic": "",
+  "topic": "What birds' nests reveal about parents whose kids leave home.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -16,6 +16,47 @@
     "An empty nest is a family home where the children have grown up and left. So, an empty nester is a parent whose children have grown up and left home.",
     "Some parents may feel sad or lost when they become empty nesters. This is called empty nest syndrome. While parents may feel sad, most children are happy to become independent and fly the coop. “To fly the coop” is a very informal expression that means the children have left the family home."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "nesting",
+      "gloss": "getting a home ready, especially before a baby"
+    },
+    {
+      "word": "syndrome",
+      "gloss": "a group of feelings or symptoms with a name"
+    },
+    {
+      "word": "coop",
+      "gloss": "a small cage or shelter for birds"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does it mean to 'feather your own nest'?",
+      "options": [
+        "To prepare a nursery for a new baby",
+        "To become rich in an unfair or dishonest way",
+        "To decorate your home with feathers"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What is an 'empty nester'?",
+      "options": [
+        "A bird that has lost its nest",
+        "A person who lives alone by choice",
+        "A parent whose children have grown up and left home"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does 'fly the coop' mean in the article?",
+      "options": [
+        "To leave the family home",
+        "To visit family often",
+        "To build a new nest"
+      ],
+      "answer": 0
+    }
+  ]
 }

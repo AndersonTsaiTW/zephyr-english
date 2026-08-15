@@ -1,7 +1,7 @@
 {
   "id": "2027-02-28",
   "title": "Managing your money in challenging times",
-  "topic": "",
+  "topic": "Simple steps for keeping your finances steady when times get hard.",
   "source": {
     "author": "Government of Canada",
     "origin": "Canada.ca",
@@ -24,6 +24,47 @@
     "You should only borrow the amount you need.",
     "Identifying ways you can increase your income may help reduce stress and help you meet your financial goals. Make sure you manage this extra income wisely. Make a budget and use the extra money to pay down your debts."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "budget",
+      "gloss": "a plan for spending and saving money"
+    },
+    {
+      "word": "interest",
+      "gloss": "extra money paid for borrowing"
+    },
+    {
+      "word": "non-essential",
+      "gloss": "not truly necessary"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does making a budget help you do?",
+      "options": [
+        "Increase your interest rates",
+        "Identify areas to cut back or adjust expenses",
+        "Avoid paying any debt at all"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does the article suggest about borrowing money?",
+      "options": [
+        "Borrow as much as possible for safety",
+        "Avoid borrowing under any circumstance",
+        "Only borrow the amount you need"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What should you do with extra income you earn?",
+      "options": [
+        "Manage it wisely and use it to pay down debt",
+        "Spend it right away",
+        "Keep it separate from your budget"
+      ],
+      "answer": 0
+    }
+  ]
 }

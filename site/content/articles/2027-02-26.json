@@ -1,7 +1,7 @@
 {
   "id": "2027-02-26",
   "title": "Seeing 'Double'?",
-  "topic": "",
+  "topic": "How one small word changes meaning with each word added.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -16,6 +16,47 @@
     "Now, if you add “down” to “double” you get something completely different. If you double down, you stick to a position or undertaking even if it is not a good one. You are not willing to change your position at all. For example, instead of apologizing for a poorly worded statement, the politician doubled down and said it again. Here, we could also say he dug in his heels.",
     "Now, if something does double duty is serves two purposes. For example, an exercise bike serves double duty if I can also dry my towels on it. People can also do double duty. That means they do two jobs or the work of two people."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "versatile",
+      "gloss": "able to be used in many ways"
+    },
+    {
+      "word": "undertaking",
+      "gloss": "a task or project you have started"
+    },
+    {
+      "word": "duty",
+      "gloss": "a job or responsibility"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does 'on the double' mean?",
+      "options": [
+        "Slowly and carefully",
+        "Quickly",
+        "Twice as expensive"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does it mean to 'double down'?",
+      "options": [
+        "To stick to a position even if it is not good",
+        "To change your mind quickly",
+        "To apologize for a mistake"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does it mean when something 'does double duty'?",
+      "options": [
+        "It costs twice as much",
+        "It takes twice as long to finish",
+        "It serves two purposes"
+      ],
+      "answer": 2
+    }
+  ]
 }

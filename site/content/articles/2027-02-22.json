@@ -1,7 +1,7 @@
 {
   "id": "2027-02-22",
   "title": "No Need to 'Gild the Lily'",
-  "topic": "",
+  "topic": "Why trying to improve a perfect flower can make it worse.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -16,6 +16,47 @@
     "So, when you gild something you could be trying to cover up something ugly. But sometimes we may try to improve something that cannot be improved. It is already wonderful just the way it is. And our attempts to make it better can make it worse.",
     "Take for example, a lily. Lilies are beautiful flowers. Like many beautiful things in nature, they do not need any additions to make them more beautiful."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "gilt",
+      "gloss": "a thin layer of gold on a surface"
+    },
+    {
+      "word": "costly",
+      "gloss": "expensive"
+    },
+    {
+      "word": "gilded",
+      "gloss": "covered with a thin layer of gold"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does the word 'gild' mean as a verb?",
+      "options": [
+        "To cover something with a thin layer of gold",
+        "To paint something a bright colour",
+        "To carve designs into wood"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Who is credited with creating the term 'Gilded Age'?",
+      "options": [
+        "Charles Dudley Warner alone",
+        "Mark Twain",
+        "A dictionary editor"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Why does the article say lilies do not need to be gilded?",
+      "options": [
+        "They are too fragile to decorate",
+        "They are not valuable enough to bother",
+        "They are already beautiful without additions"
+      ],
+      "answer": 2
+    }
+  ]
 }

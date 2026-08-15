@@ -1,7 +1,7 @@
 {
   "id": "2027-03-01",
   "title": "Differences Between Board, on Board, Aboard",
-  "topic": "",
+  "topic": "One tiny word that means a plank, a group, and a ship.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -20,6 +20,47 @@
     "However, we say you board a plane, train, or boat when you get on it. And we say you are on board once you get on.",
     "If you agree with an idea or a process, we also say that you are on board with it. But we never say you are aboard with it. And if you are very excited about an idea or process, you do not just get on board, you jump on board!"
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "conductor",
+      "gloss": "a person in charge of a train"
+    },
+    {
+      "word": "aboard",
+      "gloss": "on a ship, train, or plane"
+    },
+    {
+      "word": "housing",
+      "gloss": "a place to live"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does it mean to be 'on board' with an idea?",
+      "options": [
+        "You agree with or support it",
+        "You disagree with it strongly",
+        "You are unsure about it"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What can a 'board' of directors do?",
+      "options": [
+        "Announce train departures",
+        "Make decisions for an organization",
+        "Provide food and housing for students"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What might people do to windows and doors in scary movies?",
+      "options": [
+        "Open them wide for fresh air",
+        "Paint them a bright colour",
+        "Board them up with pieces of wood"
+      ],
+      "answer": 2
+    }
+  ]
 }

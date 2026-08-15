@@ -1,7 +1,7 @@
 {
   "id": "2027-02-27",
   "title": "Asthma and school",
-  "topic": "",
+  "topic": "What every school needs to know to keep a child with asthma safe.",
   "source": {
     "author": "U.S. National Library of Medicine",
     "origin": "MedlinePlus",
@@ -19,6 +19,47 @@
     "National Heart, Lung and Blood Institute website. Asthma management guidelines: focused updates 2020. www.nhlbi.nih.gov/health-topics/asthma-management-guidelines-2020-updates. Updated February 4, 2021. Accessed March 9, 2026.",
     "Updated by: Jacob Berman, MD, MPH, Associate Professor of Medicine, Division of General Internal Medicine, University of Washington School of Medicine, Seattle, WA. Also reviewed by David C. Dugdale, MD, Medical Director, Brenda Conaway, Editorial Director, and the A.D.A.M. Editorial team."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "triggers",
+      "gloss": "things that make a problem worse"
+    },
+    {
+      "word": "guardian",
+      "gloss": "an adult legally responsible for a child"
+    },
+    {
+      "word": "provider",
+      "gloss": "a doctor or health professional"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What should parents give to their child's school staff?",
+      "options": [
+        "A list of the child's friends",
+        "A copy of the child's medical bills",
+        "An asthma action plan"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What are 'triggers' in the context of this article?",
+      "options": [
+        "Medicines that treat asthma",
+        "Things that make a child's asthma worse",
+        "Exercises that strengthen the lungs"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Whose signatures should be on the asthma action plan?",
+      "options": [
+        "The child's provider and parent or guardian",
+        "Only the child's teacher",
+        "The school principal only"
+      ],
+      "answer": 0
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "2027-03-02",
   "title": "Bathroom safety for adults",
-  "topic": "",
+  "topic": "Small bathroom changes that can prevent a dangerous fall.",
   "source": {
     "author": "U.S. National Library of Medicine",
     "origin": "MedlinePlus",
@@ -18,6 +18,47 @@
     "Do not use towel racks as grab bars. They can't support your weight.",
     "You will need two grab bars: one to help you get in and out of the tub, and another to help you stand from a sitting position."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "commode",
+      "gloss": "a chair with a toilet built in"
+    },
+    {
+      "word": "elevated",
+      "gloss": "raised higher than usual"
+    },
+    {
+      "word": "diagonally",
+      "gloss": "at a slanted angle, not straight"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Where in the home do falls most often happen?",
+      "options": [
+        "The kitchen",
+        "The bedroom",
+        "The bathroom"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "How should grab bars be secured to the wall?",
+      "options": [
+        "Vertically or horizontally, not diagonally",
+        "Only diagonally for extra strength",
+        "Loosely, so they can be moved"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Why should you not use towel racks as grab bars?",
+      "options": [
+        "They are too expensive to install",
+        "They cannot support your weight",
+        "They are too hard to find"
+      ],
+      "answer": 1
+    }
+  ]
 }

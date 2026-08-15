@@ -1,7 +1,7 @@
 {
   "id": "2027-02-02",
   "title": "Why Is This Bird a 'Burden'?",
-  "topic": "",
+  "topic": "One graceful seabird lent English a word for heavy worry.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -17,6 +17,47 @@
     "Here is another example: His albatross was his huge credit card debt. It weighed heavily on every decision he made.",
     "So, how did the name of this large, graceful bird come to have this meaning? On Merriam-Webster’s online dictionary, experts explain that this usage of the word comes from European sea mythology."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "gliders",
+      "gloss": "things that fly smoothly without much effort"
+    },
+    {
+      "word": "hinderance",
+      "gloss": "something that gets in the way"
+    },
+    {
+      "word": "burden",
+      "gloss": "a heavy problem you must carry"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is an albatross?",
+      "options": [
+        "A large seabird with long thin wings",
+        "A small land bird that cannot fly",
+        "A fish found in the ocean"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does it mean to call something an albatross in conversation?",
+      "options": [
+        "A skill that makes life easier",
+        "A gift that brings good luck",
+        "A burden that stops you from succeeding"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What was the man's albatross in the second example?",
+      "options": [
+        "His difficult relationship with his family",
+        "His huge credit card debt",
+        "His inability to travel"
+      ],
+      "answer": 1
+    }
+  ]
 }

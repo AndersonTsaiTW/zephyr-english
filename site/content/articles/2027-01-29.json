@@ -1,7 +1,7 @@
 {
   "id": "2027-01-29",
   "title": "Oil and Water Do Not Mix",
-  "topic": "",
+  "topic": "Why oil and water explain some friendships that never quite work.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -17,6 +17,47 @@
     "This expression describes how oil and water naturally separate. They are incompatible. So are people who have nothing in common and do not get along.",
     "We sometimes say oil and water do not mix to express an opinion that two things do not go together."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "substances",
+      "gloss": "types of matter or material"
+    },
+    {
+      "word": "incompatible",
+      "gloss": "unable to exist together well"
+    },
+    {
+      "word": "laboratory",
+      "gloss": "a room used for scientific experiments"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What happens when you pour oil into water?",
+      "options": [
+        "They mix completely evenly",
+        "The oil sinks to the bottom",
+        "The oil floats to the top and they do not mix"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does it mean to say two people are like oil and water?",
+      "options": [
+        "They do not get along",
+        "They always agree with each other",
+        "They both like to cook together"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "In the story about the cat, how did the writer and Bluey behave?",
+      "options": [
+        "They became close friends over time",
+        "They mostly ignored each other while the writer cared for him",
+        "The writer stopped taking care of him"
+      ],
+      "answer": 1
+    }
+  ]
 }
