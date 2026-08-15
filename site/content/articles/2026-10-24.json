@@ -1,19 +1,64 @@
 {
   "id": "2026-10-24",
-  "title": "'Pecos Bill,' An American Folk Tale",
-  "topic": "",
+  "title": "Out of the Frying Pan and Into the Fire",
+  "topic": "You escaped the bad thing. The worse thing was waiting.",
   "source": {
     "author": "VOA Learning English",
-    "origin": "VOA Learning English, American Stories",
+    "origin": "VOA Learning English, Words and Their Stories",
     "license": "Public domain (work of the US federal government)",
-    "url": "https://learningenglish.voanews.com/a/pecos-bill-an-american-folk-tale/4773695.html"
+    "url": "https://learningenglish.voanews.com/a/out-of-the-frying-pan-and-into-the-fire/6952573.html"
   },
   "body": [
-    "Now, as they came to the Pecos River, the wagon hit a big rock. The force threw little Bill out of the wagon and he landed on the sandy ground. Mother did not know Bill was gone until she gathered the children for the midday meal. Mother set off with some of the children to look for Bill, but they could find no sign of him. Well, some people say Bill was just a baby when his family lost him. Others say he was four years old. But all agree that a group of animals called coyotes found Bill and raised him. Bill did all the things those animals did, like chase lizards and howl at the moon. He became as good a coyote as any.",
-    "Somehow the two came to rest on the moon. And that's where they stayed. Some people say they raised a family up there. Their children were as loud and wild as Bill and Sue were in their younger days. People say the sound of thunder that sometimes carries over the dry land around the Pecos River is nothing more than Pecos Bill's family laughing up a storm.",
-    "Test your understanding of this story by taking this short quiz.",
-    "This lesson plan, based on the CALLA Approach, teaches the strategy classify to help students understand the story of Pecos Bill."
+    "Today we talk about bad situations. Sometimes we think a situation is very bad. We cannot imagine that it can get any worse. But then it does.",
+    "We have an expression for just that situation – out of the frying pan and into the fire.",
+    "Imagine we are camping. The area is near a small river. So, for dinner, we decide to go fishing. Fish cooked over a campfire is a tasty meal indeed. We start the fire. We add butter and onions to the frying pan. When it heats up, we add the fish.",
+    "In the frying pan, the fish is in a very bad situation. It flips violently back and forth. It tries to get out of the hot frying pan. Finally, the fish flips out of the frying pan but lands in the fire.",
+    "The idiom out of the frying pan and into the fire means you leave a bad situation purposefully only to find yourself in a much worse situation. You thought you were improving it, but the opposite happened.",
+    "Sometimes, this saying describes a choice between two equally difficult options.",
+    "And here is a final note on usage. If the friend in this conversation simply said, “Sounds like you just jumped out of the frying pan,” we would know they mean this expression.",
+    "Some word experts say this phrase comes from very early Greek poetry. Those early poets used the expression to describe the process of trying to escape smoke and getting burned by the flames instead."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "violently",
+      "gloss": "with sudden, strong force"
+    },
+    {
+      "word": "purposefully",
+      "gloss": "on purpose, having decided to"
+    },
+    {
+      "word": "flames",
+      "gloss": "the bright burning part of a fire"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does the idiom mean?",
+      "options": [
+        "You leave a bad situation and land in a worse one",
+        "You solve a problem by acting fast",
+        "You avoid a problem by doing nothing"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "In the example, where does the fish end up?",
+      "options": [
+        "Back in the river",
+        "In the fire",
+        "Safely on a plate"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Where do some word experts say the phrase comes from?",
+      "options": [
+        "Old French cooking books",
+        "American frontier speech",
+        "Very early Greek poetry"
+      ],
+      "answer": 2
+    }
+  ]
 }

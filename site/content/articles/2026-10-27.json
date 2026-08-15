@@ -1,7 +1,7 @@
 {
   "id": "2026-10-27",
   "title": "'The Fall of the House of Usher,' by Edgar Allan Poe, Part Two",
-  "topic": "",
+  "topic": "He names his illness, and the name he gives it is fear.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -13,6 +13,47 @@
     "I learned also, but slowly, and through broken words with doubtful meaning, another strange fact about the condition of Usher’s mind. He had certain sick fears about the house in which he lived, and he had not stepped out of it for many years. He felt that the house, with its gray walls and the quiet lake around it, had somehow through the long years gotten a strong hold on his spirit.",
     "Except for himself, she was the last member of his family on earth. “When she dies,” he said, with a sadness which I can never forget, “when she dies, I will be the last of the old, old family — the House of Usher.”"
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "grave",
+      "gloss": "the place where a dead person is buried"
+    },
+    {
+      "word": "terror",
+      "gloss": "very great fear"
+    },
+    {
+      "word": "doubtful",
+      "gloss": "uncertain, hard to be sure of"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does Usher call his sickness?",
+      "options": [
+        "Fear",
+        "Sorrow",
+        "Old age"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does he expect to lose in the end?",
+      "options": [
+        "Only his memory",
+        "His life, his mind and his soul together",
+        "His house and everything in it"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "How long is it since he last stepped outside?",
+      "options": [
+        "A few weeks",
+        "Since his sister fell ill",
+        "Many years"
+      ],
+      "answer": 2
+    }
+  ]
 }

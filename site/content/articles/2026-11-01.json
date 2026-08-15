@@ -1,7 +1,7 @@
 {
   "id": "2026-11-01",
   "title": "When in Rome …",
-  "topic": "",
+  "topic": "One saint asked another what to do about Saturdays.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -17,6 +17,47 @@
     "But what does Rome have to do with following other people’s customs? Several websites describe how the expression may have begun. And if they are correct, this expression is very old.",
     "During the time of the Roman Empire more than 1500 years ago, a Christian leader, Saint Augustine, moved from Rome to Milan. Once in the new city, he found some parts of religious life to be different. For example, in Rome he fasted, or did not eat, on Saturday. But in Milan, people did not fast on Saturday. Another church leader, Saint Ambrose, gave him some advice. St. Ambrose said that when he goes to Rome he fasts on Saturdays. But when he is in Milan, he does not. Problem solved."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "customs",
+      "gloss": "the usual ways of doing things in a place"
+    },
+    {
+      "word": "norms",
+      "gloss": "what a group of people treat as normal"
+    },
+    {
+      "word": "fasted",
+      "gloss": "went without food on purpose"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does the expression tell you to do?",
+      "options": [
+        "Follow the customs of the place you are in",
+        "Travel only where you know the language",
+        "Keep your own habits wherever you go"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What did Saint Augustine find different in Milan?",
+      "options": [
+        "People ate later in the day",
+        "People did not fast on Saturday",
+        "People fasted every day"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Who gave him the advice?",
+      "options": [
+        "The bishop of Rome",
+        "A traveller he met on the road",
+        "Saint Ambrose"
+      ],
+      "answer": 2
+    }
+  ]
 }

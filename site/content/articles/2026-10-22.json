@@ -1,7 +1,7 @@
 {
   "id": "2026-10-22",
   "title": "Exploring the 'Butterfly Effect'",
-  "topic": "",
+  "topic": "One insect's wings, and a storm on the far side of the world.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -17,6 +17,47 @@
     "A similar expression involves the game of dominoes -- the domino effect.",
     "Dominoes are small rectangular game pieces. One way to play with dominoes is to set them up in a line or pattern. Then you push the domino at the start of the line into the one next to it and so on and so on … until all the dominos fall down. You started the domino effect with your single push of a single domino."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "delicate",
+      "gloss": "easily damaged"
+    },
+    {
+      "word": "unpredictable",
+      "gloss": "impossible to know in advance"
+    },
+    {
+      "word": "strike",
+      "gloss": "a refusal to work until demands are met"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is the butterfly effect?",
+      "options": [
+        "Very small changes leading to large, unpredictable ones",
+        "Insects moving between countries",
+        "A storm that changes direction"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "In the example, what started the chain of events?",
+      "options": [
+        "A storm on the other side of the planet",
+        "Television writers demanding higher pay",
+        "A town losing its main business"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What is the domino effect named after?",
+      "options": [
+        "A kind of storm",
+        "A card game",
+        "Game pieces that fall in a line after one push"
+      ],
+      "answer": 2
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "2026-10-30",
   "title": "'The Legend of Sleepy Hollow,' by Washington Irving",
-  "topic": "",
+  "topic": "A rider with no head, and a schoolteacher shaped like a bird.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -14,6 +14,47 @@
     "Ichabod did not make much money as a teacher. And although he was tall and thin, he ate like a fat man. To help him pay for his food he earned extra money teaching young people to sing. Every Sunday after church Ichabod taught singing.",
     "Among the ladies Ichabod taught was one Katrina Van Tassel. She was the only daughter of a rich Dutch farmer. She was a girl in bloom…much like a round red, rosy apple. Ichabod had a soft and foolish heart for the ladies, and soon found himself interested in Miss Van Tassel."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "valley",
+      "gloss": "low land lying between hills"
+    },
+    {
+      "word": "burial",
+      "gloss": "the placing of a dead body in the ground"
+    },
+    {
+      "word": "foolish",
+      "gloss": "silly, not sensible"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is the night rider looking for?",
+      "options": [
+        "His lost head",
+        "The road out of the valley",
+        "The man who killed him"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Why does the name Crane suit Ichabod?",
+      "options": [
+        "He came from a family of farmers",
+        "He is tall and thin, like the bird",
+        "He can sing"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "How does Ichabod earn extra money?",
+      "options": [
+        "By farming a small field",
+        "By writing letters for people",
+        "By teaching young people to sing"
+      ],
+      "answer": 2
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "2026-10-25",
   "title": "Expressions Using Our Head and Shoulders",
-  "topic": "",
+  "topic": "The part of the body that carries blame, and carries friends.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -18,6 +18,47 @@
     "When we lean on someone’s shoulder, we ask for their help. When we cry on someone’s shoulder, they are there for support.",
     "It is important to have at least one friend who has a good shoulder to cry on. These friends are great because they don't ask questions. They just listen and let us cry. You can also put your head on someone’s shoulder. This means you are getting comfort and support from that person."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "responsibility",
+      "gloss": "something that is yours to deal with"
+    },
+    {
+      "word": "blame",
+      "gloss": "saying who caused something bad"
+    },
+    {
+      "word": "comfort",
+      "gloss": "the feeling of being cared for"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does it mean to shoulder something?",
+      "options": [
+        "To accept it as your responsibility",
+        "To push it away from you",
+        "To carry it a short distance"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What is a shoulder to cry on?",
+      "options": [
+        "A doctor who treats injuries",
+        "A friend who listens and gives support without questions",
+        "A place to rest"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does it mean if something costs an arm and a leg?",
+      "options": [
+        "It is dangerous",
+        "It takes a long time",
+        "It is very expensive"
+      ],
+      "answer": 2
+    }
+  ]
 }

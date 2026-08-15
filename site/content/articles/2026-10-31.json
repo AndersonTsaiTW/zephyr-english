@@ -1,7 +1,7 @@
 {
   "id": "2026-10-31",
   "title": "Halloween in America: Costumes, Candy, Costs for Night of Fright",
-  "topic": "",
+  "topic": "Billions of dollars, from fires lit to frighten off the dead.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Arts & Culture",
@@ -16,6 +16,47 @@
     "People from Scotland and Ireland brought these ideas with them when they came to America. Some believed that spirits played tricks on people on the last night of October.",
     "In modern America, the holiday mostly belongs to children. After dark, children wear special clothing, called costumes. They often appear as frightening creatures like vampires, ghosts and witches. The children walk around their neighborhoods, knocking on doors of homes. When someone answers a door, the children yell “trick or treat.” If the people in the homes do not give them a sweet treat, the children may play a trick on them."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "costumes",
+      "gloss": "special clothes worn to look like someone else"
+    },
+    {
+      "word": "profits",
+      "gloss": "the money a business makes"
+    },
+    {
+      "word": "ancient",
+      "gloss": "from very long ago"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did the Celts believe about October 31?",
+      "options": [
+        "That spirits of the dead would return to their homes",
+        "That the sun would not rise",
+        "That animals could speak"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Why did they build huge fires?",
+      "options": [
+        "To cook the autumn feast",
+        "To frighten away evil spirits",
+        "To signal to other villages"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Who brought these ideas to America?",
+      "options": [
+        "Traders from France",
+        "Soldiers returning from Europe",
+        "People from Scotland and Ireland"
+      ],
+      "answer": 2
+    }
+  ]
 }

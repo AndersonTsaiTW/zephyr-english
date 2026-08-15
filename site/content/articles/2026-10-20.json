@@ -1,7 +1,7 @@
 {
   "id": "2026-10-20",
   "title": "It's Time to 'See the Light'",
-  "topic": "",
+  "topic": "What a lighthouse and a hard truth have in common.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -15,6 +15,47 @@
     "These people can even cast light on the darkness in our lives. When we cast light on something, we make it better. The expression can also mean that we explain something more fully or expose some unknown parts of an issue or problem. Some people like to say, “Let me cast a little light on the subject,” before they explain something.",
     "After someone casts light on a complex or difficult issue, you might begin to see the light. If you see the light, you understand something. Often, you have realized a difficult truth. For example, years ago my friend refused to believe that her boyfriend had a drinking problem. But when he was arrested for drunk driving, she began to see the light. She got him help and now he has been alcohol-free for many years. So, he saw the light, too."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "beacon",
+      "gloss": "a light that guides or warns people"
+    },
+    {
+      "word": "compliment",
+      "gloss": "something kind said about a person"
+    },
+    {
+      "word": "expose",
+      "gloss": "to make something hidden known"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is a beacon of light?",
+      "options": [
+        "A person who makes things better for everyone around them",
+        "A person who works at night",
+        "A person who follows the crowd"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does casting light on something mean?",
+      "options": [
+        "Making it brighter to look at",
+        "Explaining it more fully, or showing hidden parts of it",
+        "Keeping it to yourself"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does it mean to see the light?",
+      "options": [
+        "To wake up early",
+        "To watch a festival",
+        "To understand something, often a difficult truth"
+      ],
+      "answer": 2
+    }
+  ]
 }

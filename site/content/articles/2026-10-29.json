@@ -1,7 +1,7 @@
 {
   "id": "2026-10-29",
   "title": "'The Black Cat,' by Edgar Allan Poe",
-  "topic": "",
+  "topic": "He opens by telling you that tomorrow he dies.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -15,6 +15,47 @@
     "I was quite young when I married. You will understand the joy I felt to find that my wife shared with me my love for animals. Quickly she got for us several pets of the most likeable kind. We had birds, some goldfish, a fine dog, and a cat.",
     "The cat was a beautiful animal, of unusually large size, and entirely black. I named the cat Pluto, and it was the pet I liked best. I alone fed it, and it followed me all around the house. It was even with difficulty that I stopped it from following me through the streets."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "destroyed",
+      "gloss": "ruined completely"
+    },
+    {
+      "word": "changeable",
+      "gloss": "likely to change"
+    },
+    {
+      "word": "likeable",
+      "gloss": "easy to like"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "When does the narrator say he will die?",
+      "options": [
+        "Tomorrow",
+        "In a year",
+        "He does not say"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What did he love as a child?",
+      "options": [
+        "Books above everything",
+        "Animals, and pets most of all",
+        "The sea"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What was the black cat called?",
+      "options": [
+        "Midnight",
+        "Shadow",
+        "Pluto"
+      ],
+      "answer": 2
+    }
+  ]
 }

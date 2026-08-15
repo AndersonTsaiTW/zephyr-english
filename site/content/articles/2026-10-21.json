@@ -1,7 +1,7 @@
 {
   "id": "2026-10-21",
   "title": "Healthy eating at home",
-  "topic": "",
+  "topic": "The food in your kitchen decides more than you think.",
   "source": {
     "author": "Government of Canada",
     "origin": "Canada.ca",
@@ -21,6 +21,47 @@
     "Growing and harvesting your own food gives you access to fresh seasonal foods. If you don’t have the space to grow food at home or are new to gardening, consider joining a community garden.",
     "A home environment that supports healthy eating habits is just as important as the foods you eat. These habits help form a healthy eating pattern."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "processed",
+      "gloss": "changed a long way from its natural form"
+    },
+    {
+      "word": "preserving",
+      "gloss": "treating food so it keeps for longer"
+    },
+    {
+      "word": "harvesting",
+      "gloss": "gathering food when it is ready"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why do the foods kept in your home matter?",
+      "options": [
+        "What is available is what you end up eating",
+        "Fresh food is cheaper at home",
+        "Cooking at home takes less time"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does washing and chopping food in advance do?",
+      "options": [
+        "Makes it last longer in the fridge",
+        "Makes healthy food easier to use when you need it",
+        "Removes most of the sugar"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What if you have no space to grow food?",
+      "options": [
+        "Buy frozen food instead",
+        "Grow only herbs indoors",
+        "Consider joining a community garden"
+      ],
+      "answer": 2
+    }
+  ]
 }

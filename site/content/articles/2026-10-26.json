@@ -1,7 +1,7 @@
 {
   "id": "2026-10-26",
   "title": "'The Fall of the House of Usher,' by Edgar Allan Poe, Part One",
-  "topic": "",
+  "topic": "A letter arrives, and he cannot bring himself to refuse it.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -13,6 +13,47 @@
     "I do not know how it was — but, with my first sight of the building, a sense of heavy sadness filled my spirit. I looked at the scene before me — at the house itself — at the ground around it — at the cold stone walls of the building — at its empty eye-like windows — and at a few dead trees — I looked at this scene, I say, with a complete sadness of soul, which was no healthy, earthly feeling. What was it, I asked myself, what was it that was so fearful, so frightening in my view of the House of Usher? This was a question to which I could find no answer.",
     "I stopped my horse beside the building, on the edge of a dark and quiet lake. There, I could see reflected in the water a clear picture of the dead trees, and of the house and its empty, eye-like windows. I was now going to spend several weeks in this house of sadness — this house of gloom. Its owner was named Roderick Usher. We had been friends when we were boys; but many years had passed since our last meeting. A letter from him had reached me; a wild letter, which demanded that I reply by coming to see him. He wrote of an illness of the body — of a sickness of the mind — and of a desire to see me — his best and, indeed, his only friend. It was the manner in which all this was said — it was the heart in it — which did not allow me to say no."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "gloom",
+      "gloss": "darkness, and the low spirits that come with it"
+    },
+    {
+      "word": "soundless",
+      "gloss": "with no noise at all"
+    },
+    {
+      "word": "demanded",
+      "gloss": "asked for in a way that allowed no refusal"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How does the narrator feel on first seeing the house?",
+      "options": [
+        "A sense of heavy sadness",
+        "Relief at arriving",
+        "Curiosity and nothing more"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does he see in the water beside the house?",
+      "options": [
+        "His own face",
+        "A reflection of the dead trees and the empty windows",
+        "Nothing at all"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Why has he come?",
+      "options": [
+        "He was passing and needed shelter",
+        "He was asked to buy the house",
+        "A wild letter from Usher that he could not refuse"
+      ],
+      "answer": 2
+    }
+  ]
 }
