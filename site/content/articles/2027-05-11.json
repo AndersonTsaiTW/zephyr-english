@@ -1,0 +1,24 @@
+{
+  "id": "2027-05-11",
+  "title": "Debit card fraud",
+  "topic": "",
+  "source": {
+    "author": "Government of Canada",
+    "origin": "Canada.ca",
+    "license": "Non-commercial reproduction permitted with attribution",
+    "url": "https://www.canada.ca/en/financial-consumer-agency/services/debit-fraud.html"
+  },
+  "body": [
+    "Debit card fraud happens when someone uses your debit card or debit card information without your permission.",
+    "Debit cards issued by financial institutions have a computer chip that makes transactions more secure. The computer chip works with your PIN to make sure you give permission for each transaction. This helps protect you against fraud if someone steals your debit card.",
+    "There are actions you may take to protect yourself from debit card fraud. Follow these tips to protect your debit card and your personal and banking information.",
+    "Choose a PIN that is hard to guess. For example, avoid using your date of birth, Social Insurance Number (SIN), address or telephone number as your PIN.",
+    "Some financial institutions offer the ability to pay with a mobile device, such as a smartphone or tablet. Even with this payment method, you must always keep your PIN safe.",
+    "If you suspect that someone knows your PIN, change it immediately and contact your financial institution.",
+    "If you share your PIN with someone, you may be responsible for transactions you didn’t make or approve.",
+    "Learn how to protect yourself from unauthorized mobile payments.",
+    "Whenever possible, enable multi-factor authentication (MFA). With MFA, you need to provide more than one authentication factor to access a device or an account. For example, to access your bank account, you may need to scan your fingerprints or enter a passcode."
+  ],
+  "previewWords": [],
+  "quiz": []
+}

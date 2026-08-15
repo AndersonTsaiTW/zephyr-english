@@ -1,0 +1,59 @@
+How debit card fraud happens
+
+Debit card fraud happens when someone uses your debit card or debit card information without your permission.
+
+Your information or your card is used to:
+
+A person might steal your debit card information by:
+
+Learn more about recent fraud affecting Canadians.
+
+Protecting yourself from debit card fraud
+
+Debit cards issued by financial institutions have a computer chip that makes transactions more secure. The computer chip works with your PIN to make sure you give permission for each transaction. This helps protect you against fraud if someone steals your debit card.
+
+There are actions you may take to protect yourself from debit card fraud. Follow these tips to protect your debit card and your personal and banking information.
+
+Choose a PIN that is hard to guess. For example, avoid using your date of birth, Social Insurance Number (SIN), address or telephone number as your PIN.
+
+Be sure to keep your PIN safe:
+
+Some financial institutions offer the ability to pay with a mobile device, such as a smartphone or tablet. Even with this payment method, you must always keep your PIN safe.
+
+If you suspect that someone knows your PIN, change it immediately and contact your financial institution.
+
+If you share your PIN with someone, you may be responsible for transactions you didn’t make or approve.
+
+Learn how to protect yourself from unauthorized mobile payments.
+
+Whenever possible, enable multi-factor authentication (MFA). With MFA, you need to provide more than one authentication factor to access a device or an account. For example, to access your bank account, you may need to scan your fingerprints or enter a passcode.
+
+If cyber criminals gain access to your password, they still need to provide additional information to access your accounts.
+
+Learn more about multi-factor authentication.
+
+A daily limit is the amount of money you may spend or withdraw from your account each day. It applies to ATMs, online and in-store transactions. This limit also applies to debit cards that have a contactless feature. Someone who has your debit card may access this amount.
+
+If you feel that your limit is too high for your needs, contact your financial institution to change it. You may also ask them to disable the contactless feature on your debit card.
+
+Protect your debit card and your debit card information
+
+To better protect yourself from debit card fraud:
+
+You may use a mobile device to do your online banking. If you lose this device, let your financial institution know right away. You should also contact your mobile service provider so they may deactivate your device.
+
+Get Cyber Safe is a national public awareness campaign. It informs Canadians about cyber security and how to protect themselves online.
+
+Learn how to stay safe online with Get Cyber Safe.
+
+Learn more about your rights and responsibilities when banking online.
+
+If you're a victim of debit card fraud
+
+If you think you’re a victim of debit card fraud, contact your financial institution immediately. Take note of whom you talked to and when you spoke to them.
+
+You may then do the following:
+
+Report the fraud to the National Fraud Reporting System
+
+If you’ve been a victim of fraud or cybercrime, report it to the National Fraud Reporting System. This centralized system is jointly managed by the Royal Canadian Mounted Police and the Canadian Anti-Fraud Centre. It helps law enforcement agencies across Canada track and investigate fraudulent activities.
