@@ -1,7 +1,7 @@
 {
   "id": "2026-12-13",
   "title": "What Gives You 'Food for Thought'?",
-  "topic": "",
+  "topic": "Why some ideas are food to chew on, not just to hear.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -19,6 +19,47 @@
     "And that brings us to the end of this Words and Their Stories.",
     "Recently, what has given you food for thought? Let us know in the comments section. Or send us an email at learningenglish@voanews.com."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "digest",
+      "gloss": "to fully understand and absorb information"
+    },
+    {
+      "word": "contemplate",
+      "gloss": "to think about something seriously"
+    },
+    {
+      "word": "reflection",
+      "gloss": "careful thought about something"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does 'food for thought' mean?",
+      "options": [
+        "something that should be considered carefully",
+        "a meal eaten while working",
+        "food that helps you sleep better"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What happened after the writer's conference gave the woman food for thought?",
+      "options": [
+        "she forgot about it within a day",
+        "it took her weeks to digest everything she learned",
+        "she decided never to write again"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Which words does the article suggest using for a more formal tone?",
+      "options": [
+        "chew and digest",
+        "consider and ponder",
+        "reflect and contemplate"
+      ],
+      "answer": 2
+    }
+  ]
 }

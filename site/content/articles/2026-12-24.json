@@ -1,7 +1,7 @@
 {
   "id": "2026-12-24",
   "title": "'The Gift of the Magi,' by O. Henry",
-  "topic": "",
+  "topic": "Della has less than two dollars to buy Jim a Christmas gift.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -14,6 +14,47 @@
     "Della finished her crying and dried her face. She stood by the window and looked out unhappily at a gray cat walking along a gray fence in a gray back yard. Tomorrow would be Christmas Day, and she had only one dollar and eighty-seven cents to buy her husband Jim a gift. She had been saving every penny she could for months, with this result.",
     "Jim earned twenty dollars a week, which does not go far. Expenses had been greater than she had expected. They always are. Many a happy hour she had spent planning to buy something nice for him. Something fine and rare -- something close to being worthy of the honor of belonging to Jim."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "negotiating",
+      "gloss": "discussing to reach an agreement on a price"
+    },
+    {
+      "word": "unhappily",
+      "gloss": "in a sad way"
+    },
+    {
+      "word": "worthy",
+      "gloss": "deserving something because it is good enough"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How much money did Della have to buy Jim's Christmas gift?",
+      "options": [
+        "one dollar and eighty-seven cents",
+        "twenty dollars exactly",
+        "sixty cents in total"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "How did Della save most of her sixty cents in pennies?",
+      "options": [
+        "by finding coins on the street",
+        "by selling her own clothes",
+        "by negotiating with vendors at the market"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What was Della looking at from the window after she stopped crying?",
+      "options": [
+        "children playing in the snow",
+        "a grey cat walking along a grey fence",
+        "Jim walking home from work"
+      ],
+      "answer": 1
+    }
+  ]
 }

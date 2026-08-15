@@ -1,7 +1,7 @@
 {
   "id": "2027-01-14",
   "title": "The Story of Jack Frost",
-  "topic": "",
+  "topic": "Meet the imaginary character English speakers blame for icy noses.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -18,6 +18,47 @@
     "Now, Jack Frost does, indeed, bring the cold of winter. But he can also create beauty in nature. Some traditions claim that Jack Frost is responsible for leaving ice and snow on windows, trees, the ground…anywhere it will stick.",
     "While we know frost is a natural event, it is fun to think that an imaginary creature named Jack Frost (or another name in some other cultures) changed the world into a winter wonderland!"
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "personification",
+      "gloss": "giving human qualities to something that is not human"
+    },
+    {
+      "word": "bundle",
+      "gloss": "to dress warmly with lots of clothing"
+    },
+    {
+      "word": "nipping",
+      "gloss": "biting or pinching lightly, often from cold"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does the article say Jack Frost represents?",
+      "options": [
+        "The heat of summer",
+        "A real historical person",
+        "The personification of winter and cold weather"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What should you do when a frost or deep freeze comes?",
+      "options": [
+        "Bundle up and wear enough clothing to stay warm",
+        "Stay outside as long as possible",
+        "Open all the windows in your home"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Besides bringing cold, what else can Jack Frost be credited with?",
+      "options": [
+        "Melting snow quickly in spring",
+        "Creating beauty, like ice patterns on windows",
+        "Ending winter early each year"
+      ],
+      "answer": 1
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "2027-01-10",
   "title": "To Pull or Not to Pull Punches",
-  "topic": "",
+  "topic": "What it means when someone refuses to soften the truth for you.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -16,6 +16,47 @@
     "If you don’t pull punches, you speak your mind. You tell it like it is. You don’t mince words or sugar-coat the truth. Mincing words means to soften or weaken your words especially for the sake of being polite. Some people mince words when they are afraid to tell someone the truth. And if you sugarcoat something, you make it sound more pleasant or acceptable than it really is.",
     "People who don’t pull punches can also be called straight-talking, blunt, or frank. In fact, sometimes we use “blunt” and “frank” when we break bad or difficult news to someone. We might say, “Look, I need to be frank with you,” or “I hate to be blunt but …” and then you’re blunt. You don’t pull your punches."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "mince",
+      "gloss": "to soften or weaken your words to be polite"
+    },
+    {
+      "word": "sugarcoat",
+      "gloss": "to make something sound nicer than it really is"
+    },
+    {
+      "word": "blunt",
+      "gloss": "very direct, not trying to be gentle"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does it mean to not pull any punches?",
+      "options": [
+        "To avoid difficult conversations completely",
+        "To speak only when someone asks a direct question",
+        "To speak directly and honestly, even if it hurts"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does it mean to mince words?",
+      "options": [
+        "To soften or weaken your words to be polite",
+        "To speak too quickly to be understood",
+        "To repeat the same words again and again"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What are two other words used to describe someone who doesn't pull punches?",
+      "options": [
+        "Shy and quiet",
+        "Straight-talking and blunt",
+        "Careful and cautious"
+      ],
+      "answer": 1
+    }
+  ]
 }

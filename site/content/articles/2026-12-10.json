@@ -1,7 +1,7 @@
 {
   "id": "2026-12-10",
   "title": "Be Careful What You 'Bank On'",
-  "topic": "",
+  "topic": "Why trusting a bank became English's word for counting on anything.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -19,6 +19,47 @@
     "For example, you can bank on the fact that a famous person caught doing something wrong will soon give a public apology. It is certain to happen.",
     "You can bank on the fact that if I see chocolate cake, I will eat it. It is a given. It will happen."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "withdrawals",
+      "gloss": "taking money out of an account"
+    },
+    {
+      "word": "strategy",
+      "gloss": "a plan to achieve a goal"
+    },
+    {
+      "word": "scandals",
+      "gloss": "shocking actions that damage someone's reputation"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does it mean to 'bank on' something?",
+      "options": [
+        "to deposit money right away",
+        "to avoid it completely",
+        "to trust it will happen"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "In the example about the Olympics, why does a city host the games?",
+      "options": [
+        "to bank on drawing large crowds",
+        "to reduce its yearly budget",
+        "to avoid international attention"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What is one thing the speaker says they can 'bank on the fact' will happen?",
+      "options": [
+        "banks will stop lending money to people",
+        "a famous person will apologize after a scandal",
+        "elections will be cancelled without warning"
+      ],
+      "answer": 1
+    }
+  ]
 }

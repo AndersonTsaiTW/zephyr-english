@@ -1,7 +1,7 @@
 {
   "id": "2026-12-27",
   "title": "Are You Strong 'Out of the Gate'?",
-  "topic": "",
+  "topic": "Why horse races gave English a phrase for a strong start.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -17,6 +17,47 @@
     "This expression comes from sports or activities that involve holding animals behind a gate until it is time to start. With horse racing, dog racing, and bull-riding, the animals all wait behind a gate.",
     "When I was a child, my parents often took me to horse races. The horses were behind a gate as they waited to start the race. As soon as they were out of the gate, the race had started! That’s also when my parents would start yelling. Right out of the gate, they would yell for their horse to win."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "outset",
+      "gloss": "the very beginning of something"
+    },
+    {
+      "word": "reunion",
+      "gloss": "a gathering of family or friends"
+    },
+    {
+      "word": "crashed",
+      "gloss": "stopped working suddenly, like a broken computer"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does out of the gate mean?",
+      "options": [
+        "The very beginning of something",
+        "The final stage of a project",
+        "A pause before starting"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Where does the expression out of the gate come from?",
+      "options": [
+        "Boats leaving a harbour",
+        "Runners crossing a finish line",
+        "Animals held behind a gate before a race"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "In the speaker's story about the online class, what went wrong right out of the gate?",
+      "options": [
+        "The class was cancelled at the last minute",
+        "Forgetting a password and a computer crash",
+        "The teacher never logged in to teach"
+      ],
+      "answer": 1
+    }
+  ]
 }

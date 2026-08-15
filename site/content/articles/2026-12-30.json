@@ -1,7 +1,7 @@
 {
   "id": "2026-12-30",
   "title": "Be Bold. 'Break the Mold'!",
-  "topic": "",
+  "topic": "How breaking a mold explains a company that let kids design toys.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -18,6 +18,47 @@
     "We also call these new ways and methods fresh, one-of-a-kind, or novel.",
     "For example, after a toy company lost money for three straight years, the owner tried something completely different. She asked young children to develop new toys for the company. And it worked. The new toys sold very well. So, we say she broke the mold of toy development by asking children instead of experts to design new toys for the company."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "mold",
+      "gloss": "a hollow shape that gives material its form"
+    },
+    {
+      "word": "unique",
+      "gloss": "one of a kind, unlike anything else"
+    },
+    {
+      "word": "novel",
+      "gloss": "new and original"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What happens when you break the mold, according to this idiom?",
+      "options": [
+        "Everything comes out looking exactly the same",
+        "The material becomes impossible to shape",
+        "You shape things by hand, so each one looks different"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "How did the toy company owner break the mold?",
+      "options": [
+        "She asked young children to design new toys",
+        "She hired more expert designers",
+        "She copied a rival company's toy line"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does break the mold mean, according to Merriam-Webster?",
+      "options": [
+        "To repeat a proven method",
+        "To do something in a completely new way",
+        "To follow strict company rules"
+      ],
+      "answer": 1
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "2027-01-13",
   "title": "Are You the Windshield or the Bug?",
-  "topic": "",
+  "topic": "What bugs hitting a car windshield teach us about good and bad days.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -18,6 +18,47 @@
     "But then our luck changes. Things don’t go our way. We may be down in the dumps or just down on our luck. For whatever reason, we are not at the top of our game. On these days, we are the bugs.",
     "This expression is very informal. So, it is not very serious. Similar expressions include “peaks and valleys.” Peaks are high while the valleys are low. You can also say “you win some, you lose some.” And sometimes we refer to life as a “rollercoaster ride.” Rollercoasters are famous for their high climbs and sharp drops."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "transparent",
+      "gloss": "clear enough to see through"
+    },
+    {
+      "word": "informal",
+      "gloss": "casual, not following strict rules"
+    },
+    {
+      "word": "rollercoaster",
+      "gloss": "an amusement ride with high climbs and sharp drops"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is a windshield, according to the article?",
+      "options": [
+        "A transparent screen of glass that protects people inside",
+        "A part of the engine that cools the car",
+        "A device that measures the vehicle's speed"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does it mean to be the windshield on a good day?",
+      "options": [
+        "You avoid every task and rest all day",
+        "You reach your goals and get things done",
+        "You cause problems for the people around you"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Which expression is given as similar to some days you're the windshield?",
+      "options": [
+        "Better late than never",
+        "Actions speak louder than words",
+        "Peaks and valleys"
+      ],
+      "answer": 2
+    }
+  ]
 }

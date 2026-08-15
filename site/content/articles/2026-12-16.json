@@ -1,7 +1,7 @@
 {
   "id": "2026-12-16",
   "title": "Partners in Crime",
-  "topic": "",
+  "topic": "Why calling your best friend a 'criminal' is actually a compliment.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -17,6 +17,47 @@
     "A less popular example is the television show Partners in Crime from 1984 in the U.S., starring Lynda Carter and Loni Anderson.",
     "Besides partners in crime, we also have a similar expression, thick as thieves, to describe very close friends who share information and secrets."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "mischief",
+      "gloss": "playful trouble that is not serious"
+    },
+    {
+      "word": "light-hearted",
+      "gloss": "cheerful and not serious"
+    },
+    {
+      "word": "adventurous",
+      "gloss": "willing to try exciting or new things"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does 'partners in crime' usually describe today?",
+      "options": [
+        "people on trial for a real crime",
+        "close friends involved in playful activities",
+        "police officers working together"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Who wrote the original 'Partners in Crime' collection of short stories?",
+      "options": [
+        "Agatha Christie",
+        "Lynda Carter",
+        "Loni Anderson"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What is another expression mentioned that means close friends who share secrets?",
+      "options": [
+        "bells on",
+        "food for thought",
+        "thick as thieves"
+      ],
+      "answer": 2
+    }
+  ]
 }

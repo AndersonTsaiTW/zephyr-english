@@ -1,7 +1,7 @@
 {
   "id": "2027-01-09",
   "title": "Two Stories about Letter X, How It Got into the Alphabet",
-  "topic": "",
+  "topic": "Why an oyster king's son keeps forgetting the most important part.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -20,6 +20,47 @@
     "The son of this oyster king was named Shovel Ears. And it was hard for him to remember.",
     "“He knows how to open oysters, but he forgets to pick out the pearls,” said the father of Shovel Ears."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "liberal",
+      "gloss": "generous or plentiful in amount"
+    },
+    {
+      "word": "repetition",
+      "gloss": "saying or doing something again and again"
+    },
+    {
+      "word": "rural",
+      "gloss": "relating to the countryside, not the city"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What book do these two stories come from?",
+      "options": [
+        "The Story of an Eyewitness",
+        "Rootabaga Pigeons",
+        "Words and Their Stories"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What is Carl Sandburg best known for, according to the article?",
+      "options": [
+        "Writing detective novels for adults",
+        "Composing music for children's shows",
+        "His poems about Chicago and three Pulitzer Prizes"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What problem does Shovel Ears have?",
+      "options": [
+        "He forgets to pick out the pearls after opening oysters",
+        "He cannot open oysters at all",
+        "He loses the pearls before he can sell them"
+      ],
+      "answer": 0
+    }
+  ]
 }

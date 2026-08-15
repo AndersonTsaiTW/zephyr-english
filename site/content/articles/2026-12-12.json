@@ -1,7 +1,7 @@
 {
   "id": "2026-12-12",
   "title": "The Line of Least Resistance",
-  "topic": "",
+  "topic": "A rich man wanders his own house, disliking every room his wife loves.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -17,6 +17,47 @@
     "Mister Mindon walked into the library. No one in the house ever read any of the books. But Mister Mindon was proud to be rich enough to have a perfectly useless room in his house.",
     "He went into the sunny little room where his wife planned her busy days and evenings. Her writing table was covered with notes and cards from all her friends. Her wastepaper basket was full of empty envelopes that had carried invitations to lunches, dinners, and theater parties."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "unpleasant",
+      "gloss": "not nice, unfriendly"
+    },
+    {
+      "word": "orchestra",
+      "gloss": "a group of musicians playing together"
+    },
+    {
+      "word": "wastepaper",
+      "gloss": "paper thrown away as rubbish"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did Mister Mindon dislike the dining room?",
+      "options": [
+        "it was too small for his family",
+        "it reminded him of long, boring dinners with his wife's friends",
+        "the food served there was always cold"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What did Mister Mindon do instead of joining the parties in the ballroom?",
+      "options": [
+        "he stayed and danced all night",
+        "he left the house until morning",
+        "he went to bed and heard the orchestra playing"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Why was Mister Mindon proud of his library, even though no one read the books?",
+      "options": [
+        "it proved he was wealthy enough to have a useless room",
+        "it held rare books worth a fortune",
+        "his wife had chosen every book herself"
+      ],
+      "answer": 0
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "2026-12-18",
   "title": "AI, Hallucinate, Authentic or Rizz for Word of the Year",
-  "topic": "",
+  "topic": "When a chatbot's made-up answers became a word of the year.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -16,6 +16,47 @@
     "It can produce human-like writing. But, sometimes, its writings are not correct or do not make sense. When artificial intelligence produces such information, people say that the program has “hallucinated.”",
     "The British dictionary publisher Cambridge chose “hallucinate” as its word of the year. It says the word “gets to the heart of why people are talking about AI.”"
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "artificial",
+      "gloss": "made by humans, not occurring naturally"
+    },
+    {
+      "word": "asteroid",
+      "gloss": "a large rock that travels through space"
+    },
+    {
+      "word": "database",
+      "gloss": "a large, organized collection of information"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Which word did the publisher Collins choose as its word of the year?",
+      "options": [
+        "Hallucinate",
+        "Rizz",
+        "AI"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does it mean when an AI program 'hallucinates'?",
+      "options": [
+        "it produces information that is wrong or does not make sense",
+        "it stops working completely",
+        "it refuses to answer any questions"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Which of these was mentioned as a real use of AI in the article?",
+      "options": [
+        "AI wrote a full Beatles album by itself",
+        "Mattel used AI to design new toy cars",
+        "AI replaced every news presenter in Kuwait"
+      ],
+      "answer": 1
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "2027-01-03",
   "title": "Ways to 'Divide and Conquer'",
-  "topic": "",
+  "topic": "How dividing your enemies, or your to-do list, helps you win.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -16,6 +16,47 @@
     "Now, this expression is not just used when talking about defeating people. We can also divide and conquer when trying to complete a difficult task.",
     "If you want to complete a complex task, it is helpful to have several people working on it at the same time. You would divide the tasks and delegate them to others. That way, you can conquer - or complete - the task."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "delegate",
+      "gloss": "to give a task to someone else to do"
+    },
+    {
+      "word": "alliance",
+      "gloss": "an agreement between people or groups to work together"
+    },
+    {
+      "word": "detectives",
+      "gloss": "police officers who investigate crimes"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is the main idea behind the divide and conquer strategy?",
+      "options": [
+        "Creating divisions so a group fights itself instead of you",
+        "Working alone without any help from others",
+        "Avoiding conflict with everyone at all costs"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What happened when police tried to divide and conquer warring drug dealers?",
+      "options": [
+        "The dealers formed a peaceful alliance instead",
+        "The dealers fought each other and got arrested",
+        "The dealers stopped selling drugs entirely"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "How can divide and conquer help with a difficult task?",
+      "options": [
+        "By doing all the work alone to stay in control",
+        "By ignoring the hardest parts of the task",
+        "By splitting the work among several people at once"
+      ],
+      "answer": 2
+    }
+  ]
 }

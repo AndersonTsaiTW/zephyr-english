@@ -1,7 +1,7 @@
 {
   "id": "2027-01-16",
   "title": "'A Horseman in the Sky' by Ambrose Bierce",
-  "topic": "",
+  "topic": "A southern soldier's secret could get him shot by his own side.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -16,6 +16,47 @@
     "One sunny afternoon, a few weeks later, Carter Druse lay with his face in the dirt by the side of a road. He was on his stomach, his arms still holding his gun. Carter would not receive a medal for his actions. In fact, if his commanding officer were to see him, he would order Carter shot immediately.",
     "For Carter was not dead or wounded. He was sleeping while on duty. Fortunately, no one could see him. He was hidden by some bushes, growing by the side of the road."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "traitor",
+      "gloss": "someone who betrays their own country or side"
+    },
+    {
+      "word": "commanding",
+      "gloss": "having authority over others, as in a commanding officer"
+    },
+    {
+      "word": "wounded",
+      "gloss": "injured, often in a fight or battle"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What decision did Carter Druse make that shocked his father?",
+      "options": [
+        "He decided to become a doctor instead of a soldier",
+        "He decided to join the Union Army against the south",
+        "He decided to leave home and never return"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What did Carter's father ask him not to tell his mother?",
+      "options": [
+        "That Carter had joined the Union Army",
+        "That Carter had been wounded in battle",
+        "That Carter had run away from home"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What was Carter Druse actually doing when we find him by the road?",
+      "options": [
+        "Writing a letter to his father",
+        "Watching closely for enemy soldiers",
+        "Sleeping while on duty"
+      ],
+      "answer": 2
+    }
+  ]
 }

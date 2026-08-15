@@ -1,7 +1,7 @@
 {
   "id": "2026-12-25",
   "title": "'Tis the Season!",
-  "topic": "",
+  "topic": "One small word covers everything from tornadoes to Christmas cookies.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -16,6 +16,47 @@
     "“Season” can also refer to the time before and during a major holiday. December is a busy holiday season in many parts of the world. Holidays include Christmas, Hanukkah, Kwanzaa, the Feast of Our Lady of Guadalupe and the Winter Solstice. December is often a time to take a break from work and spend time with loved ones.",
     "Speaking of Christmas, when we say ‘tis the season we are talking about something dealing with this holiday – its good side and its not-so-good side. For example, let’s say I give a co-worker a big box of homemade cookies. They might say to me, “Thanks! But why are you giving me so many cookies?” I can answer, “’Tis the season!”"
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "hibernation",
+      "gloss": "a long deep sleep some animals have in winter"
+    },
+    {
+      "word": "monsoon",
+      "gloss": "a season of heavy rain in some regions"
+    },
+    {
+      "word": "tornado",
+      "gloss": "a spinning, destructive column of wind"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Which season begins when the weather gets colder and days grow darker?",
+      "options": [
+        "the growing season for plants",
+        "the dry season in the desert",
+        "the hibernation season for some animals"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does 'tis the season' usually refer to?",
+      "options": [
+        "something related to the Christmas holiday",
+        "the start of the school year",
+        "the beginning of tornado season"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "In the example about cookies, what does the speaker say when asked why they gave so many?",
+      "options": [
+        "I made too many by mistake",
+        "'Tis the season!",
+        "They were on sale at the store"
+      ],
+      "answer": 1
+    }
+  ]
 }

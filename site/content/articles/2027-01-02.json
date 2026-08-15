@@ -1,7 +1,7 @@
 {
   "id": "2027-01-02",
   "title": "'The Exact Science of Matrimony' by O.Henry",
-  "topic": "",
+  "topic": "Why two swindlers writing a wedding ad worry about the police.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -15,6 +15,47 @@
     "“Now listen,” Jeff answered. “You know my rule, Andy. In all illegal activities, we must obey the law, in every detail. Something offered for sale must exist. It must be seen. You must be able to produce it. That is how I have kept out of trouble with the police. Now, for this business to work, we must be able to produce a charming widow, with or without the beauty, as advertised.”",
     "“Well,” said Andy, after thinking it over, “it might be better, if the United States Post Office should decide to investigate our marriage agency. But where can you hope to find a widow who would waste her time on a marriage proposal that has no marriage in it?”"
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "illegal",
+      "gloss": "against the law"
+    },
+    {
+      "word": "investigate",
+      "gloss": "to look into something carefully to find facts"
+    },
+    {
+      "word": "faithful",
+      "gloss": "loyal and can be trusted"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is Jeff Peters and Andy Tucker's rule about illegal activities?",
+      "options": [
+        "Never write anything down on paper",
+        "Something offered for sale must actually exist and be produced",
+        "Always hire a licensed lawyer first"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does the marriage ad say the widow has?",
+      "options": [
+        "Three thousand dollars in cash and valuable property",
+        "A large house in the countryside",
+        "A gold mine somewhere in Illinois"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What worries Andy Tucker about their scheme?",
+      "options": [
+        "That the widow might refuse to marry",
+        "That the ad will cost too much money",
+        "That the Post Office might investigate their agency"
+      ],
+      "answer": 2
+    }
+  ]
 }

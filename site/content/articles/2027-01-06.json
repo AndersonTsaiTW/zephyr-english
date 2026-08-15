@@ -1,7 +1,7 @@
 {
   "id": "2027-01-06",
   "title": "It's Time to 'Separate the Wheat from the Chaff'",
-  "topic": "",
+  "topic": "What choosing gear for a hike has to do with old-time wheat farming.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -17,6 +17,47 @@
     "This idiom can also mean that you decide which things are valuable and which things have little worth.",
     "For example, let’s say you are organizing a large neighborhood yard sale to raise money for a local charity. Many neighbors donate things they no longer need. Some are valuable and should get a high price. But other things are not worth much and should be low in cost. In this case, taking your time to separate the wheat from the chaff is time well spent. You do not want to see something valuable sold for too little money. It is for charity, after all."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "chaff",
+      "gloss": "the dry outer covering removed from grain"
+    },
+    {
+      "word": "winnowing",
+      "gloss": "separating grain from its outer covering using wind"
+    },
+    {
+      "word": "husk",
+      "gloss": "the dry outer covering of a seed or grain"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is chaff, according to the article?",
+      "options": [
+        "A tool used to cut down wheat stalks",
+        "A type of bread made from wheat",
+        "The outer covering and husk around grain"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "In farming, what is the process of separating wheat from chaff called?",
+      "options": [
+        "Planting or sowing seeds",
+        "Winnowing or threshing",
+        "Harvesting or reaping the fields"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "In the yard sale example, why is it worth separating the wheat from the chaff?",
+      "options": [
+        "So valuable items are not sold for too little money",
+        "So all items can simply be thrown away",
+        "So the whole sale can be cancelled"
+      ],
+      "answer": 0
+    }
+  ]
 }

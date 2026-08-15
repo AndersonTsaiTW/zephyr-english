@@ -1,7 +1,7 @@
 {
   "id": "2026-12-17",
   "title": "It’s Showtime!",
-  "topic": "",
+  "topic": "Why saying 'it's showtime' means more than just starting a show.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -17,6 +17,47 @@
     "We use the expression not just to say something has started. We also use it to suggest that we overcame difficulties and challenges along the way. Or we had to follow a long process.",
     "For example, to produce this program, I first research the expression or idiom. I find definitions, examples, and sometimes similar words. Then I send it to the editor who checks for content and errors. After that, I find pictures to go with the lesson, get the music ready. I’m now ready to voice and produce the lesson! It’s showtime!"
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "scheduled",
+      "gloss": "planned to happen at a set time"
+    },
+    {
+      "word": "presentation",
+      "gloss": "a talk given to explain something to others"
+    },
+    {
+      "word": "overcame",
+      "gloss": "successfully dealt with a difficulty"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does the word 'showtime' mean on its own?",
+      "options": [
+        "the scheduled time a show begins",
+        "the price of a theatre ticket",
+        "an actor's dressing room"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "When someone says 'It's showtime!' about a work presentation, what are they suggesting?",
+      "options": [
+        "they are cancelling the presentation",
+        "they forgot to prepare for it",
+        "they are ready after working hard to get there"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does the speaker do right before saying 'It's showtime!' about producing the program?",
+      "options": [
+        "cancels the lesson due to errors",
+        "gets the music ready after researching and editing",
+        "reads the news live without preparation"
+      ],
+      "answer": 1
+    }
+  ]
 }

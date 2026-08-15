@@ -1,7 +1,7 @@
 {
   "id": "2027-01-11",
   "title": "'One Thousand Dollars,' by O. Henry",
-  "topic": "",
+  "topic": "A young heir is puzzled by an oddly small inheritance.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -20,6 +20,47 @@
     "I’ve just come from a meeting with my late uncle's lawyers. He leaves me an even $1,000. Now, what can a man possibly do with $1,000?\"",
     "Old Bryson showed very little interest. \"I thought the late Septimus Gillian was worth something like half a million.\""
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "anti-social",
+      "gloss": "not enjoying the company of other people"
+    },
+    {
+      "word": "respectfully",
+      "gloss": "in a polite and considerate way"
+    },
+    {
+      "word": "package",
+      "gloss": "a small bundle or parcel of something"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How much money did Gillian's late uncle leave him?",
+      "options": [
+        "Ten thousand dollars",
+        "One thousand dollars",
+        "Half a million dollars"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "How did Gillian react when he received the money?",
+      "options": [
+        "He touched the bills and laughed",
+        "He cried and refused to accept it",
+        "He immediately gave it all to Old Bryson"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "How did Old Bryson react when Gillian wanted to tell his story?",
+      "options": [
+        "He eagerly asked to hear every detail",
+        "He left the room right away",
+        "He showed little interest and said he hated Gillian's stories"
+      ],
+      "answer": 2
+    }
+  ]
 }

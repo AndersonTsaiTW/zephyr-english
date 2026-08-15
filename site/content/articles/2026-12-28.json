@@ -1,7 +1,7 @@
 {
   "id": "2026-12-28",
   "title": "'Luck,' by Mark Twain",
-  "topic": "",
+  "topic": "A clergyman's private words about a celebrated war hero stun a dinner guest.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -14,6 +14,47 @@
     "Next to me sat a clergyman, who was an old friend of mine. He was not always a clergyman. During the first half of his life he was a teacher in the military school at Woolwich. There was a strange look in his eye as he leaned toward me and whispered – “Privately – he is a complete fool.” He meant, of course, the hero of our dinner.",
     "This came as a shock to me. I looked hard at my friend. I could not have been more surprised if he had said the same thing about Napoleon, or Socrates, or Solomon. But I was sure of two things about the clergyman. He always spoke the truth. And, his judgment of men was good. Therefore, I wanted to find out more about our hero as soon as I could."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "celebrated",
+      "gloss": "famous and admired by many people"
+    },
+    {
+      "word": "clergyman",
+      "gloss": "a religious leader, like a priest or minister"
+    },
+    {
+      "word": "judgment",
+      "gloss": "the ability to make wise decisions"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How did the narrator feel when he first saw the famous general?",
+      "options": [
+        "Disappointed by his plain appearance",
+        "Full of excitement, unable to look away",
+        "Suspicious of all his medals"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What did the clergyman whisper about the honoured guest?",
+      "options": [
+        "That he was a brave and wise leader",
+        "That he deserved even more praise",
+        "That he was a complete fool"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Why did the narrator take the clergyman's words seriously?",
+      "options": [
+        "The clergyman always spoke the truth and judged men well",
+        "The clergyman had fought beside the general",
+        "The clergyman was jealous of the general's fame"
+      ],
+      "answer": 0
+    }
+  ]
 }

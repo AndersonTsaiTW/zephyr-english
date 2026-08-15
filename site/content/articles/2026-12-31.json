@@ -1,7 +1,7 @@
 {
   "id": "2026-12-31",
   "title": "Many Handy 'Hand' Expressions",
-  "topic": "",
+  "topic": "What your hands reveal about pride, strictness, and unfair control in English.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -16,6 +16,47 @@
     "Let’s say you are asked to lead a project. You want it to be successful. You want it to be on time and on budget. So, you lead with a firm hand. If you lead with a firm hand, you are strict. You follow all the rules closely. You don’t let jokes or laziness affect your team’s progress. Teachers can teach with a firm hand. And parents can parent with a firm hand, too. Having a firm hand and being strict go hand in hand.",
     "A firm hand is not the same as a heavy hand. If a person or organization has a heavy hand, they use a lot of force or power to control people and events. A heavy hand is often considered a bad thing. When you deal with a situation with a heavy hand, you could be seen as oppressive. Someone who is heavy-handed is severe or harsh when dealing with others or when dealing with a situation."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "oppressive",
+      "gloss": "harsh and controlling, hard to bear"
+    },
+    {
+      "word": "severe",
+      "gloss": "very harsh or strict"
+    },
+    {
+      "word": "budget",
+      "gloss": "a set amount of money planned for a task"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does it mean to do something with your own bare hands?",
+      "options": [
+        "To do it yourself, usually with a lot of effort",
+        "To do it quickly without any planning",
+        "To ask someone else to help you"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What is the difference between a firm hand and a heavy hand?",
+      "options": [
+        "A firm hand is unkind, a heavy hand is gentle",
+        "There is no real difference between them",
+        "A firm hand is strict, a heavy hand uses too much force"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does it mean if someone is heavy-handed?",
+      "options": [
+        "They are relaxed and easygoing",
+        "They are severe or harsh in how they treat others",
+        "They are careful and gentle with people"
+      ],
+      "answer": 1
+    }
+  ]
 }

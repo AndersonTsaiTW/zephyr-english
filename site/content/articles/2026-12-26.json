@@ -1,7 +1,7 @@
 {
   "id": "2026-12-26",
   "title": "'The Devil and Tom Walker,' by Washington Irving",
-  "topic": "",
+  "topic": "A pirate buried treasure, and its devilish guardian awaits a greedy pair.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -16,6 +16,47 @@
     "The story said that this treasure was protected by the devil himself, who was a good friend of Captain Kidd.",
     "In the year seventeen twenty-seven, a man named Tom Walker lived near this place. Tom Walker was not a pleasant man. He loved only one thing -- money. There was only one person worse than Tom. That was his wife. She also loved money. These two were so hungry for money that they even stole things from each other."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "executed",
+      "gloss": "put to death as a punishment"
+    },
+    {
+      "word": "treasure",
+      "gloss": "valuable gold, silver, or jewels that are hidden"
+    },
+    {
+      "word": "pleasant",
+      "gloss": "nice and enjoyable to be around"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What happened to Captain Kidd in Boston?",
+      "options": [
+        "He hid his treasure and sailed away safely",
+        "He became friends with the devil and vanished",
+        "He was captured by the English and executed"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Who did the old story say guarded Captain Kidd's treasure?",
+      "options": [
+        "The devil, who was a friend of Kidd",
+        "A group of soldiers hired by Kidd",
+        "Tom Walker and his greedy wife"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does the story say about Tom Walker and his wife?",
+      "options": [
+        "They gave away money to their neighbours",
+        "They loved money more than anything else",
+        "They searched together for Captain Kidd's treasure"
+      ],
+      "answer": 1
+    }
+  ]
 }

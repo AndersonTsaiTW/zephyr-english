@@ -1,7 +1,7 @@
 {
   "id": "2026-12-23",
   "title": "Expressions for Celebrating the Holidays",
-  "topic": "",
+  "topic": "Why saying you'll come 'with bells on' has nothing to do with bells.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -19,6 +19,47 @@
     "But let’s say you love holidays and are in the holiday spirit. If you get invited to some special holiday events, you can say you’ll be there with bells on. For example, if I invite you to a holiday party or dinner, you can say, “Thanks! I’ll be there with bells on!”",
     "This doesn’t mean that you will actually wear bells. It means you are very excited to attend the event. However, if you want to wear bells... well, you can do that too!"
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "Dongzhi",
+      "gloss": "the Winter Solstice celebration in China"
+    },
+    {
+      "word": "Toji",
+      "gloss": "the Winter Solstice celebration in Japan"
+    },
+    {
+      "word": "Kwanzaa",
+      "gloss": "a seven day African American cultural celebration"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How many days does Kwanzaa last, and when does it end?",
+      "options": [
+        "eight days, ending on Christmas Day",
+        "seven days, ending on New Year's Day",
+        "one day, celebrated only in China"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does it mean to say 'I'll be there with bells on'?",
+      "options": [
+        "you are very excited to attend",
+        "you plan to bring bells as a gift",
+        "you are not sure if you can come"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What is Dongzhi?",
+      "options": [
+        "a Christmas tradition in Japan",
+        "another name for Hanukkah",
+        "a Winter Solstice celebration in China"
+      ],
+      "answer": 2
+    }
+  ]
 }

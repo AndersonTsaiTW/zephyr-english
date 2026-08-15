@@ -1,7 +1,7 @@
 {
   "id": "2026-12-19",
   "title": "Doctor Heidegger’s Experiment by Nathaniel Hawthorne",
-  "topic": "",
+  "topic": "Four unlucky friends, an old doctor, and a mirror that shows ghosts.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -16,6 +16,47 @@
     "\"My dear old friends,\" said Doctor Heidegger, \"I would like your help in one of my little experiments.\" He motioned for them to sit down.",
     "Doctor Heidegger's office was a very strange place. The dark room was filled with books, cobwebs, and dust. An old mirror hanging between two bookcases was said to show the ghosts of all the doctor's dead patients."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "unfortunate",
+      "gloss": "having bad luck"
+    },
+    {
+      "word": "cobwebs",
+      "gloss": "thin webs made by spiders, often in old places"
+    },
+    {
+      "word": "politician",
+      "gloss": "a person who works in government"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did Colonel Killigrew waste his best years and health?",
+      "options": [
+        "fighting in a long war",
+        "enjoying drink and the company of women",
+        "working too many hours at his job"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What happened to Mister Medbourne as a young man?",
+      "options": [
+        "he became a famous doctor",
+        "he married the Widow Wycherly",
+        "he lost all his money in a bad business deal"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What is the old mirror in Doctor Heidegger's office said to show?",
+      "options": [
+        "the ghosts of the doctor's dead patients",
+        "the future of anyone who looks into it",
+        "a reflection of the forest outside"
+      ],
+      "answer": 0
+    }
+  ]
 }

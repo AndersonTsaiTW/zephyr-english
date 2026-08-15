@@ -1,7 +1,7 @@
 {
   "id": "2027-01-07",
   "title": "What Good Comes from 'Casting a Wide Net'?",
-  "topic": "",
+  "topic": "Why searching like a fisherman might land you a better job.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -17,6 +17,47 @@
     "There are many related expressions that describe similar ideas. One is to cast your net wide. Others include considering all options or exploring all opportunities.",
     "Casting a wide net also means you leave no stone unturned. You look thoroughly. You search high and low for what you want."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "unturned",
+      "gloss": "not turned over, as in checking every possibility"
+    },
+    {
+      "word": "broaden",
+      "gloss": "to make wider or more general"
+    },
+    {
+      "word": "thoroughly",
+      "gloss": "in a complete and careful way"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does it mean to cast a wide net?",
+      "options": [
+        "To focus on only one single choice",
+        "To search a very wide area for options",
+        "To avoid making any decisions at all"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Where does the expression likely come from?",
+      "options": [
+        "Fishing, where a net catches many fish at once",
+        "Farming, where seeds are spread across a field",
+        "Sailing, where sailors search for land"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What example is given of casting a wide net?",
+      "options": [
+        "Buying the cheapest product available in a store",
+        "Staying in one city for a new job",
+        "Someone job hunting who is willing to move anywhere"
+      ],
+      "answer": 2
+    }
+  ]
 }

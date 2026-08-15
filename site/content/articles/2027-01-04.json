@@ -1,7 +1,7 @@
 {
   "id": "2027-01-04",
   "title": "The Story of an Eyewitness by Jack London",
-  "topic": "",
+  "topic": "A magazine sent Jack London to see a city destroyed by fire.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -15,6 +15,47 @@
     "Not in history has a modern city been so completely destroyed. San Francisco is gone. Nothing remains of it but memories and a few homes that were near the edge of the city. Its industrial area is gone. Its business area is gone. Its social and living areas are gone. The factories, great stores and newspaper buildings, the hotels and the huge homes of the very rich, are all gone.",
     "Within minutes of the earthquake the fires began. Within an hour a huge tower of smoke caused by the fires could be seen a hundred miles away. And for three days and nights this huge fire moved in the sky, reddening the sun, darkening the day and filling the land with smoke."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "telegraph",
+      "gloss": "an old way of sending quick messages over wires"
+    },
+    {
+      "word": "industrial",
+      "gloss": "relating to factories and manufacturing"
+    },
+    {
+      "word": "reddening",
+      "gloss": "turning red in colour"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did Jack London travel to San Francisco?",
+      "options": [
+        "He lived there and wanted to help rebuild",
+        "A magazine sent him to report on the earthquake",
+        "He was researching a novel about earthquakes"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "How long did the huge fire burn after the earthquake?",
+      "options": [
+        "A few hours",
+        "One full day",
+        "Three days and nights"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does the article say happened to the city's business and industrial areas?",
+      "options": [
+        "They were completely destroyed",
+        "They were mostly untouched by the disaster",
+        "They were rebuilt within days"
+      ],
+      "answer": 0
+    }
+  ]
 }

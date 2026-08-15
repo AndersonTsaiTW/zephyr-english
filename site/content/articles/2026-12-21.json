@@ -1,7 +1,7 @@
 {
   "id": "2026-12-21",
   "title": "'The Return of a Private' by Hamlin Garland",
-  "topic": "",
+  "topic": "A soldier heads home from war, worried he can't support his family.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -17,6 +17,47 @@
     "Morning came slowly with a pale yellow light. The train was slowing down as it came into the town of La Crosse where the three soldiers would get off the train. The station was empty because it was Sunday.",
     "\"I'll get home in time for dinner,\" Smith thought. \"She usually has dinner about one o'clock on Sunday afternoon,” and he smiled."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "malaria",
+      "gloss": "a serious disease spread by mosquitoes"
+    },
+    {
+      "word": "shivered",
+      "gloss": "shook from cold or fear"
+    },
+    {
+      "word": "unnaturally",
+      "gloss": "in a way that is not normal"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did Private Smith have unusually bright eyes?",
+      "options": [
+        "he had not slept in days",
+        "he was excited to be home",
+        "he had been sick with malaria"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What worried Private Smith most about returning home?",
+      "options": [
+        "that his family had moved away",
+        "that he was too sick and weak to work",
+        "that the train would be delayed"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What town were the three soldiers arriving at on the train?",
+      "options": [
+        "La Crosse",
+        "Cincinnati",
+        "Wisconsin City"
+      ],
+      "answer": 0
+    }
+  ]
 }

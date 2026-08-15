@@ -1,7 +1,7 @@
 {
   "id": "2026-12-14",
   "title": "'The Boarded Window' by Ambrose Bierce",
-  "topic": "",
+  "topic": "A man's boarded window hides a secret that aged him early.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -15,6 +15,47 @@
     "His little log house had a single door. Directly opposite was a window. The window was boarded up. No one could remember a time when it was not. And no one knew why it had been closed. It surely was not because of the man’s dislike of light and air. Sometimes, he could be seen lying in the sun on his doorstep. I imagine there are few people living today who ever knew the secret of that window. But I am one, as you shall see.",
     "The man's name was said to be Murlock. He appeared to be seventy years old, but he was really fifty. Something other than years had been the cause of his aging."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "settlements",
+      "gloss": "small communities where people have newly moved"
+    },
+    {
+      "word": "frontier",
+      "gloss": "the edge of settled land, near the wilderness"
+    },
+    {
+      "word": "boarded",
+      "gloss": "covered over with wooden boards"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Where was the man's log house located?",
+      "options": [
+        "in the middle of a busy town",
+        "beside a river far from any forest",
+        "surrounded by a huge forest near Cincinnati"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Why was the window in the man's house boarded up?",
+      "options": [
+        "because he disliked light and air",
+        "the reason is never explained",
+        "a storm had broken the glass"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "How old did the man appear, compared to his real age?",
+      "options": [
+        "he appeared seventy but was really fifty",
+        "he appeared and was both seventy",
+        "he appeared fifty but was really seventy"
+      ],
+      "answer": 0
+    }
+  ]
 }

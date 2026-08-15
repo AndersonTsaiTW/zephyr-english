@@ -1,7 +1,7 @@
 {
   "id": "2026-12-06",
   "title": "One Person's Trash Is Another Person's Treasure",
-  "topic": "",
+  "topic": "Why trash beats garbage in a saying about what people value.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -19,6 +19,47 @@
     "This also means that different things appeal to different people. But as a set expression, we do not say “different strokes for different people.” That just doesn't sound right.",
     "Different strokes for different folks can also mean that people live in different ways and value different things."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "worthless",
+      "gloss": "having no value"
+    },
+    {
+      "word": "prized",
+      "gloss": "valued highly, treasured"
+    },
+    {
+      "word": "identical",
+      "gloss": "exactly the same"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does the expression 'one person's trash is another person's treasure' mean?",
+      "options": [
+        "everyone likes the exact same things",
+        "trash is more valuable than treasure to everyone",
+        "something worthless to one person may be valuable to another"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Why does the expression use the word 'trash' instead of 'rubbish' or 'garbage'?",
+      "options": [
+        "because rubbish is not used in American English",
+        "because trash and treasure start with a similar sound",
+        "because garbage is considered impolite to say"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does 'different strokes for different folks' mean?",
+      "options": [
+        "different things appeal to different people",
+        "everyone secretly wants the same things",
+        "people should copy their neighbours' choices"
+      ],
+      "answer": 0
+    }
+  ]
 }

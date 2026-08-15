@@ -1,7 +1,7 @@
 {
   "id": "2026-12-07",
   "title": "The Lady in Black by Eleanor H. Porter",
-  "topic": "",
+  "topic": "A silent clock and a boy's cry reveal a mother's private grief.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, American Stories",
@@ -18,6 +18,47 @@
     "\"Muvver!\" The voice was more demanding.",
     "The Lady in Black did not answer. He might go away, she thought, if she did not answer."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "restlessly",
+      "gloss": "in an uneasy way, unable to stay still"
+    },
+    {
+      "word": "silenced",
+      "gloss": "made something stop making noise"
+    },
+    {
+      "word": "demanding",
+      "gloss": "insistent, hard to ignore"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why did the Lady in Black stop the clock three months earlier?",
+      "options": [
+        "she was angry after her daughter's death",
+        "the clock was broken beyond repair",
+        "she wanted to save it as a gift"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Who is calling 'Muvver' from behind the closed door?",
+      "options": [
+        "a family friend",
+        "the family's doctor",
+        "a little boy"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "How does the Lady in Black respond when the voice calls again?",
+      "options": [
+        "she calls out for him to come in",
+        "she stays silent, hoping he will go away",
+        "she opens the door right away"
+      ],
+      "answer": 1
+    }
+  ]
 }

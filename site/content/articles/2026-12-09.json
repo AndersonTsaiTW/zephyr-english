@@ -1,7 +1,7 @@
 {
   "id": "2026-12-09",
   "title": "Let's Talk about 'Going South'",
-  "topic": "",
+  "topic": "When plans go south instead of sideways, and why the difference matters.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -17,6 +17,47 @@
     "Sideways is another direction you don’t want your projects or efforts to go. As a direction word, sideways means to go to either side – not forward or backward.",
     "As an idiomatic expression, to go sideways also means things do not go as planned. But this expression can be used a little differently from going south. Often when things go sideways, they go wrong in strange ways. In other words, things get weird."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "guarantee",
+      "gloss": "promise that something will definitely happen"
+    },
+    {
+      "word": "awry",
+      "gloss": "wrong, not as planned"
+    },
+    {
+      "word": "idiomatic",
+      "gloss": "an expression whose meaning differs from its literal words"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does it mean if something 'goes south'?",
+      "options": [
+        "it improves quickly and easily",
+        "it stops working or gets worse",
+        "it moves to a new location"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "When something 'goes sideways', what usually happens?",
+      "options": [
+        "it goes wrong in strange or weird ways",
+        "it becomes very easy to fix",
+        "it returns exactly to the original plan"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Which is an example of a trip that 'goes south' in the article?",
+      "options": [
+        "arriving early and getting a free upgrade",
+        "finding a cheaper hotel than expected",
+        "missing your plane and having your passport stolen"
+      ],
+      "answer": 2
+    }
+  ]
 }
