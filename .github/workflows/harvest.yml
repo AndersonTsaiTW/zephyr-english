@@ -30,11 +30,11 @@ on:
       scaffold:
         description: 'How many days to fill'
         required: false
-        default: '12'
+        default: '20'
       budget:
         description: 'Maximum pages to download'
         required: false
-        default: '400'
+        default: '600'
 
 # One at a time. Two runs would both branch from main and the second would
 # overwrite the first one's work.
@@ -77,8 +77,8 @@ jobs:
       - name: Look for articles
         run: |
           node scripts/harvest.mjs \
-            --scaffold "${{ github.event.inputs.scaffold || '12' }}" \
-            --budget "${{ github.event.inputs.budget || '400' }}"
+            --scaffold "${{ github.event.inputs.scaffold || '20' }}" \
+            --budget "${{ github.event.inputs.budget || '600' }}"
 
       # New files are untracked until they are staged, and an unstaged file is
       # invisible to git diff. Staging first is what makes the check below
