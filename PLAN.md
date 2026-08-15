@@ -153,7 +153,13 @@ Still to do:
 
 ## Articles
 
-Thirty-six days are published, 11 August to 15 September 2026, one article a day. Every chapter of BC Reads that works as a reading is now used, and 6 to 15 September come from VOA Learning English instead.
+Over a hundred and sixty days are published, starting 11 August 2026 and running into 2027, one article a day. Run `node -e "console.log(JSON.parse(require('fs').readFileSync('site/content/index.json')).length)"` for the current count rather than trusting this sentence.
+
+Where they come from has changed twice. The first twenty-six days are BC Reads. Then VOA Learning English, until it became clear that two thirds of that site is Associated Press copy and only two of its sections are written in house. Now most days come from canada.ca, which suits the reader better anyway, with VOA's idiom column and its retellings of out-of-copyright literature for variety.
+
+The finding and the fetching are automated. `.github/workflows/harvest.yml` runs `scripts/harvest.mjs` every morning and scaffolds articles for the days that are still empty, then leaves them on the `content/incoming` branch. It writes no quiz and never touches `site/content/index.json`, so nothing it does reaches a reader. Finishing an article is what publishes it.
+
+Every chapter of BC Reads that works as a reading is used.
 
 The remaining chapters were checked and ruled out for reasons worth recording, so nobody re-treads the ground. Readers 1 and 2 are all under 220 words, too short once trimmed. Several Reader 6 chapters are software instructions for WeVideo rather than readings. Two more, on standing up for your human rights and on publishing a digital story, are worksheets whose lists live in HTML that does not survive extraction, leaving paragraphs ending in a colon with nothing after them.
 
@@ -161,7 +167,7 @@ One chapter is set aside rather than ruled out. "The Many Pathways to Knowledge"
 
 The VOA batch is two kinds of piece. Six of them are Words and Their Stories, which explains an idiom and suits a reader learning to hear English as a native speaker uses it. Those arrive with a radio introduction, a sign-off, a glossary and sometimes a scripted dialogue, none of which belongs in a two minute read, so the trimming is mostly a matter of finding the article inside the broadcast. The other four are history and science pieces that needed only their byline and their longest sentences removed.
 
-For a thirty-seventh day onwards, the source list in `docs/content-sources.md` has canada.ca, VOA Learning English and Project Gutenberg Canada. VOA is the only one with an archive deep enough to run for a year, and it is American rather than Canadian.
+When the harvester stops finding anything, the sources are exhausted and `scripts/data/sources.json` needs another entry. Read the licence note at the top of that file first. Two traps are already recorded there in the comments, both of which cost an hour: VOA's news sections are agency copy under a page that looks identical to its own writing, and MedlinePlus publishes an easy-to-read index whose links leave the site for publishers whose text is not public domain.
 
 ## What is left
 
