@@ -1,7 +1,7 @@
 {
   "id": "2027-01-19",
   "title": "Let's 'Zero in' on Number Expressions",
-  "topic": "",
+  "topic": "Why English borrows zero, six and seven to talk about confusion and focus.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -17,6 +17,47 @@
     "Now, let’s move to the numbers six and seven. If something is at sixes and sevens, it is in a state of confusion or disorder. In other words, it is all messed up!",
     "At sixes and sevens may also mean a state of disagreement between two or more people. For example, when the manager left without a word the workplace was at sixes and sevens. Nobody knew which way was up! (If you don’t know which way is up – you are very confused.)"
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "testimony",
+      "gloss": "what a witness says in court"
+    },
+    {
+      "word": "quarterback",
+      "gloss": "the football player who throws the ball"
+    },
+    {
+      "word": "disorder",
+      "gloss": "a lack of order or organization"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does zero in mean, according to the article?",
+      "options": [
+        "Losing interest in something completely",
+        "Directing all your attention on something",
+        "Counting down from ten"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "In American football, what does a quarterback do, according to the article?",
+      "options": [
+        "Guard the goal line",
+        "Kick the ball through the goalposts",
+        "Zero in on a receiver"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does at sixes and sevens describe?",
+      "options": [
+        "A state of confusion or disorder",
+        "A perfectly organized schedule",
+        "A friendly agreement between two people"
+      ],
+      "answer": 0
+    }
+  ]
 }

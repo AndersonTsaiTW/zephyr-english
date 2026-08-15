@@ -1,7 +1,7 @@
 {
   "id": "2026-12-08",
   "title": "Healthy eating for seniors",
-  "topic": "",
+  "topic": "Why your body may stop telling you when it's thirsty as you age.",
   "source": {
     "author": "Government of Canada",
     "origin": "Canada.ca",
@@ -19,6 +19,47 @@
     "If some foods have become more difficult to eat, try choosing and preparing foods differently. For example, for a softer texture, try cooking vegetables instead of eating them raw.",
     "As you age, your sense of thirst may decline, but you still need to drink regularly whether you feel thirsty or not. To stay hydrated, drink throughout the day and with each meal and snack. Satisfy your thirst with water instead of sugary drinks."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "nutrients",
+      "gloss": "the healthy parts of food your body uses"
+    },
+    {
+      "word": "hydrated",
+      "gloss": "having enough water in your body"
+    },
+    {
+      "word": "texture",
+      "gloss": "how a food feels when you eat it"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "At what age does the article suggest starting a daily vitamin D supplement?",
+      "options": [
+        "51 years or older",
+        "18 years or older",
+        "65 years or older"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does the article suggest trying instead of salt for more flavour?",
+      "options": [
+        "More sugar",
+        "Extra butter",
+        "Different spices and herbs"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does the article say may decline as people age, even though they still need to drink regularly?",
+      "options": [
+        "Their appetite",
+        "Their sense of thirst",
+        "Their sense of hearing"
+      ],
+      "answer": 1
+    }
+  ]
 }

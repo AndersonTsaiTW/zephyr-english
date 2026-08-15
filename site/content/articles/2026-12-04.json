@@ -1,7 +1,7 @@
 {
   "id": "2026-12-04",
   "title": "Healthy eating for parents and children",
-  "topic": "",
+  "topic": "Friends start to matter more, but parents still shape a child's plate.",
   "source": {
     "author": "Government of Canada",
     "origin": "Canada.ca",
@@ -20,6 +20,47 @@
     "Offer your kids healthy meals and snacks at regular times throughout the day. This is important to help them get enough nutrients and energy to help them grow and develop. Have a conversation about all of the components that go into a healthy meal.",
     "Offering a variety of healthy foods is the best way to help your children get the nutrients they need. Since vitamin D is found in very few foods, eat foods containing vitamin D or take a supplement with 400 IU (10 µg) of vitamin D every day."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "peers",
+      "gloss": "people the same age as you"
+    },
+    {
+      "word": "nutrients",
+      "gloss": "the parts of food your body needs"
+    },
+    {
+      "word": "supplement",
+      "gloss": "a pill you take in addition to food"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "As children grow older, what does the article say starts to influence them more?",
+      "options": [
+        "Their peers",
+        "Their teachers",
+        "Television advertising"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Why does the article recommend a vitamin D supplement for children?",
+      "options": [
+        "Because supplements are cheaper than fresh food",
+        "Because children usually dislike the taste of vitamin D foods",
+        "Because vitamin D is found in very few foods"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What can get in the way of families eating meals together?",
+      "options": [
+        "A lack of healthy recipes",
+        "Conflicting work schedules or after school activities",
+        "Disagreements about which foods to buy"
+      ],
+      "answer": 1
+    }
+  ]
 }

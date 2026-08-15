@@ -1,7 +1,7 @@
 {
   "id": "2027-01-05",
   "title": "Protect Your Head!",
-  "topic": "",
+  "topic": "Why a blow to your head can injure the far side too.",
   "source": {
     "author": "Government of Canada",
     "origin": "Canada.ca",
@@ -17,6 +17,47 @@
     "The impact of an object and violent blows to the head can cause contusions and lacerations to the scalp and can sometimes cause a concussion or skull fracture.",
     "Concussions are caused by a violent and sudden displacement of the brain within the skull. On the side of the head receiving the blow, the brain hits the side of the skull, while on the opposite side of the blow, the brain moves away from the skull. Harmful shear stresses are then developed in the brain as well as the brain stem, that is, where the brain is attached to the spinal cord. In serious cases, the victim can lapse into a coma and die."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "contusions",
+      "gloss": "bruises, injuries that do not break the skin"
+    },
+    {
+      "word": "lacerations",
+      "gloss": "cuts or tears in the skin"
+    },
+    {
+      "word": "concussion",
+      "gloss": "a brain injury caused by a hard hit"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does the article say can happen if you lose part of your body, compared to losing your head?",
+      "options": [
+        "Losing any body part is equally dangerous",
+        "You can generally survive losing a body part, but not your head",
+        "The head heals faster than other body parts"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What are some causes of head injuries mentioned in the article?",
+      "options": [
+        "Loud noise and bright light",
+        "Cold temperatures and poor lighting",
+        "Falling objects and hanging boards or pipes"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "During a concussion, what happens to the brain inside the skull?",
+      "options": [
+        "It is suddenly displaced and can hit the skull",
+        "It shrinks slightly from the impact",
+        "It stops receiving blood temporarily"
+      ],
+      "answer": 0
+    }
+  ]
 }

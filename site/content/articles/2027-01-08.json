@@ -1,7 +1,7 @@
 {
   "id": "2027-01-08",
   "title": "Setting savings and investment goals",
-  "topic": "",
+  "topic": "Why the government suggests paying off debt before you start investing.",
   "source": {
     "author": "Government of Canada",
     "origin": "Canada.ca",
@@ -20,6 +20,47 @@
     "Keep in mind that some investments are complex and can be risky. Talk to an investment professional or financial advisor to find the investment that is right for you.",
     "Many investments offer the potential for a higher rate of return but also involve some level of risk. However, the risk may be more acceptable if your goal is longer-term because you have more time to recover any financial losses."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "worksheet",
+      "gloss": "a page with questions or spaces to fill in"
+    },
+    {
+      "word": "accessible",
+      "gloss": "easy to reach or use"
+    },
+    {
+      "word": "advisor",
+      "gloss": "a person who gives expert help or guidance"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does the article say you are generally better off paying down debt first?",
+      "options": [
+        "Paying debt improves your credit score instantly",
+        "Banks require debt to be paid before investing",
+        "Debt interest is usually higher than investment returns"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What should you focus on if you are saving for an emergency fund within a year or two?",
+      "options": [
+        "Choosing the investment with the highest possible return",
+        "Keeping your money protected and easily accessible",
+        "Locking your money away for ten years"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Why might a longer-term goal allow for more investment risk, according to the article?",
+      "options": [
+        "Because you have more time to recover losses",
+        "Because long-term investments are guaranteed by the bank",
+        "Because inflation does not affect long-term savings"
+      ],
+      "answer": 0
+    }
+  ]
 }

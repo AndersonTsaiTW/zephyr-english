@@ -1,7 +1,7 @@
 {
   "id": "2027-01-22",
   "title": "'Clean As a Whistle'",
-  "topic": "",
+  "topic": "Why nobody actually knows where clean as a whistle comes from.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -19,6 +19,47 @@
     "Like many of our English expressions and idioms, the origin of clean as a whistle is unclear.",
     "Some word experts say it comes from the sound of a whistle, which is clear and sharp. Other experts suggest that clean as a whistle comes from drinking alcohol. When you finished your drink and your glass was empty, it was said to be clean as a whistle and needed to be refilled."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "spotless",
+      "gloss": "completely clean, without any marks"
+    },
+    {
+      "word": "corruption",
+      "gloss": "dishonest use of power for personal gain"
+    },
+    {
+      "word": "wrongdoings",
+      "gloss": "bad or illegal actions"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does the article say is unclear about the expression clean as a whistle?",
+      "options": [
+        "Its correct spelling",
+        "Its pronunciation",
+        "Its origin"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "According to one theory, where might clean as a whistle come from?",
+      "options": [
+        "The sound of a whistle, which is clear and sharp",
+        "The whistle of a train arriving on time",
+        "A children's game played in Britain"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What can clean as a whistle describe, besides physical spaces?",
+      "options": [
+        "A recipe for a family dinner",
+        "A driving record free of accidents",
+        "A type of musical instrument"
+      ],
+      "answer": 1
+    }
+  ]
 }

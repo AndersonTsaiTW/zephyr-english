@@ -1,7 +1,7 @@
 {
   "id": "2026-12-29",
   "title": "Welcome to the January food guide newsletter!",
-  "topic": "",
+  "topic": "Why Canada checked its own food guide and found it still holds up.",
   "source": {
     "author": "Government of Canada",
     "origin": "Canada.ca",
@@ -18,6 +18,47 @@
     "Consider breaking a big goal down into smaller steps, and taking it one step at a time. You do not need to make a lot of changes at once. Start with one new healthy eating habit, then add others as your consistency and confidence grow.",
     "There are many diets and food products marketed as the key to weight loss, good health or sport performance. However, they may not work and can be harmful to your health."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "barriers",
+      "gloss": "things that stop you from reaching a goal"
+    },
+    {
+      "word": "consistency",
+      "gloss": "doing something the same way regularly"
+    },
+    {
+      "word": "marketed",
+      "gloss": "advertised or promoted for sale"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What did the Evidence Review find about Canada's food guide?",
+      "options": [
+        "It needs to be rewritten completely",
+        "It is now out of date",
+        "It remains scientifically sound and useful"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does the newsletter suggest about making changes to eating habits?",
+      "options": [
+        "Break a big goal into smaller steps",
+        "Change every habit at once for best results",
+        "Wait until February to avoid crowds"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does the newsletter warn about some diets and food products?",
+      "options": [
+        "They are always more expensive than groceries",
+        "They may not work and can be harmful",
+        "They are only sold outside Canada"
+      ],
+      "answer": 1
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "2027-01-26",
   "title": "'Watch My Dust!'",
-  "topic": "",
+  "topic": "Why losing a race can mean biting the dust in English.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -19,6 +19,47 @@
     "However, if something bites the dust, it has failed.",
     "To bite the dust can mean suffering defeat. It can also mean something comes to an early end or is no longer useful. For example, if my old car dies on a long road trip, I can say my car bit the dust. In the past ten years, many technologies have bitten the dust."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "belongings",
+      "gloss": "things that you own"
+    },
+    {
+      "word": "reasoning",
+      "gloss": "the thinking behind an idea"
+    },
+    {
+      "word": "defeat",
+      "gloss": "a loss in a contest or fight"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does eat my dust mean, according to the article?",
+      "options": [
+        "You are covered in dirt",
+        "You are ahead of someone",
+        "You have given up on a race"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does watch my dust suggest about the speaker?",
+      "options": [
+        "They are so sure of winning they are warning others",
+        "They doubt they will win",
+        "They are asking for help finishing the race"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does bite the dust mean, according to the article?",
+      "options": [
+        "To celebrate a victory",
+        "To start a new competition",
+        "To fail or come to an early end"
+      ],
+      "answer": 2
+    }
+  ]
 }

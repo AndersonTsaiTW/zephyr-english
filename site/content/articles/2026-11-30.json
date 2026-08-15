@@ -1,7 +1,7 @@
 {
   "id": "2026-11-30",
   "title": "Healthy eating at work",
-  "topic": "",
+  "topic": "Why the snacks in your desk drawer decide what you eat.",
   "source": {
     "author": "Government of Canada",
     "origin": "Canada.ca",
@@ -19,6 +19,47 @@
     "It can also be helpful not to keep highly processed foods or sugary drinks at work.",
     "You may not have a fridge or space to prepare a meal at work, which can limit your meal options. Bring a small cooler bag or ice pack with you instead to keep fresh foods cold."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "workplace",
+      "gloss": "the place where you do your job"
+    },
+    {
+      "word": "processed",
+      "gloss": "changed a lot in a factory before you buy it"
+    },
+    {
+      "word": "cooler",
+      "gloss": "a bag that keeps food cold"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does the article suggest doing with meals and snacks for work?",
+      "options": [
+        "Include them in your meal plan and prepare some in advance",
+        "Buy them fresh from a cafeteria each day",
+        "Wait until lunchtime to decide what to eat"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Why does the article suggest keeping a small amount of healthy food at work?",
+      "options": [
+        "Because workplace fridges are usually broken",
+        "Because coworkers often ask to share your food",
+        "Because you might forget to pack enough some days"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does the article recommend for keeping fresh foods cold without a fridge?",
+      "options": [
+        "Asking a coworker to store food in their bag",
+        "Bringing a small cooler bag or ice pack",
+        "Eating only foods that do not need to be cold"
+      ],
+      "answer": 1
+    }
+  ]
 }

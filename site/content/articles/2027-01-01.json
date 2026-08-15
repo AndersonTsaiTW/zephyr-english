@@ -1,7 +1,7 @@
 {
   "id": "2027-01-01",
   "title": "Module 6 - Guide for Investigating Musculoskeletal Injuries (MSI)",
-  "topic": "",
+  "topic": "Why a half-full container of water can be harder to lift.",
   "source": {
     "author": "Government of Canada",
     "origin": "Canada.ca",
@@ -24,6 +24,47 @@
     "13. Do you perform tasks during which your neck gets into awkward postures frequently for a prolonged period (repetitive twisting or bending of the neck, in any direction)?",
     "14. Do you perform tasks during which your shoulder gets into awkward postures (elbow away from the side of your torso, in any direction) frequently for a prolonged period?"
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "awkward",
+      "gloss": "not natural or comfortable"
+    },
+    {
+      "word": "posture",
+      "gloss": "the position of your body"
+    },
+    {
+      "word": "grasp",
+      "gloss": "hold something firmly in your hand"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What kind of object does the guide give as an example of one with a shifting centre of gravity?",
+      "options": [
+        "A bag of dry sand",
+        "A container half filled with water",
+        "A stack of flat boxes"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Besides lifting, what other situation does the guide ask about regarding the neck or shoulders?",
+      "options": [
+        "Awkward posture when gripping tools or equipment",
+        "Sitting for long periods",
+        "Standing on one leg"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What can happen if a task uses the same body part repeatedly without rest, according to the guide?",
+      "options": [
+        "A faster heart rate",
+        "Improved muscle strength over time",
+        "Fatigue of the soft tissues in that area"
+      ],
+      "answer": 2
+    }
+  ]
 }

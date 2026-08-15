@@ -1,7 +1,7 @@
 {
   "id": "2026-12-11",
   "title": "Healthy eating for teens",
-  "topic": "",
+  "topic": "Why what teens eat now can matter decades from now.",
   "source": {
     "author": "Government of Canada",
     "origin": "Canada.ca",
@@ -20,6 +20,47 @@
     "Try including vegetables and fruits at every meal and snack. They are filled with nutrients that your body needs. They also make a great snack when you are on the go.",
     "Eating a variety of healthy foods is the best way to help get the nutrients you need. Since vitamin D is found in very few foods, eat foods containing vitamin D or take a supplement with 400 IU (10 µg) of vitamin D every day."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "chronic",
+      "gloss": "lasting a long time and not going away quickly"
+    },
+    {
+      "word": "nutrients",
+      "gloss": "the healthy parts in food"
+    },
+    {
+      "word": "supplement",
+      "gloss": "a pill you take in addition to food"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What does the article say healthy eating as a teen can help reduce later in life?",
+      "options": [
+        "The cost of groceries",
+        "The need for exercise",
+        "The risk of chronic disease"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does the article suggest focusing on more than body weight?",
+      "options": [
+        "Your overall health",
+        "Trying new restaurants",
+        "Counting every calorie"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Why does the article recommend a vitamin D supplement for teens?",
+      "options": [
+        "Because it helps with sports performance",
+        "Because vitamin D is found in very few foods",
+        "Because doctors require it by law"
+      ],
+      "answer": 1
+    }
+  ]
 }

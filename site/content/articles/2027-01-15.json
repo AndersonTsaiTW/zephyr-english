@@ -1,7 +1,7 @@
 {
   "id": "2027-01-15",
   "title": "'In The Hot Seat' Is Not Where You Want to Be",
-  "topic": "",
+  "topic": "Why an uncomfortable round of questions is called the hot seat.",
   "source": {
     "author": "VOA Learning English",
     "origin": "VOA Learning English, Words and Their Stories",
@@ -18,6 +18,47 @@
     "For example, parents often put their children in the hot seat. They may want to know where they go, who they are with, and what they are doing. These questions could feel like an interrogation. As with the earlier police example, an interrogation and being in the hot seat go hand in hand.",
     "Teachers and school officials can also put students in the hot seat. If students are accused of doing something like cheating on a test or damaging school property, a teacher might put them in the hot seat to get information."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "interrogation",
+      "gloss": "a period of tough questioning"
+    },
+    {
+      "word": "detective",
+      "gloss": "a police officer who investigates crimes"
+    },
+    {
+      "word": "observing",
+      "gloss": "watching closely"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What example does the article give of being in the hot seat?",
+      "options": [
+        "A relaxing weekend at home",
+        "A difficult job interview or school exam",
+        "A quiet walk in the park"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What might parents want to know when they put their children in the hot seat?",
+      "options": [
+        "Where they go, who they are with, and what they are doing",
+        "What their favourite school subject is",
+        "How much allowance they want"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Why might a teacher put a student in the hot seat, according to the article?",
+      "options": [
+        "To announce a surprise holiday",
+        "To hand out an award",
+        "To get information after an accusation like cheating"
+      ],
+      "answer": 2
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "2026-12-15",
   "title": "Improving your eating habits",
-  "topic": "",
+  "topic": "Why naming the exact thing that stops you helps a habit stick.",
   "source": {
     "author": "Government of Canada",
     "origin": "Canada.ca",
@@ -19,6 +19,47 @@
     "Achievable: Can you do it?",
     "You should figure out ways you can reach your goal. Your attitudes, abilities, skills and supports should be well-matched to the goal you are trying to achieve. Your goals should be challenging, but not so hard that you will not be able to achieve them."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "barrier",
+      "gloss": "something that stops you from reaching a goal"
+    },
+    {
+      "word": "frequency",
+      "gloss": "how often something happens"
+    },
+    {
+      "word": "motivate",
+      "gloss": "give someone a reason to keep going"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "How does the passage define a barrier?",
+      "options": [
+        "A type of exercise plan",
+        "Something that keeps you from reaching your goal",
+        "A food that is hard to digest"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does the measurable part of a goal ask you to think about?",
+      "options": [
+        "How much money the goal will cost",
+        "How long the goal has existed",
+        "How much you will do and how often"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What should your goals be, according to the passage?",
+      "options": [
+        "Challenging, but still possible to achieve",
+        "Easy enough to finish in one day",
+        "Impossible to fail at"
+      ],
+      "answer": 0
+    }
+  ]
 }

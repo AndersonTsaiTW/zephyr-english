@@ -1,7 +1,7 @@
 {
   "id": "2026-12-22",
   "title": "Welcome to the October food guide newsletter!",
-  "topic": "",
+  "topic": "Why a homemade soup can beat a store-bought one on sodium alone.",
   "source": {
     "author": "Government of Canada",
     "origin": "Canada.ca",
@@ -15,6 +15,47 @@
     "The food guide plate is a planning tool for all kinds of meals and snacks. This month, we focus on using the plate to make freezer-friendly meals, such as soups, casseroles, baked goods, and snacks. With more than 50 freezer-friendly meals, the Canada's food guide kitchen can help you get started.",
     "Tip: The food guide plate promotes a variety of healthy foods. The food examples included are just that – examples. Use the plate's proportions as a reference tool to help you include a variety of vegetables and fruits, whole grains, and protein foods in your overall eating pattern."
   ],
-  "previewWords": [],
-  "quiz": []
+  "previewWords": [
+    {
+      "word": "sodium",
+      "gloss": "the salt in food"
+    },
+    {
+      "word": "legumes",
+      "gloss": "beans, peas and lentils"
+    },
+    {
+      "word": "portions",
+      "gloss": "amounts of food for one meal"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Why does the newsletter suggest homemade soup over many store-bought kinds?",
+      "options": [
+        "Store-bought soups take longer to heat up",
+        "Store-bought soups are more expensive to buy",
+        "Store-bought soups tend to be higher in sodium"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "What does the newsletter suggest doing with large batches of freezer-friendly meals?",
+      "options": [
+        "Give them away to neighbours",
+        "Freeze them in meal-sized portions for later",
+        "Sell them at a farmers market"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What does the food guide plate help you do with the foods on it?",
+      "options": [
+        "See the proportions of different food groups",
+        "Count the exact calories in a meal",
+        "Follow one fixed recipe every day"
+      ],
+      "answer": 0
+    }
+  ]
 }
