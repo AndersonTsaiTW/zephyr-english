@@ -82,6 +82,18 @@ A word you have already met is not charged again. Beyond two appearances an unfa
 
 Names do not count towards this figure. A reader meeting "Viola Desmond" is not being asked to know a rare word, and counting names as difficult vocabulary made the number useless for any article about a real person or place. The checker lists them separately so you can still see them.
 
+## Letting the machine do the fetching
+
+`scripts/harvest.mjs` does everything above except the part that needs judgement. It reads `scripts/data/sources.json`, lists candidates from each source in turn, downloads the ones it has not seen, and keeps the ones that survive:
+
+It throws out anything with an agency byline, anything whose title or opening pages carry a subject nobody should meet unannounced before work, anything that is one part of a serial, any repeat of a title already used, and anything outside the length, grade and coverage limits after trimming. On a typical run about eight pages in a hundred come through. That number sounds low and is not: most pages on a government site are lists, and a list has no article in it.
+
+It writes `content-raw/<date>.txt` and a scaffolded `site/content/articles/<date>.json` for each day that has no article, and stops there. No topic line, no word explanations, no quiz, and no change to `site/content/index.json`.
+
+`.github/workflows/harvest.yml` runs it every morning and collects the results in one pull request.
+
+Adding a source means adding an entry to `sources.json` with the licence written out. That string is copied into the source block of every article taken from it, so if you cannot write it honestly, the source does not belong there. Two traps worth knowing. VOA's news sections are mostly agency copy, which the harvester checks for but which you should know before adding another VOA section. And MedlinePlus publishes an "easy to read" index whose links go to kidshealth.org and other publishers whose text is not public domain, so only pages on `medlineplus.gov` itself can be used. Whatever the site's own front page implies, the licence follows the words, not the link.
+
 ## Preparing a batch
 
 Do a week or two at a time.

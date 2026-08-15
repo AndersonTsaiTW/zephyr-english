@@ -54,6 +54,8 @@ scripts/                  small Node programs, no libraries installed
   fetch-source.mjs        a page on the web to plain text, no model involved
   list-voa.mjs            what VOA has, and whether it is VOA's own writing
   propose-trim.mjs        proposes a cut. You still have to read it
+  harvest.mjs             fills empty days with half-finished articles
+  data/sources.json       where to look, and under what licence
 docs/design.md            colours, type sizes and what each screen looks like
 docs/content-sources.md   where articles come from and how to credit them
 notes-zh/                 the owner's own notes in Chinese, not published
@@ -107,6 +109,18 @@ The second was a countdown that would not leave. HTML's `hidden` attribute is su
 Finishing a day offers a card to share. It is drawn on a canvas in the browser, in `drawShareCard()`, so it works offline and needs no server. Web Share carries the image and the text together where the browser supports files; where it does not, the card can be shown on the page and saved by hand.
 
 Two things about it are deliberate. It is always the dark palette, because a card lands in a chat beside other people's photographs and a white square reads as a blank message. And the streak wording only celebrates exact milestones, seven days, fourteen, thirty, and so on. Ranges would call day twelve "a week straight", which is both untrue and the kind of praise that stops meaning anything once you notice it.
+
+## Where articles come from now
+
+A workflow runs every morning, reads `scripts/data/sources.json`, downloads pages nobody has looked at yet, measures them, and scaffolds an article for each day that does not have one. It opens a single pull request and adds to it.
+
+What arrives is half an article. There is a title, a source block and a body cut down by deleting whole paragraphs. There is no topic line, no word explanations and no quiz, and `site/content/index.json` is untouched. That last part is what makes the whole thing safe: a date in the index is a promise that opening the app that morning gives you something to read and something to answer, so an article joins the index only when someone has finished it. Merging the pull request changes nothing a reader sees.
+
+The split is deliberate rather than a limitation of the tooling. Downloading, measuring and deleting are all checkable, and `check-article.mjs` checks them. Whether a question is a fair test of whether someone followed the article is not checkable, so a person writes it.
+
+`scripts/data/seen-sources.json` records every URL the harvester has looked at and what it decided, so it never downloads the same page twice. It grows by a few hundred lines a week and is meant to be committed.
+
+If a run finds nothing, the sources are exhausted. Add to `sources.json`, and read the licence note at the top of it before you do.
 
 ## Being found
 

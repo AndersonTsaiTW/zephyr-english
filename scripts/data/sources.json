@@ -1,0 +1,142 @@
+{
+  "_comment": [
+    "Where harvest.mjs looks for candidate articles. Canadian sources first,",
+    "as docs/content-sources.md says. Every entry names the licence that",
+    "lets us reprint an excerpt, and that string is copied verbatim into the",
+    "source block of any article taken from it. If you cannot write that",
+    "line honestly, the source does not belong here.",
+    "",
+    "kind: voa-section  walks /z/<section>?p=N",
+    "kind: sitemap      reads an XML sitemap and filters the URLs",
+    "kind: index-page   takes the links out of one listing page"
+  ],
+  "sources": [
+    {
+      "name": "Canada.ca, settling in Canada",
+      "kind": "sitemap",
+      "sitemap": "https://www.canada.ca/en/immigration-refugees-citizenship.sitemap.xml",
+      "include": "/services/(settle-canada|new-immigrants|canadians)/",
+      "exclude": "/news/|/corporate/",
+      "author": "Government of Canada",
+      "origin": "Canada.ca",
+      "license": "Non-commercial reproduction permitted with attribution",
+      "limit": 200
+    },
+    {
+      "name": "Canada.ca, health",
+      "kind": "sitemap",
+      "sitemap": "https://www.canada.ca/en/public-health.sitemap.xml",
+      "include": "/services/",
+      "exclude": "/news/|/corporate/|/publications/|/statistics/|/surveillance/",
+      "author": "Government of Canada",
+      "origin": "Canada.ca",
+      "license": "Non-commercial reproduction permitted with attribution",
+      "limit": 400
+    },
+    {
+      "name": "Canada.ca, food and nutrition",
+      "kind": "sitemap",
+      "sitemap": "https://www.canada.ca/en/health-canada.sitemap.xml",
+      "include": "/services/",
+      "exclude": "/news/|/corporate/|/publications/|/drugs-health-products/",
+      "author": "Government of Canada",
+      "origin": "Canada.ca",
+      "license": "Non-commercial reproduction permitted with attribution",
+      "limit": 400
+    },
+    {
+      "name": "Canada.ca, work and money",
+      "kind": "sitemap",
+      "sitemap": "https://www.canada.ca/en/employment-social-development.sitemap.xml",
+      "include": "/services/",
+      "exclude": "/news/|/corporate/|/publications/|/reports/",
+      "author": "Government of Canada",
+      "origin": "Canada.ca",
+      "license": "Non-commercial reproduction permitted with attribution",
+      "limit": 400
+    },
+    {
+      "name": "Canada.ca, banking and credit",
+      "kind": "sitemap",
+      "sitemap": "https://www.canada.ca/en/financial-consumer-agency.sitemap.xml",
+      "include": "/services/",
+      "exclude": "/news/|/corporate/|/publications/",
+      "author": "Government of Canada",
+      "origin": "Canada.ca",
+      "license": "Non-commercial reproduction permitted with attribution",
+      "limit": 300
+    },
+    {
+      "name": "Canada.ca, weather and nature",
+      "kind": "sitemap",
+      "sitemap": "https://www.canada.ca/en/environment-climate-change.sitemap.xml",
+      "include": "/services/",
+      "exclude": "/news/|/corporate/|/publications/|/reports/|/data/",
+      "author": "Government of Canada",
+      "origin": "Canada.ca",
+      "license": "Non-commercial reproduction permitted with attribution",
+      "limit": 300
+    },
+    {
+      "name": "VOA Words and Their Stories",
+      "kind": "voa-section",
+      "section": "987",
+      "pages": 30,
+      "author": "VOA Learning English",
+      "origin": "VOA Learning English, Words and Their Stories",
+      "license": "Public domain (work of the US federal government)"
+    },
+    {
+      "name": "VOA American Stories",
+      "kind": "voa-section",
+      "section": "1581",
+      "pages": 20,
+      "author": "VOA Learning English",
+      "origin": "VOA Learning English, American Stories",
+      "license": "Public domain (work of the US federal government)"
+    },
+    {
+      "name": "VOA Arts and Culture",
+      "kind": "voa-section",
+      "section": "986",
+      "pages": 20,
+      "author": "VOA Learning English",
+      "origin": "VOA Learning English, Arts & Culture",
+      "license": "Public domain (work of the US federal government)"
+    },
+    {
+      "name": "Canada.ca, parks and travel",
+      "kind": "sitemap",
+      "sitemap": "https://www.canada.ca/en/parks-canada.sitemap.xml",
+      "include": "\\.html$",
+      "exclude": "/news/|/corporate/|/publications/|/agency/|/campaigns/",
+      "author": "Government of Canada",
+      "origin": "Canada.ca",
+      "license": "Non-commercial reproduction permitted with attribution",
+      "limit": 300
+    },
+    {
+      "name": "Canada.ca, transport and safety",
+      "kind": "sitemap",
+      "sitemap": "https://www.canada.ca/en/transport-canada.sitemap.xml",
+      "include": "\\.html$",
+      "exclude": "/news/|/corporate/|/publications/|/programs/|/campaigns/|/statistics/",
+      "author": "Government of Canada",
+      "origin": "Canada.ca",
+      "license": "Non-commercial reproduction permitted with attribution",
+      "limit": 300
+    },
+    {
+      "name": "MedlinePlus, patient instructions",
+      "kind": "sitemap",
+      "sitemap": "https://medlineplus.gov/sitemap.xml",
+      "include": "^https://medlineplus\\.gov/ency/patientinstructions/\\d+\\.htm$",
+      "author": "U.S. National Library of Medicine",
+      "origin": "MedlinePlus",
+      "license": "Public domain (work of the US federal government)",
+      "limit": 500,
+      "_note": "The site's own easy-to-read index links out to kidshealth.org and other publishers whose text is not public domain. Only pages under medlineplus.gov itself can be used.",
+      "titleExclude": "discharge|surgery|repair|transplant|catheter|chemotherapy|dialysis|ostomy|tube|biopsy|amputat"
+    }
+  ]
+}

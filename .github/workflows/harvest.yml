@@ -1,0 +1,112 @@
+name: Harvest articles
+
+# Fills the days that do not have an article yet.
+#
+# Every morning this reads the source list in scripts/data/sources.json,
+# downloads pages it has not seen before, measures them against the rules in
+# docs/content-sources.md, and scaffolds an article for each empty day. Then
+# it opens one pull request and leaves it there.
+#
+# What it produces is half an article: a title, a source block, and a body
+# trimmed by deletion. The topic line, the word explanations and the quiz are
+# missing on purpose. Those are what a reader is actually graded on, and this
+# project's rule is that a person reads every question before it ships.
+#
+# It never edits site/content/index.json either, so nothing it does can reach
+# a reader. A date in the index is a promise that opening the app that morning
+# gives you something to read and something to answer. Finishing an article is
+# what puts it there.
+#
+# So the pull request is a pile of prepared work, not a change to the site.
+# Merging it is safe at any time. Ignoring it for a week is also safe.
+
+on:
+  schedule:
+    # 09:20 UTC, which is the small hours in Toronto. Nothing depends on the
+    # hour; it is offset from the nudge job so the two never overlap.
+    - cron: '20 9 * * *'
+  workflow_dispatch:
+    inputs:
+      scaffold:
+        description: 'How many days to fill'
+        required: false
+        default: '12'
+      budget:
+        description: 'Maximum pages to download'
+        required: false
+        default: '400'
+
+# One at a time. Two runs would both branch from main and the second would
+# overwrite the first one's work.
+concurrency:
+  group: harvest
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'AndersonTsaiTW'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Start from the incoming branch if it exists
+        run: |
+          git config user.name 'zephyr-harvest'
+          git config user.email 'zephyr-harvest@users.noreply.github.com'
+          if git ls-remote --exit-code --heads origin content/incoming; then
+            git fetch origin content/incoming
+            git checkout content/incoming
+            git merge --no-edit origin/main
+          else
+            git checkout -b content/incoming
+          fi
+
+      - name: Look for articles
+        run: |
+          node scripts/harvest.mjs \
+            --scaffold "${{ github.event.inputs.scaffold || '12' }}" \
+            --budget "${{ github.event.inputs.budget || '400' }}"
+
+      # The harvester applies tighter limits than check-article.mjs does, so
+      # this should never fail. If it ever does, something in the trimmer has
+      # drifted and the run should stop rather than open a pull request full
+      # of articles nobody can publish.
+      - name: Check every new article against the real rules
+        run: |
+          status=0
+          for file in $(git diff --name-only --diff-filter=A -- site/content/articles); do
+            node scripts/check-article.mjs "$file" > /dev/null || { echo "FAILED $file"; status=1; }
+          done
+          exit $status
+
+      - name: Open or update the pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet && git diff --cached --quiet; then
+            echo 'Nothing new. The sources are exhausted, or every page failed the checks.'
+            exit 0
+          fi
+          added=$(git diff --name-only --diff-filter=A -- site/content/articles | wc -l)
+          git add -A
+          git commit -m "Harvest: ${added} articles waiting for a quiz
+
+          Bodies are trimmed and sourced. The topic line, the word
+          explanations and the quiz still have to be written by hand, and
+          site/content/index.json is untouched until they are."
+          git push -u origin content/incoming
+          if ! gh pr view content/incoming > /dev/null 2>&1; then
+            gh pr create \
+              --base main \
+              --head content/incoming \
+              --title 'Harvested articles waiting for a quiz' \
+              --body 'Scaffolded by .github/workflows/harvest.yml. Each article has a title, a source block and a body trimmed by deletion only. Write the topic line, three word explanations and three questions, then run scripts/check-article.mjs and add the date to site/content/index.json.'
+          fi
